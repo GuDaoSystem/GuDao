@@ -1,0 +1,24 @@
+[ 2017-12-15T14:30:34+08:00 ] ::1 /GuDao/index.php/Band
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+ERR: 无法加载模块:Band
+
+[ 2017-12-15T14:31:30+08:00 ] ::1 /GuDao/index.php/Band
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+ERR: 无法加载模块:Band
+
+[ 2017-12-15T14:31:31+08:00 ] ::1 /GuDao/index.php/Band
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+ERR: 无法加载模块:Band
+
+[ 2017-12-15T14:31:31+08:00 ] ::1 /GuDao/index.php/Band
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000090s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001569s ]
+ERR: 无法加载模块:Band
+
