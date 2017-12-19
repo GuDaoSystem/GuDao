@@ -20,8 +20,8 @@ class UserModel extends Model {
     public function getUserInfo($id) {
     	$user = new UserModel();
     	$map["user_id"] = $id;
-    	$result = $user->where($map)->getField('user_id, username, gender, birthday, headshot, intro');
-    	return $result;
+        $result = $user->where($map)->field("user_id, username, gender, birthday, headshot, intro")->select();
+    	return $result[0];
     }
 
     // 修改用户信息

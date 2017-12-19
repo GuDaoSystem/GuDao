@@ -17,6 +17,7 @@ class IndexController extends Controller {
         $this->display();
     }
 
+
     // 登录
     public function doLogin() {
         $data["email"] = $_POST["email"];

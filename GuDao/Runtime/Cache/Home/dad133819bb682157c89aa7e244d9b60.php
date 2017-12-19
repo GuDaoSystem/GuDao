@@ -1,1 +1,29 @@
-<?php if (!defined('THINK_PATH')) exit();?>Band/index.html
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title></title>
+<script src="/GuDao/Public/js/common/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<script>
+	$.ajax({
+		url: "/GuDao/index.php/Home/Band/getBandByID",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"id": 1
+		},
+		// data: {
+		// 	"pageIndex": 1,
+		// 	"pageSize": 2,
+		// 	"sortRule": "band_name desc"
+		// },
+		success: function(result) {
+			console.log(result.data.band_name);
+		}
+	});
+</script>
+</body>
+</html>

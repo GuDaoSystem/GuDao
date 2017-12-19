@@ -8,7 +8,6 @@
 </head>
 <body>
 <script>
-	console.log("/GuDao/index.php/Home/User/getUserInfo");
 	$.ajax({
 		url: "/GuDao/index.php/Home/User/getUserInfo",
 		type: "GET",
