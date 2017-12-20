@@ -8,7 +8,6 @@
 </head>
 <body>
 <script>
-	console.log("/GuDao/index.php/Home/Index/login");
 </script>
 </body>
 </html>

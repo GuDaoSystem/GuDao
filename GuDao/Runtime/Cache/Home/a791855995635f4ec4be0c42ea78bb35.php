@@ -10,12 +10,16 @@
 <script>
 	$.ajax({
 		url: "/GuDao/index.php/Home/Show/getShowByPage",
-		type: "POST",
+		type: "GET",
 		dataType: "json",
 		data: {
 			"pageIndex": 1,
-			"pageSize": 5
+			"pageSize": 2,
+			"sortRule": "show_time desc"
 		},
+		// data: {
+		// 	id: 1
+		// },
 		success: function(result) {
 			console.log(result);
 		}

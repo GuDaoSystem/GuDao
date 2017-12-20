@@ -14,12 +14,11 @@ class UserController extends Controller {
         if($data) {
             $result["code"] = 200;
             $result["msg"] = "查询成功";
-            $result["data"] = $data;
         } else {
             $result["code"] = 201;
             $result["msg"] = "查询失败";
-            $result["data"] = "";
         }
+        $result["data"] = $data;
         $this->ajaxReturn($result);
     }
 

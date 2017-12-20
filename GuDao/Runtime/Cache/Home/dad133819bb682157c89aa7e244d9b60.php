@@ -9,19 +9,19 @@
 <body>
 <script>
 	$.ajax({
-		url: "/GuDao/index.php/Home/Band/getBandByID",
+		url: "/GuDao/index.php/Home/Band/getBandByPage",
 		type: "GET",
 		dataType: "json",
-		data: {
-			"id": 1
-		},
 		// data: {
-		// 	"pageIndex": 1,
-		// 	"pageSize": 2,
-		// 	"sortRule": "band_name desc"
+		// 	"id": 1
 		// },
+		data: {
+			"pageIndex": 1,
+			"pageSize": 2,
+			"sortRule": "band_name desc"
+		},
 		success: function(result) {
-			console.log(result.data.band_name);
+			console.log(result);
 		}
 	});
 </script>
