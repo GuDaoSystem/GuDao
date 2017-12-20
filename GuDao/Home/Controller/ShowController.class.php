@@ -43,4 +43,19 @@ class ShowController extends Controller {
     	$result["data"] = $data;
     	$this->ajaxReturn($result);
     }
+
+    // 获取演出参演乐队
+    public function getBandByShow() {
+        $show = new ShowModel();
+        $data = $show->getBandByShow($_GET["id"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $result["data"] = $data;
+        $this->ajaxReturn($result);
+    }
 }

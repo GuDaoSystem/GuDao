@@ -9,17 +9,12 @@
 <body>
 <script>
 	$.ajax({
-		url: "/GuDao/index.php/Home/Show/getShowByPage",
+		url: "/GuDao/index.php/Home/Show/getBandByShow",
 		type: "GET",
 		dataType: "json",
 		data: {
-			"pageIndex": 1,
-			"pageSize": 2,
-			"sortRule": "show_time desc"
+			"id": 1
 		},
-		// data: {
-		// 	id: 1
-		// },
 		success: function(result) {
 			console.log(result);
 		}

@@ -84,3 +84,58 @@
 			"band_intro": "aaaaaaaaaaaaaaaaaaaaaa"
 		}
 	}
+
+
+
+
+- 获取乐队演出经历
+
+1. 接口地址：__URL__/getExperience
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+3. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		乐队ID
+
+	参考示例：
+	{
+		"id": 1
+	}
+
+4. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Object				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": [{
+			"show_id": "1",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_address": "Encore LiveClub",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2"
+		}, {
+			"show_id": "2",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_address": "Encore LiveClub",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2"
+		}]
+	}

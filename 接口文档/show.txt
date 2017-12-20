@@ -91,3 +91,48 @@
 			"show_state": "2"
 		}
 	}
+
+
+
+
+- 获取演出参演乐队
+
+1. 接口地址：__URL__/getBandByShow
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+3. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		演出ID
+
+	参考示例：
+	{
+		"id": 1
+	}
+
+4. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Object				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": [{
+			"band_id": "3",
+			"band_name": "Slash",
+			"band_intro": "aaaaaaaaaaaaaaaaaaaaaa"
+		}, {
+			"band_id": "2",
+			"band_name": "Hyper",
+			"band_intro": "bbbbbbbbbbbbbbbbbbbbbbbbb"
+		}]
+	}

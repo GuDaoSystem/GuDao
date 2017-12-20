@@ -44,4 +44,19 @@ class BandController extends Controller {
         $result["data"] = $data;
     	$this->ajaxReturn($result);
     }
+
+    // 获取乐队演出经历
+    public function getExperience() {
+        $band = new BandModel();
+        $data = $band->getExperience($_GET["id"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $result["data"] = $data;
+        $this->ajaxReturn($result);
+    }
 }

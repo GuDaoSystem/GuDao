@@ -9,16 +9,11 @@
 <body>
 <script>
 	$.ajax({
-		url: "/GuDao/index.php/Home/Band/getBandByPage",
+		url: "/GuDao/index.php/Home/Band/getExperience",
 		type: "GET",
 		dataType: "json",
-		// data: {
-		// 	"id": 1
-		// },
 		data: {
-			"pageIndex": 1,
-			"pageSize": 2,
-			"sortRule": "band_name desc"
+			"id": 1
 		},
 		success: function(result) {
 			console.log(result);

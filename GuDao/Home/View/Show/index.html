@@ -9,17 +9,12 @@
 <body>
 <script>
 	$.ajax({
-		url: "__URL__/getShowByPage",
+		url: "__URL__/getBandByShow",
 		type: "GET",
 		dataType: "json",
 		data: {
-			"pageIndex": 1,
-			"pageSize": 2,
-			"sortRule": "show_time desc"
+			"id": 1
 		},
-		// data: {
-		// 	id: 1
-		// },
 		success: function(result) {
 			console.log(result);
 		}

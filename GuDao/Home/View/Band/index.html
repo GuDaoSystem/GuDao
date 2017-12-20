@@ -9,16 +9,11 @@
 <body>
 <script>
 	$.ajax({
-		url: "__URL__/getBandByPage",
+		url: "__URL__/getExperience",
 		type: "GET",
 		dataType: "json",
-		// data: {
-		// 	"id": 1
-		// },
 		data: {
-			"pageIndex": 1,
-			"pageSize": 2,
-			"sortRule": "band_name desc"
+			"id": 1
 		},
 		success: function(result) {
 			console.log(result);
