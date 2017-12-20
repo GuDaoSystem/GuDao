@@ -1,0 +1,96 @@
+- 按页获取所有通知
+
+1. 接口地址：__URL__/getNoticeByPage
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+3. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	pageIndex	Number		是		分页索引（第几页）
+	pageSize	Number		是		分页大小（每页显示几个记录）
+
+	参考示例：
+	{
+		"pageIndex": 1,
+		"pageSize": 2
+	}
+
+4. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Object				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": [{
+			"notice_id": "1",
+			"notice_type": "1",
+			"notice_time": "2017-11-12 00:00:00",
+			"notice_message": "未来现场Futrue Live 2017（广州站）开始预售啦！",
+			"show_id": "1"
+		}, {
+			"notice_id": "2",
+			"notice_type": "1",
+			"notice_time": "2017-11-12 00:00:00",
+			"notice_message": "未来现场Futrue Live 2017（广州站）开始预售啦！",
+			"show_id": "1"
+		}]
+	}
+
+
+
+
+- 按类型获取通知
+
+1. 接口地址：__URL__/getNoticeByType
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+3. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	type		Number		是		通知类型（1为演出售票中，2为演出推迟，3为演出取消）
+
+	参考示例：
+	{
+		"type": 1
+	}
+
+4. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Object				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": {{
+			"notice_id": "1",
+			"notice_type": "1",
+			"notice_time": "2017-11-12 00:00:00",
+			"notice_message": "未来现场Futrue Live 2017（广州站）开始预售啦！",
+			"show_id": "1"
+		}, {
+			"notice_id": "2",
+			"notice_type": "1",
+			"notice_time": "2017-11-12 00:00:00",
+			"notice_message": "未来现场Futrue Live 2017（广州站）开始预售啦！",
+			"show_id": "1"
+		}}
+	}

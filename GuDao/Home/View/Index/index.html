@@ -8,6 +8,17 @@
 </head>
 <body>
 <script>
+	$.ajax({
+		url: "__URL__/doLogin",
+		type: "POST",
+		dataType: "json",
+		data: {
+			"username": "233425"
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 </script>
 </body>
 </html>
