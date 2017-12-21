@@ -2,6 +2,8 @@
 namespace Home\Controller;
 use Think\Controller;
 use Home\Model\BandModel;
+use Home\Model\AttendModel;
+use Home\Model\ShowModel;
 use Home\Model\PictureModel;
 class BandController extends Controller {
 	// 渲染页面
@@ -48,8 +50,12 @@ class BandController extends Controller {
 
     // 获取乐队演出经历
     public function getExperience() {
-        $band = new BandModel();
-        $data = $band->getExperience($_GET["id"]);
+        $attend = new AttendModel();
+        $showList = $attend->getExperience($_GET["id"]);
+        for($i = 0; $i < count($showList); $i++) {
+            $show = new ShowModel();
+            $data[$i] = $show->getShowByID($showList[$i]);
+        }
         if($data) {
             $result["code"] = 200;
             $result["msg"] = "查询成功";
