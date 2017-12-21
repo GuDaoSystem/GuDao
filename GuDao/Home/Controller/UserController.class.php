@@ -22,7 +22,7 @@ class UserController extends Controller {
         $this->ajaxReturn($result);
     }
 
-    // 修改用户基本信息
+    // 修改用户信息
     public function modifyUserInfo() {
         $id = $_POST["id"];
         if($_POST["username"]) {

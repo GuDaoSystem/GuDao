@@ -52,4 +52,21 @@ class IndexController extends Controller {
         }
         $this->ajaxReturn($result);
     }
+
+    // 发送验证码
+    function sendVerificationCode() {
+        $email = $_POST["email"];
+        $title = "孤岛注册验证码";
+        $code = rand(1000, 9999);
+        $content = "验证码为 {$code} 。你正在注册孤岛账号，欢迎加入孤岛！";
+        if(sendMail($email, $title, $content)) {
+            $result["code"] = 200;
+            $result["msg"] = "发送验证码成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "发送验证码失败";
+        }
+        $result["data"] = $code;
+        $this->ajaxReturn($result);
+    }
 }
