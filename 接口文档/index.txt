@@ -1,25 +1,27 @@
 - 登录
 
-1. 接口地址：__URL__/login
+1. 接口地址：__URL__/doLogin
 
 2. 请求方式：POST
 
 3. 响应类型：json
 
-3. 请求参数：
+4. 请求参数：
 
 	参数名称	参数类型	必选	说明
 	--------------------------------------
 	email		String		是		邮箱
-	password	String		是		密码
+	password	String		是		md5加密密码
+	remPswSign	Boolean		否		记住密码的标记（默认为false，需要记住密码时设置为true）
 
 	参考示例：
 	{
 		"email": "ng.winglam@qq.com",
-		"password": "wuyinglin"
+		"password": "9961b06e08ea3a53fda07a812dc3b3cd",
+		"remPswSign": true
 	}
 
-4. 响应参数：
+5. 响应参数：
 
 	参数名称	参数类型			说明
 	----------------------------------------
@@ -32,31 +34,75 @@
 		"msg": "登录成功"
 	}
 
+6. 补充：
+
+	1) 记住密码后邮箱和密码分别保存于cookie中的gudaoLoginEmail字段和gudaoLoginPwd字段，7天期限。
+	2) 登录后用户ID保存于cookie中的gudaoUserID字段。
 
 
 
-- 注册
 
-1. 接口地址：__URL__/register
+- 发送注册验证码
+
+1. 接口地址：__URL__/sendRegisterCode
 
 2. 请求方式：POST
 
 3. 响应类型：json
 
-3. 请求参数：
+4. 请求参数：
 
 	参数名称	参数类型	必选	说明
 	--------------------------------------
 	email		String		是		邮箱
-	password	String		是		密码
+
+	参考示例：
+	{
+		"email": "ng.winglam@qq.com"
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "发送验证码成功"
+	}
+
+6. 补充：
+
+	1) 验证码保存于cookie中的code字段，60秒期限，使用完后需要删除。
+
+
+
+
+- 注册
+
+1. 接口地址：__URL__/doRegister
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	email		String		是		邮箱
+	password	String		是		md5加密密码
 
 	参考示例：
 	{
 		"email": "ng.winglam@qq.com",
-		"password": "wuyinglin"
+		"password": "9961b06e08ea3a53fda07a812dc3b3cd"
 	}
 
-4. 响应参数：
+5. 响应参数：
 
 	参数名称	参数类型			说明
 	----------------------------------------
@@ -69,37 +115,189 @@
 		"msg": "注册成功"
 	}
 
+6. 补充：
+
+	1) 注册后需要自动登录。
 
 
 
-- 发送验证码
 
-1. 接口地址：__URL__/sendVerificationCode
+- 获取通知
 
-2. 请求方式：POST
+1. 接口地址：__URL__/getNotice
+
+2. 请求方式：无
 
 3. 响应类型：json
 
-3. 请求参数：
+4. 请求参数：无
 
-	参数名称	参数类型	必选	说明
-	--------------------------------------
-	email		String		是		邮箱
-
-	参考示例：
-	{
-		"email": "ng.winglam@qq.com"
-	}
-
-4. 响应参数：
+5. 响应参数：
 
 	参数名称	参数类型			说明
 	----------------------------------------
 	code		Number				状态码
 	msg			String				状态说明
+	data		Array				响应数据
 
 	参考示例：
 	{
 		"code": 200,
-		"msg": "发送验证码成功"
+		"msg": "查询成功"
+		"data": [{
+			"notice_id": "1",
+			"notice_type": "1",
+			"notice_time": "2017-11-12 00:00:00",
+			"notice_message": "未来现场Futrue Live 2017（广州站）开始预售啦！",
+			"show_id": "1"
+		}, {
+			"notice_id": "2",
+			"notice_type": "1",
+			"notice_time": "2017-11-12 00:00:00",
+			"notice_message": "未来现场Futrue Live 2017（广州站）开始预售啦！",
+			"show_id": "1"
+		}]
 	}
+
+6. 补充：无
+
+
+
+
+- 获取最新演出
+
+1. 接口地址：__URL__/getRecentShow
+
+2. 请求方式：无
+
+3. 响应类型：json
+
+4. 请求参数：无
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Array				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功"
+		"data": [{
+			"show_id": "1",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_address": "Encore LiveClub",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2"
+		}, {
+			"show_id": "1",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_address": "Encore LiveClub",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2"
+		}]
+	}
+
+6. 补充：无
+
+
+
+
+- 获取热门演出
+
+1. 接口地址：__URL__/getHotShow
+
+2. 请求方式：无
+
+3. 响应类型：json
+
+4. 请求参数：无
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Array				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功"
+		"data": [{
+			"show_id": "1",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_address": "Encore LiveClub",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2"
+		}, {
+			"show_id": "1",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_address": "Encore LiveClub",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2"
+		}]
+	}
+
+6. 补充：无
+
+
+
+
+- 获取演出月历
+
+1. 接口地址：__URL__/getShowCalendar
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	month		String		是		月份
+
+	参考示例：
+	{
+		"month": "2017-11"
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Array				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功"
+		"data": [{
+			"show_time": "2017-11-18 19:00:00",
+			"count": 2
+		}, {
+			"show_time": "2017-11-20 19:00:00",
+			"count": 1
+		}]
+	}
+
+6. 补充：无

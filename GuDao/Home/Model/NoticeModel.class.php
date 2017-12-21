@@ -10,18 +10,18 @@ class NoticeModel extends Model {
     }
 
     // 按类型获取通知
-    public function getNoticeByType($type) {
-        $notice = new NoticeModel();
-        $map["notice_type"] = $type;
-        $result = $notice->where($map)->select();
-        return $result;
-    }
+    // public function getNoticeByType($type) {
+    //     $notice = new NoticeModel();
+    //     $map["notice_type"] = $type;
+    //     $result = $notice->where($map)->select();
+    //     return $result;
+    // }
 
     // 按演出获取通知
-    public function getNoticeByShow($id) {
-        $notice = new NoticeModel();
-        $map["show_id"] = $id;
-        $result = $notice->where($map)->select();
-        return $result;
-    }
+    // public function getNoticeByShow($id) {
+    //     $notice = new NoticeModel();
+    //     $map["show_id"] = $id;
+    //     $result = $notice->where($map)->select();
+    //     return $result;
+    // }
 }

@@ -5,6 +5,7 @@
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title></title>
 <script src="/GuDao/Public/js/common/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="/GuDao/Public/js/common/md5.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 <script>
@@ -13,7 +14,8 @@
 		type: "POST",
 		dataType: "json",
 		data: {
-			"username": "233425"
+			"email": "ng.winglam@qq.com",
+			"password": md5("wuyinglin")
 		},
 		success: function(result) {
 			console.log(result);

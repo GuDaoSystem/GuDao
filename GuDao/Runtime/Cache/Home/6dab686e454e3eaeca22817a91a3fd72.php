@@ -8,17 +8,17 @@
 </head>
 <body>
 <script>
-	$.ajax({
-		url: "/GuDao/index.php/Home/User/getPictureByBand",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"id": 1
-		},
-		success: function(result) {
-			console.log(result);
-		}
-	});
+	// $.ajax({
+	// 	url: "/GuDao/index.php/Home/User/getPictureByBand",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"id": 1
+	// 	},
+	// 	success: function(result) {
+	// 		console.log(result);
+	// 	}
+	// });
 </script>
 </body>
 </html>
