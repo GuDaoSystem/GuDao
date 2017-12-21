@@ -2,6 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 use Home\Model\UserModel;
+use Home\Model\PictureModel;
 class UserController extends Controller {
     public function index(){
     	$this->display();
@@ -51,6 +52,21 @@ class UserController extends Controller {
             $result["code"] = 201;
             $result["msg"] = "修改失败";
         }
+        $this->ajaxReturn($result);
+    }
+
+    // 按乐队获取图片
+    public function getPictureByBand() {
+        $picture = new PictureModel();
+        $data = $picture->getPictureByBand($_GET["id"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $result["data"] = $data;
         $this->ajaxReturn($result);
     }
 }

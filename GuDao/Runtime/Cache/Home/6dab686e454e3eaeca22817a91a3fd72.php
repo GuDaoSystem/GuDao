@@ -9,7 +9,7 @@
 <body>
 <script>
 	$.ajax({
-		url: "/GuDao/index.php/Home/User/getUserInfo",
+		url: "/GuDao/index.php/Home/User/getPictureByBand",
 		type: "GET",
 		dataType: "json",
 		data: {
