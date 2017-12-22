@@ -3,9 +3,9 @@ namespace Home\Model;
 use Think\Model;
 class ShowModel extends Model {
     // 按页获取所有演出
-    public function getShowByPage($startIndex, $pageLength, $sortRule) {
+    public function getShowByPage($startIndex, $pageLength) {
     	$show = new ShowModel();
-    	$result = $show->limit($startIndex, $pageLength)->order($sortRule)->select();
+    	$result = $show->order("show_time desc")->limit($startIndex, $pageLength)->select();
     	return $result;
     }
 
@@ -17,28 +17,12 @@ class ShowModel extends Model {
         return $result[0];
     }
 
-    // 按地点获取演出
-    // public function getShowByPlace($place) {
-    //     $show = new ShowModel();
-    //     $map["show_place"] = $place;
-    //     $result = $show->where($map)->select();
-    //     return $result;
-    // }
-
-    // 按状态获取演出
-    // public function getShowByState($state) {
-    //     $show = new ShowModel();
-    //     $map["show_state"] = $state;
-    //     $result = $show->where($map)->select();
-    //     return $result;
-    // }
-
     // 按条件获取演出
-    // public function getShowByCondition($condition) {
-    //     $show = new ShowModel();
-    //     $result = $show->where($condition)->select();
-    //     return $result;
-    // }
+    public function getShowByCondition($startIndex, $pageLength, $condition) {
+        $show = new ShowModel();
+        $result = $show->where($condition)->order("show_time desc")->limit($startIndex, $pageLength)->select();
+        return $result;
+    }
 
     // 按演出数量获取日期
     public function getDateByShowNum($month) {

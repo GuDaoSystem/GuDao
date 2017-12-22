@@ -21,7 +21,7 @@ class SupportModel extends Model {
 	// 按页用户数量排序演出
 	public function sortBandByUserNum($startIndex, $pageLength) {
 		$support = new SupportModel();
-		$result = $support->field("count('user_id') as count, band_id")->group("band_id")->limit($startIndex, $pageLength)->order("count desc")->select();
+		$result = $support->field("count('user_id') as count, band_id")->group("band_id")->order("count desc")->limit($startIndex, $pageLength)->select();
 		return $result;
 	}
 }

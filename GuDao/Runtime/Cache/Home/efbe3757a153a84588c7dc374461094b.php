@@ -8,21 +8,21 @@
 </head>
 <body>
 <script>
-	// $.ajax({
-	// 	url: "/GuDao/index.php/Home/Show/getShowByCondition",
-	// 	// type: "POST",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"pageIndex": 1,
-	// 		"pageSize": 2,
-	// 		"state": 2
-	// 		// "place": "广东外语外贸大学"
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	$.ajax({
+		url: "/GuDao/index.php/Home/Show/getBandByShow",
+		// type: "POST",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"id": 1,
+			"user_id": 4,
+			"show_id": 2,
+			"time": "2017-12-22"
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 </script>
 </body>
 </html>
