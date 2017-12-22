@@ -10,11 +10,11 @@ class BandModel extends Model {
     // }
 
     // 按ID获取指定乐队
-    // public function getBandByID($id) {
-    //     $band = new BandModel();
-    //     $map["band_id"] = $id;
-    //     $result = $band->where($map)->select();
-    //     return $result[0];
-    // }
+    public function getBandByID($id) {
+        $band = new BandModel();
+        $map["band_id"] = $id;
+        $result = $band->where($map)->select();
+        return $result[0];
+    }
     
 }

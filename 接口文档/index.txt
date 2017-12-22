@@ -164,6 +164,51 @@
 
 
 
+- 获取演出月历
+
+1. 接口地址：__URL__/getShowCalendar
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	month		String		是		月份
+
+	参考示例：
+	{
+		"month": "2017-11"
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Array				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功"
+		"data": [{
+			"show_time": "2017-11-18 19:00:00",
+			"count": 2
+		}, {
+			"show_time": "2017-11-20 19:00:00",
+			"count": 1
+		}]
+	}
+
+6. 补充：无
+
+
+
+
 - 获取最新演出
 
 1. 接口地址：__URL__/getRecentShow
@@ -260,24 +305,15 @@
 
 
 
-- 获取演出月历
+- 获取热门乐队
 
-1. 接口地址：__URL__/getShowCalendar
+1. 接口地址：__URL__/getHotBand
 
-2. 请求方式：POST
+2. 请求方式：无
 
 3. 响应类型：json
 
-4. 请求参数：
-
-	参数名称	参数类型	必选	说明
-	--------------------------------------
-	month		String		是		月份
-
-	参考示例：
-	{
-		"month": "2017-11"
-	}
+4. 请求参数：无
 
 5. 响应参数：
 
@@ -292,11 +328,15 @@
 		"code": 200,
 		"msg": "查询成功"
 		"data": [{
-			"show_time": "2017-11-18 19:00:00",
-			"count": 2
+			"band_id": "1",
+			"band_name": "Slash",
+			"band_intro": "aaaaaaaaaaaaaaaaaaaaaa"，
+			"band_cover": "img/show/1.jpg"
 		}, {
-			"show_time": "2017-11-20 19:00:00",
-			"count": 1
+			"band_id": "1",
+			"band_name": "Slash",
+			"band_intro": "aaaaaaaaaaaaaaaaaaaaaa"，
+			"band_cover": "img/show/1.jpg"
 		}]
 	}
 

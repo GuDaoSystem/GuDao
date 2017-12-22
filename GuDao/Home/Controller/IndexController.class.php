@@ -5,6 +5,8 @@ use Home\Model\UserModel;
 use Home\Model\NoticeModel;
 use Home\Model\WantModel;
 use Home\Model\ShowModel;
+use Home\Model\SupportModel;
+use Home\Model\BandModel;
 class IndexController extends Controller {
     // 渲染页面
     public function index(){
@@ -126,6 +128,21 @@ class IndexController extends Controller {
         $this->ajaxReturn($result);
     }
 
+    // 获取演出月历
+    public function getShowCalendar() {
+        $show = new ShowModel();
+        $data = $show->getDateByShowNum($_POST["month"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
     // 获取最新演出
     public function getRecentShow() {
         $show = new ShowModel();
@@ -170,28 +187,32 @@ class IndexController extends Controller {
         $this->ajaxReturn($result);
     }
 
-    // 获取演出月历
-    public function getShowCalendar() {
-        $show = new ShowModel();
-        $data = $show->getDateByShowNum($_POST["month"]);
-        if($data) {
-            $result["code"] = 200;
-            $result["msg"] = "查询成功";
-            $result["data"] = $data;
-        } else {
+    // 获取热门乐队
+    public function getHotBand() {
+        $support = new SupportModel();
+        $supportList = $support->getBandByPageNUserNum(0, 5);
+        if(!$supportList) {
             $result["code"] = 201;
             $result["msg"] = "查询失败";
+        } else {
+            for($i = 0; $i < count($supportList); $i++) {
+                $band = new BandModel();
+                $bandList[$i] = $band->getBandByID($supportList[$i]["band_id"]);
+                if(!$bandList[$i]) {
+                    $result["code"] = 201;
+                    $result["msg"] = "查询失败";
+                    $this->ajaxReturn($result);
+                }
+            }
+            if($bandList) {
+                $result["code"] = 200;
+                $result["msg"] = "查询成功";
+                $result["data"] = $bandList;
+            } else {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+            }
         }
         $this->ajaxReturn($result);
-    }
-
-
-    /* -------------------- 首页功能 -------------------- */
-
-    // 
-
-    // 退出登录
-    public function logout() {
-        setcookie("gudaoUserID", "", time() - 60, "/");
     }
 }
