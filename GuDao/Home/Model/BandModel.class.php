@@ -9,6 +9,13 @@ class BandModel extends Model {
     // 	return $result;
     // }
 
+    // 按名称获取所有乐队
+    public function getBandByName($startIndex, $pageLength){
+        $band = new BandModel();
+        $result = $band->order("band_name")->limit($startIndex, $pageLength)->select();
+        return $result;
+    }
+
     // 按ID获取指定乐队
     public function getBandByID($id) {
         $band = new BandModel();

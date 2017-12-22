@@ -7,15 +7,14 @@ class AttendModel extends Model {
         $attend = new AttendModel();
         $map["show_id"] = $id;
         $result = $attend->where($map)->getField('band_id', true);
-        //$result = $attend->where($map)->select();
         return $result;
     }
 
 	// 按乐队获取演出
-    // public function getShowByBand($id) {
-    //     $attend = new AttendModel();
-    //     $map["band_id"] = $id;
-    //     $result = $attend->where($map)->getField('show_id', true);
-    //     return $result;
-    // }
+    public function getShowByBand($id) {
+        $attend = new AttendModel();
+        $map["band_id"] = $id;
+        $result = $attend->where($map)->getField('show_id', true);
+        return $result;
+    }
 }

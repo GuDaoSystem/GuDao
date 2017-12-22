@@ -1,33 +1,31 @@
-- 按页获取所有乐队
+- 按支持度获取所有乐队
 
-1. 接口地址：__URL__/getBandByPage
+1. 接口地址：__URL__/getBandBySupport
 
 2. 请求方式：GET
 
 3. 响应类型：json
 
-3. 请求参数：
+4. 请求参数：
 
 	参数名称	参数类型	必选	说明
 	--------------------------------------
 	pageIndex	Number		是		分页索引（第几页）
 	pageSize	Number		是		分页大小（每页显示几个记录）
-	sortRule	String		否		排序规则，包括字段名（默认为band_id，可选band_name）和正逆序（默认为正序，可选desc），用一个空格连接
 
 	参考示例：
 	{
 		"pageIndex": 1,
-		"pageSize": 2,
-		"sortRule": "band_name desc"
+		"pageSize": 2
 	}
 
-4. 响应参数：
+5. 响应参数：
 
 	参数名称	参数类型			说明
 	----------------------------------------
 	code		Number				状态码
 	msg			String				状态说明
-	data		Object				响应数据
+	data		Array				响应数据
 
 	参考示例：
 	{
@@ -36,13 +34,68 @@
 		"data": [{
 			"band_id": "3",
 			"band_name": "Slash",
-			"band_intro": "aaaaaaaaaaaaaaaaaaaaaa"
+			"band_intro": "aaaaaaaaaaaaaaaaaaaaaa",
+			"band_cover": "img/1.jpg"
 		}, {
 			"band_id": "2",
 			"band_name": "Hyper",
-			"band_intro": "bbbbbbbbbbbbbbbbbbbbbbbbb"
+			"band_intro": "bbbbbbbbbbbbbbbbbbbbbbbbb",
+			"band_cover": "img/1.jpg"
 		}]
 	}
+
+6. 补充：无
+
+
+
+
+- 按名称获取所有乐队
+
+1. 接口地址：__URL__/getBandByName
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	pageIndex	Number		是		分页索引（第几页）
+	pageSize	Number		是		分页大小（每页显示几个记录）
+
+	参考示例：
+	{
+		"pageIndex": 1,
+		"pageSize": 2
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Array				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": [{
+			"band_id": "3",
+			"band_name": "Slash",
+			"band_intro": "aaaaaaaaaaaaaaaaaaaaaa",
+			"band_cover": "img/1.jpg"
+		}, {
+			"band_id": "2",
+			"band_name": "Hyper",
+			"band_intro": "bbbbbbbbbbbbbbbbbbbbbbbbb",
+			"band_cover": "img/1.jpg"
+		}]
+	}
+
+6. 补充：无
 
 
 
@@ -55,7 +108,7 @@
 
 3. 响应类型：json
 
-3. 请求参数：
+4. 请求参数：
 
 	参数名称	参数类型	必选	说明
 	--------------------------------------
@@ -66,7 +119,7 @@
 		"id": 1
 	}
 
-4. 响应参数：
+5. 响应参数：
 
 	参数名称	参数类型			说明
 	----------------------------------------
@@ -81,9 +134,92 @@
 		"data": {
 			"band_id": "1",
 			"band_name": "Slash",
-			"band_intro": "aaaaaaaaaaaaaaaaaaaaaa"
+			"band_intro": "aaaaaaaaaaaaaaaaaaaaaa",
+			"band_cover": "img/1.jpg"
 		}
 	}
+
+6. 补充：无
+
+
+
+
+- 获取乐队支持的用户数量
+
+1. 接口地址：__URL__/getSupportUserNum
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		乐队ID
+
+	参考示例：
+	{
+		"id": 1
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		String				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": "233"
+	}
+
+6. 补充：无
+
+
+
+
+- 点击支持/取消支持
+
+1. 接口地址：__URL__/toggleSupport
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	user_id		Number		是		用户ID
+	band_id		Number		是		乐队ID
+	time		String		是		时间（格式为yyyy-mm-dd）
+
+	参考示例：
+	{
+		"user_id": 4,
+		"band_id": 2,
+		"time": "2017-12-22"
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "删除支持记录成功"
+	}
+
+6. 补充：无
 
 
 
@@ -96,7 +232,7 @@
 
 3. 响应类型：json
 
-3. 请求参数：
+4. 请求参数：
 
 	参数名称	参数类型	必选	说明
 	--------------------------------------
@@ -107,13 +243,13 @@
 		"id": 1
 	}
 
-4. 响应参数：
+5. 响应参数：
 
 	参数名称	参数类型			说明
 	----------------------------------------
 	code		Number				状态码
 	msg			String				状态说明
-	data		Object				响应数据
+	data		Array				响应数据
 
 	参考示例：
 	{
@@ -140,6 +276,10 @@
 		}]
 	}
 
+6. 补充：
+
+	1) 演出状态为预售（show_state = 1）或变更（show_state = 3）时可链接到演出详细页。
+
 
 
 
@@ -151,7 +291,7 @@
 
 3. 响应类型：json
 
-3. 请求参数：
+4. 请求参数：
 
 	参数名称	参数类型	必选	说明
 	--------------------------------------
@@ -162,13 +302,13 @@
 		"id": 1
 	}
 
-4. 响应参数：
+5. 响应参数：
 
 	参数名称	参数类型			说明
 	----------------------------------------
 	code		Number				状态码
 	msg			String				状态说明
-	data		Object				响应数据
+	data		Array				响应数据
 
 	参考示例：
 	{
@@ -176,3 +316,5 @@
 		"msg": "查询成功",
 		"data": ["band/band1_01.jpg", "band/band1_02.jpg", "band/band1_03.jpg"]
 	}
+
+6. 补充：无

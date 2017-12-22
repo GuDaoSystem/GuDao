@@ -9,11 +9,12 @@
 <body>
 <script>
 	$.ajax({
-		url: "/GuDao/index.php/Home/Band/getPictureByBand",
+		url: "/GuDao/index.php/Home/Band/getBandByName",
 		type: "GET",
 		dataType: "json",
 		data: {
-			"id": 1
+			"pageIndex": 1,
+			"pageSize": 2,
 		},
 		success: function(result) {
 			console.log(result);

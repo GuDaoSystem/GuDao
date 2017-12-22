@@ -96,8 +96,8 @@ class ShowController extends Controller {
     public function toggleWant() {
         $data["user_id"] = $_POST["user_id"];
         $data["show_id"] = $_POST["show_id"];
-        // 取消想看
         $want = new WantModel();
+        // 取消想看
         if($want->checkWant($data)) {
             if($want->deleteWant($data)) {
                 $result["code"] = 200;
