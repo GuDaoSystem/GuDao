@@ -57,7 +57,7 @@ class IndexController extends Controller {
 
     /* -------------------- 注册页面 -------------------- */
 
-    // 发送注册验证码
+    // 1. 发送注册验证码
     function sendRegisterCode() {
         $email = $_POST["email"];
         $user = new UserModel();
@@ -95,7 +95,7 @@ class IndexController extends Controller {
         // $this->ajaxReturn($result);
     }
 
-    // 注册
+    // 2. 注册
     public function doRegister() {
         $data["email"] = $_POST["email"];
         $data["password"] = md5($_POST["password"]);
@@ -128,7 +128,7 @@ class IndexController extends Controller {
         $this->ajaxReturn($result);
     }
 
-    // 获取演出月历
+    // 获取演出时间表
     public function getShowCalendar() {
         $show = new ShowModel();
         $data = $show->getDateByShowNum($_POST["month"]);

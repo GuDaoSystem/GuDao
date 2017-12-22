@@ -16,27 +16,34 @@ class UserModel extends Model {
     	return $result;
     }
 
-    // 获取用户信息
-    // public function getUserInfo($id) {
-    // 	$user = new UserModel();
-    // 	$map["user_id"] = $id;
-    //     $result = $user->where($map)->field("user_id, username, gender, birthday, headshot, intro")->select();
-    // 	return $result[0];
-    // }
+    // 获取用户基本信息
+    public function getUserBasicInfo($id) {
+        $user = new UserModel();
+        $map["user_id"] = $id;
+        $result = $user->where($map)->field("user_id, username, gender, birthday, headshot, intro")->select();
+        return $result[0];
+    }
 
     // 修改用户信息
-    // public function modifyUserInfo($id, $data) {
-    // 	$user = new UserModel();
-    // 	$map["user_id"] = $id;
-    // 	$result = $user->where($map)->save($data);
-    // 	return $result;
-    // }
+    public function modifyUserInfo($id, $data) {
+    	$user = new UserModel();
+    	$map["user_id"] = $id;
+    	$result = $user->where($map)->save($data);
+    	return $result;
+    }
 
     // 查询邮箱是否已存在
     public function checkEmail($email) {
-    	$user = new UserModel();
-    	$map["email"] = $email;
-    	$result = $user->where($map)->select();
-    	return $result;
+        $user = new UserModel();
+        $map["email"] = $email;
+        $result = $user->where($map)->select();
+        return $result;
+    }
+
+    // 查询密码是否已正确
+    public function checkPassword($data) {
+        $user = new UserModel();
+        $result = $user->where($data)->select();
+        return $result;
     }
 }

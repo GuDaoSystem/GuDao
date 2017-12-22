@@ -1,12 +1,12 @@
 - 获取用户信息
 
-1. 接口地址：__URL__/getUserInfo
+1. 接口地址：__URL__/getUserBasicInfo
 
 2. 请求方式：GET
 
 3. 响应类型：json
 
-3. 请求参数：
+4. 请求参数：
 
 	参数名称	参数类型	必选	说明
 	--------------------------------------
@@ -17,7 +17,7 @@
 		"id": 1
 	}
 
-4. 响应参数：
+5. 响应参数：
 
 	参数名称	参数类型			说明
 	----------------------------------------
@@ -39,10 +39,132 @@
 		}
 	}
 
+6. 补充：无
 
 
 
-- 修改用户信息
+
+- 获取用户动态
+
+1. 接口地址：__URL__/getUserActivity
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		用户ID
+
+	参考示例：
+	{
+		"id": 1
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Array				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "修改成功",
+		"data": [{
+			"time": "2017-12-11",
+			"type": "band",
+			"band": {
+				"band_id": "1",
+				"band_name": "Slash",
+				"band_intro": "aaaaaaaaaaaaaaaaaaaaaa",
+				"band_cover": "img/1.jpg"
+			}
+		}, {
+			"time": "2017-12-11",
+			"type": "show",
+			"show": {
+				"show_id": "1",
+				"show_name": "未来现场Future Live 2017（广州站）",
+				"show_time": "2017-11-18 19:00:00",
+				"show_address": "Encore LiveClub",
+				"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+				"show_ticket": "40",
+				"show_poster": "../img/show/1.jpg",
+				"show_state": "2"
+			}
+		}]
+	}
+
+6. 补充：
+
+	1) type为show时显示“想看某演出”；type为band时显示“支持某乐队”。
+
+
+
+
+- 获取演出时间表
+
+1. 接口地址：__URL__/getShowCalendar
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		用户ID
+
+	参考示例：
+	{
+		"id": 1
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Array				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "修改成功",
+		"data": [{
+			"show_id": "1",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_address": "Encore LiveClub",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2"
+		}, {
+			"show_id": "1",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_address": "Encore LiveClub",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2"
+		}]
+	}
+
+6. 补充：无
+
+
+
+
+- 修改用户基本信息
 
 1. 接口地址：__URL__/modifyUserInfo
 
@@ -50,13 +172,12 @@
 
 3. 响应类型：json
 
-3. 请求参数：
+4. 请求参数：
 
 	参数名称	参数类型	必选	说明
 	--------------------------------------
 	id			Number		是		用户ID
 	username	String		否		用户名
-	password	String		否		密码
 	gender		Number		否		性别（0为女性，1为男性）
 	birthday	String		否		出生日期（格式为yyyy-mm-dd）
 	headshot	String		否		头像链接
@@ -68,7 +189,7 @@
 		"username": "NgWingLam"
 	}
 
-4. 响应参数：
+5. 响应参数：
 
 	参数名称	参数类型			说明
 	----------------------------------------
@@ -80,3 +201,200 @@
 		"code": 200,
 		"msg": "修改成功"
 	}
+
+6. 补充：无
+
+
+
+
+- 检查原始密码
+
+1. 接口地址：__URL__/checkPassword
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		用户ID
+	password	String		是		md5加密密码
+
+	参考示例：
+	{
+		"id": 1,
+		"password": "9961b06e08ea3a53fda07a812dc3b3cd"
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "密码正确"
+	}
+
+6. 补充：无
+
+
+
+
+- 检查原始密码
+
+1. 接口地址：__URL__/sendResetEmailCode
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	email		String		是		邮箱
+
+	参考示例：
+	{
+		"email": "ng.winglam@qq.com"
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "发送验证码成功"
+	}
+
+6. 补充：
+
+	1) 验证码保存于cookie中的code字段，60秒期限，使用完后需要删除。
+
+
+
+
+- 重设邮箱
+
+1. 接口地址：__URL__/modifyUserInfo
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		用户ID
+	email		String		是		邮箱
+
+	参考示例：
+	{
+		"id": 1,
+		"email": "ng.winglam@qq.com"
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "修改成功"
+	}
+
+6. 补充：无
+
+
+
+
+- 重设密码
+
+1. 接口地址：__URL__/modifyUserInfo
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		用户ID
+	password	String		是		md5加密密码
+
+	参考示例：
+	{
+		"id": 1,
+		"password": "9961b06e08ea3a53fda07a812dc3b3cd"
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "修改成功"
+	}
+
+6. 补充：无
+
+
+
+
+- 发送忘记密码验证码
+
+1. 接口地址：__URL__/sendForgetPasswordCode
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	email		String		是		邮箱
+
+	参考示例：
+	{
+		"email": "ng.winglam@qq.com"
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "发送验证码成功"
+	}
+
+6. 补充：
+
+	1) 验证码保存于cookie中的code字段，60秒期限，使用完后需要删除。

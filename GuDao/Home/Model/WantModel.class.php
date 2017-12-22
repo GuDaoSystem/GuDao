@@ -3,12 +3,12 @@ namespace Home\Model;
 use Think\Model;
 class WantModel extends Model {
 	// 按用户获取演出
-	// public function getShowByUser($id) {
-	// 	$want = new WantModel();
-	// 	$map["user_id"] = $id;
-	// 	$result = $want->where($map)->select();
-	// 	return $result;
-	// }
+	public function getShowByUser($id) {
+		$want = new WantModel();
+		$map["user_id"] = $id;
+		$result = $want->where($map)->field("want_time as time, show_id")->order("time desc")->select();
+		return $result;
+	}
 
 	// 按演出获取用户数量
 	// public function getUserNumByShow($id) {
