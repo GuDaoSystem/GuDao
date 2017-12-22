@@ -12,30 +12,32 @@ class NoticeController extends Controller {
     	$startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
     	$pageLength = $_GET["pageSize"];
     	$notice = new NoticeModel();
-    	$data = $notice->getNoticeByPage($startIndex, $pageLength);
+        $data = $notice->getNoticeByPage($startIndex, $pageLength);
     	if($data) {
     		$result["code"] = 200;
     		$result["msg"] = "查询成功";
+            $result["data"] = $data;
     	} else {
     		$result["code"] = 201;
     		$result["msg"] = "查询失败";
     	}
-    	$result["data"] = $data;
     	$this->ajaxReturn($result);
     }
 
     // 按类型获取通知
     public function getNoticeByType() {
+        $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
+        $pageLength = $_GET["pageSize"];
     	$notice = new NoticeModel();
-        $data = $notice->getNoticeByType($_GET["type"]);
+        $data = $notice->getNoticeByType($startIndex, $pageLength, $_GET["type"]);
         if($data) {
             $result["code"] = 200;
             $result["msg"] = "查询成功";
+            $result["data"] = $data;
         } else {
             $result["code"] = 201;
             $result["msg"] = "查询失败";
         }
-        $result["data"] = $data;
         $this->ajaxReturn($result);
     }
 }

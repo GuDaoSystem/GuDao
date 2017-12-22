@@ -161,7 +161,7 @@ class IndexController extends Controller {
     // 获取热门演出
     public function getHotShow() {
         $want = new WantModel();
-        $wantList = $want->getShowByPageNUserNum(0, 5);
+        $wantList = $want->sortShowByUserNum(0, 5);
         if(!$wantList) {
             $result["code"] = 201;
             $result["msg"] = "查询失败";
@@ -190,7 +190,7 @@ class IndexController extends Controller {
     // 获取热门乐队
     public function getHotBand() {
         $support = new SupportModel();
-        $supportList = $support->getBandByPageNUserNum(0, 5);
+        $supportList = $support->sortBandByUserNum(0, 5);
         if(!$supportList) {
             $result["code"] = 201;
             $result["msg"] = "查询失败";

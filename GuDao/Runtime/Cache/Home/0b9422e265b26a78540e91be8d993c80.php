@@ -9,12 +9,13 @@
 <body>
 <script>
 	$.ajax({
-		url: "/GuDao/index.php/Home/Notice/getNoticeByPage",
+		url: "/GuDao/index.php/Home/Notice/getNoticeByType",
 		type: "GET",
 		dataType: "json",
 		data: {
 			"pageIndex": 1,
-			"pageSize": 2
+			"pageSize": 2,
+			"type": 1
 		},
 		// data: {
 		// 	"type": 2

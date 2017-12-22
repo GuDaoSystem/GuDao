@@ -19,7 +19,7 @@ class WantModel extends Model {
 	// }
 
 	// 按页用户数量排序演出
-	public function getShowByPageNUserNum($startIndex, $pageLength) {
+	public function sortShowByUserNum($startIndex, $pageLength) {
 		$want = new WantModel();
 		$result = $want->field("count('user_id') as count, show_id")->group("show_id")->limit($startIndex, $pageLength)->order("count desc")->select();
 		return $result;

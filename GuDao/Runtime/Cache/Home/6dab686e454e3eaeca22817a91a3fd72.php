@@ -9,19 +9,19 @@
 </head>
 <body>
 <script>
-	$.ajax({
-		url: "/GuDao/index.php/Home/User/checkPassword",
-		type: "POST",
-		dataType: "json",
-		data: {
-			"id": 4,
-			"password": md5("wuyinglin"),
-			//"email": "ng.winglam@qq.com"
-		},
-		success: function(result) {
-			console.log(result);
-		}
-	});
+	// $.ajax({
+	// 	url: "/GuDao/index.php/Home/User/checkPassword",
+	// 	type: "POST",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"id": 4,
+	// 		"password": md5("wuyinglin"),
+	// 		//"email": "ng.winglam@qq.com"
+	// 	},
+	// 	success: function(result) {
+	// 		console.log(result);
+	// 	}
+	// });
 </script>
 </body>
 </html>
