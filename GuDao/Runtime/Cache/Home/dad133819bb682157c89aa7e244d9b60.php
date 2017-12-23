@@ -9,12 +9,13 @@
 <body>
 <script>
 	$.ajax({
-		url: "/GuDao/index.php/Home/Band/getBandByName",
+		url: "/GuDao/index.php/Home/Band/getBandByInitial",
 		type: "GET",
 		dataType: "json",
 		data: {
 			"pageIndex": 1,
 			"pageSize": 2,
+			"initial": "L"
 		},
 		success: function(result) {
 			console.log(result);

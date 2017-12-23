@@ -16,6 +16,14 @@ class BandModel extends Model {
         return $result;
     }
 
+    // 按首字母获取乐队
+    public function getBandByInitial($startIndex, $pageLength, $initial) {
+        $band = new BandModel();
+        $map["band_nameInitial"] = $initial;
+        $result = $band->where($map)->order("band_name")->limit($startIndex, $pageLength)->select();
+        return $result;
+    }
+
     // 按ID获取指定乐队
     public function getBandByID($id) {
         $band = new BandModel();

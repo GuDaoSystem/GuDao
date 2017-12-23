@@ -9,18 +9,6 @@
 </head>
 <body>
 <script>
-	// $.ajax({
-	// 	url: "/GuDao/index.php/Home/Index/doLogin",
-	// 	type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"email": "ng.winglam@qq.com",
-	// 		"password": md5("wuyinglin")
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
 </script>
 </body>
 </html>

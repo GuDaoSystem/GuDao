@@ -59,17 +59,30 @@ class BandController extends Controller {
         if($data) {
             $result["code"] = 200;
             $result["msg"] = "查询成功";
+            $result["data"] = $data;
         } else {
             $result["code"] = 201;
             $result["msg"] = "查询失败";
         }
-        $result["data"] = $data;
         $this->ajaxReturn($result);
     }
 
     // 按首字母获取乐队
     public function getBandByInitial() {
-
+        $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
+        $pageLength = $_GET["pageSize"];
+        $initial = $_GET["initial"];
+        $band = new BandModel();
+        $data = $band->getBandByInitial($startIndex, $pageLength, $initial);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
     }
 
 
