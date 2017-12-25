@@ -6,6 +6,7 @@ use Home\Model\WantModel;
 use Home\Model\SupportModel;
 use Home\Model\ShowModel;
 use Home\Model\BandModel;
+use Home\Model\CommentModel;
 class UserController extends Controller {
     public function index(){
         $this->display();
@@ -142,6 +143,22 @@ class UserController extends Controller {
         $result["msg"] = "查询成功";
         $result["data"] = $data;
         $this->ajaxReturn($result);
+    }
+
+    // 获取用户发出的评论
+    public function getCommentByUser() {
+        $comment = new CommentModel();
+        $data = $comment->getCommentByUser($_GET["id"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+        
     }
 
     // 修改用户信息

@@ -9,12 +9,13 @@
 <body>
 <script>
 	$.ajax({
-		url: "/GuDao/index.php/Home/Band/getExperience",
+		url: "/GuDao/index.php/Home/Band/getCommentNReply",
 		type: "GET",
 		// type: "POST",
 		dataType: "json",
 		data: {
-			"id": 1
+			"target": 2,
+			"id": 5
 			// "user_id": 4,
 			// "band_id": 4,
 			// "time": "2017-12-22"

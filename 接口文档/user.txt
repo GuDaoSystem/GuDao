@@ -246,7 +246,7 @@
 
 
 
-- 检查原始密码
+- 发送重设邮箱验证码
 
 1. 接口地址：__URL__/sendResetEmailCode
 

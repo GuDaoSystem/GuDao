@@ -6,6 +6,8 @@ use Home\Model\SupportModel;
 use Home\Model\AttendModel;
 use Home\Model\ShowModel;
 use Home\Model\PictureModel;
+use Home\Model\CommentModel;
+use Home\Model\ReplyModel;
 class BandController extends Controller {
 	// 渲染页面
     public function index(){
@@ -188,6 +190,33 @@ class BandController extends Controller {
             $result["code"] = 201;
             $result["msg"] = "查询失败";
         }
+        $result["data"] = $data;
+        $this->ajaxReturn($result);
+    }
+
+    // 获取评论及回复
+    public function getCommentNReply() {
+        $data["comment_target"] = $_GET["target"];
+        $data["target_id"] = $_GET["id"];
+        $comment = new CommentModel();
+        $data = $comment->getCommentByTarget($data);
+        if(!$data) {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+            $this->ajaxReturn($result);
+        }
+        for($i = 0; $i < count($data); $i++) {
+            if(!$data[$i]) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+                $this->ajaxReturn($result);
+            }
+            $reply = new ReplyModel();
+            $data[$i]["reply"] = $reply->getReplyByComment($data[$i]["comment_id"]);
+        }
+
+        $result["code"] = 200;
+        $result["msg"] = "查询成功";
         $result["data"] = $data;
         $this->ajaxReturn($result);
     }
