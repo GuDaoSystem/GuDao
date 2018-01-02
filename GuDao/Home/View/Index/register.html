@@ -9,18 +9,19 @@
 </head>
 <body>
 <script>
-	// $.ajax({
-	// 	url: "__URL__/sendVerificationCode",
-	// 	type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"email": "ng.winglam@qq.com",
-	// 		//"password": md5("wuyinglin")
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	$.ajax({
+		url: "__URL__/doRegister",
+		type: "POST",
+		dataType: "json",
+		data: {
+			"email": "ng.winglam@123.com",
+			"password": md5("wuyinglin123"),
+			"autoLogin": true
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 </script>
 </body>
 </html>

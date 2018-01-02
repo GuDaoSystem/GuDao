@@ -2,7 +2,7 @@
 namespace Home\Model;
 use Think\Model;
 class NoticeModel extends Model {
-    // 按页获取所有通知
+    // 按页获取通知
     public function getNoticeByPage($startIndex, $pageLength) {
     	$notice = new NoticeModel();
         $result = $notice->order("notice_time desc")->limit($startIndex, $pageLength)->select();

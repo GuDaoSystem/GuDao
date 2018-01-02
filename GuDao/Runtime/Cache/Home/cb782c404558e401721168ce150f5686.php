@@ -10,12 +10,13 @@
 <body>
 <script>
 	$.ajax({
-		url: "/GuDao/index.php/Home/Index/sendVerificationCode",
+		url: "/GuDao/index.php/Home/Index/doRegister",
 		type: "POST",
 		dataType: "json",
 		data: {
-			"email": "ng.winglam@qq.com",
-			//"password": md5("wuyinglin")
+			"email": "ng.winglam@123.com",
+			"password": md5("wuyinglin123"),
+			"autoLogin": true
 		},
 		success: function(result) {
 			console.log(result);

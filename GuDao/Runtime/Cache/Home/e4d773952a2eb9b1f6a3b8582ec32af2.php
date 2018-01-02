@@ -9,18 +9,21 @@
 </head>
 <body>
 <script>
-	$.ajax({
-		url: "/GuDao/index.php/Home/Index/doLogin",
-		type: "POST",
-		dataType: "json",
-		data: {
-			"email": "ng.winglam@qq.com",
-			"password": md5("wuyinglin")
-		},
-		success: function(result) {
-			console.log(result);
-		}
-	});
+	// $.ajax({
+	// 	url: "/GuDao/index.php/Home/Index/autoLogin",
+	// 	type: "POST",
+	// 	dataType: "json",
+	// 	data: {
+	// 		// "email": "ng.winglam@qq.com",
+	// 		// "password": md5("wuyinglin"),
+	// 		// "autoLogin": true
+	// 		// "id": 1,
+	// 		// "token": "f1b0e4b5b15802b5c391ae418e4cf357"
+	// 	},
+	// 	success: function(result) {
+	// 		console.log(result);
+	// 	}
+	// });
 </script>
 </body>
 </html>

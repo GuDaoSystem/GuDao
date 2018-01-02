@@ -9,6 +9,8 @@
 </head>
 <body>
 <script>
+	// localStorage.removeItem("test");
+	// console.log(localStorage.getItem("test"));
 </script>
 </body>
 </html>

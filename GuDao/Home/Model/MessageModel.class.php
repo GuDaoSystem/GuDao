@@ -6,7 +6,7 @@ class MessageModel extends Model {
 	public function getMessageByUser($id) {
 		$message = new MessageModel();
 		$map["user_id"] = $id;
-		$result = $message->where($map)->order("comment_time desc")->select();
+		$result = $message->where($map)->order("message_time desc")->select();
 		return $result;
 	}
 }

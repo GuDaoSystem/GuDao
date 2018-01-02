@@ -20,6 +20,43 @@ class UserController extends Controller {
 
 
 
+
+    /* -------------------- 忘记密码 -------------------- */
+
+    // 1. 发送验证码
+    public function sendCode() {
+        $email = $_POST["email"];
+        $title = "孤岛验证码";
+        $code = rand(1000, 9999);
+        $content = "验证码为 <strong>{$code}</strong> 。你正在重新设置密码，若非本人操作请注意账号安全！";
+        if(sendMail($email, $title, $content)) {
+            $result["code"] = 200;
+            $result["msg"] = "发送验证码成功";
+            setcookie("code", $code, time() + 60, "/");
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "发送验证码失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+    // 2. 重设密码
+    public function resetPassword() {
+        $map["email"] = $_POST["email"];
+        $param["password"] = md5($_POST["password"]);
+        $user = new UserModel();
+        $data = $user->resetPassword($map, $param);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "重设密码成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "重设密码失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+
     /* -------------------- 个人页面 -------------------- */
 
     // 获取用户信息
@@ -196,82 +233,4 @@ class UserController extends Controller {
         $this->ajaxReturn($result);
     }
 
-
-    /* -------------------- 重设邮箱 -------------------- */
-
-    // 1. 检查原始密码
-    public function checkPassword() {
-        $data["user_id"] = $_POST["id"];
-        $data["password"] = md5($_POST["password"]);
-        $user = new UserModel();
-        if($user->checkPassword($data)) {
-            $result["code"] = 200;
-            $result["msg"] = "密码正确";
-        } else {
-            $result["code"] = 201;
-            $result["msg"] = "密码错误";
-        }
-        $this->ajaxReturn($result);
-    }
-
-    // 2. 发送重设邮箱验证码
-    public function sendResetEmailCode() {
-        $email = $_POST["email"];
-        $user = new UserModel();
-        if($user->checkEmail($email)) {
-            $result["code"] = 201;
-            $result["msg"] = "邮箱已存在";
-        } else {
-            $title = "孤岛验证码";
-            $code = rand(1000, 9999);
-            $content = "验证码为 <strong>{$code}</strong> 。你正在重新设置邮箱，若非本人操作请注意账号安全！";
-            if(sendMail($email, $title, $content)) {
-                setcookie("code", $code, time() + 60, "/");
-                $result["code"] = 200;
-                $result["msg"] = "发送验证码成功";
-            } else {
-                $result["code"] = 201;
-                $result["msg"] = "发送验证码失败";
-            }
-        }
-        $this->ajaxReturn($result);
-    }
-
-    // 3. 重设邮箱：$this->modifyUserInfo();
-
-
-    /* -------------------- 重设密码 -------------------- */
-
-    // 1. 检查原始密码: $this->checkPassword();
-
-    // 2. 重设密码：$this->modifyUserInfo();
-
-
-    /* -------------------- 忘记密码页面 -------------------- */
-
-    // 1. 发送忘记密码验证码
-    public function sendForgetPasswordCode() {
-        $email = $_POST["email"];
-        $title = "孤岛验证码";
-        $code = rand(1000, 9999);
-        $content = "验证码为 <strong>{$code}</strong> 。你正在重新设置密码，若非本人操作请注意账号安全！";
-        if(sendMail($email, $title, $content)) {
-            $result["code"] = 200;
-            $result["msg"] = "发送验证码成功";
-            setcookie("code", $code, time() + 60, "/");
-        } else {
-            $result["code"] = 201;
-            $result["msg"] = "发送验证码失败";
-        }
-        $this->ajaxReturn($result);
-    }
-
-    // 2. 重设密码：$this->modifyUserInfo();
-
-
-    /* -------------------- 用户页面 -------------------- */
-
-    // 获取用户信息：$this->getUserBasicInfo();
-
-    // 获取用户动态：$this->getUserActivity();
 }

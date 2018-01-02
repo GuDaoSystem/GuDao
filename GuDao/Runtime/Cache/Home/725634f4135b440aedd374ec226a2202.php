@@ -10,12 +10,12 @@
 <body>
 <script>
 	$.ajax({
-		url: "/GuDao/index.php/Home/Index/getHotBand",
-		// type: "POST",
-		// dataType: "json",
-		// data: {
-		// 	"month": "2017-11",
-		// },
+		url: "/GuDao/index.php/Home/Index/getShowCalendar",
+		type: "POST",
+		dataType: "json",
+		data: {
+			"month": "2017-11",
+		},
 		success: function(result) {
 			console.log(result);
 		}
