@@ -3,7 +3,7 @@ return array(
 	// 配置路由
 	'MODULE_ALLOW_LIST' => array('Home'),
 
-	// 连接数据库
+	// 连接MySQL数据库
     'DB_TYPE' => 'mysql',
     'DB_HOST' => 'localhost',
     'DB_NAME' => 'gudao',

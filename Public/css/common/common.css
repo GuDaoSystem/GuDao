@@ -1,0 +1,230 @@
+body {
+	background: #0d0d0d;
+	color: #f2f2f2;
+	font-size: 1.4rem;
+	font-family: "Microsoft YaHei", "Tahoma";
+}
+a {
+	color: #333333;
+}
+a:hover {
+	color: #ffd700;
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+	padding: 0;
+}
+footer {
+	padding: 1% 0;
+	border-top: 1px solid #333333;
+	text-align: center;
+	font-size: 1.2rem;
+	color: #333333;
+}
+
+
+.navbar {
+    padding: 2% 0 1.7%;
+	background: #0d0d0d url(../../img/common/nav_logo.png) no-repeat;
+	background-size: 100%;
+	background-position-y: 100%;
+	font-size: 1.8rem;
+	color: #333333;
+}
+
+.navbar .row .logo {
+	opacity: 0;
+}
+.navbar .row .logo a {
+	display: inline-block;
+	width: 100%;
+	padding: 10% 0;
+}
+
+.navbar .row .menu {
+	padding: 0;
+	text-align: center;
+}
+.navbar .row .menu a {
+	display: inline-block;
+	width: 100%;
+	padding: 25% 0;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+}
+.navbar .row .menu.active a,
+.navbar .row .menu:hover {
+	color: #ffd700;
+}
+
+.navbar .row .search {
+	padding: 1.6% 0;
+}
+.navbar .row .search form {
+	height: 2.5rem;
+	font-size: 0;
+}
+.navbar .row .search form input:nth-child(1),
+.navbar .row .search form button:nth-child(2) {
+	height: 100%;
+	background: none;
+	font-size: 1.6rem;
+	outline: none;
+
+}
+.navbar .row .search form input {
+	width: 80%;
+	padding: 2% 0 2% 5%;
+	border: 1px solid #333333;
+	border-right: none;
+	border-radius: 0.2rem 0 0 0.2rem;
+	color: #f2f2f2;
+}
+.navbar .row .search form input::-webkit-input-placeholder {
+	color: #333333;
+}
+.navbar .row .search form button {
+	width: 20%;
+	border: 1px solid #333333;
+	border-left: none;
+	border-radius: 0 0.2rem 0.2rem 0;
+}
+
+.navbar .row .didnotLogin {
+	text-align: center;
+	font-size: 1.6rem;
+}
+.navbar .row .didnotLogin a {
+	display: inline-block;
+	padding: 19% 0;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+}
+
+.navbar .row .didLogin {
+	text-align: center;
+	position: relative;
+}
+.navbar .row .didLogin img {
+	width: 40%;
+	border: 2px solid #ffd700;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.navbar .row .didLogin .userList {
+	display: none;
+	position: absolute;
+	top: 80%;
+    right: 0;
+    padding-top: 30%;
+}
+.navbar .row .didLogin .userList ul {
+	border: 1px solid #333333;
+	border-radius: 0.3rem;
+	box-shadow: 0.3rem 0.3rem 1rem #000000;
+	position: relative;
+	padding: 1rem;
+}
+.navbar .row .didLogin .userList ul li {
+	width: 100%;
+	padding: 0.5rem 0;
+	font-size: 1.6rem;
+}
+.navbar .row .didLogin .userList ul .triangle {
+	width: 100%;
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+}
+.navbar .row .didLogin .userList ul .triangle span {
+	display: inline-block;
+	width: 0;
+    height: 0;
+    transform: rotate(45deg);
+    border-style: solid;
+    border-top-left-radius: 0.3rem;
+}
+.navbar .row .didLogin .userList ul .triangle .triangleBorder {
+    border-width: 1rem;
+    border-color: #333333 transparent transparent #333333;
+}
+.navbar .row .didLogin .userList ul .triangle .triangleColor {
+    margin:0 0 0.1rem -2.3rem;
+    border-width: 0.9rem;
+    border-color: #0d0d0d transparent transparent #0d0d0d;
+}
+.navbar .row .didLogin .userList ul .username {
+	padding: 0.5rem 0 1rem;
+    margin-bottom: 0.5rem;
+	border-bottom: 1px solid #333333;
+	font-size: 1.4rem;
+	color: #ffd700;
+}
+.navbar .row .didLogin .userList ul li a {
+	display: inline-block;
+	width: 100%;
+}
+.navbar .row .didLogin .userList ul li a span {
+	display: inline-block;
+	width: 0.5rem;
+	height: 0.5rem;
+	background: #ffd700;
+	border-radius: 50%;
+	vertical-align: top;
+	opacity: 0;
+}
+.navbar .row .didLogin .userList ul li a .spot {
+	opacity: 1;
+}
+
+
+.backToTop {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #0d0d0d;
+    border: 1px solid #333333;
+    border-radius: 0.3rem;
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    right: 2%;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+}
+.backToTop:hover {
+    border: 1px solid #ffd700;
+}
+.backToTop span {
+    vertical-align: middle;
+    margin-top: 10%;
+}
+.showBackToTop {
+	animation: showBackToTop 1s;
+	animation-fill-mode: forwards;
+	-webkit-animation: showBackToTop 1s;
+	-webkit-animation-fill-mode: forwards;
+}
+.hideBackToTop {
+	animation: hideBackToTop 1s;
+	animation-fill-mode: forwards;
+	-webkit-animation: hideBackToTop 1s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+
+@keyframes showBackToTop { from { bottom: -3rem; opacity: 0; } to { bottom: 4rem; opacity: 1; } }
+@-moz-keyframes showBackToTop { from { bottom: -3rem; opacity: 0; } to { bottom: 4rem; opacity: 1; } }
+@-webkit-keyframes showBackToTop { from { bottom: -3rem; opacity: 0; } to { bottom: 4rem; opacity: 1; } }
+@-o-keyframes showBackToTop { from { bottom: -3rem; opacity: 0; } to { bottom: 4rem; opacity: 1; } }
+
+@keyframes hideBackToTop { from { bottom:4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
+@-moz-keyframes hideBackToTop { from { bottom:4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
+@-webkit-keyframes hideBackToTop { from { bottom:4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
+@-o-keyframes hideBackToTop { from { bottom:4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }

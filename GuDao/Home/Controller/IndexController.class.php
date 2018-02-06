@@ -21,6 +21,9 @@ class IndexController extends Controller {
     public function home(){
         $this->display();
     }
+    public function search(){
+        $this->display();
+    }
 
 
 
@@ -86,7 +89,8 @@ class IndexController extends Controller {
             $code = rand(1000, 9999);
             $content = "验证码为 <strong>{$code}</strong> 。你正在注册孤岛账号，欢迎加入孤岛！";
             if(sendMail($email, $title, $content)) {
-                setcookie("code", $code, time() + 60, "/");
+                //setcookie("code", $code, time() + 60, "/");
+                S($email, $code, 60);
                 $result["code"] = 200;
                 $result["msg"] = "发送验证码成功";
             } else {
@@ -99,15 +103,24 @@ class IndexController extends Controller {
 
     // 2. 注册并登录
     public function doRegister() {
-        $data["email"] = $_POST["email"];
-        $data["password"] = md5($_POST["password"]);
-        $user = new UserModel();
-        if($user->register($data)) {
-            $this->doLogin();
+        $email = $_POST["email"];
+        $code = $_POST["code"];
+        //S($email, "1234", 20);
+        if(S($email) == $code) {
+            $data["email"] = $email;
+            $data["password"] = md5($_POST["password"]);
+            $user = new UserModel();
+            if($user->register($data)) {
+                $this->doLogin();
+            } else {
+                $result["code"] = 201;
+                $result["msg"] = "注册失败";
+            }
         } else {
             $result["code"] = 201;
-            $result["msg"] = "注册失败";
+            $result["msg"] = "验证码错误";
         }
+        S($email, null);
         $this->ajaxReturn($result);
     }
 

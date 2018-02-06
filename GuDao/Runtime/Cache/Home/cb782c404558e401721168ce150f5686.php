@@ -14,7 +14,8 @@
 		type: "POST",
 		dataType: "json",
 		data: {
-			"email": "ng.winglam@123.com",
+			"email": "ng.winglam@qq.com",
+			"code": 1234,
 			"password": md5("wuyinglin123"),
 			"autoLogin": true
 		},

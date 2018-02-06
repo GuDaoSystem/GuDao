@@ -8,22 +8,19 @@
 </head>
 <body>
 <script>
-	$.ajax({
-		url: "/GuDao/index.php/Home/Notice/getNoticeByType",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"pageIndex": 1,
-			"pageSize": 2,
-			"type": 1
-		},
-		// data: {
-		// 	"type": 2
-		// },
-		success: function(result) {
-			console.log(result);
-		}
-	});
+	// $.ajax({
+	// 	url: "/GuDao/index.php/Home/Notice/getNoticeByType",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"pageIndex": 1,
+	// 		"pageSize": 2,
+	// 		"type": 1
+	// 	},
+	// 	success: function(result) {
+	// 		console.log(result);
+	// 	}
+	// });
 </script>
 </body>
 </html>
