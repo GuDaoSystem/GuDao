@@ -1,9 +1,7 @@
 $(function() {
 	$(document).ajaxStart(function() {
-		console.log("start");
 		setLoading();
 	}).ajaxStop(function() {
-		console.log("stop");
 		removeLoading();
 	});
 
