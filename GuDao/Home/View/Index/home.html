@@ -122,17 +122,19 @@
 <script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
 <script>
-	// $.ajax({
-	// 	url: "__URL__/getShowCalendar",
-	// 	type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"month": "2017-11",
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+$(function() {
+	$.ajax({
+		url: "__URL__/getShowCalendar",
+		type: "POST",
+		dataType: "json",
+		data: {
+			"month": "2017-11",
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
+});
 </script>
 </body>
 </html>

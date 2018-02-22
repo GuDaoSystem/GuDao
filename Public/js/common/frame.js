@@ -1,4 +1,13 @@
 $(function() {
+	$(document).ajaxStart(function() {
+		console.log("start");
+		setLoading();
+	}).ajaxStop(function() {
+		console.log("stop");
+		removeLoading();
+	});
+
+
 	// 检查登录状态
 	// sessionStorage.setItem("userID", 1);
 	if(sessionStorage.getItem("userID")) {

@@ -315,3 +315,17 @@ footer {
 .alert-box.image .box .message::-webkit-scrollbar {
 	display: none;
 }
+
+
+
+
+/* -------------------- 加载动画 -------------------- */
+
+.loading {
+	background: rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+}
+
+.loading span {
+	background: #ffd700;
+}

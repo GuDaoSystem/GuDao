@@ -35,7 +35,7 @@
 						<li class="dropdown-header">NgWingLam</li>
 						<li role="separator" class="divider"></li>
 						<li><a href="../User">个人中心</a></li>
-						<li><a href="../User" class="">我的消息<span class="dot-span"></span></a></li>
+						<li><a href="../User" class="tips">我的消息<span class="dot-span"></span></a></li>
 						<li class="logout"><a href="#">退出登录</a></li>
 					</ul>
 				</li>
@@ -122,17 +122,19 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/common.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
 <script>
-	// $.ajax({
-	// 	url: "/GuDao/index.php/Home/Index/getShowCalendar",
-	// 	type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"month": "2017-11",
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+$(function() {
+	$.ajax({
+		url: "/GuDao/index.php/Home/Index/getShowCalendar",
+		type: "POST",
+		dataType: "json",
+		data: {
+			"month": "2017-11",
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
+});
 </script>
 </body>
 </html>
