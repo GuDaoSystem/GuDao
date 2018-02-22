@@ -4,7 +4,7 @@ use Think\Controller;
 use Home\Model\NoticeModel;
 class NoticeController extends Controller {
     public function index(){
-    	$this->display();
+        $this->display();
     }
 
     // 按页获取所有通知

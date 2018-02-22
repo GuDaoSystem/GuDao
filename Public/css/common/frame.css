@@ -153,7 +153,8 @@ button {
 .navbar .container .navbar-collapse .navbar-nav li a {
 	font-size: 1.6rem;
 }
-.navbar .container .navbar-collapse .navbar-nav li.active a {
+.navbar .container .navbar-collapse .navbar-nav li.active a,
+.navbar .container .navbar-collapse .didnotLogin a.active {
 	color: #ffd700;
 }
 .navbar .container .navbar-collapse .navbar-nav li a:hover {
