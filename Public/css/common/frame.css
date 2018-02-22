@@ -59,14 +59,14 @@ button {
 }
 .navbar .container .navbar-header .navbar-brand img {
 	width: auto;
-	height: 5.6rem;
+	height: 5.5rem;
 }
 
 
 /* ---------- 已登录二级菜单 ---------- */
 
 .navbar .container .navbar-collapse .didLogin .dropdown {
-	padding: 2px 15px 7px;
+	padding: 2px 15px 6px;
 }
 
 .navbar .container .navbar-collapse .didLogin .dropdown .dropdown-toggle {
