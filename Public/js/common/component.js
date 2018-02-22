@@ -36,7 +36,7 @@ var navbar = {
 						   </li>
 					   </ul>
 					   <!-- 表单 -->
-					   <form class="navbar-form navbar-right">
+					   <form class="search-box navbar-form navbar-right">
 						   <div class="input-group">
 							   <input type="text" class="form-control" placeholder="搜索...">
 							   <span class="input-group-btn">

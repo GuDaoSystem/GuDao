@@ -36,6 +36,30 @@ $(function() {
 	}
 
 
+	// 搜索按钮
+	$(".search-box button").click(function() {
+		search();
+	});
+	$(document).keydown(function(e) {
+		if(e.keyCode == 13) {
+			e.preventDefault();
+			search();
+		}
+	});
+	function search() {
+		if($(".search-box input").val()) {
+			location.href = "../../GuDao/Index/search";
+		} else {
+			setAlertBox({
+				className: "text",
+				close: true,
+				title: "孤岛提示",
+				message: "请输入搜索内容"
+			});
+		}
+	}
+
+
 	// 退出登录
 	$(".logout").click(function(e) {
 		e.preventDefault();
