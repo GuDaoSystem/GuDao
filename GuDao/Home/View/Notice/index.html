@@ -33,19 +33,18 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "__URL__/getNoticeByType",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"pageIndex": 1,
-	// 		"pageSize": 2,
-	// 		"type": 1
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	$.ajax({
+		url: "__URL__/getNoticeByPage",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"pageIndex": 1,
+			"pageSize": 2
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 });
 </script>
 

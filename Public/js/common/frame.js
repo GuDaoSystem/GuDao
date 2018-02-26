@@ -7,7 +7,7 @@ $(function() {
 
 
 	// 检查登录状态
-	sessionStorage.setItem("userID", 1);
+	// sessionStorage.setItem("userID", 1);
 	if(sessionStorage.getItem("userID")) {
 		$(".didnotLogin").hide();
 	} else {
@@ -40,7 +40,7 @@ $(function() {
 	$(".search-box button").click(function() {
 		search();
 	});
-	$(document).keydown(function(e) {
+	$(".search-box input").keydown(function(e) {
 		if(e.keyCode == 13) {
 			e.preventDefault();
 			search();

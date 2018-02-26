@@ -33,19 +33,18 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "/GuDao/index.php/Home/Notice/getNoticeByType",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"pageIndex": 1,
-	// 		"pageSize": 2,
-	// 		"type": 1
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	$.ajax({
+		url: "/GuDao/index.php/Home/Notice/getNoticeByPage",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"pageIndex": 1,
+			"pageSize": 2
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 });
 </script>
 

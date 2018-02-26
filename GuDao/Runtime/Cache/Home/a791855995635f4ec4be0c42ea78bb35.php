@@ -33,21 +33,18 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "/GuDao/index.php/Home/Show/getShowByCondition",
-	// 	// type: "POST",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"pageIndex": 1,
-	// 		"pageSize": 2,
-	// 		"state": 2
-	// 		// "place": "广东外语外贸大学"
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	$.ajax({
+		url: "/GuDao/index.php/Home/Show/getShowByPage",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"pageIndex": 1,
+			"pageSize": 2
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 });
 </script>
 

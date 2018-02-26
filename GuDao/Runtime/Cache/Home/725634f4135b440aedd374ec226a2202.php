@@ -33,17 +33,45 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "/GuDao/index.php/Home/Index/getShowCalendar",
-	// 	type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"month": "2017-11",
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	$.ajax({
+		url: "/GuDao/index.php/Home/Index/getNotice",
+		dataType: "json",
+		success: function(result) {
+			console.log(result);
+		}
+	});
+	$.ajax({
+		url: "/GuDao/index.php/Home/Index/getShowCalendar",
+		type: "POST",
+		dataType: "json",
+		data: {
+			"month": "2017-11",
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
+	$.ajax({
+		url: "/GuDao/index.php/Home/Index/getRecentShow",
+		dataType: "json",
+		success: function(result) {
+			console.log(result);
+		}
+	});
+	$.ajax({
+		url: "/GuDao/index.php/Home/Index/getHotShow",
+		dataType: "json",
+		success: function(result) {
+			console.log(result);
+		}
+	});
+	$.ajax({
+		url: "/GuDao/index.php/Home/Index/getHotBand",
+		dataType: "json",
+		success: function(result) {
+			console.log(result);
+		}
+	});
 });
 </script>
 

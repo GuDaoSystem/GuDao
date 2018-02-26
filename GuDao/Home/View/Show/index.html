@@ -33,21 +33,18 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "__URL__/getShowByCondition",
-	// 	// type: "POST",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"pageIndex": 1,
-	// 		"pageSize": 2,
-	// 		"state": 2
-	// 		// "place": "广东外语外贸大学"
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	$.ajax({
+		url: "__URL__/getShowByPage",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"pageIndex": 1,
+			"pageSize": 2
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 });
 </script>
 

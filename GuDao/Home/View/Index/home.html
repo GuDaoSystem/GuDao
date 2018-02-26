@@ -33,17 +33,45 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "__URL__/getShowCalendar",
-	// 	type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"month": "2017-11",
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	$.ajax({
+		url: "__URL__/getNotice",
+		dataType: "json",
+		success: function(result) {
+			console.log(result);
+		}
+	});
+	$.ajax({
+		url: "__URL__/getShowCalendar",
+		type: "POST",
+		dataType: "json",
+		data: {
+			"month": "2017-11",
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
+	$.ajax({
+		url: "__URL__/getRecentShow",
+		dataType: "json",
+		success: function(result) {
+			console.log(result);
+		}
+	});
+	$.ajax({
+		url: "__URL__/getHotShow",
+		dataType: "json",
+		success: function(result) {
+			console.log(result);
+		}
+	});
+	$.ajax({
+		url: "__URL__/getHotBand",
+		dataType: "json",
+		success: function(result) {
+			console.log(result);
+		}
+	});
 });
 </script>
 

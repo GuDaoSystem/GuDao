@@ -33,19 +33,18 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "__URL__/getBandByInitial",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"pageIndex": 1,
-	// 		"pageSize": 2,
-	// 		"initial": "L"
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	$.ajax({
+		url: "__URL__/getBandBySupport",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"pageIndex": 1,
+			"pageSize": 2
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 });
 </script>
 

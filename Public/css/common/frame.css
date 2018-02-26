@@ -29,8 +29,20 @@ button {
     border: 1px solid #ffd700;
     border-radius: 100rem;
     color: #ffd700;
+
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+button:hover {
+	background: #080808;
 }
 
+#gudao {
+	height: 100%;
+}
 
 
 
@@ -167,7 +179,13 @@ button {
 /* -------------------- 内容 -------------------- */
 
 .container.content {
-	margin: 8rem auto 2rem;
+	min-height: -webkit-calc(100% - 41px);
+	min-height: -moz-calc(100% - 41px);
+	min-height: -ms-calc(100% - 41px);
+	min-height: -o-calc(100% - 41px);
+	min-height: calc(100% - 41px);
+	
+	padding: 8rem 0 2rem;
 	color: #f2f2f2;
 }
 .container .thumbnail {
@@ -289,15 +307,6 @@ footer {
 	padding: 0.4rem 1.8rem;
 	margin: 0 0.5rem;
 	font-size: 1.2rem;
-
-	-webkit-transition: all 0.2s;
-	-moz-transition: all 0.2s;
-	-ms-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	transition: all 0.2s;
-}
-.alert-box.text .box .buttons button:hover {
-	background: #080808;
 }
 
 
