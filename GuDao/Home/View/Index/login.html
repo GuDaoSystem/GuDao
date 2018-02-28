@@ -27,11 +27,11 @@
 		</div>
 		<div class="right">
 			<form id="login">
-				<div class="input email">
+				<div class="input">
 					<span class="glyphicon glyphicon-envelope"></span>
 					<input type="email" name="email" placeholder="邮箱" autocomplete="off">
 				</div>
-				<div class="input password">
+				<div class="input">
 					<span class="glyphicon glyphicon-lock"></span>
 					<input type="password" name="password" placeholder="密码">
 				</div>

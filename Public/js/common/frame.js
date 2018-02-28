@@ -88,7 +88,6 @@ $(function() {
 		$(".back-to-top").hide();
 	}
 	$(document).scroll(function() {
-		console.log($(document).scrollTop())
 		if($(document).scrollTop() > 150) {
 			$(".back-to-top").show().removeClass("hide-back-to-top").addClass("show-back-to-top");
 		} else if($(".back-to-top").hasClass("show-back-to-top")) {

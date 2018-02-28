@@ -40,11 +40,11 @@
 }
 
 .right form div.input {
-	width: 100%;
+	/*width: 100%;
 	margin-top: -1px;
 	padding: 0.8rem 1rem;
 	border-top: 1px solid #ffd700;
-	border-bottom: 1px solid #ffd700;
+	border-bottom: 1px solid #ffd700;*/
 	font-size: 0;
 }
 .right form div.input span {
@@ -64,7 +64,7 @@
 	font-size: 1.6rem;
 	vertical-align: middle;
 }
-.right form div.input input::-webkit-input-placeholder {
+/*.right form div.input input::-webkit-input-placeholder {
 	color: #333;
 }
 .right form div.input input::-moz-placeholder {
@@ -75,7 +75,7 @@
 }
 .right form div.input input:-ms-input-placeholder {
 	color: #333;
-}
+}*/
 .right form div.input label {
     display: block;
     color: #ffd700;

@@ -40,10 +40,30 @@ button:hover {
 	background: #080808;
 }
 
+input::-webkit-input-placeholder {
+	color: #333;
+}
+input::-moz-placeholder {
+	color: #333;
+}
+input:-moz-placeholder {
+	color: #333;
+}
+input:-ms-input-placeholder {
+	color: #333;
+}
+
+div.input {
+	width: 100%;
+	margin-top: -1px;
+	padding: 0.8rem 1rem;
+	border-top: 1px solid #ffd700;
+	border-bottom: 1px solid #ffd700;
+}
+
 #gudao {
 	height: 100%;
 }
-
 
 
 /* -------------------- 导航条 -------------------- */
