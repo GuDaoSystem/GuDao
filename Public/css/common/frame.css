@@ -241,10 +241,10 @@ button:hover {
 @-webkit-keyframes showBackToTop { from { bottom: -3rem; opacity: 0; } to { bottom: 4rem; opacity: 1; } }
 @-o-keyframes showBackToTop { from { bottom: -3rem; opacity: 0; } to { bottom: 4rem; opacity: 1; } }
 
-@keyframes hideBackToTop { from { bottom:4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
-@-moz-keyframes hideBackToTop { from { bottom:4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
-@-webkit-keyframes hideBackToTop { from { bottom:4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
-@-o-keyframes hideBackToTop { from { bottom:4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
+@keyframes hideBackToTop { from { bottom: 4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
+@-moz-keyframes hideBackToTop { from { bottom: 4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
+@-webkit-keyframes hideBackToTop { from { bottom: 4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
+@-o-keyframes hideBackToTop { from { bottom: 4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
 
 
 

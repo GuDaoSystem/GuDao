@@ -41,7 +41,7 @@
 						<span class="checked"></span>
 						<p>下次自动登录</p>
 					</div>
-					<a href="">忘记密码？</a>
+					<a href="../User/forgetPassword">忘记密码？</a>
 				</div>
 				<button>登录</button>
 				<p class="register">没有账号？点击<a href="">注册</a></p>
