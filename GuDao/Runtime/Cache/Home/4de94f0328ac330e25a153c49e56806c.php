@@ -9,6 +9,8 @@
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/frame.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/forgetPassword.css">
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/common/md5.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/common/jquery.validate.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/bootstrap.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/vue.js"></script>
 </head>
@@ -26,7 +28,7 @@
 			<li><span></span>完成</li>
 		</ul>
 		<div class="tab-content">
-			<div class="step1 vertical-center">
+			<div class="step step1">
 				<form>
 					<div class="input">
 						<span class="glyphicon glyphicon-envelope"></span>
@@ -40,7 +42,7 @@
 					<button class="next">下一步</button>
 				</form>
 			</div>
-			<div class="step2 vertical-center">
+			<div class="step step2">
 				<form>
 					<div class="input">
 						<span class="glyphicon glyphicon-lock"></span>
@@ -53,7 +55,7 @@
 					<button class="next">下一步</button>
 				</form>
 			</div>
-			<div class="step3 vertical-center">
+			<div class="step step3">
 				<div>
 					<span class="glyphicon glyphicon-ok-circle"></span>
 					<p>已重设密码并登录成功，<span class="countdown">3</span>秒后为你<a href="../Index/home">返回首页</a></p>
@@ -75,20 +77,20 @@
 
 <script>
 $(function() {
-	$.ajax({
-		url: "/GuDao/index.php/Home/User/checkCode",
-		type: "POST",
-		dataType: "json",
-		data: {
-			// // "id": 4,
-			// "password": md5("wuyinglin"),
-			"email": "ng.winglam@qq.com",
-			"code": "1234"
-		},
-		success: function(result) {
-			console.log(result);
-		}
-	});
+	// $.ajax({
+	// 	url: "/GuDao/index.php/Home/User/checkCode",
+	// 	type: "POST",
+	// 	dataType: "json",
+	// 	data: {
+	// 		// // "id": 4,
+	// 		// "password": md5("wuyinglin"),
+	// 		"email": "ng.winglam@qq.com",
+	// 		"code": "1234"
+	// 	},
+	// 	success: function(result) {
+	// 		console.log(result);
+	// 	}
+	// });
 });
 </script>
 

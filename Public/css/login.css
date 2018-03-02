@@ -76,14 +76,14 @@
 .right form div.input input:-ms-input-placeholder {
 	color: #333;
 }*/
-.right form div.input label {
+/*.right form div.input label {
     display: block;
     color: #ffd700;
     margin: 0;
 	font-size: 0.2rem;
     font-weight: lighter;
     text-align: right;
-}
+}*/
 
 .right form div.other {
 	font-size: 1.2rem;

@@ -60,6 +60,14 @@ div.input {
 	border-top: 1px solid #ffd700;
 	border-bottom: 1px solid #ffd700;
 }
+div.input label {
+    display: block;
+    color: #ffd700;
+    margin: 0;
+	font-size: 0.2rem;
+    font-weight: lighter;
+    text-align: right;
+}
 
 #gudao {
 	height: 100%;

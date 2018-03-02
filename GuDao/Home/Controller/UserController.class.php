@@ -57,6 +57,21 @@ class UserController extends Controller {
         $this->ajaxReturn($result);
     }
 
+    // 校验验证码
+    public function checkCode() {
+        $email = $_POST["email"];
+        $code = $_POST["code"];
+        if(S($email) == $code) {
+            S($email, null);
+            $result["code"] = 200;
+            $result["msg"] = "验证码正确";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "验证码错误";
+        }
+        $this->ajaxReturn($result);
+    }
+
 
     /* -------------------- 个人页面 -------------------- */
 
