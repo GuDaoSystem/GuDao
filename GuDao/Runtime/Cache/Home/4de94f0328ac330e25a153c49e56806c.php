@@ -71,6 +71,7 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/common.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/component.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/forgetPassword.js"></script>
 
 <script>
 $(function() {
