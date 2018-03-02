@@ -75,19 +75,20 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "/GuDao/index.php/Home/User/resetPassword",
-	// 	type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		// "id": 4,
-	// 		"password": md5("wuyinglin"),
-	// 		"email": "ng.winglam@qq.com"
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	$.ajax({
+		url: "/GuDao/index.php/Home/User/checkCode",
+		type: "POST",
+		dataType: "json",
+		data: {
+			// // "id": 4,
+			// "password": md5("wuyinglin"),
+			"email": "ng.winglam@qq.com",
+			"code": "1234"
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 });
 </script>
 

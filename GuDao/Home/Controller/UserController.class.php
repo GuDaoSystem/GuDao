@@ -30,9 +30,10 @@ class UserController extends Controller {
         $code = rand(1000, 9999);
         $content = "验证码为 <strong>{$code}</strong> 。你正在重新设置密码，若非本人操作请注意账号安全！";
         if(sendMail($email, $title, $content)) {
+            S($email, $code, 60);
             $result["code"] = 200;
             $result["msg"] = "发送验证码成功";
-            setcookie("code", $code, time() + 60, "/");
+            // setcookie("code", $code, time() + 60, "/");
         } else {
             $result["code"] = 201;
             $result["msg"] = "发送验证码失败";

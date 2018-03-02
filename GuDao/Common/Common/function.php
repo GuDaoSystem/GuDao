@@ -1,5 +1,6 @@
 <?php
 
+// 发送邮件
 function sendMail($addressee, $subject, $content){
     // 引入PHPMailer核心文件，使用require_once包含避免出现PHPMailer类重复定义的警告
     require_once("PHPMailer/PHPMailer.php"); 
@@ -65,4 +66,20 @@ function sendMail($addressee, $subject, $content){
 	} catch(Exception $e) {
 		return false;
 	}
+}
+
+
+// 校验验证码
+function checkCode() {
+	S("ng.winglam@qq.com", 1234, 60);
+	$email = $_POST["email"];
+	$code = $_POST["code"];
+	if(S($email) == $code) {
+		$result["code"] = 200;
+		$result["msg"] = "验证码正确";
+	} else {
+		$result["code"] = 201;
+		$result["msg"] = "验证码错误";
+	}
+	$this->ajaxReturn($result);
 }
