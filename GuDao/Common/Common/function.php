@@ -38,7 +38,7 @@ function sendMail($addressee, $subject, $content){
 	    $mail->Username ="ng.winglam";
 
 	    // 设置smtp登录的密码（最新的授权码）
-	    $mail->Password = "refhmpmmouorbiba";
+	    $mail->Password = "dgtcyaorntfucacj";
 
 	    // 设置发件人邮箱地址，必须为已存在的合法邮箱地址
 	    $mail->From = "gudaomusic@foxmail.com";

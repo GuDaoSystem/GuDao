@@ -26,6 +26,7 @@
 			<li class="active"><span></span>获取验证码</li>
 			<li><span></span>重设密码</li>
 			<li><span></span>完成</li>
+			<span class="underline tab1"></span>
 		</ul>
 		<div class="tab-content">
 			<div class="step step1">
