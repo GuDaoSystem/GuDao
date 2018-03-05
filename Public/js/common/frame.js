@@ -100,16 +100,18 @@ $(function() {
 
 
 	// 查看原图
-	$("img.thumbnail").click(function() {
-		setAlertBox({
-			className: "image",
-			close: true,
-			maskClose: true,
-			message: "<img src=" + this.src +">",
-			buttons: []
-		});
-		if($(".alert-box.image .message").height() > $(".alert-box.image .box").height()) {
-			$(".alert-box.image .message").height($(".alert-box.image .box").height() - 72);
+	$(document).click(function(e) {
+		if(e.target.tagName.toLowerCase() == "img" && $(e.target).hasClass("thumbnail")) {
+			setAlertBox({
+				className: "image",
+				close: true,
+				maskClose: true,
+				message: "<img src=" + e.target.src +">",
+				buttons: []
+			});
+			if($(".alert-box.image .message").height() > $(".alert-box.image .box").height()) {
+				$(".alert-box.image .message").height($(".alert-box.image .box").height() - 72);
+			}
 		}
 	});
 });
