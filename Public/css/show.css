@@ -1,0 +1,103 @@
+.condition ul {
+	border-bottom: 1px dashed #333;
+}
+
+.condition ul p {
+	display: inline-block;
+	padding: 0.6rem 1rem;
+	font-size: 1.2rem;
+}
+
+.condition ul li {
+	display: inline-block;
+	padding: 0.6rem 1rem;
+	cursor: pointer;
+}
+.condition ul li.active a {
+	color: #ffd700;
+}
+
+
+
+.show-list li {
+	margin-top: 2rem;
+}
+.show-list li .show-content {
+	padding: 0.8rem;
+	border: 1px solid #333;
+	border-radius: 0.2rem;
+	position: relative;
+
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.show-list li .show-content:hover {
+	border: 1px solid #ffd700;
+}
+
+.show-list li .show-content img {
+	display: inline-block;
+	width: 50%;
+	background: #f2f2f2;
+	cursor: pointer;
+
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.show-list li .show-content img:hover {
+	opacity: 0.8;
+}
+
+.show-list li .show-content .info {
+	display: inline-block;
+	width: 50%;
+	margin-bottom: 2rem;
+	padding: 0 0.8rem 0 1.6rem;
+	font-size: 1.2rem;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.show-list li .show-content .info p {
+	margin: 0.5rem 0;
+}
+.show-list li .show-content .info p .glyphicon {
+	color: #333;
+	font-size: 1.6rem;
+	margin-right: 0.6rem;
+}
+.show-list li .show-content .info .name {
+	font-size: 1.4rem;
+	color: #ffd700;
+}
+.show-list li .show-content .info .want .num {
+	color: #ffd700;
+}
+.show-list li .show-content .info .state {
+	color: #333;
+	font-size: 2.4rem;
+	font-weight: lighter;
+	position: absolute;
+	right: 0.8rem;
+	bottom: 0.8rem;
+
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.show-list li .show-content:hover .info .state.yushou {
+	color: #ffd700;
+}
+.show-list li .show-content:hover .info .state.quxiao {
+	color: #f00;
+}
+.show-list li .show-content:hover .info .state.biangeng {
+	color: #0f0;
+}

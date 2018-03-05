@@ -57,11 +57,11 @@ var copyright = {
 };
 
 
-new Vue({
-  el: '#gudao',
-  components: {
-  	"navbar": navbar,
-  	"back-to-top": backToTop,
-  	"copyright": copyright
-  }
-});
+// new Vue({
+//   el: '#gudao',
+//   components: {
+//   	"navbar": navbar,
+//   	"back-to-top": backToTop,
+//   	"copyright": copyright
+//   }
+// });

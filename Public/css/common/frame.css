@@ -73,6 +73,12 @@ div.input label {
 	height: 100%;
 }
 
+.thumbnail {
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+}
+
 
 /* -------------------- 导航条 -------------------- */
 

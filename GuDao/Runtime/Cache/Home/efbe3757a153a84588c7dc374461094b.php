@@ -33,22 +33,24 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "/GuDao/index.php/Home/Show/getCommentNReply",
-	// 	// type: "POST",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"target": 1,
-	// 		"id": 2,
-	// 		// "user_id": 4,
-	// 		// "show_id": 2,
-	// 		// "time": "2017-12-22"
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	var id = location.search.substr(1).split("=")[1];
+	$.ajax({
+		url: "/GuDao/index.php/Home/Show/getShowByID",
+		// type: "POST",
+		type: "GET",
+		dataType: "json",
+		data: {
+			// "target": 1,
+			"id": id,
+			// "user_id": 4,
+			// "show_id": 2,
+			// "time": "2017-12-22"
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
+
 });
 </script>
 
