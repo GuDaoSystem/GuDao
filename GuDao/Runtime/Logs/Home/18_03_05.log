@@ -19253,3 +19253,946 @@ SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0073s ]
 SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0092s ]
 SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,2   [ RunTime:0.0006s ]
 
+[ 2018-03-05T17:33:38+08:00 ] ::1 /GuDao/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002745s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029236s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029345s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000894s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001546s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001611s ]
+
+[ 2018-03-05T17:33:38+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000947s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:33:59+08:00 ] ::1 /GuDao/Index/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000904s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000963s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011669s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011745s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000757s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001113s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001188s ]
+
+[ 2018-03-05T17:33:59+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001782s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:33:59+08:00 ] ::1 /GuDao/index.php/Home/Index/getHotShow
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001630s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0145s ]
+SQL: SELECT count('user_id') as count,`show_id` FROM `want` GROUP BY show_id ORDER BY count desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 2  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0138s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0166s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0011s ]
+
+[ 2018-03-05T17:33:59+08:00 ] ::1 /GuDao/index.php/Home/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.019172s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019283s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0099s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2017-11%' GROUP BY show_time  [ RunTime:0.0005s ]
+
+[ 2018-03-05T17:34:00+08:00 ] ::1 /GuDao/index.php/Home/Index/getHotBand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001010s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002392s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0155s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0140s ]
+SQL: SELECT count('user_id') as count,`band_id` FROM `support` GROUP BY band_id ORDER BY count desc LIMIT 0,4   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0163s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0192s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0015s ]
+
+[ 2018-03-05T17:34:00+08:00 ] ::1 /GuDao/index.php/Home/Index/getNotice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001988s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002159s ]
+SQL: SHOW COLUMNS FROM `notice` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `notice` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `notice` ORDER BY notice_time desc LIMIT 0,7   [ RunTime:0.0005s ]
+
+[ 2018-03-05T17:34:00+08:00 ] ::1 /GuDao/index.php/Home/Index/getRecentShow
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.032171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002157s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002271s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,4   [ RunTime:0.0004s ]
+
+[ 2018-03-05T17:34:49+08:00 ] ::1 /GuDao/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001968s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013693s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013805s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001056s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001116s ]
+
+[ 2018-03-05T17:34:50+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002473s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:34:58+08:00 ] ::1 /GuDao/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001685s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013807s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013897s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000986s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001924s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002087s ]
+
+[ 2018-03-05T17:34:58+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000931s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002263s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:11+08:00 ] ::1 /GuDao/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011615s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011692s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001051s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002124s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002215s ]
+
+[ 2018-03-05T17:35:11+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001929s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:14+08:00 ] ::1 /GuDao/User/forgetPassword
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002454s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070125s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070217s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000905s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000913s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000975s ]
+
+[ 2018-03-05T17:35:14+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001587s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:16+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000913s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001739s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:38+08:00 ] ::1 /GuDao/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001552s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012680s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012790s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001876s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001673s ]
+
+[ 2018-03-05T17:35:38+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001118s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001608s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:39+08:00 ] ::1 /GuDao/User/forgetPassword
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001404s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013515s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013606s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000860s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000916s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001085s ]
+
+[ 2018-03-05T17:35:39+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000944s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:44+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002011s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002121s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000371s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014117s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001291s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001347s ]
+
+[ 2018-03-05T17:35:44+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001850s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:44+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001238s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0112s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,2   [ RunTime:0.0006s ]
+
+[ 2018-03-05T17:35:48+08:00 ] ::1 /GuDao/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001174s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001271s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009704s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009791s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000958s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001013s ]
+
+[ 2018-03-05T17:35:49+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001049s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:50+08:00 ] ::1 /GuDao/User/forgetPassword
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001759s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000218s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015638s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015747s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001070s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001122s ]
+
+[ 2018-03-05T17:35:50+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001515s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:52+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000975s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001490s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014874s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015033s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000911s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002145s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002231s ]
+
+[ 2018-03-05T17:35:52+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000997s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001612s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:52+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000848s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001646s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0106s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,2   [ RunTime:0.0005s ]
+
+[ 2018-03-05T17:35:54+08:00 ] ::1 /GuDao/Index/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000949s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002284s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000191s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011945s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012067s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001085s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000954s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001025s ]
+
+[ 2018-03-05T17:35:54+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000997s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001695s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:55+08:00 ] ::1 /GuDao/index.php/Home/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001959s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0108s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0125s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2017-11%' GROUP BY show_time  [ RunTime:0.0008s ]
+
+[ 2018-03-05T17:35:55+08:00 ] ::1 /GuDao/index.php/Home/Index/getRecentShow
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000842s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001515s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,4   [ RunTime:0.0007s ]
+
+[ 2018-03-05T17:35:55+08:00 ] ::1 /GuDao/index.php/Home/Index/getHotShow
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001519s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0164s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0209s ]
+SQL: SELECT count('user_id') as count,`show_id` FROM `want` GROUP BY show_id ORDER BY count desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0174s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0250s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 2  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0181s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0202s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0019s ]
+
+[ 2018-03-05T17:35:55+08:00 ] ::1 /GuDao/index.php/Home/Index/getNotice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002503s ]
+SQL: SHOW COLUMNS FROM `notice` [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `notice` [ RunTime:0.0247s ]
+SQL: SELECT * FROM `notice` ORDER BY notice_time desc LIMIT 0,7   [ RunTime:0.0008s ]
+
+[ 2018-03-05T17:35:55+08:00 ] ::1 /GuDao/index.php/Home/Index/getHotBand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001631s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0124s ]
+SQL: SELECT count('user_id') as count,`band_id` FROM `support` GROUP BY band_id ORDER BY count desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0112s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.3565s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0996s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0004s ]
+
+[ 2018-03-05T17:35:57+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002295s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017635s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001245s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001338s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001426s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001507s ]
+
+[ 2018-03-05T17:35:57+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000895s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001823s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:57+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001614s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,2   [ RunTime:0.0006s ]
+
+[ 2018-03-05T17:35:59+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001190s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011889s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011964s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000967s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001047s ]
+
+[ 2018-03-05T17:35:59+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000848s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002122s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:35:59+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000797s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001953s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,2   [ RunTime:0.0007s ]
+
+[ 2018-03-05T17:36:15+08:00 ] ::1 /GuDao/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001349s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000352s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013126s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001003s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001062s ]
+
+[ 2018-03-05T17:36:15+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000892s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003608s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:36:18+08:00 ] ::1 /GuDao/User/forgetPassword
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002724s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015122s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015237s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001675s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001782s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001522s ]
+
+[ 2018-03-05T17:36:18+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001511s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:37:34+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010067s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010184s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001732s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002047s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001687s ]
+
+[ 2018-03-05T17:37:34+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001883s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,2   [ RunTime:0.0005s ]
+
+[ 2018-03-05T17:37:35+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000966s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001930s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:37:39+08:00 ] ::1 /GuDao/Show/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001038s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012533s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012608s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001072s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001127s ]
+
+[ 2018-03-05T17:37:39+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000908s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001368s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:37:39+08:00 ] ::1 /GuDao/index.php/Home/Show/getShowByID?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002576s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0166s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0007s ]
+
+[ 2018-03-05T17:38:09+08:00 ] ::1 /GuDao/Show/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001309s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009424s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009498s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000700s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000879s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000932s ]
+
+[ 2018-03-05T17:38:09+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001973s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:38:09+08:00 ] ::1 /GuDao/index.php/Home/Show/getShowByID?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001079s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001991s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0174s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0223s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0006s ]
+
+[ 2018-03-05T17:38:11+08:00 ] ::1 /GuDao/Band
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029862s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029978s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001101s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001179s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000942s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001014s ]
+
+[ 2018-03-05T17:38:11+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001778s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:38:13+08:00 ] ::1 /GuDao/Index/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000141s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002143s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012339s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012458s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001042s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001122s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001390s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001489s ]
+
+[ 2018-03-05T17:38:13+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000903s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001696s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-05T17:38:13+08:00 ] ::1 /GuDao/index.php/Home/Index/getRecentShow
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001501s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0117s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,4   [ RunTime:0.0006s ]
+
+[ 2018-03-05T17:38:13+08:00 ] ::1 /GuDao/index.php/Home/Index/getHotShow
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001606s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0170s ]
+SQL: SELECT count('user_id') as count,`show_id` FROM `want` GROUP BY show_id ORDER BY count desc LIMIT 0,4   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0195s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0161s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 2  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0106s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0174s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0006s ]
+
+[ 2018-03-05T17:38:13+08:00 ] ::1 /GuDao/index.php/Home/Index/getNotice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000789s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001507s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001613s ]
+SQL: SHOW COLUMNS FROM `notice` [ RunTime:0.0159s ]
+SQL: SHOW COLUMNS FROM `notice` [ RunTime:0.0171s ]
+SQL: SELECT * FROM `notice` ORDER BY notice_time desc LIMIT 0,7   [ RunTime:0.0007s ]
+
+[ 2018-03-05T17:38:13+08:00 ] ::1 /GuDao/index.php/Home/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001973s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0176s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2017-11%' GROUP BY show_time  [ RunTime:0.0009s ]
+
+[ 2018-03-05T17:38:14+08:00 ] ::1 /GuDao/index.php/Home/Index/getHotBand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000844s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003870s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0094s ]
+SQL: SELECT count('user_id') as count,`band_id` FROM `support` GROUP BY band_id ORDER BY count desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0003s ]
+

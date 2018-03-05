@@ -1,3 +1,12 @@
+new Vue({
+	el: '#gudao',
+	components: {
+		"navbar": navbar,
+		"copyright": copyright
+	}
+});
+
+
 $(function() {
 	$("#login").validate({
 		debug: true,

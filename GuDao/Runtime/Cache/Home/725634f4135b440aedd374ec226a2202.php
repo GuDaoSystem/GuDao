@@ -32,6 +32,15 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
 
 <script>
+new Vue({
+	el: '#gudao',
+	components: {
+		"navbar": navbar,
+		"back-to-top": backToTop,
+		"copyright": copyright
+	}
+});
+
 $(function() {
 	$.ajax({
 		url: "/GuDao/index.php/Home/Index/getNotice",
@@ -72,14 +81,6 @@ $(function() {
 			console.log(result);
 		}
 	});
-});
-new Vue({
-  el: '#gudao',
-  components: {
-  	"navbar": navbar,
-  	"back-to-top": backToTop,
-  	"copyright": copyright
-  }
 });
 </script>
 

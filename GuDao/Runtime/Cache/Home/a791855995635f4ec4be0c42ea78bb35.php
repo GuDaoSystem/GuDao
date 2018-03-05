@@ -59,59 +59,6 @@
 				</div>
 			</li>
 		</ul>
-
-
-
-		<!-- <ul class="row show-list">
-			<li class="col-sm-6 col-md-4">
-				<div class="show-content">
-					<img src="/GuDao/Public/img/show/1.jpg" class="thumbnail"><div class="info">
-						<p class="name text-overflow-ellipsis">演出乐队</p>
-						<p class="band text-overflow-ellipsis"><span class="glyphicon glyphicon-headphones"></span>乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1</p>
-						<p class="place text-overflow-ellipsis"><span class="glyphicon glyphicon-map-marker"></span>演出地点</p>
-						<p class="time text-overflow-ellipsis"><span class="glyphicon glyphicon-time"></span>2018/03/05 19:00</p>
-						<p class="want"><span class="glyphicon glyphicon-eye-open"></span><span class="num">2333</span>人想看</p>
-						<span class="state yushou">/&ensp;预售</span>
-					</div>
-				</div>
-			</li>
-			<li class="col-sm-6 col-md-4">
-				<div class="show-content">
-					<img src="/GuDao/Public/img/show/1.jpg" class="thumbnail"><div class="info">
-						<p class="name text-overflow-ellipsis">演出乐队</p>
-						<p class="band text-overflow-ellipsis"><span class="glyphicon glyphicon-headphones"></span>乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1</p>
-						<p class="place text-overflow-ellipsis"><span class="glyphicon glyphicon-map-marker"></span>演出地点</p>
-						<p class="time text-overflow-ellipsis"><span class="glyphicon glyphicon-time"></span>2018/03/05 19:00</p>
-						<p class="want"><span class="glyphicon glyphicon-eye-open"></span><span class="num">2333</span>人想看</p>
-						<span class="state quxiao">/&ensp;预售</span>
-					</div>
-				</div>
-			</li>
-			<li class="col-sm-6 col-md-4">
-				<div class="show-content">
-					<img src="/GuDao/Public/img/show/1.jpg" class="thumbnail"><div class="info">
-						<p class="name text-overflow-ellipsis">演出乐队</p>
-						<p class="band text-overflow-ellipsis"><span class="glyphicon glyphicon-headphones"></span>乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1</p>
-						<p class="place text-overflow-ellipsis"><span class="glyphicon glyphicon-map-marker"></span>演出地点</p>
-						<p class="time text-overflow-ellipsis"><span class="glyphicon glyphicon-time"></span>2018/03/05 19:00</p>
-						<p class="want"><span class="glyphicon glyphicon-eye-open"></span><span class="num">2333</span>人想看</p>
-						<span class="state biangeng">/&ensp;预售</span>
-					</div>
-				</div>
-			</li>
-			<li class="col-sm-6 col-md-4">
-				<div class="show-content">
-					<img src="/GuDao/Public/img/show/1.jpg" class="thumbnail"><div class="info">
-						<p class="name text-overflow-ellipsis">演出乐队</p>
-						<p class="band text-overflow-ellipsis"><span class="glyphicon glyphicon-headphones"></span>乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1</p>
-						<p class="place text-overflow-ellipsis"><span class="glyphicon glyphicon-map-marker"></span>演出地点</p>
-						<p class="time text-overflow-ellipsis"><span class="glyphicon glyphicon-time"></span>2018/03/05 19:00</p>
-						<p class="want"><span class="glyphicon glyphicon-eye-open"></span><span class="num">2333</span>人想看</p>
-						<span class="state jieshu">/&ensp;预售</span>
-					</div>
-				</div>
-			</li>
-		</ul> -->
 	</div>
 
 	<!-- 底部 -->

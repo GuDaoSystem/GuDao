@@ -32,20 +32,28 @@
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
 
 <script>
-$(function() {
-	$.ajax({
-		url: "__URL__/getBandBySupport",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"pageIndex": 1,
-			"pageSize": 2
-		},
-		success: function(result) {
-			console.log(result);
-		}
-	});
+new Vue({
+	el: '#gudao',
+	components: {
+		"navbar": navbar,
+		"back-to-top": backToTop,
+		"copyright": copyright
+	}
 });
+// $(function() {
+// 	$.ajax({
+// 		url: "__URL__/getBandBySupport",
+// 		type: "GET",
+// 		dataType: "json",
+// 		data: {
+// 			"pageIndex": 1,
+// 			"pageSize": 2
+// 		},
+// 		success: function(result) {
+// 			console.log(result);
+// 		}
+// 	});
+// });
 </script>
 
 </body>

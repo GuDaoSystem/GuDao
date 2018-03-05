@@ -1,3 +1,11 @@
+new Vue({
+	el: '#gudao',
+	components: {
+		"navbar": navbar,
+		"copyright": copyright
+	}
+});
+
 $(function() {
 	getCode({
 		form: {

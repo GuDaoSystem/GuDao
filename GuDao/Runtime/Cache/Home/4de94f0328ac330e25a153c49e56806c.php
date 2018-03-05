@@ -66,7 +66,6 @@
 	</div>
 
 	<!-- 底部 -->
-	<back-to-top></back-to-top>
 	<copyright></copyright>
 </div>
 

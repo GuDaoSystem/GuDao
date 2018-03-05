@@ -32,6 +32,14 @@
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
 
 <script>
+new Vue({
+	el: '#gudao',
+	components: {
+		"navbar": navbar,
+		"back-to-top": backToTop,
+		"copyright": copyright
+	}
+});
 $(function() {
 	// $.ajax({
 	// 	url: "__URL__/getCommentByUser",
