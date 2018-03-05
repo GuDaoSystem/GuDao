@@ -24,7 +24,7 @@ new Vue({
 	updated: function () {
 		this.$nextTick(function () {
 			$(".info").click(function() {
-				location.href = "Show/detail?id=" + $(this).attr("index");
+				location.href = "Show/detail?id=" + $(this).attr("index") + "#home";
 			});
 		});
 	},
