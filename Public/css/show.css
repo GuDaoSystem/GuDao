@@ -39,7 +39,6 @@
 }
 
 .show-list li .show-content img {
-	display: inline-block;
 	width: 50%;
 	background: #f2f2f2;
 	cursor: pointer;
@@ -100,4 +99,173 @@
 }
 .show-list li .show-content:hover .info .state.biangeng {
 	color: #0f0;
+}
+
+
+
+
+
+
+
+/*detail*/
+
+.top {
+	margin-bottom: 2rem;
+	position: relative;
+}
+
+
+.top img {
+	width: 30%;
+	cursor: pointer;
+	vertical-align: top;
+
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.top img:hover {
+	opacity: 0.8;
+}
+
+
+.top .info {
+	display: inline-block;
+	width: 70%;
+	padding: 1rem 2rem;
+	vertical-align: top;
+}
+
+.top .info .state {
+	font-size: 3rem;
+	font-weight: lighter;
+	position: absolute;
+	right: 2rem;
+	top: 1rem;
+}
+.top .info .state.yushou {
+	color: #ffd700;
+}
+.top .info .state.quxiao {
+	color: #f00;
+}
+.top .info .state.biangeng {
+	color: #0f0;
+}
+.top .info .state.jieshu {
+	color: #333;
+}
+
+.top .info .name {
+	height: 3rem;
+	padding-left: 2.2rem;
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+
+.top .info ul li {
+	margin: 0.6rem 0;
+}
+.top .info ul li p {
+	line-height: 160%;
+}
+.top .info ul li .glyphicon {
+	margin: 3px 0.4rem 0 0;
+	color: #333;
+	font-size: 1.6rem;
+	vertical-align: top;
+}
+.top .info ul li .title {
+	display: inline-block;
+	width: 7rem;
+	vertical-align: top;
+}
+.top .info ul li .msg {
+	display: inline-block;
+	width: calc(100% - 10rem);
+	vertical-align: top;
+}
+.top .info ul li .msg a {
+	color: #f2f2f2;
+}
+.top .info ul li .msg a:hover {
+	color: #ffd700;
+}
+.top .info ul li .msg li {
+	margin: 0;
+	line-height: 160%;
+}
+.top .info ul li .msg li .value {
+	color: #ffd700;
+}
+
+.top .info .want {
+    padding: 0.6rem 1.2rem;
+	margin-left: 2.2rem;
+    color: #f2f2f2;
+	font-size: 1.8rem;
+	position: absolute;
+	bottom: 1rem;
+}
+.top .info .want .glyphicon {
+	margin-right: 0.5rem;
+	color: #ffd700;
+}
+.top .info .want .num {
+	color: #ffd700;
+	font-weight: bold;
+}
+
+
+
+
+
+.tablist {
+	border-bottom: 1px solid #333;
+	font-size: 0;
+	text-align: center;
+	position: relative;
+}
+.tablist li {
+	display: inline-block;
+	width: 70px;
+	float: none;
+	font-size: 1.4rem;
+}
+.tablist li a {
+	margin: 0;
+	padding: 8px 0;
+	border: none;
+}
+.tablist li a:hover,
+.tablist li.active a:hover {
+	background: none;
+	border: none;
+	color: #ffd700;
+}
+.tablist li.active a {
+	background: none;
+	border: none;
+	color: #ffd700;
+}
+.tablist .underline {
+	display: block;
+	width: 70px;
+	height: 1px;
+	background: #ffd700;
+	position: absolute;
+
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.tablist .underline.tab1 {
+	left: calc((100% - 140px) / 2);
+}
+.tablist .underline.tab2 {
+	left: calc((100% - 140px) / 2 + 70px);
 }

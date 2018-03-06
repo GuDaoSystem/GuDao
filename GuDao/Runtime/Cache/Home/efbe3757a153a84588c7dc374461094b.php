@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/frame.css">
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/show.css">
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/bootstrap.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/vue.js"></script>
@@ -19,19 +20,69 @@
 
 	<!-- 内容 -->
 	<div class="container content">
+		<div class="top">
+			<img src="/GuDao/Public/img/show/1.jpg" class="thumbnail"><div class="info">
+				<span class="state yushou">/&ensp;预售</span>
+				<p class="name">演出名称</p>
+				<ul>
+					<li>
+						<span class="glyphicon glyphicon-headphones"></span>
+						<p class="title">演出乐队：</p>
+						<p class="msg"><a href="">乐队1</a>&ensp;/&ensp;<a href="">乐队2</a>&ensp;/&ensp;<a href="">乐队3</a>&ensp;/&ensp;<a href="">乐队4</a>&ensp;/&ensp;<a href="">乐队5</a>&ensp;/&ensp;<a href="">乐队6</a>&ensp;/&ensp;<a href="">乐队7</a>&ensp;/&ensp;<a href="">乐队2</a>&ensp;/&ensp;<a href="">乐队3</a>&ensp;/&ensp;<a href="">乐队4</a>&ensp;/&ensp;<a href="">乐队5</a>&ensp;/&ensp;<a href="">乐队6</a>&ensp;/&ensp;<a href="">乐队7</a></p>
+					</li>
+					<li>
+						<span class="glyphicon glyphicon-map-marker"></span>
+						<div class="title">
+							<p>演出地点：</p>
+							<p>具体地点：</p>
+						</div>
+						<div class="msg">
+							<p class="place">演出地点地点</p>
+							<p class="address">演出具体地点</p>
+						</div>
+					</li>
+					<li>
+						<span class="glyphicon glyphicon-time"></span>
+						<p class="title">演出时间：</p>
+						<p class="msg">2017年12月24日 19:00</p>
+					</li>
+					<li>
+						<span class="glyphicon glyphicon-tag"></span>
+						<p class="title">演出门票：</p>
+						<ul class="msg">
+							<li><span class="value">￥21</span>（预售票，不含酒）</li>
+							<li><span class="value">￥21</span>（预售票，不含酒）</li>
+							<li><span class="value">￥21</span>（预售票，不含酒）</li>
+						</ul>
+					</li>
+				</ul>
+				<button class="want"><span class="glyphicon glyphicon-eye-open"></span><span class="num">2333</span>人想看</button>
+			</div>
+		</div>
+
 		<div>
 			<ul class="tablist nav nav-tabs" role="tablist">
-				<li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-				<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-				<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-				<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+				<li class="tab1" role="presentation"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">详情</a></li>
+				<li class="tab2" role="presentation"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab">评论</a></li>
+				<span class="underline"></span>
 			</ul>
-
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane" id="home">.1..</div>
-				<div role="tabpanel" class="tab-pane" id="profile">.2..</div>
-				<div role="tabpanel" class="tab-pane" id="messages">.3..</div>
-				<div role="tabpanel" class="tab-pane" id="settings">.4..</div>
+				<div role="tabpanel" class="tab-pane fade" id="detail">
+					<div class="desc">
+						<p>演出信息演出信息</p>
+						<p>演出信息演出信息演出信息演出信息演出信息演出信息</p>
+						<p>演出信息演演出信息演出信息出信息</p>
+						<p>演出信息演出演出信息演出信息演出信息演出信息演出信息演出信息信息</p>
+						<p>演出信出信息</p>
+						<p>演出信息演演出信息演出信息出信息</p>
+						<p>演出信息演出信息</p>
+						<p>演出演出信息演出信息演出信息演出信息演出信息演出信息息</p>
+					</div>
+					<ul class="band">
+						
+					</ul>
+				</div>
+				<div role="tabpanel" class="tab-pane fade" id="comment">评论</div>
 			</div>
 		</div>
 	</div>
@@ -75,12 +126,14 @@ $(function() {
 	});
 
 
-	var tabIndex = ["#home", "#profile", "#messages", "#settings"].indexOf(location.hash);
+	var tabIndex = ["#detail", "#comment"].indexOf(location.hash);
 	$(".tablist li:eq(" + tabIndex +")").addClass("active");
-	$(".tab-content div:eq(" + tabIndex +")").addClass("active");
-	$('.tablist a').click(function () {
+	$(".tablist .underline").addClass("tab" + (tabIndex + 1));
+	$(".tab-content div:eq(" + tabIndex +")").addClass("in").addClass("active");
+	$(".tablist a").click(function () {
 		location.href = location.toString().split("#")[0] + $(this).attr("href");
-	})
+		$(".tablist .underline").removeClass("tab1 tab2").addClass($(this).parent()[0].className);
+	});
 
 });
 </script>
