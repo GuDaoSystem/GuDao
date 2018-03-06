@@ -203,11 +203,11 @@
 
 .top .info .want {
     padding: 0.6rem 1.2rem;
-	margin-left: 2.2rem;
     color: #f2f2f2;
 	font-size: 1.8rem;
 	position: absolute;
 	bottom: 1rem;
+	right: 2rem;
 }
 .top .info .want .glyphicon {
 	margin-right: 0.5rem;
@@ -268,4 +268,43 @@
 }
 .tablist .underline.tab2 {
 	left: calc((100% - 140px) / 2 + 70px);
+}
+
+
+.tab-content .tab-pane {
+	padding: 2rem 12rem 0;
+}
+
+
+.tab-content #detail .desc {
+	text-align: center;
+}
+
+.tab-content #detail .band {
+	margin-top: 1rem;
+}
+.tab-content #detail .band li {
+	padding: 1rem;
+}
+.tab-content #detail .band li div {
+	padding: 0.8rem;
+	border: 1px solid #333;
+	border-radius: 0.2rem;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.tab-content #detail .band li div:hover {
+	border: 1px solid #ffd700;
+}
+.tab-content #detail .band li div img {
+	width: 20%;
+}
+.tab-content #detail .band li div p {
+	display: inline-block;
+	padding-left: 0.5rem;
+	font-size: 1.6rem;
 }

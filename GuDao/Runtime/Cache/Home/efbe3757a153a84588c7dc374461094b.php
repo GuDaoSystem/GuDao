@@ -22,8 +22,11 @@
 	<div class="container content">
 		<div class="top">
 			<img src="/GuDao/Public/img/show/1.jpg" class="thumbnail"><div class="info">
-				<span class="state yushou">/&ensp;预售</span>
-				<p class="name">演出名称</p>
+				<span v-if="show.show_state == '1'" class="state yushou">/&ensp;预售</span>
+				<span v-else-if="show.show_state == '2'" class="state quxiao">/&ensp;取消</span>
+				<span v-else-if="show.show_state == '3'" class="state biangeng">/&ensp;变更</span>
+				<span v-else-if="show.show_state == '4'" class="state">/&ensp;结束</span>
+				<p class="name">{{show.show_name}}</p>
 				<ul>
 					<li>
 						<span class="glyphicon glyphicon-headphones"></span>
@@ -37,14 +40,14 @@
 							<p>具体地点：</p>
 						</div>
 						<div class="msg">
-							<p class="place">演出地点地点</p>
-							<p class="address">演出具体地点</p>
+							<p class="place">{{show.show_place}}</p>
+							<p class="address">{{show.show_address}}点</p>
 						</div>
 					</li>
 					<li>
 						<span class="glyphicon glyphicon-time"></span>
 						<p class="title">演出时间：</p>
-						<p class="msg">2017年12月24日 19:00</p>
+						<p class="msg">{{show.show_time}}</p>
 					</li>
 					<li>
 						<span class="glyphicon glyphicon-tag"></span>
@@ -69,17 +72,35 @@
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane fade" id="detail">
 					<div class="desc">
-						<p>演出信息演出信息</p>
+						<!-- <p>演出信息演出信息</p>
 						<p>演出信息演出信息演出信息演出信息演出信息演出信息</p>
 						<p>演出信息演演出信息演出信息出信息</p>
 						<p>演出信息演出演出信息演出信息演出信息演出信息演出信息演出信息信息</p>
 						<p>演出信出信息</p>
 						<p>演出信息演演出信息演出信息出信息</p>
 						<p>演出信息演出信息</p>
-						<p>演出演出信息演出信息演出信息演出信息演出信息演出信息息</p>
+						<p>演出演出信息演出信息演出信息演出信息演出信息演出信息息</p> -->
+						{{show.show_message}}
 					</div>
-					<ul class="band">
-						
+					<ul class="row band">
+						<li class="col-lg-4 col-sm-6">
+							<div>
+								<img src="/GuDao/Public/img/band/bandCover.jpg">
+								<p>乐队名称</p>
+							</div>
+						</li>
+						<li class="col-lg-4 col-sm-6">
+							<div>
+								<img src="/GuDao/Public/img/band/bandCover.jpg">
+								<p>乐队名称</p>
+							</div>
+						</li>
+						<li class="col-lg-4 col-sm-6">
+							<div>
+								<img src="/GuDao/Public/img/band/bandCover.jpg">
+								<p>乐队名称</p>
+							</div>
+						</li>
 					</ul>
 				</div>
 				<div role="tabpanel" class="tab-pane fade" id="comment">评论</div>
@@ -96,46 +117,9 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/common.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/component.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/showDetail.js"></script>
 
 <script>
-new Vue({
-	el: '#gudao',
-	components: {
-		"navbar": navbar,
-		"back-to-top": backToTop,
-		"copyright": copyright
-	}
-});
-$(function() {
-	var id = location.search.substr(1).split("=")[1];
-	$.ajax({
-		url: "/GuDao/index.php/Home/Show/getShowByID",
-		// type: "POST",
-		type: "GET",
-		dataType: "json",
-		data: {
-			// "target": 1,
-			"id": id,
-			// "user_id": 4,
-			// "show_id": 2,
-			// "time": "2017-12-22"
-		},
-		success: function(result) {
-			console.log(result);
-		}
-	});
-
-
-	var tabIndex = ["#detail", "#comment"].indexOf(location.hash);
-	$(".tablist li:eq(" + tabIndex +")").addClass("active");
-	$(".tablist .underline").addClass("tab" + (tabIndex + 1));
-	$(".tab-content div:eq(" + tabIndex +")").addClass("in").addClass("active");
-	$(".tablist a").click(function () {
-		location.href = location.toString().split("#")[0] + $(this).attr("href");
-		$(".tablist .underline").removeClass("tab1 tab2").addClass($(this).parent()[0].className);
-	});
-
-});
 </script>
 
 </body>
