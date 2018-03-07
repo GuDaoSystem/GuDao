@@ -71,17 +71,7 @@
 			</ul>
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane fade" id="detail">
-					<div class="desc">
-						<!-- <p>演出信息演出信息</p>
-						<p>演出信息演出信息演出信息演出信息演出信息演出信息</p>
-						<p>演出信息演演出信息演出信息出信息</p>
-						<p>演出信息演出演出信息演出信息演出信息演出信息演出信息演出信息信息</p>
-						<p>演出信出信息</p>
-						<p>演出信息演演出信息演出信息出信息</p>
-						<p>演出信息演出信息</p>
-						<p>演出演出信息演出信息演出信息演出信息演出信息演出信息息</p> -->
-						{{show.show_message}}
-					</div>
+					<div class="desc"><pre>{{show.show_message}}</pre></div>
 					<ul class="row band">
 						<li class="col-lg-4 col-sm-6">
 							<div>
@@ -103,7 +93,114 @@
 						</li>
 					</ul>
 				</div>
-				<div role="tabpanel" class="tab-pane fade" id="comment">评论</div>
+				<div role="tabpanel" class="tab-pane fade" id="comment">
+					<div class="send-box">
+						<div class="media">
+							<div class="media-left">
+								<a href="#">
+									<img class="media-object" src="/GuDao/Public/img/user/headImg.jpg">
+								</a>
+							</div>
+							<div class="media-body">
+								<textarea maxlength="140"></textarea>
+								<div class="bottom">
+									<p><span>0</span>/140</p>
+									<button>发送</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<ul class="comment-list media-list">
+						<li class="media">
+							<div class="media-left">
+								<a href="#">
+									<img class="media-object" src="/GuDao/Public/img/user/headImg.jpg">
+								</a>
+							</div>
+							<div class="media-body">
+								<div class="comment-content">
+									<div class="media-heading">
+										<p class="name"><a href="">用户名</a></p>
+										<p class="time">2017年12月23日 12:00</p>
+									</div>
+									<p>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+									<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
+								</div>
+
+								<div class="reply-box">
+									<textarea maxlength="100"></textarea>
+									<div class="bottom">
+										<p><span>0</span>/100</p>
+										<button>发送</button>
+									</div>
+								</div>
+
+								<ul class="reply-list media-list">
+									<li class="media">
+										<div class="media-left">
+											<a href="#">
+												<img class="media-object" src="/GuDao/Public/img/user/headImg.jpg">
+											</a>
+										</div>
+										<div class="media-body">
+											<div class="reply-content">
+												<div class="media-heading">
+													<p class="name"><a href="">用户名</a>&ensp;回复&ensp;<a href="">用户名</a></p>
+													<p class="time">2017年12月23日 12:00</p>
+												</div>
+												<p>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+												<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
+											</div>
+
+											<div class="reply-box">
+												<textarea maxlength="100"></textarea>
+												<div class="bottom">
+													<p><span>0</span>/100</p>
+													<button>发送</button>
+												</div>
+											</div>
+											
+										</div>
+									</li>
+									<li class="media">
+										<div class="media-left">
+											<a href="#">
+												<img class="media-object" src="/GuDao/Public/img/user/headImg.jpg">
+											</a>
+										</div>
+										<div class="media-body">
+											<div class="reply-content">
+												<div class="media-heading">
+													<p class="name"><a href="">用户名</a>&ensp;回复&ensp;<a href="">用户名</a></p>
+													<p class="time">2017年12月23日 12:00</p>
+												</div>
+												<p>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+												<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="media">
+							<div class="media-left">
+								<a href="#">
+									<img class="media-object" src="/GuDao/Public/img/user/headImg.jpg">
+								</a>
+							</div>
+							<div class="media-body">
+								<div class="comment-content">
+									<div class="media-heading">
+										<p class="name"><a href="">用户名</a></p>
+										<p class="time">2017年12月23日 12:00</p>
+									</div>
+									<p>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+									<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -120,6 +217,20 @@
 <script type="text/javascript" src="/GuDao/Public/js/showDetail.js"></script>
 
 <script>
+$(function() {
+	var textareaPadding = 12 * 1 * 2;
+	$("textarea").on("input", function () {
+		if((this.scrollHeight - textareaPadding) > $(this).height()) {
+			$(this).height(this.scrollHeight - textareaPadding);
+		}
+		$(this).next().find("span").text(this.value.length);
+	});
+
+
+	$(".reply").click(function() {
+		$(this).parent().next(".reply-box").toggle();
+	});
+});
 </script>
 
 </body>

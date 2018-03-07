@@ -19,10 +19,11 @@ new Vue({
 	},
 	mounted: function() {
 		this.$nextTick(function () {
-			var tabIndex = ["#detail", "#comment"].indexOf(location.hash);
+			var tabList = ["#detail", "#comment"];
+			var tabIndex = tabList.indexOf(location.hash);
 			$(".tablist li:eq(" + tabIndex +")").addClass("active");
 			$(".tablist .underline").addClass("tab" + (tabIndex + 1));
-			$(".tab-content div:eq(" + tabIndex +")").addClass("in").addClass("active");
+			$(tabList[tabIndex]).addClass("in").addClass("active");
 			$(".tablist a").click(function () {
 				location.href = location.toString().split("#")[0] + $(this).attr("href");
 				$(".tablist .underline").removeClass("tab1 tab2").addClass($(this).parent()[0].className);
@@ -31,9 +32,7 @@ new Vue({
 	},
 	updated: function () {
 		this.$nextTick(function () {
-			// $(".info").click(function() {
-			// 	location.href = "Show/detail?id=" + $(this).attr("index") + "#detail";
-			// });
+			$(document).scrollTop(0);
 		});
 	},
 	computed: {
@@ -57,7 +56,7 @@ new Vue({
 						data.show_time = time;
 
 						_this.show = data;
-						console.log(data);
+						// console.log(data.show_message);
 					}
 				}
 			});

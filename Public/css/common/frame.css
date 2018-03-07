@@ -12,6 +12,7 @@ body {
 
 a {
 	color: #333;
+	cursor: pointer;
 
 	-webkit-transition: all 0.2s;
 	-moz-transition: all 0.2s;
@@ -51,6 +52,16 @@ input:-moz-placeholder {
 }
 input:-ms-input-placeholder {
 	color: #333;
+}
+
+pre {
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
 }
 
 div.input {
