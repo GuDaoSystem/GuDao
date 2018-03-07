@@ -182,34 +182,7 @@
 
 <script>
 $(function() {
-	var textareaPadding = 12 * 1 * 2;
-	$("textarea").on("input", function () {
-		if((this.scrollHeight - textareaPadding) > $(this).height()) {
-			$(this).height(this.scrollHeight - textareaPadding);
-		}
-		$(this).next().find("span").text(this.value.length);
-	});
-
-
-	$(".reply").click(function() {
-		$(this).parent().next(".reply-box").toggle();
-	});
-
-
-	// $.ajax({
-	// 			url: "getCommentNReply",
-	// 			type: "GET",
-	// 			dataType: "json",
-	// 			data: {
-	// 				"target": 1,
-	// 				"id": location.search.substr(1).split("=")[1]
-	// 			},
-	// 			success: function(result) {
-	// 				if(result.code === 200) {
-	// 					console.log(result);
-	// 				}
-	// 			}
-	// 		});
+	
 });
 </script>
 

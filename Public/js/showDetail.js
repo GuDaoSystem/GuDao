@@ -30,11 +30,24 @@ new Vue({
 				location.href = location.toString().split("#")[0] + $(this).attr("href");
 				$(".tablist .underline").removeClass("tab1 tab2").addClass($(this).parent()[0].className);
 			});
+
 		});
 	},
 	updated: function () {
 		this.$nextTick(function () {
 			$(document).scrollTop(0);
+
+			var textareaPadding = 12 * 1 * 2;
+			$("textarea").on("input", function () {
+				if((this.scrollHeight - textareaPadding) > $(this).height()) {
+					$(this).height(this.scrollHeight - textareaPadding);
+				}
+				$(this).next().find("span").text(this.value.length);
+			});
+
+			$(".reply").click(function() {
+				$(this).parent().next(".reply-box").toggle();
+			});
 		});
 	},
 	computed: {
