@@ -1,7 +1,8 @@
 new Vue({
 	el: '#gudao',
 	data: {
-		show: {}
+		show: {},
+		comment: []
 	},
 	components: {
 		"navbar": navbar,
@@ -16,6 +17,7 @@ new Vue({
 		});
 
 		this.getShowDetail();
+		this.getComment();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
@@ -57,6 +59,24 @@ new Vue({
 
 						_this.show = data;
 						// console.log(data.show_message);
+					}
+				}
+			});
+		},
+		getComment: function() {
+			var _this = this;
+			$.ajax({
+				url: "getCommentNReply",
+				type: "GET",
+				dataType: "json",
+				data: {
+					"target": 1,
+					"id": location.search.substr(1).split("=")[1]
+				},
+				success: function(result) {
+					if(result.code === 200) {
+						_this.comment = result.data;
+						// console.log(_this.comment[1].reply[0]);
 					}
 				}
 			});

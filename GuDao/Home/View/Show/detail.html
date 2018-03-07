@@ -110,8 +110,9 @@
 							</div>
 						</div>
 					</div>
+
 					<ul class="comment-list media-list">
-						<li class="media">
+						<li v-for="comment in comment" class="media">
 							<div class="media-left">
 								<a href="#">
 									<img class="media-object" src="__PUBLIC__/img/user/headImg.jpg">
@@ -121,9 +122,9 @@
 								<div class="comment-content">
 									<div class="media-heading">
 										<p class="name"><a href="">用户名</a></p>
-										<p class="time">2017年12月23日 12:00</p>
+										<p class="time">{{comment.comment_time}}</p>
 									</div>
-									<p>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+									<p>{{comment.comment_content}}</p>
 									<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
 								</div>
 
@@ -134,9 +135,8 @@
 										<button>发送</button>
 									</div>
 								</div>
-
 								<ul class="reply-list media-list">
-									<li class="media">
+									<li v-for="reply in comment.reply" class="media">
 										<div class="media-left">
 											<a href="#">
 												<img class="media-object" src="__PUBLIC__/img/user/headImg.jpg">
@@ -146,12 +146,11 @@
 											<div class="reply-content">
 												<div class="media-heading">
 													<p class="name"><a href="">用户名</a>&ensp;回复&ensp;<a href="">用户名</a></p>
-													<p class="time">2017年12月23日 12:00</p>
+													<p class="time">{{reply.reply_time}}</p>
 												</div>
-												<p>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+												<p>{{reply.reply_content}}</p>
 												<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
 											</div>
-
 											<div class="reply-box">
 												<textarea maxlength="100"></textarea>
 												<div class="bottom">
@@ -159,44 +158,9 @@
 													<button>发送</button>
 												</div>
 											</div>
-											
-										</div>
-									</li>
-									<li class="media">
-										<div class="media-left">
-											<a href="#">
-												<img class="media-object" src="__PUBLIC__/img/user/headImg.jpg">
-											</a>
-										</div>
-										<div class="media-body">
-											<div class="reply-content">
-												<div class="media-heading">
-													<p class="name"><a href="">用户名</a>&ensp;回复&ensp;<a href="">用户名</a></p>
-													<p class="time">2017年12月23日 12:00</p>
-												</div>
-												<p>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
-												<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
-											</div>
 										</div>
 									</li>
 								</ul>
-							</div>
-						</li>
-						<li class="media">
-							<div class="media-left">
-								<a href="#">
-									<img class="media-object" src="__PUBLIC__/img/user/headImg.jpg">
-								</a>
-							</div>
-							<div class="media-body">
-								<div class="comment-content">
-									<div class="media-heading">
-										<p class="name"><a href="">用户名</a></p>
-										<p class="time">2017年12月23日 12:00</p>
-									</div>
-									<p>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
-									<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
-								</div>
 							</div>
 						</li>
 					</ul>
@@ -232,7 +196,20 @@ $(function() {
 	});
 
 
-	
+	// $.ajax({
+	// 			url: "getCommentNReply",
+	// 			type: "GET",
+	// 			dataType: "json",
+	// 			data: {
+	// 				"target": 1,
+	// 				"id": location.search.substr(1).split("=")[1]
+	// 			},
+	// 			success: function(result) {
+	// 				if(result.code === 200) {
+	// 					console.log(result);
+	// 				}
+	// 			}
+	// 		});
 });
 </script>
 
