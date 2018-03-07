@@ -32,20 +32,28 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
 
 <script>
-$(function() {
-	$.ajax({
-		url: "/GuDao/index.php/Home/Notice/getNoticeByPage",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"pageIndex": 1,
-			"pageSize": 2
-		},
-		success: function(result) {
-			console.log(result);
-		}
-	});
+new Vue({
+	el: '#gudao',
+	components: {
+		"navbar": navbar,
+		"back-to-top": backToTop,
+		"copyright": copyright
+	}
 });
+// $(function() {
+// 	$.ajax({
+// 		url: "/GuDao/index.php/Home/Notice/getNoticeByPage",
+// 		type: "GET",
+// 		dataType: "json",
+// 		data: {
+// 			"pageIndex": 1,
+// 			"pageSize": 2
+// 		},
+// 		success: function(result) {
+// 			console.log(result);
+// 		}
+// 	});
+// });
 </script>
 
 </body>

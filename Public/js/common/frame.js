@@ -15,7 +15,7 @@ $(function() {
 	}
 	if(sessionStorage.getItem("userID")) {
 		$.ajax({
-			url: "../User/getUserBasicInfo",
+			url: "../../GuDao/User/getUserBasicInfo",
 			type: "GET",
 			dataType: "json",
 			data: {
