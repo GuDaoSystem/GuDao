@@ -13,6 +13,19 @@ $(function() {
 	} else {
 		$(".didLogin").hide();
 	}
+	if(sessionStorage.getItem("userID")) {
+		$.ajax({
+			url: "../User/getUserBasicInfo",
+			type: "GET",
+			dataType: "json",
+			data: {
+				"id": sessionStorage.getItem("userID")
+			},
+			success: function(result) {
+				console.log(result);
+			}
+		});
+	}
 
 
 	// 导航栏avtive状态
