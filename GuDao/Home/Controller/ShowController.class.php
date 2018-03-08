@@ -19,7 +19,22 @@ class ShowController extends Controller {
 
 
 
-    /* -------------------- 演出列表页面 -------------------- */
+    /* -------------------- 演出列表页 -------------------- */
+
+    // 获取所有演出地点
+    public function getShowPlace() {
+        $show = new ShowModel();
+        $data = $show->getShowPlace();
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
 
     // 按页获取演出列表
     public function getShowByPage() {
@@ -89,7 +104,7 @@ class ShowController extends Controller {
 
 
 
-    /* -------------------- 演出详细页面 -------------------- */
+    /* -------------------- 演出详细页 -------------------- */
 
     // 按ID获取指定演出
     public function getShowByID() {
@@ -104,6 +119,36 @@ class ShowController extends Controller {
     		$result["msg"] = "查询失败";
     	}
     	$this->ajaxReturn($result);
+    }
+
+    // 获取演出参演乐队
+    public function getBandByShow() {
+        $attend = new AttendModel();
+        $bandID = $attend->getBandIDByShow($_GET["id"]);
+        if(!$bandID) {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+            $this->ajaxReturn($result);
+        }
+        for($i = 0; $i < count($bandID); $i++) {
+            if(!$bandID[$i]) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+                $this->ajaxReturn($result);
+            }
+            $band = new BandModel();
+            $data[$i] = $band->getBandByID($bandID[$i]);
+            if(!$data[$i]) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+                $this->ajaxReturn($result);
+            }
+        }
+
+        $result["code"] = 200;
+        $result["msg"] = "查询成功";
+        $result["data"] = $data;
+        $this->ajaxReturn($result);
     }
 
     // 获取演出想看的用户数量
@@ -165,36 +210,6 @@ class ShowController extends Controller {
             $result["code"] = 201;
             $result["msg"] = "删除想看记录失败";
         }
-        $this->ajaxReturn($result);
-    }
-
-    // 获取演出参演乐队
-    public function getBandByShow() {
-        $attend = new AttendModel();
-        $bandID = $attend->getBandIDByShow($_GET["id"]);
-        if(!$bandID) {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-            $this->ajaxReturn($result);
-        }
-        for($i = 0; $i < count($bandID); $i++) {
-            if(!$bandID[$i]) {
-                $result["code"] = 201;
-                $result["msg"] = "查询失败";
-                $this->ajaxReturn($result);
-            }
-            $band = new BandModel();
-            $data[$i] = $band->getBandByID($bandID[$i]);
-            if(!$data[$i]) {
-                $result["code"] = 201;
-                $result["msg"] = "查询失败";
-                $this->ajaxReturn($result);
-            }
-        }
-
-        $result["code"] = 200;
-        $result["msg"] = "查询成功";
-        $result["data"] = $data;
         $this->ajaxReturn($result);
     }
 

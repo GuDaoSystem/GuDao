@@ -41,31 +41,34 @@ new Vue({
 	}
 });
 $(function() {
-	// $.ajax({
-	// 	url: "/GuDao/index.php/Home/Notice/getNoticeByPage",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"pageIndex": 1,
-	// 		"pageSize": 10
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+	// 获取全部
 	$.ajax({
-		url: "/GuDao/index.php/Home/Notice/getNoticeByType",
+		url: "/GuDao/index.php/Home/Notice/getNoticeByPage",
 		type: "GET",
 		dataType: "json",
 		data: {
 			"pageIndex": 1,
-			"pageSize": 10,
-			"type": 1
+			"pageSize": 10
 		},
 		success: function(result) {
 			console.log(result);
 		}
 	});
+	
+	// // 按类型获取
+	// $.ajax({
+	// 	url: "/GuDao/index.php/Home/Notice/getNoticeByType",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"pageIndex": 1,
+	// 		"pageSize": 10,
+	// 		"type": 1
+	// 	},
+	// 	success: function(result) {
+	// 		console.log(result);
+	// 	}
+	// });
 });
 </script>
 

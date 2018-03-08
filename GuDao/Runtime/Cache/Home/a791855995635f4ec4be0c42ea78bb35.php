@@ -29,8 +29,7 @@
 			<ul class="place">
 				<p>演出地点</p>
 				<li class="active"><a>全部</a></li>
-				<li><a>广东外语外贸大学</a></li>
-				<li><a>Encore LiveClub</a></li>
+				<li v-for="item in place"><a>{{item}}</a></li>
 			</ul>
 			<ul class="state">
 				<p>演出状态</p>

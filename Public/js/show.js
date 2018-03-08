@@ -1,6 +1,7 @@
 new Vue({
 	el: '#gudao',
 	data: {
+		place: [],
 		showByPage: []
 	},
 	components: {
@@ -15,11 +16,11 @@ new Vue({
 			removeLoading();
 		});
 
+		this.getShowPlace();
 		this.getShowByPage();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
-			$(".condition a").click(this.getShowByCondition);
 		});
 	},
 	updated: function () {
@@ -27,6 +28,8 @@ new Vue({
 			$(".info").click(function() {
 				location.href = "Show/detail?id=" + $(this).attr("index") + "#detail";
 			});
+			
+			$(".condition a").click(this.getShowByCondition);
 		});
 	},
 	computed: {
@@ -41,6 +44,19 @@ new Vue({
 		}
 	},
 	methods: {
+		getShowPlace: function() {
+			var _this = this;
+			$.ajax({
+				url: "Show/getShowPlace",
+				dataType: "json",
+				success: function(result) {
+					// console.log(result);
+					if(result.code === 200) {
+						_this.place = result.data;
+					}
+				}
+			});
+		},
 		getShowByPage: function() {
 			var _this = this;
 			$.ajax({
@@ -52,6 +68,7 @@ new Vue({
 					"pageSize": 6
 				},
 				success: function(result) {
+					// console.log(result.data);
 					_this.showByPage = result.data;
 				}
 			});

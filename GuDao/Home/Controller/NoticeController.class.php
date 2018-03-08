@@ -7,7 +7,7 @@ class NoticeController extends Controller {
         $this->display();
     }
 
-    // 按页获取所有通知
+    // 按页获取通知列表
     public function getNoticeByPage() {
     	$startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
     	$pageLength = $_GET["pageSize"];
@@ -24,7 +24,7 @@ class NoticeController extends Controller {
     	$this->ajaxReturn($result);
     }
 
-    // 按类型获取通知
+    // 按类型获取通知列表
     public function getNoticeByType() {
         $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
         $pageLength = $_GET["pageSize"];

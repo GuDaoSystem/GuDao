@@ -1,0 +1,564 @@
+
+---------------------------------------- 演出列表页 ----------------------------------------
+
+
+- 获取所有演出地点
+
+1. 接口地址：Show/getShowPlace
+
+2. 请求方式：无
+
+3. 响应类型：json
+
+4. 请求参数：无
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Array				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": ["Encore LiveClub"]
+	}
+
+6. 补充：无
+
+
+- 按页获取演出列表
+
+1. 接口地址：Show/getShowByPage
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	pageIndex	Number		是		分页索引（第几页）
+	pageSize	Number		是		分页大小（每页显示几个记录）
+
+	参考示例：
+	{
+		"pageIndex": 1,
+		"pageSize": 2
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Array				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": [{
+			"show_id": "1",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_place": "Encore LiveClub",
+			"show_address": "广州大学城南亭商业区南亭大道35号顶层",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2",
+			"want": "233",
+			"band": [{
+				"band_id": "1",
+				"band_name": "冷气机吹底裤",
+				"band_intro": "啊啊啊啊啊啊",
+				"band_cover": "band/band1_01.jpg",
+				"band_nameinitial": "L",
+			}]
+		}]
+	}
+
+6. 补充：无
+
+
+- 按条件获取演出列表
+
+1. 接口地址：Show/getShowByPage
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	pageIndex	Number		是		分页索引（第几页）
+	pageSize	Number		是		分页大小（每页显示几个记录）
+	sort		String		否		演出排序（“按热度”排序时值为"hot"）
+	place		String		否		演出地点（“全部”时值为空）
+	state		Number		否		演出状态（1为预售，2为取消，3为变更，4为结束，“全部”时值为空）
+
+	参考示例：
+	{
+		"pageIndex": 1,
+		"pageSize": 2，
+		"sort": "hot",
+		"place": "Encore LiveClub",
+		"state": 1
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Array				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": [{
+			"show_id": "1",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_place": "Encore LiveClub",
+			"show_address": "广州大学城南亭商业区南亭大道35号顶层",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2",
+			"want": "233",
+			"band": [{
+				"band_id": "1",
+				"band_name": "冷气机吹底裤",
+				"band_intro": "啊啊啊啊啊啊",
+				"band_cover": "band/band1_01.jpg",
+				"band_nameinitial": "L",
+			}]
+		}]
+	}
+
+6. 补充：无
+
+
+
+---------------------------------------- 演出详细页 ----------------------------------------
+
+
+- 按ID获取指定演出
+
+1. 接口地址：getShowByID
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		演出ID
+
+	参考示例：
+	{
+		"id": 1
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Object				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": {
+			"show_id": "1",
+			"show_name": "未来现场Future Live 2017（广州站）",
+			"show_time": "2017-11-18 19:00:00",
+			"show_address": "Encore LiveClub",
+			"show_message": "aaaaaaaaaaaaaaaaaaaaaaa",
+			"show_ticket": "40",
+			"show_poster": "../img/show/1.jpg",
+			"show_state": "2"
+		}
+	}
+
+6. 补充：无
+
+
+- 获取演出参演乐队
+
+1. 接口地址：getBandByShow
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		演出ID
+
+	参考示例：
+	{
+		"id": 1
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		Object				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": [{
+			"band_id": "3",
+			"band_name": "Slash",
+			"band_intro": "aaaaaaaaaaaaaaaaaaaaaa",
+			"band_cover": "band/band1_01.jpg",
+			"band_nameinitial": "S"
+		}]
+	}
+
+6. 补充：无
+
+
+- 获取演出想看的用户数量
+
+1. 接口地址：getWantUserNum
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	id			Number		是		演出ID
+
+	参考示例：
+	{
+		"id": 1
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		String				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": "233"
+	}
+
+6. 补充：无
+
+
+- 检查用户是否想看
+
+1. 接口地址：checkWant
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	user_id		Number		是		用户ID
+	show_id		Number		是		演出ID
+
+	参考示例：
+	{
+		"user_id": 4,
+		"show_id": 2
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功"
+	}
+
+6. 补充：无
+
+
+- 新增想看
+
+1. 接口地址：addWant
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	user_id		Number		是		用户ID
+	show_id		Number		是		演出ID
+	time		String		是		时间（格式为yyyy-mm-dd）
+
+	参考示例：
+	{
+		"user_id": 4,
+		"show_id": 2,
+		"time": "2017-12-22"
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "新增想看记录成功"
+	}
+
+6. 补充：
+
+	1) 演出状态为取消（show_state = 2）或结束（show_state = 4）时不能进行此操作。
+
+
+- 删除想看
+
+1. 接口地址：deleteWant
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	user_id		Number		是		用户ID
+	show_id		Number		是		演出ID
+
+	参考示例：
+	{
+		"user_id": 4,
+		"show_id": 2
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "删除想看记录成功"
+	}
+
+6. 补充：
+
+	1) 演出状态为取消（show_state = 2）或结束（show_state = 4）时不能进行此操作。
+
+
+- 获取评价及回复
+
+1. 接口地址：getCommentNReply
+
+2. 请求方式：GET
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	target		Number		是		评论的对象（取值为1）
+	id			Number		是		演出ID
+
+	参考示例：
+	{
+		"target": 1,
+		"id": 2
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+	data		String				响应数据
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "查询成功",
+		"data": [{
+			"comment_id": "1",
+			"comment_target": "1",
+			"target_id": "2",
+			"comment_content": "aaaaaaa",
+			"comment_time": "2018-12-01 12:00:00",
+			"user_id": "1",
+			"user": {
+				"user_id": "1",
+				"username": "111",
+				"gender": "0",
+				"birthday": "2000-01-01",
+				"headshot": "i.jpg",
+				"intro": "aaaaa",
+			},
+			"reply": [{
+				"reply_id": "1",
+				"comment_id": "1",
+				"reply_content": "aaaaa",
+				"reply_time": "2018-12-01 12:00:00",
+				"reply_type": "0",
+				"user_id": 5,
+				"user": {
+					"user_id": "5",
+					"username": "555",
+					"gender": "0",
+					"birthday": "2000-01-01",
+					"headshot": "i.jpg",
+					"intro": "aaaaa",
+				},
+				"target_id": 1,
+				"target": {
+					"user_id": "1",
+					"username": "111",
+					"gender": "0",
+					"birthday": "2000-01-01",
+					"headshot": "i.jpg",
+					"intro": "aaaaa",
+				},
+			}]
+		}]
+	}
+
+6. 补充：无
+
+
+- 发送评论
+
+1. 接口地址：sendComment
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	content		String		是		评论内容
+	user_id		Number		是		评论者ID
+	time		String		是		评论的时间（格式为yyyy-mm-dd）
+	target		Number		是		评论的对象（取值为1）
+	target_id	Number		是		演出ID
+
+	参考示例：
+	{
+		"content": "aaaaaaa",
+		"user_id": 1,
+		"time": "2018-11-23",
+		"target": 1,
+		"target_id": 1
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "评论成功"
+	}
+
+6. 补充：无
+
+
+- 回复评论
+
+1. 接口地址：replyComment
+
+2. 请求方式：POST
+
+3. 响应类型：json
+
+4. 请求参数：
+
+	参数名称	参数类型	必选	说明
+	--------------------------------------
+	comment_id	Number		是		所回复的评论ID
+	content		String		是		回复内容
+	time		String		是		回复的时间（格式为yyyy-mm-dd）
+	type		Number		是		（取值为1）
+	user_id		Number		是		回复者ID
+	target_id	Number		是		被回复者ID
+
+	参考示例：
+	{
+		"comment_id": 1,
+		"content": "aaaaa",
+		"time": "2018-11-23",
+		"type": 1,
+		"user_id": 1,
+		"target_id": 1
+	}
+
+5. 响应参数：
+
+	参数名称	参数类型			说明
+	----------------------------------------
+	code		Number				状态码
+	msg			String				状态说明
+
+	参考示例：
+	{
+		"code": 200,
+		"msg": "回复成功"
+	}
+
+6. 补充：无

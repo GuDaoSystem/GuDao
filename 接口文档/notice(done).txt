@@ -1,6 +1,10 @@
-- 按页获取所有通知
 
-1. 接口地址：__URL__/getNoticeByPage
+---------------------------------------- 通知列表页 ----------------------------------------
+
+
+- 按页获取通知列表
+
+1. 接口地址：Notice/getNoticeByPage
 
 2. 请求方式：GET
 
@@ -37,23 +41,15 @@
 			"notice_time": "2017-11-12 00:00:00",
 			"notice_message": "未来现场Futrue Live 2017（广州站）开始预售啦！",
 			"show_id": "1"
-		}, {
-			"notice_id": "2",
-			"notice_type": "1",
-			"notice_time": "2017-11-12 00:00:00",
-			"notice_message": "未来现场Futrue Live 2017（广州站）开始预售啦！",
-			"show_id": "1"
 		}]
 	}
 
 6. 补充：无
 
 
-
-
 - 按类型获取通知
 
-1. 接口地址：__URL__/getNoticeByType
+1. 接口地址：Notice/getNoticeByType
 
 2. 请求方式：GET
 
@@ -88,12 +84,6 @@
 		"msg": "查询成功",
 		"data": [{
 			"notice_id": "1",
-			"notice_type": "1",
-			"notice_time": "2017-11-12 00:00:00",
-			"notice_message": "未来现场Futrue Live 2017（广州站）开始预售啦！",
-			"show_id": "1"
-		}, {
-			"notice_id": "2",
 			"notice_type": "1",
 			"notice_time": "2017-11-12 00:00:00",
 			"notice_message": "未来现场Futrue Live 2017（广州站）开始预售啦！",

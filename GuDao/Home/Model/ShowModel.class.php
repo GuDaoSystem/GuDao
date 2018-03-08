@@ -18,11 +18,6 @@ class ShowModel extends Model {
     }
 
     // 按条件获取演出
-    // public function getShowByCondition($startIndex, $pageLength, $condition) {
-    //     $show = new ShowModel();
-    //     $result = $show->where($condition)->order("show_time desc")->limit($startIndex, $pageLength)->select();
-    //     return $result;
-    // }
     public function getShowByCondition($startIndex, $pageLength, $condition) {
         $show = new ShowModel();
         $result = $show->where($condition)->order("show_time desc")->limit($startIndex, $pageLength)->select();
@@ -34,6 +29,13 @@ class ShowModel extends Model {
         $show = new ShowModel();
         $map["show_time"] = array("like", $month."%");
         $result = $show->where($map)->field("count('show_id') as count, show_time")->group("show_time")->select();
+        return $result;
+    }
+
+    // 获取所有演出地点
+    public function getShowPlace() {
+        $show = new ShowModel();
+        $result = $show->getField('show_place', true);
         return $result;
     }
 }

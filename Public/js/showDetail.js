@@ -214,6 +214,15 @@ new Vue({
 		},
 		toggleWant: function() {
 			var _this = this;
+			if(this.show.show_state == 2 || this.show.show_state == 4) {
+				setAlertBox({
+					className: "text",
+					close: true,
+					title: "孤岛提示",
+					message: "该演出状态下不能进行“想看”操作"
+				});
+				return;
+			}
 			var user_id = sessionStorage.getItem("userID");
 			var show_id = location.search.substr(1).split("=")[1];
 			if($(".want").hasClass("active")) {
@@ -267,7 +276,7 @@ new Vue({
 					// console.log(result.data[1].reply);
 					if(result.code === 200) {
 						_this.comments = result.data;
-						// console.log(_this.comments);
+						console.log(_this.comments);
 					}
 				}
 			});
