@@ -16,4 +16,11 @@ class CommentModel extends Model {
 		$result = $comment->where($map)->order("comment_time desc")->select();
 		return $result;
 	}
+
+	// 发送评论
+	public function sendComment($param) {
+		$comment = new CommentModel();
+		$result = $comment->add($param);
+		return $result;
+	}
 }

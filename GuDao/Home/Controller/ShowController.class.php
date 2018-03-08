@@ -121,31 +121,49 @@ class ShowController extends Controller {
         $this->ajaxReturn($result);
     }
 
-    // 点击想看/取消想看
-    public function toggleWant() {
+    // 检测是否想看
+    public function checkWant() {
         $data["user_id"] = $_POST["user_id"];
         $data["show_id"] = $_POST["show_id"];
         $want = new WantModel();
-        // 取消想看
-        if($want->checkWant($data)) {
-            if($want->deleteWant($data)) {
-                $result["code"] = 200;
-                $result["msg"] = "删除想看记录成功";
-            } else {
-                $result["code"] = 201;
-                $result["msg"] = "删除想看记录失败";
-            }
+        $data = $want->checkWant($data);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
         }
-        // 想看
-        else {
-            $data["want_time"] = $_POST["time"];
-            if($want->addWant($data)) {
-                $result["code"] = 200;
-                $result["msg"] = "新增想看记录成功";
-            } else {
-                $result["code"] = 201;
-                $result["msg"] = "新增想看记录失败";
-            }
+        $this->ajaxReturn($result);
+    }
+
+    // 新增想看
+    public function addWant() {
+        $data["user_id"] = $_POST["user_id"];
+        $data["show_id"] = $_POST["show_id"];
+        $data["want_time"] = $_POST["time"];
+        $want = new WantModel();
+        if($want->addWant($data)) {
+             $result["code"] = 200;
+            $result["msg"] = "新增想看记录成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "新增想看记录失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+    // 删除想看
+    public function deleteWant() {
+        $data["user_id"] = $_POST["user_id"];
+        $data["show_id"] = $_POST["show_id"];
+        $want = new WantModel();
+        if($want->deleteWant($data)) {
+             $result["code"] = 200;
+            $result["msg"] = "删除想看记录成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "删除想看记录失败";
         }
         $this->ajaxReturn($result);
     }
@@ -188,18 +206,15 @@ class ShowController extends Controller {
         $data = $comment->getCommentByTarget($data);
         if(!$data) {
             $result["code"] = 201;
-            $result["msg"] = "查询失败";
+            $result["msg"] = "查询失败1";
             $this->ajaxReturn($result);
         }
         for($i = 0; $i < count($data); $i++) {
             if(!$data[$i]) {
                 $result["code"] = 201;
-                $result["msg"] = "查询失败";
+                $result["msg"] = "查询失败2";
                 $this->ajaxReturn($result);
             }
-
-            $reply = new ReplyModel();
-            $data[$i]["reply"] = $reply->getReplyByComment($data[$i]["comment_id"]);
 
             $user = new UserModel();
             $data[$i]["user"] = $user->getUserBasicInfo($data[$i]["user_id"]);
@@ -208,11 +223,71 @@ class ShowController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
+
+            $reply = new ReplyModel();
+            $data[$i]["reply"] = $reply->getReplyByComment($data[$i]["comment_id"]);
+            if($data[$i]["reply"]) {
+                for($j = 0; $j < count($data[$i]["reply"]); $j++) {
+                    $user = new UserModel();
+                    $data[$i]["reply"][$j]["user"] = $user->getUserBasicInfo($data[$i]["reply"][$j]["user_id"]);
+                    if(!$data[$i]["reply"][$j]["user"]) {
+                        $result["code"] = 201;
+                        $result["msg"] = "查询失败";
+                        $this->ajaxReturn($result);
+                    }
+                    $data[$i]["reply"][$j]["target"] = $user->getUserBasicInfo($data[$i]["reply"][$j]["target_id"]);
+                    if(!$data[$i]["reply"][$j]["target"]) {
+                        $result["code"] = 201;
+                        $result["msg"] = "查询失败";
+                        $this->ajaxReturn($result);
+                    }
+                }
+                
+            }
         }
 
         $result["code"] = 200;
         $result["msg"] = "查询成功";
         $result["data"] = $data;
+        $this->ajaxReturn($result);
+    }
+
+    // 发送评论
+    public function sendComment() {
+        $data["comment_content"] = $_POST["content"];
+        $data["user_id"] = $_POST["user_id"];
+        $data["comment_time"] = $_POST["time"];
+        $data["comment_target"] = $_POST["target"];
+        $data["target_id"] = $_POST["target_id"];
+        $comment = new CommentModel();
+        $data = $comment->sendComment($data);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "评论成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "评论失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+    // 回复评论
+    public function replyComment() {
+        $data["comment_id"] = $_POST["comment_id"];
+        $data["reply_content"] = $_POST["content"];
+        $data["reply_type"] = $_POST["type"];
+        $data["reply_time"] = $_POST["time"];
+        $data["user_id"] = $_POST["user_id"];
+        $data["target_id"] = $_POST["target_id"];
+        $reply = new ReplyModel();
+        $data = $reply->replyComment($data);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "回复成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "回复失败";
+        }
         $this->ajaxReturn($result);
     }
 }

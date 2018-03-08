@@ -3,7 +3,8 @@ new Vue({
 	data: {
 		show: {},
 		bands: [],
-		want: "",
+		wantNum: 0,
+		want: false,
 		comments: []
 	},
 	components: {
@@ -20,7 +21,8 @@ new Vue({
 
 		this.getShow();
 		this.getBand();
-		this.getWant();
+		this.getWantNum();
+		this.checkWant();
 		this.getComment();
 	},
 	mounted: function() {
@@ -30,15 +32,17 @@ new Vue({
 			$(".tablist li:eq(" + tabIndex +")").addClass("active");
 			$(".tablist .underline").addClass("tab" + (tabIndex + 1));
 			$(tabList[tabIndex]).addClass("in").addClass("active");
-			$(".tablist a").click(function () {
+			$(".tablist a").unbind("click").click(function () {
 				location.href = location.toString().split("#")[0] + $(this).attr("href");
 				$(".tablist .underline").removeClass("tab1 tab2").addClass($(this).parent()[0].className);
 			});
 
+			$(".want").unbind("click").click(this.toggleWant);
 		});
 	},
 	updated: function () {
 		this.$nextTick(function () {
+			var _this = this;
 			$(document).scrollTop(0);
 
 			var textareaPadding = 12 * 1 * 2;
@@ -49,8 +53,84 @@ new Vue({
 				$(this).next().find("span").text(this.value.length);
 			});
 
-			$(".reply").click(function() {
+			$(".band div").unbind("click").click(function() {
+				location.href = "../Band/detail?id=" + $(this).attr("index");
+			});
+
+			$(".send-box .send").unbind("click").click(function() {
+				var send = $(this);
+				var content = send.parent().prev("textarea").val();
+				if(!content) {
+					setAlertBox({
+						className: "text",
+						close: true,
+						title: "孤岛提示",
+						message: "请输入评论内容"
+					});
+					return;
+				}
+				var time = new Date();
+				time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+				$.ajax({
+					url: "sendComment",
+					type: "POST",
+					dataType: "json",
+					data: {
+						"content": content,
+						"user_id": sessionStorage.getItem("userID"),
+						"time": time,
+						"target": 1,
+						"target_id": location.search.substr(1).split("=")[1]
+					},
+					success: function(result) {
+						if(result.code === 200) {
+							// console.log(result);
+							send.parent().prev("textarea").val("");
+							_this.getComment();
+						}
+					}
+				});
+			});
+
+			$(".reply").unbind("click").click(function() {
 				$(this).parent().next(".reply-box").toggle();
+			});
+
+			$(".reply-box .send").unbind("click").click(function() {
+				var send = $(this);
+				var content = send.parent().prev("textarea").val();
+				if(!content) {
+					setAlertBox({
+						className: "text",
+						close: true,
+						title: "孤岛提示",
+						message: "请输入评论内容"
+					});
+					return;
+				}
+				var time = new Date();
+				time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+				$.ajax({
+					url: "replyComment",
+					type: "POST",
+					dataType: "json",
+					data: {
+						"comment_id": send.parents(".comment").attr("commentid"),
+						"content": content,
+						"time": time,
+						"type": 1,
+						"user_id": sessionStorage.getItem("userID"),
+						"target_id": send.parents(".comment").attr("Userid")
+					},
+					success: function(result) {
+						if(result.code === 200) {
+							// console.log(result);
+							send.parent().prev("textarea").val("");
+							$(".reply-box").hide();
+							_this.getComment();
+						}
+					}
+				});
 			});
 		});
 	},
@@ -97,7 +177,7 @@ new Vue({
 				}
 			});
 		},
-		getWant: function() {
+		getWantNum: function() {
 			var _this = this;
 			$.ajax({
 				url: "getWantUserNum",
@@ -108,11 +188,70 @@ new Vue({
 				},
 				success: function(result) {
 					if(result.code === 200) {
-						_this.want = result.data;
+						_this.wantNum = result.data;
 						// console.log(_this.want);
 					}
 				}
 			});
+		},
+		checkWant: function() {
+			var _this = this;
+			$.ajax({
+				url: "checkWant",
+				type: "POST",
+				dataType: "json",
+				data: {
+					"user_id": sessionStorage.getItem("userID"),
+					"show_id": location.search.substr(1).split("=")[1],
+				},
+				success: function(result) {
+					// console.log(result);
+					if(result.code === 200) {
+						_this.want = true;
+					}
+				}
+			});
+		},
+		toggleWant: function() {
+			var _this = this;
+			var user_id = sessionStorage.getItem("userID");
+			var show_id = location.search.substr(1).split("=")[1];
+			if($(".want").hasClass("active")) {
+				$.ajax({
+					url: "deleteWant",
+					type: "POST",
+					dataType: "json",
+					data: {
+						"user_id": sessionStorage.getItem("userID"),
+						"show_id": location.search.substr(1).split("=")[1]
+					},
+					success: function(result) {
+						if(result.code === 200) {
+							_this.wantNum --;
+							_this.want = false;
+						}
+					}
+				});
+			} else {
+				var time = new Date();
+				time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
+				$.ajax({
+					url: "addWant",
+					type: "POST",
+					dataType: "json",
+					data: {
+						"user_id": sessionStorage.getItem("userID"),
+						"show_id": location.search.substr(1).split("=")[1],
+						"time": time
+					},
+					success: function(result) {
+						if(result.code === 200) {
+							_this.wantNum ++;
+							_this.want = true;
+						}
+					}
+				});
+			}
 		},
 		getComment: function() {
 			var _this = this;
@@ -125,6 +264,7 @@ new Vue({
 					"id": location.search.substr(1).split("=")[1]
 				},
 				success: function(result) {
+					// console.log(result.data[1].reply);
 					if(result.code === 200) {
 						_this.comments = result.data;
 						// console.log(_this.comments);

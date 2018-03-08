@@ -209,13 +209,23 @@
 	bottom: 1rem;
 	right: 2rem;
 }
+.top .info .want.active {
+	background: #ffd700;
+	color: #333;
+}
 .top .info .want .glyphicon {
 	margin-right: 0.5rem;
 	color: #ffd700;
 }
+.top .info .want.active .glyphicon {
+	color: #333;
+}
 .top .info .want .num {
 	color: #ffd700;
 	font-weight: bold;
+}
+.top .info .want.active .num {
+	color: #0d0d0d;
 }
 
 

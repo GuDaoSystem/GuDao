@@ -33,8 +33,8 @@
 						<p class="title">演出乐队：</p>
 						<p class="msg">
 							<span v-for="band, index in bands">
-								<span v-if="index + 1 == bands.length"><a href="">{{band.band_name}}</a></span>
-								<span v-else><a href="">{{band.band_name}}</a>&ensp;/&ensp;</span>
+								<span v-if="index + 1 == bands.length"><a :href="'../Band/detail?id=' + band.band_id">{{band.band_name}}</a></span>
+								<span v-else><a :href="'../Band/detail?id=' + band.band_id">{{band.band_name}}</a>&ensp;/&ensp;</span>
 							</span>
 						</p>
 					</li>
@@ -59,14 +59,14 @@
 						<p class="title">演出门票：</p>
 						<p v-if="show.show_ticket == 0" class="msg">免票</p>
 						<p v-else class="msg"><span class="value">￥{{show.show_ticket}}</span></p>
-						<!-- <ul class="msg">
+						<!-- <ul v-else class="msg">
 							<li><span class="value">￥21</span>（预售票，不含酒）</li>
 							<li><span class="value">￥21</span>（预售票，不含酒）</li>
 							<li><span class="value">￥21</span>（预售票，不含酒）</li>
 						</ul> -->
 					</li>
 				</ul>
-				<button class="want"><span class="glyphicon glyphicon-eye-open"></span><span class="num">{{want}}</span>人想看</button>
+				<button class="want" :class="{active: want}"><span class="glyphicon glyphicon-eye-open"></span><span class="num">{{wantNum}}</span>人想看</button>
 			</div>
 		</div>
 
@@ -81,7 +81,7 @@
 					<div class="desc"><pre>{{show.show_message}}</pre></div>
 					<ul class="row band">
 						<li v-for="band in bands" class="col-lg-4 col-sm-6">
-							<div>
+							<div :index="band.band_id">
 								<img src="__PUBLIC__/img/user/headImg.jpg">
 								<p>{{band.band_name}}</p>
 							</div>
@@ -100,14 +100,14 @@
 								<textarea maxlength="140"></textarea>
 								<div class="bottom">
 									<p><span>0</span>/140</p>
-									<button>发送</button>
+									<button class="send">发送</button>
 								</div>
 							</div>
 						</div>
 					</div>
 
 					<ul class="comment-list media-list">
-						<li v-for="comment in comments" class="media">
+						<li v-for="comment in comments" :commentid="comment.comment_id" :userid="comment.user_id" class="comment media">
 							<div class="media-left">
 								<a href="#">
 									<img class="media-object" src="__PUBLIC__/img/user/headImg.jpg">
@@ -116,7 +116,7 @@
 							<div class="media-body">
 								<div class="comment-content">
 									<div class="media-heading">
-										<p class="name"><a href="">{{comment.user.username}}</a></p>
+										<p class="name"><a :href="'../User/user?id=' + comment.user_id">{{comment.user.username}}</a></p>
 										<p class="time">{{comment.comment_time}}</p>
 									</div>
 									<p>{{comment.comment_content}}</p>
@@ -127,7 +127,7 @@
 									<textarea maxlength="100"></textarea>
 									<div class="bottom">
 										<p><span>0</span>/100</p>
-										<button>发送</button>
+										<button class="send">发送</button>
 									</div>
 								</div>
 								<ul class="reply-list media-list">
@@ -140,7 +140,7 @@
 										<div class="media-body">
 											<div class="reply-content">
 												<div class="media-heading">
-													<p class="name"><a href="">用户名</a>&ensp;回复&ensp;<a href="">用户名</a></p>
+													<p class="name"><a href="">{{reply.user.username}}</a>&ensp;回复&ensp;<a href="">{{reply.target.username}}</a></p>
 													<p class="time">{{reply.reply_time}}</p>
 												</div>
 												<p>{{reply.reply_content}}</p>
@@ -150,7 +150,7 @@
 												<textarea maxlength="100"></textarea>
 												<div class="bottom">
 													<p><span>0</span>/100</p>
-													<button>发送</button>
+													<button class="send">发送</button>
 												</div>
 											</div>
 										</div>
@@ -177,25 +177,7 @@
 
 <script>
 $(function() {
-	$(".want").click(function() {
-		var user_id = sessionStorage.getItem("userID");
-		var show_id = location.search.substr(1).split("=")[1];
-		var time = new Date();
-		time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
-		$.ajax({
-			url: "toggleWant",
-			type: "POST",
-			dataType: "json",
-			data: {
-				"user_id": sessionStorage.getItem("userID"),
-				"show_id": location.search.substr(1).split("=")[1],
-				"time": time
-			},
-			success: function(result) {
-				console.log(result);
-			}
-		});
-	});
+
 });
 </script>
 

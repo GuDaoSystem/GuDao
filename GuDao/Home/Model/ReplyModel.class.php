@@ -6,7 +6,14 @@ class ReplyModel extends Model {
 	public function getReplyByComment($id) {
 		$reply = new ReplyModel();
 		$map["comment_id"] = $id;
-		$result = $reply->where($map)->order("reply_time desc")->select();
+		$result = $reply->where($map)->order("reply_time asc")->select();
+		return $result;
+	}
+
+	// 回复评论
+	public function replyComment($param) {
+		$reply = new ReplyModel();
+		$result = $reply->add($param);
 		return $result;
 	}
 }
