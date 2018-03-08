@@ -52,10 +52,7 @@ new Vue({
 					"pageSize": 6
 				},
 				success: function(result) {
-					console.log(result);
-					if(result.code === 200) {
-						_this.showByPage = result.data;
-					}
+					_this.showByPage = result.data;
 				}
 			});
 		},
@@ -89,7 +86,6 @@ new Vue({
 						"state": state
 					},
 					success: function(result) {
-						console.log(result);
 						_this.showByPage = result.data;
 					}
 				});
