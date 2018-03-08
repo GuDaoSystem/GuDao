@@ -2,7 +2,9 @@ new Vue({
 	el: '#gudao',
 	data: {
 		show: {},
-		comment: []
+		bands: [],
+		want: "",
+		comments: []
 	},
 	components: {
 		"navbar": navbar,
@@ -16,7 +18,9 @@ new Vue({
 			removeLoading();
 		});
 
-		this.getShowDetail();
+		this.getShow();
+		this.getBand();
+		this.getWant();
 		this.getComment();
 	},
 	mounted: function() {
@@ -53,7 +57,7 @@ new Vue({
 	computed: {
 	},
 	methods: {
-		getShowDetail: function() {
+		getShow: function() {
 			var _this = this;
 			$.ajax({
 				url: "getShowByID",
@@ -71,7 +75,41 @@ new Vue({
 						data.show_time = time;
 
 						_this.show = data;
-						// console.log(data.show_message);
+						// console.log(_this.show);
+					}
+				}
+			});
+		},
+		getBand: function() {
+			var _this = this;
+			$.ajax({
+				url: "getBandByShow",
+				type: "GET",
+				dataType: "json",
+				data: {
+					"id": location.search.substr(1).split("=")[1]
+				},
+				success: function(result) {
+					if(result.code === 200) {
+						_this.bands = result.data;
+						// console.log(_this.bands);
+					}
+				}
+			});
+		},
+		getWant: function() {
+			var _this = this;
+			$.ajax({
+				url: "getWantUserNum",
+				type: "GET",
+				dataType: "json",
+				data: {
+					"id": location.search.substr(1).split("=")[1]
+				},
+				success: function(result) {
+					if(result.code === 200) {
+						_this.want = result.data;
+						// console.log(_this.want);
 					}
 				}
 			});
@@ -88,8 +126,8 @@ new Vue({
 				},
 				success: function(result) {
 					if(result.code === 200) {
-						_this.comment = result.data;
-						// console.log(_this.comment[1].reply[0]);
+						_this.comments = result.data;
+						// console.log(_this.comments);
 					}
 				}
 			});

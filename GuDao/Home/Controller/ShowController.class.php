@@ -7,6 +7,7 @@ use Home\Model\AttendModel;
 use Home\Model\BandModel;
 use Home\Model\CommentModel;
 use Home\Model\ReplyModel;
+use Home\Model\UserModel;
 class ShowController extends Controller {
 	// 渲染页面
     public function index(){
@@ -196,8 +197,17 @@ class ShowController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
+
             $reply = new ReplyModel();
             $data[$i]["reply"] = $reply->getReplyByComment($data[$i]["comment_id"]);
+
+            $user = new UserModel();
+            $data[$i]["user"] = $user->getUserBasicInfo($data[$i]["user_id"]);
+            if(!$data[$i]["user"]) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+                $this->ajaxReturn($result);
+            }
         }
 
         $result["code"] = 200;

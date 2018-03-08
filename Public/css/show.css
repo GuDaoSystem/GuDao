@@ -197,7 +197,7 @@
 	margin: 0;
 	line-height: 160%;
 }
-.top .info ul li .msg li .value {
+.top .info ul li .msg .value {
 	color: #ffd700;
 }
 
