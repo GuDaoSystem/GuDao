@@ -42,15 +42,16 @@
 			</ul>
 		</div>
 
+		<div v-show="!list">NOT FOUND</div>
 		<ul class="row show-list">
 			<li v-for="item in list" class="col-sm-6 col-md-4">
 				<div class="show-content">
 					<img :src="'/GuDao/Public/img/show/' + item.show_poster" class="thumbnail"><div class="info" :index="item.show_id">
 						<p class="name text-overflow-ellipsis">{{item.show_name}}</p>
-						<p class="band text-overflow-ellipsis"><span class="glyphicon glyphicon-headphones"></span>乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1&ensp;/&ensp;乐队1</p>
+						<p class="band text-overflow-ellipsis"><span class="glyphicon glyphicon-headphones"></span><span v-for="band in item.band">{{band.band_name}}&ensp;/&ensp;</span></p>
 						<p class="place text-overflow-ellipsis"><span class="glyphicon glyphicon-map-marker"></span>{{item.show_place}}</p>
 						<p class="time text-overflow-ellipsis"><span class="glyphicon glyphicon-time"></span>{{item.show_time}}</p>
-						<p class="want"><span class="glyphicon glyphicon-eye-open"></span><span class="num">2333</span>人想看</p>
+						<p class="want"><span class="glyphicon glyphicon-eye-open"></span><span class="num">{{item.want}}</span>人想看</p>
 						<span v-if="item.show_state == '1'" class="state yushou">/&ensp;预售</span>
 						<span v-else-if="item.show_state == '2'" class="state quxiao">/&ensp;取消</span>
 						<span v-else-if="item.show_state == '3'" class="state biangeng">/&ensp;变更</span>
@@ -74,21 +75,6 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "/GuDao/index.php/Home/Show/getShowByPage",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"pageIndex": 1,
-	// 		"pageSize": 2
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
-	// $(".thumbnail").click(function() {
-	// 	console.log(this);
-	// });
 });
 </script>
 

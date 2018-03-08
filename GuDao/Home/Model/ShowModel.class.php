@@ -18,6 +18,11 @@ class ShowModel extends Model {
     }
 
     // 按条件获取演出
+    // public function getShowByCondition($startIndex, $pageLength, $condition) {
+    //     $show = new ShowModel();
+    //     $result = $show->where($condition)->order("show_time desc")->limit($startIndex, $pageLength)->select();
+    //     return $result;
+    // }
     public function getShowByCondition($startIndex, $pageLength, $condition) {
         $show = new ShowModel();
         $result = $show->where($condition)->order("show_time desc")->limit($startIndex, $pageLength)->select();

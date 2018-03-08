@@ -182,18 +182,7 @@
 
 <script>
 $(function() {
-	// var textareaPadding = 12 * 1 * 2;
-	// $("textarea").on("input", function () {
-	// 	if((this.scrollHeight - textareaPadding) > $(this).height()) {
-	// 		$(this).height(this.scrollHeight - textareaPadding);
-	// 	}
-	// 	$(this).next().find("span").text(this.value.length);
-	// });
-
-
-	// $(".reply").click(function() {
-	// 	$(this).parent().next(".reply-box").toggle();
-	// });
+	
 });
 </script>
 

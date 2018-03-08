@@ -20,42 +20,68 @@ class ShowController extends Controller {
 
     /* -------------------- 演出列表页面 -------------------- */
 
-    // 按页获取所有演出
+    // 按页获取演出列表
     public function getShowByPage() {
-    	$startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
-    	$pageLength = $_GET["pageSize"];
-    	$show = new ShowModel();
-    	$data = $show->getShowByPage($startIndex, $pageLength);
-    	if($data) {
-    		$result["code"] = 200;
-    		$result["msg"] = "查询成功";
-            $result["data"] = $data;
-    	} else {
-    		$result["code"] = 201;
-    		$result["msg"] = "查询失败";
-    	}
-    	$this->ajaxReturn($result);
-    }
-
-    // 按条件获取演出
-    public function getShowByCondition() {
         $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
         $pageLength = $_GET["pageSize"];
         if($_GET["place"]) {
             $condition["show_place"] = $_GET["place"];
         }
-        if($_GET["state"]) {
+        if($_GET["state"] > 0) {
             $condition["show_state"] = $_GET["state"];
         }
         $show = new ShowModel();
         $data = $show->getShowByCondition($startIndex, $pageLength, $condition);
-        if($data) {
-            $result["code"] = 200;
-            $result["msg"] = "查询成功";
-            $result["data"] = $data;
-        } else {
+        if(!$data) {
             $result["code"] = 201;
             $result["msg"] = "查询失败";
+            $this->ajaxReturn($result);
+        }
+        for($i = 0; $i < count($data); $i++) {
+            if(!$data[$i]) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+                $this->ajaxReturn($result);
+            }
+
+            $want = new WantModel();
+            $data[$i]["want"] = $want->getUserNumByShow($data[$i]["show_id"]);
+            if(!$data[$i]["want"]) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+                $this->ajaxReturn($result);
+            }
+
+            $attend = new AttendModel();
+            $bandID = $attend->getBandIDByShow($data[$i]["show_id"]);
+            if(!$bandID) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+                $this->ajaxReturn($result);
+            }
+            for($j = 0; $j < count($bandID); $j++) {
+                if(!$bandID[$j]) {
+                    $result["code"] = 201;
+                    $result["msg"] = "查询失败";
+                    $this->ajaxReturn($result);
+                }
+                $band = new BandModel();
+                $data[$i]["band"][$j] = $band->getBandByID($bandID[$j]);
+                if(!$data[$i]["band"][$j]) {
+                    $result["code"] = 201;
+                    $result["msg"] = "查询失败";
+                    $this->ajaxReturn($result);
+                }
+            }
+        }
+        $result["code"] = 200;
+        $result["msg"] = "查询成功";
+        $result["data"] = $data;
+        if($_GET["sort"] == "hot") {
+            foreach($result["data"] as $dataItem) {
+                $sort[] = $dataItem["want"];
+            }
+            array_multisort($sort, SORT_DESC, $result["data"]);
         }
         $this->ajaxReturn($result);
     }
