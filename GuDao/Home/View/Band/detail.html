@@ -21,17 +21,16 @@
 	<div class="container content">
 		<div>
 			<ul class="tablist nav nav-tabs" role="tablist">
-				<li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-				<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-				<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-				<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+				<li class="tab1" role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">演出</a></li>
+				<li class="tab2" role="presentation"><a href="#picture" aria-controls="picture" role="tab" data-toggle="tab">图片</a></li>
+				<li class="tab3" role="presentation"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab">评论</a></li>
+				<span class="underline"></span>
 			</ul>
 
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane" id="home">.1..</div>
-				<div role="tabpanel" class="tab-pane" id="profile">.2..</div>
-				<div role="tabpanel" class="tab-pane" id="messages">.3..</div>
-				<div role="tabpanel" class="tab-pane" id="settings">.4..</div>
+				<div role="tabpanel" class="tab-pane fade" id="show">演出列表</div>
+				<div role="tabpanel" class="tab-pane fade" id="picture">图片列表</div>
+				<div role="tabpanel" class="tab-pane fade" id="comment">评论列表</div>
 			</div>
 		</div>
 	</div>
@@ -56,28 +55,91 @@ new Vue({
 	}
 });
 $(function() {
+	$.ajax({
+		url: "__URL__/getInitial",
+		dataType: "json",
+		success: function(result) {
+			console.log(result);
+		}
+	});
+	$.ajax({
+		url: "__URL__/getBandByID",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"id": location.search.toString().substr(1).split("=")[1]
+		},
+		success: function(result) {
+			// console.log(result);
+		}
+	});
+	$.ajax({
+		url: "__URL__/getSupportUserNum",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"id": location.search.toString().substr(1).split("=")[1]
+		},
+		success: function(result) {
+			// console.log(result);
+		}
+	});
 	// $.ajax({
-	// 	url: "__URL__/getCommentNReply",
+	// 	url: "__URL__/checkSupport",
 	// 	type: "GET",
-	// 	// type: "POST",
 	// 	dataType: "json",
 	// 	data: {
-	// 		"target": 2,
-	// 		"id": 5
-	// 		// "user_id": 4,
-	// 		// "band_id": 4,
-	// 		// "time": "2017-12-22"
+	// 		"user_id": sessionStorage.getItem("userID"),
+	// 		"band_id": location.search.toString().substr(1).split("=")[1]
 	// 	},
 	// 	success: function(result) {
-	// 		console.log(result);
+	// 		// console.log(result);
 	// 	}
 	// });
+	$.ajax({
+		url: "__URL__/getExperience",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"id": location.search.toString().substr(1).split("=")[1]
+		},
+		success: function(result) {
+			// console.log(result);
+		}
+	});
+	$.ajax({
+		url: "__URL__/getPictureByBand",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"id": location.search.toString().substr(1).split("=")[1]
+		},
+		success: function(result) {
+			// console.log(result);
+		}
+	});
+	$.ajax({
+		url: "__URL__/getCommentNReply",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"target": 2,
+			"id": location.search.toString().substr(1).split("=")[1]
+		},
+		success: function(result) {
+			// console.log(result);
+		}
+	});
 	
-	var tabIndex = ["#home", "#profile", "#messages", "#settings"].indexOf(location.hash);
+
+	var tabList = ["#show", "#picture", "#comment"];
+	var tabIndex = tabList.indexOf(location.hash);
 	$(".tablist li:eq(" + tabIndex +")").addClass("active");
-	$(".tab-content div:eq(" + tabIndex +")").addClass("active");
-	$(".tablist a").click(function () {
+	$(".tablist .underline").addClass("tab" + (tabIndex + 1));
+	$(tabList[tabIndex]).addClass("in").addClass("active");
+	$(".tablist a").unbind("click").click(function () {
 		location.href = location.toString().split("#")[0] + $(this).attr("href");
+		$(".tablist .underline").removeClass("tab1 tab2").addClass($(this).parent()[0].className);
 	});
 });
 </script>

@@ -1700,3 +1700,2467 @@ SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0123s ]
 SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0058s ]
 SQL: SELECT * FROM `band` WHERE `band_initial` = 'A' LIMIT 0,10   [ RunTime:0.0012s ]
 
+[ 2018-03-09T13:04:56+08:00 ] ::1 /GuDao/Band
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014776s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014894s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000854s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000918s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000992s ]
+
+[ 2018-03-09T13:04:56+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002056s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:04:57+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByPage?pageIndex=1&pageSize=10&initial=L
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000863s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000869s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `band` WHERE `band_initial` = 'L' LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0058s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0125s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0124s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 8 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-03-09T13:05:29+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031238s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031321s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000758s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000809s ]
+
+[ 2018-03-09T13:05:30+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002091s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002260s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:09:36+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000831s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009225s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009338s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000994s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001060s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000694s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2018-03-09T13:09:36+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000948s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001010s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:10:48+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000881s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001184s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012680s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012770s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001053s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000937s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000990s ]
+
+[ 2018-03-09T13:10:48+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000985s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001099s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:10:51+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000320s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009282s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009373s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000656s ]
+
+[ 2018-03-09T13:10:52+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001674s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:10:59+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000929s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000246s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010944s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011021s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000912s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000977s ]
+
+[ 2018-03-09T13:10:59+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000923s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:11:55+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000729s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007933s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000694s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000775s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001064s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001132s ]
+
+[ 2018-03-09T13:11:56+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000996s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:11:57+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001373s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010129s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001075s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000975s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001034s ]
+
+[ 2018-03-09T13:11:57+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000828s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001470s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:12:05+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000844s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010056s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000876s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000953s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001005s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001077s ]
+
+[ 2018-03-09T13:12:06+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001168s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:12:10+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000947s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000339s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011651s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011722s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000859s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001250s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001307s ]
+
+[ 2018-03-09T13:12:10+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000997s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:13:10+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001980s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007773s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007842s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000399s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000567s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000620s ]
+
+[ 2018-03-09T13:13:11+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001778s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:14:33+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001134s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000319s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000735s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010852s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010949s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000881s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000934s ]
+
+[ 2018-03-09T13:14:33+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:14:33+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001244s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:15:33+08:00 ] ::1 /GuDao/Band/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010397s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010472s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001624s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001702s ]
+
+[ 2018-03-09T13:15:33+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000565s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004158s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:15:33+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001844s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0131s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0124s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:15:33+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001851s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:15:44+08:00 ] ::1 /GuDao/Band/detail?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000992s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008402s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008478s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000869s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000920s ]
+
+[ 2018-03-09T13:15:44+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001273s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:15:45+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0136s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:15:45+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001899s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0013s ]
+
+[ 2018-03-09T13:15:59+08:00 ] ::1 /GuDao/Band/detail?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001517s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012251s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012325s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000914s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000966s ]
+
+[ 2018-03-09T13:16:00+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001600s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:16:00+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001143s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001860s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:16:00+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000942s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001831s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0166s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0152s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 6 LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2018-03-09T13:16:25+08:00 ] ::1 /GuDao/Band/detail?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001676s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001777s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008705s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008800s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000958s ]
+
+[ 2018-03-09T13:16:25+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:16:26+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003431s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0139s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0137s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:16:26+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000083s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002377s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0165s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:16:36+08:00 ] ::1 /GuDao/Band/detail?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000842s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000971s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011505s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011587s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000961s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001030s ]
+
+[ 2018-03-09T13:16:37+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001411s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:16:37+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000881s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001895s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0066s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-03-09T13:16:37+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003144s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001158s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001278s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0101s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:17:42+08:00 ] ::1 /GuDao/Band/detail?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010606s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010703s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000682s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000736s ]
+
+[ 2018-03-09T13:17:43+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002106s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:17:43+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001623s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0102s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 6 LIMIT 1   [ RunTime:0.0019s ]
+
+[ 2018-03-09T13:17:43+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002039s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0165s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:17:43+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001834s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0115s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 6  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 2  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:18:34+08:00 ] ::1 /GuDao/Band/detail?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001062s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001322s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008380s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008450s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001485s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001751s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001379s ]
+
+[ 2018-03-09T13:18:34+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001602s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:18:34+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0123s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 6  [ RunTime:0.0010s ]
+
+[ 2018-03-09T13:18:34+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000741s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002422s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:18:34+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001462s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0139s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0090s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 6  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 2  [ RunTime:0.0016s ]
+
+[ 2018-03-09T13:18:34+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000072s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008717s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002980s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003111s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0137s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:19:15+08:00 ] ::1 /GuDao/Band/detail?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001527s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014479s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014588s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001415s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001505s ]
+
+[ 2018-03-09T13:19:16+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000084s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001586s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:19:16+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002365s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0113s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 6 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:19:16+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003700s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0165s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:19:16+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000741s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001484s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0142s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 6  [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:19:16+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001154s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002052s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 6 ORDER BY comment_time desc  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:19:16+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001123s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003572s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0118s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0164s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 6  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0248s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 2  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:19:38+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001110s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010369s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010451s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000905s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000956s ]
+
+[ 2018-03-09T13:19:38+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000992s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:19:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001578s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0169s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:19:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000796s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001356s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0151s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:19:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000801s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001714s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0015s ]
+
+[ 2018-03-09T13:19:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001007s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015904s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016017s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0141s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0158s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:19:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001761s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001465s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:20:48+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000799s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001066s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011782s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011907s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001245s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001721s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001818s ]
+
+[ 2018-03-09T13:20:49+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001102s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:20:49+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0091s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:20:49+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001970s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0009s ]
+
+[ 2018-03-09T13:20:49+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000864s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002394s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0117s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0168s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:20:49+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002500s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0128s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0100s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:20:49+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004111s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0159s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0009s ]
+
+[ 2018-03-09T13:21:22+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009986s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010064s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000920s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000976s ]
+
+[ 2018-03-09T13:21:23+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000861s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001137s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:21:23+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001531s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0111s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:21:23+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000994s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001091s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001202s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0149s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:21:23+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001165s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001256s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0155s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:21:23+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000765s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001499s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0142s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0008s ]
+
+[ 2018-03-09T13:21:23+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001622s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0153s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0128s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:21:47+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000876s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000937s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000235s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017905s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000884s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000944s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000931s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000982s ]
+
+[ 2018-03-09T13:21:47+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001198s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:21:47+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006999s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001418s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0154s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:21:47+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000903s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001428s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0159s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0159s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:21:47+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001938s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002076s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0123s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:21:47+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.020155s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.020258s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0122s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0136s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:21:48+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000980s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001549s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0139s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0128s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0137s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0127s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0013s ]
+
+[ 2018-03-09T13:32:57+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001056s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001147s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009493s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001459s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001554s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000974s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001041s ]
+
+[ 2018-03-09T13:32:57+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000841s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001207s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:32:57+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000882s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0095s ]
+SQL: SELECT `band_initial` FROM `band`  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:32:57+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001163s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001258s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0101s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0074s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:32:57+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001856s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:32:57+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000837s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001630s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0136s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:32:58+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001119s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001522s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0139s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0154s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:32:58+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019991s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0073s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:36:45+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008845s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008957s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001112s ]
+
+[ 2018-03-09T13:36:46+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000798s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000996s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:36:46+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001205s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0106s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:36:46+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001125s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001175s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001274s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0128s ]
+SQL: SELECT `band_initial` FROM `band`  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:36:46+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000879s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001797s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0134s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0137s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2018-03-09T13:36:46+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000902s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001775s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0108s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0089s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:36:46+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002491s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0060s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:36:46+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000831s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002561s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0092s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:37:46+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006582s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000146s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011383s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011455s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001092s ]
+
+[ 2018-03-09T13:37:47+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000798s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001079s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:37:47+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001122s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001218s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0155s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:37:47+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001437s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0128s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:37:47+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000839s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001711s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0104s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0196s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:37:47+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000073s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000839s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001944s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0105s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0135s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:37:47+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000963s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001687s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0123s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0106s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0107s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:37:47+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002176s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0120s ]
+
+[ 2018-03-09T13:42:03+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000886s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001649s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014369s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014491s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000733s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000795s ]
+
+[ 2018-03-09T13:42:03+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000894s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001581s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:42:03+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001794s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:42:04+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001538s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0126s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0101s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0152s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:42:04+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001284s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0026s ]
+
+[ 2018-03-09T13:42:04+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001119s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0172s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0240s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0008s ]
+
+[ 2018-03-09T13:42:04+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000923s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001921s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003583s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0155s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0149s ]
+ERR: Think\Model:groupBy方法不存在！
+
+[ 2018-03-09T13:42:04+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002167s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0126s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:43:37+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000869s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001517s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015326s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015434s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001150s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001171s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001245s ]
+
+[ 2018-03-09T13:43:37+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000867s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001829s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:43:38+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001464s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:43:38+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001654s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0115s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:43:38+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000968s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001671s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0131s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0056s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:43:38+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.038762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.038858s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0078s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:43:38+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0083s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:43:38+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001725s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0063s ]
+SQL: SELECT `band_initial`,count(*) FROM `band` GROUP BY band_initial  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:43:48+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001305s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011100s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000915s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000973s ]
+
+[ 2018-03-09T13:43:48+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:43:48+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001762s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0127s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:43:48+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001448s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0115s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:43:48+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000912s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002685s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0118s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0123s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:43:48+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.035014s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011354s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0094s ]
+SQL: SELECT `band_initial` FROM `band` GROUP BY band_initial  [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:43:48+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001029s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:43:48+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001006s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004632s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0078s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:44:00+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010180s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010253s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000776s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000830s ]
+
+[ 2018-03-09T13:44:01+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001015s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:44:01+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001160s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001245s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0102s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:44:01+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001599s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:44:01+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001613s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `band` GROUP BY band_initial  [ RunTime:0.0084s ]
+
+[ 2018-03-09T13:44:01+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001606s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0133s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:44:01+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0115s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:44:01+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000967s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001720s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0101s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:44:26+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000894s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009996s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010100s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000978s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001116s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001181s ]
+
+[ 2018-03-09T13:44:26+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001551s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:44:27+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000908s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001980s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002077s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0104s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0144s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0015s ]
+
+[ 2018-03-09T13:44:27+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001464s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0064s ]
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\GuDao\ThinkPHP\Library\Think\Model.class.php 第 222 行.
+SQL: SELECT `band_initial` FROM `band`  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:44:27+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001683s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0084s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0114s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0138s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0102s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0009s ]
+
+[ 2018-03-09T13:44:27+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001908s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:44:27+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000799s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001753s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0121s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:44:27+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006932s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0071s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:44:39+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000989s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000684s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009635s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009705s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000671s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000724s ]
+
+[ 2018-03-09T13:44:39+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002238s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:44:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001921s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0132s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:44:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000767s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001449s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0133s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0125s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0123s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:44:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001443s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0105s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0083s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:44:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001219s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0051s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0117s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+
+[ 2018-03-09T13:44:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001703s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `band` GROUP BY band_initial  [ RunTime:0.0062s ]
+
+[ 2018-03-09T13:44:39+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001085s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001680s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0081s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:44:52+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001588s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009226s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009301s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000939s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000992s ]
+
+[ 2018-03-09T13:44:52+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001690s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:44:52+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001915s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0099s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-03-09T13:44:52+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001485s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0116s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:44:52+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001109s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0098s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:44:53+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001473s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0081s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0082s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:44:53+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000087s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000953s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001629s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001756s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0097s ]
+SQL: SELECT `band_initial` FROM `band` GROUP BY band_initial  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:44:53+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000844s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003200s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:45:00+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000827s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009946s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000774s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000827s ]
+
+[ 2018-03-09T13:45:00+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001227s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:45:00+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000965s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001156s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0159s ]
+SQL: SELECT `band_initial` FROM `band` GROUP BY band_initial LIMIT 1   [ RunTime:0.0024s ]
+
+[ 2018-03-09T13:45:00+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001987s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002097s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0117s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0076s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:45:00+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001295s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0083s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:45:00+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001482s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0125s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0124s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:45:00+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002493s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:45:00+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002107s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-03-09T13:45:21+08:00 ] ::1 /GuDao/Band/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010450s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010518s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000962s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001032s ]
+
+[ 2018-03-09T13:45:21+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-09T13:45:21+08:00 ] ::1 /GuDao/index.php/Home/Band/getInitial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0107s ]
+SQL: SELECT `band_initial` FROM `band` GROUP BY band_initial  [ RunTime:0.0017s ]
+
+[ 2018-03-09T13:45:21+08:00 ] ::1 /GuDao/index.php/Home/Band/getBandByID?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000811s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002045s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+
+[ 2018-03-09T13:45:21+08:00 ] ::1 /GuDao/index.php/Home/Band/getPictureByBand?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001610s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `picture` [ RunTime:0.0092s ]
+SQL: SELECT `picture_url` FROM `picture` WHERE `band_id` = 5  [ RunTime:0.0006s ]
+
+[ 2018-03-09T13:45:21+08:00 ] ::1 /GuDao/index.php/Home/Band/getExperience?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002016s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0105s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0064s ]
+SQL: SELECT `show_id` FROM `attend` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0012s ]
+
+[ 2018-03-09T13:45:21+08:00 ] ::1 /GuDao/index.php/Home/Band/getCommentNReply?target=2&id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001687s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 2 AND `target_id` = 5 ORDER BY comment_time desc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0134s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0165s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 11 ORDER BY reply_time asc  [ RunTime:0.0008s ]
+
+[ 2018-03-09T13:45:21+08:00 ] ::1 /GuDao/index.php/Home/Band/getSupportUserNum?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000106s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001069s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002697s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0056s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `support` WHERE `band_id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+

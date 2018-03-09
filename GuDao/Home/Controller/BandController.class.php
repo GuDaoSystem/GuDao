@@ -8,6 +8,7 @@ use Home\Model\ShowModel;
 use Home\Model\PictureModel;
 use Home\Model\CommentModel;
 use Home\Model\ReplyModel;
+use Home\Model\UserModel;
 class BandController extends Controller {
 	// 渲染页面
     public function index(){
@@ -19,7 +20,22 @@ class BandController extends Controller {
 
 
 
-    /* -------------------- 乐队列表页面 -------------------- */
+    /* -------------------- 乐队列表页 -------------------- */
+
+    // 获取所有乐队首字母
+    public function getInitial() {
+        $band = new BandModel();
+        $data = $band->getInitial();
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
 
     // 按页获取乐队列表
     public function getBandByPage() {
@@ -58,72 +74,6 @@ class BandController extends Controller {
         $this->ajaxReturn($result);
     }
 
-    // // 按支持度获取所有乐队
-    // public function getBandBySupport() {
-    // 	$startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
-    // 	$pageLength = $_GET["pageSize"];
-
-    //     $support = new SupportModel();
-    //     $supportList = $support->sortBandByUserNum($startIndex, $pageLength);
-    //     if(!$supportList) {
-    //         $result["code"] = 200;
-    //         $result["msg"] = "查询失败";
-    //     } else {
-    //         for($i = 0; $i < count($supportList); $i++) {
-    //             if(!$supportList[$i]) {
-    //                 $result["code"] = 200;
-    //                 $result["msg"] = "查询失败";
-    //             }
-    //             $band = new BandModel();
-    //             $data[$i] = $band->getBandByID($supportList[$i]["band_id"]);
-    //             if(!$data[$i]) {
-    //                 $result["code"] = 200;
-    //                 $result["msg"] = "查询失败";
-    //             }
-    //         }
-    //     }
-
-    // 	$result["code"] = 200;
-    // 	$result["msg"] = "查询成功";
-    //     $result["data"] = $data;
-    // 	$this->ajaxReturn($result);
-    // }
-
-    // // 按名称获取所有乐队
-    // public function getBandByName() {
-    //     $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
-    //     $pageLength = $_GET["pageSize"];
-    //     $band = new BandModel();
-    //     $data = $band->getBandByName($startIndex, $pageLength);
-    //     if($data) {
-    //         $result["code"] = 200;
-    //         $result["msg"] = "查询成功";
-    //         $result["data"] = $data;
-    //     } else {
-    //         $result["code"] = 201;
-    //         $result["msg"] = "查询失败";
-    //     }
-    //     $this->ajaxReturn($result);
-    // }
-
-    // // 按首字母获取乐队
-    // public function getBandByInitial() {
-    //     $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
-    //     $pageLength = $_GET["pageSize"];
-    //     $initial = $_GET["initial"];
-    //     $band = new BandModel();
-    //     $data = $band->getBandByInitial($startIndex, $pageLength, $initial);
-    //     if($data) {
-    //         $result["code"] = 200;
-    //         $result["msg"] = "查询成功";
-    //         $result["data"] = $data;
-    //     } else {
-    //         $result["code"] = 201;
-    //         $result["msg"] = "查询失败";
-    //     }
-    //     $this->ajaxReturn($result);
-    // }
-
 
     /* -------------------- 乐队详细页面 -------------------- */
 
@@ -146,42 +96,58 @@ class BandController extends Controller {
     public function getSupportUserNum() {
         $support = new SupportModel();
         $data = $support->getUserNumByBand($_GET["id"]);
+        $result["code"] = 200;
+        $result["msg"] = "查询成功";
         if($data) {
-            $result["code"] = 200;
-            $result["msg"] = "查询成功";
             $result["data"] = $data;
         } else {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
+            $result["data"] = 0;
         }
         $this->ajaxReturn($result);
     }
 
-    // 点击支持/取消支持
-    public function toggleSupport() {
+    // 检测是否想看
+    public function checkSupport() {
         $data["user_id"] = $_POST["user_id"];
         $data["band_id"] = $_POST["band_id"];
         $support = new SupportModel();
-        // 取消支持
         if($support->checkSupport($data)) {
-            if($support->deleteSupport($data)) {
-                $result["code"] = 200;
-                $result["msg"] = "删除支持记录成功";
-            } else {
-                $result["code"] = 201;
-                $result["msg"] = "删除支持记录失败";
-            }
+            $result["code"] = 200;
+            $result["msg"] = "已支持";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "未支持";
         }
-        // 想看
-        else {
-            $data["support_time"] = $_POST["time"];
-            if($support->addSupport($data)) {
-                $result["code"] = 200;
-                $result["msg"] = "新增支持记录成功";
-            } else {
-                $result["code"] = 201;
-                $result["msg"] = "新增支持记录失败";
-            }
+        $this->ajaxReturn($result);
+    }
+
+    // 新增想看
+    public function addSupport() {
+        $data["user_id"] = $_POST["user_id"];
+        $data["band_id"] = $_POST["band_id"];
+        $data["support_time"] = $_POST["time"];
+        $support = new SupportModel();
+        if($support->addSupport($data)) {
+            $result["code"] = 200;
+            $result["msg"] = "新增支持记录成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "新增支持记录失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+    // 删除想看
+    public function deleteSupport() {
+        $data["user_id"] = $_POST["user_id"];
+        $data["band_id"] = $_POST["band_id"];
+        $support = new SupportModel();
+        if($support->deleteSupport($data)) {
+            $result["code"] = 200;
+            $result["msg"] = "删除支持记录成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "删除支持记录失败";
         }
         $this->ajaxReturn($result);
     }
@@ -248,13 +214,79 @@ class BandController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
+
+            $user = new UserModel();
+            $data[$i]["user"] = $user->getUserBasicInfo($data[$i]["user_id"]);
+            if(!$data[$i]["user"]) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+                $this->ajaxReturn($result);
+            }
+
             $reply = new ReplyModel();
             $data[$i]["reply"] = $reply->getReplyByComment($data[$i]["comment_id"]);
+            if($data[$i]["reply"]) {
+                for($j = 0; $j < count($data[$i]["reply"]); $j++) {
+                    $user = new UserModel();
+                    $data[$i]["reply"][$j]["user"] = $user->getUserBasicInfo($data[$i]["reply"][$j]["user_id"]);
+                    if(!$data[$i]["reply"][$j]["user"]) {
+                        $result["code"] = 201;
+                        $result["msg"] = "查询失败";
+                        $this->ajaxReturn($result);
+                    }
+                    $data[$i]["reply"][$j]["target"] = $user->getUserBasicInfo($data[$i]["reply"][$j]["target_id"]);
+                    if(!$data[$i]["reply"][$j]["target"]) {
+                        $result["code"] = 201;
+                        $result["msg"] = "查询失败";
+                        $this->ajaxReturn($result);
+                    }
+                }
+                
+            }
         }
 
         $result["code"] = 200;
         $result["msg"] = "查询成功";
         $result["data"] = $data;
+        $this->ajaxReturn($result);
+    }
+
+    // 发送评论
+    public function sendComment() {
+        $data["comment_content"] = $_POST["content"];
+        $data["user_id"] = $_POST["user_id"];
+        $data["comment_time"] = $_POST["time"];
+        $data["comment_target"] = $_POST["target"];
+        $data["target_id"] = $_POST["target_id"];
+        $comment = new CommentModel();
+        $data = $comment->sendComment($data);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "评论成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "评论失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+    // 回复评论
+    public function replyComment() {
+        $data["comment_id"] = $_POST["comment_id"];
+        $data["reply_content"] = $_POST["content"];
+        $data["reply_type"] = $_POST["type"];
+        $data["reply_time"] = $_POST["time"];
+        $data["user_id"] = $_POST["user_id"];
+        $data["target_id"] = $_POST["target_id"];
+        $reply = new ReplyModel();
+        $data = $reply->replyComment($data);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "回复成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "回复失败";
+        }
         $this->ajaxReturn($result);
     }
 }

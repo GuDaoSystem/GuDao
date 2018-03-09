@@ -32,4 +32,10 @@ class BandModel extends Model {
         return $result[0];
     }
     
+    // 获取所有乐队首字母
+    public function getInitial() {
+        $band = new BandModel();
+        $result = $band->group('band_initial')->getField('band_initial', true);
+        return $result;  
+    }
 }

@@ -171,13 +171,12 @@ class ShowController extends Controller {
         $data["user_id"] = $_POST["user_id"];
         $data["show_id"] = $_POST["show_id"];
         $want = new WantModel();
-        $data = $want->checkWant($data);
-        if($data) {
+        if($want->checkWant($data)) {
             $result["code"] = 200;
-            $result["msg"] = "查询成功";
+            $result["msg"] = "已想看";
         } else {
             $result["code"] = 201;
-            $result["msg"] = "查询失败";
+            $result["msg"] = "未想看";
         }
         $this->ajaxReturn($result);
     }
@@ -189,7 +188,7 @@ class ShowController extends Controller {
         $data["want_time"] = $_POST["time"];
         $want = new WantModel();
         if($want->addWant($data)) {
-             $result["code"] = 200;
+            $result["code"] = 200;
             $result["msg"] = "新增想看记录成功";
         } else {
             $result["code"] = 201;
@@ -204,7 +203,7 @@ class ShowController extends Controller {
         $data["show_id"] = $_POST["show_id"];
         $want = new WantModel();
         if($want->deleteWant($data)) {
-             $result["code"] = 200;
+            $result["code"] = 200;
             $result["msg"] = "删除想看记录成功";
         } else {
             $result["code"] = 201;
@@ -221,13 +220,13 @@ class ShowController extends Controller {
         $data = $comment->getCommentByTarget($data);
         if(!$data) {
             $result["code"] = 201;
-            $result["msg"] = "查询失败1";
+            $result["msg"] = "查询失败";
             $this->ajaxReturn($result);
         }
         for($i = 0; $i < count($data); $i++) {
             if(!$data[$i]) {
                 $result["code"] = 201;
-                $result["msg"] = "查询失败2";
+                $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
 

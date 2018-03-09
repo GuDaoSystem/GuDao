@@ -48,7 +48,7 @@ $(function() {
 		data: {
 			"pageIndex": 1,
 			"pageSize": 10,
-			"initial": "A"
+			"initial": "L"
 		},
 		success: function(result) {
 			console.log(result);

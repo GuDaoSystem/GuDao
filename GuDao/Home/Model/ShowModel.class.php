@@ -35,7 +35,7 @@ class ShowModel extends Model {
     // 获取所有演出地点
     public function getShowPlace() {
         $show = new ShowModel();
-        $result = $show->getField('show_place', true);
+        $result = $show->group('show_place')->getField('show_place', true);
         return $result;
     }
 }

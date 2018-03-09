@@ -41,6 +41,21 @@ new Vue({
 	}
 });
 $(function() {
+	// 按页获取乐队列表
+	$.ajax({
+		url: "__URL__/getBandByPage",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"pageIndex": 1,
+			"pageSize": 10,
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
+
+	// 按首字母获取乐队列表
 	$.ajax({
 		url: "__URL__/getBandByPage",
 		type: "GET",
