@@ -21,71 +21,108 @@ class BandController extends Controller {
 
     /* -------------------- 乐队列表页面 -------------------- */
 
-    // 按支持度获取所有乐队
-    public function getBandBySupport() {
-    	$startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
-    	$pageLength = $_GET["pageSize"];
-
-        $support = new SupportModel();
-        $supportList = $support->sortBandByUserNum($startIndex, $pageLength);
-        if(!$supportList) {
-            $result["code"] = 200;
+    // 按页获取乐队列表
+    public function getBandByPage() {
+        $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
+        $pageLength = $_GET["pageSize"];
+        if($_GET["initial"]) {
+            $condition["band_initial"] = $_GET["initial"];
+        }
+        $band = new BandModel();
+        $data = $band->getBandByPage($startIndex, $pageLength, $condition);
+        if(!$data) {
+            $result["code"] = 201;
             $result["msg"] = "查询失败";
-        } else {
-            for($i = 0; $i < count($supportList); $i++) {
-                if(!$supportList[$i]) {
-                    $result["code"] = 200;
-                    $result["msg"] = "查询失败";
-                }
-                $band = new BandModel();
-                $data[$i] = $band->getBandByID($supportList[$i]["band_id"]);
-                if(!$data[$i]) {
-                    $result["code"] = 200;
-                    $result["msg"] = "查询失败";
-                }
+            $this->ajaxReturn($result);
+        }
+        for($i = 0; $i < count($data); $i++) {
+            if(!$data[$i]) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+                $this->ajaxReturn($result);
             }
+
+            $support = new SupportModel();
+            $data[$i]["support"] = $support->getUserNumByBand($data[$i]["band_id"]);
         }
 
-    	$result["code"] = 200;
-    	$result["msg"] = "查询成功";
+        foreach ($data as $key => $item) {
+            $key1[$key] = $item['support'];
+            $key2[$key] = $item['band_name'];
+        }
+        array_multisort($key1, SORT_DESC, $key2, SORT_ASC, $data);
+
+        $result["code"] = 200;
+        $result["msg"] = "查询成功";
         $result["data"] = $data;
-    	$this->ajaxReturn($result);
-    }
-
-    // 按名称获取所有乐队
-    public function getBandByName() {
-        $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
-        $pageLength = $_GET["pageSize"];
-        $band = new BandModel();
-        $data = $band->getBandByName($startIndex, $pageLength);
-        if($data) {
-            $result["code"] = 200;
-            $result["msg"] = "查询成功";
-            $result["data"] = $data;
-        } else {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-        }
         $this->ajaxReturn($result);
     }
 
-    // 按首字母获取乐队
-    public function getBandByInitial() {
-        $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
-        $pageLength = $_GET["pageSize"];
-        $initial = $_GET["initial"];
-        $band = new BandModel();
-        $data = $band->getBandByInitial($startIndex, $pageLength, $initial);
-        if($data) {
-            $result["code"] = 200;
-            $result["msg"] = "查询成功";
-            $result["data"] = $data;
-        } else {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-        }
-        $this->ajaxReturn($result);
-    }
+    // // 按支持度获取所有乐队
+    // public function getBandBySupport() {
+    // 	$startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
+    // 	$pageLength = $_GET["pageSize"];
+
+    //     $support = new SupportModel();
+    //     $supportList = $support->sortBandByUserNum($startIndex, $pageLength);
+    //     if(!$supportList) {
+    //         $result["code"] = 200;
+    //         $result["msg"] = "查询失败";
+    //     } else {
+    //         for($i = 0; $i < count($supportList); $i++) {
+    //             if(!$supportList[$i]) {
+    //                 $result["code"] = 200;
+    //                 $result["msg"] = "查询失败";
+    //             }
+    //             $band = new BandModel();
+    //             $data[$i] = $band->getBandByID($supportList[$i]["band_id"]);
+    //             if(!$data[$i]) {
+    //                 $result["code"] = 200;
+    //                 $result["msg"] = "查询失败";
+    //             }
+    //         }
+    //     }
+
+    // 	$result["code"] = 200;
+    // 	$result["msg"] = "查询成功";
+    //     $result["data"] = $data;
+    // 	$this->ajaxReturn($result);
+    // }
+
+    // // 按名称获取所有乐队
+    // public function getBandByName() {
+    //     $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
+    //     $pageLength = $_GET["pageSize"];
+    //     $band = new BandModel();
+    //     $data = $band->getBandByName($startIndex, $pageLength);
+    //     if($data) {
+    //         $result["code"] = 200;
+    //         $result["msg"] = "查询成功";
+    //         $result["data"] = $data;
+    //     } else {
+    //         $result["code"] = 201;
+    //         $result["msg"] = "查询失败";
+    //     }
+    //     $this->ajaxReturn($result);
+    // }
+
+    // // 按首字母获取乐队
+    // public function getBandByInitial() {
+    //     $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
+    //     $pageLength = $_GET["pageSize"];
+    //     $initial = $_GET["initial"];
+    //     $band = new BandModel();
+    //     $data = $band->getBandByInitial($startIndex, $pageLength, $initial);
+    //     if($data) {
+    //         $result["code"] = 200;
+    //         $result["msg"] = "查询成功";
+    //         $result["data"] = $data;
+    //     } else {
+    //         $result["code"] = 201;
+    //         $result["msg"] = "查询失败";
+    //     }
+    //     $this->ajaxReturn($result);
+    // }
 
 
     /* -------------------- 乐队详细页面 -------------------- */

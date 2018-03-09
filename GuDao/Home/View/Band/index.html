@@ -40,20 +40,21 @@ new Vue({
 		"copyright": copyright
 	}
 });
-// $(function() {
-// 	$.ajax({
-// 		url: "__URL__/getBandBySupport",
-// 		type: "GET",
-// 		dataType: "json",
-// 		data: {
-// 			"pageIndex": 1,
-// 			"pageSize": 2
-// 		},
-// 		success: function(result) {
-// 			console.log(result);
-// 		}
-// 	});
-// });
+$(function() {
+	$.ajax({
+		url: "__URL__/getBandByPage",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"pageIndex": 1,
+			"pageSize": 10,
+			"initial": "L"
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
+});
 </script>
 
 </body>

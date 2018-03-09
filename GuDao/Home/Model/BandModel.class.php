@@ -3,10 +3,10 @@ namespace Home\Model;
 use Think\Model;
 class BandModel extends Model {
     // 按页获取所有乐队
-    public function getBandByPage($startIndex, $pageLength, $sortRule) {
-    	$band = new BandModel();
-    	$result = $band->limit($startIndex, $pageLength)->order($sortRule)->select();
-    	return $result;
+    public function getBandByPage($startIndex, $pageLength, $condition) {
+        $band = new BandModel();
+        $result = $band->where($condition)->limit($startIndex, $pageLength)->select();
+        return $result;
     }
 
     // 按名称获取所有乐队

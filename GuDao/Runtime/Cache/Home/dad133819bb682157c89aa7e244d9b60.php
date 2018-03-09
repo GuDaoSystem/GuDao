@@ -40,20 +40,21 @@ new Vue({
 		"copyright": copyright
 	}
 });
-// $(function() {
-// 	$.ajax({
-// 		url: "/GuDao/index.php/Home/Band/getBandBySupport",
-// 		type: "GET",
-// 		dataType: "json",
-// 		data: {
-// 			"pageIndex": 1,
-// 			"pageSize": 2
-// 		},
-// 		success: function(result) {
-// 			console.log(result);
-// 		}
-// 	});
-// });
+$(function() {
+	$.ajax({
+		url: "/GuDao/index.php/Home/Band/getBandByPage",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"pageIndex": 1,
+			"pageSize": 10,
+			"initial": "A"
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
+});
 </script>
 
 </body>
