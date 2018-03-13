@@ -313,19 +313,25 @@ footer {
 .no-data {
 	padding: 2rem 1rem;
 }
+.no-more {
+	display: none;
+	padding: 3rem 1rem;
+}
 .no-data img {
     display: block;
 	width: 40%;
     margin: 5rem auto;
 }
-.no-data span {
+.no-data span,
+.no-more span {
 	display: block;
 	width: 100%;
 	height: 1px;
     background: #333;
 	box-shadow: 0.5rem 0.5rem 1rem #000;
 }
-.no-data p {
+.no-data p,
+.no-more p {
     display: inline-block;
     padding: 0 1rem;
     background: #0d0d0d;
