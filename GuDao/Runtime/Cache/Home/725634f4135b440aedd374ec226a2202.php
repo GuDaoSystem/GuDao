@@ -19,7 +19,7 @@
 	<navbar></navbar>
 
 	<!-- 内容 -->
-	<div class="container content">
+	<div id="home" class="container content">
 		<!-- 演出时间表 -->
 		<div class="calendar">
 			<div class="head">

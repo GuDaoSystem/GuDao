@@ -18,7 +18,28 @@
 	<navbar></navbar>
 
 	<!-- 内容 -->
-	<div class="container content">
+	<div id="index" class="container content">
+		<!-- 基本信息 -->
+		<div class="top">
+		</div>
+
+		<!-- 标签页 -->
+		<div>
+			<ul class="tablist nav nav-tabs" role="tablist">
+				<li class="tab1" role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">动态</a></li>
+				<li class="tab2" role="presentation"><a href="#message" aria-controls="message" role="tab" data-toggle="tab">消息</a></li>
+				<li class="tab3" role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">演出</a></li>
+				<li class="tab4" role="presentation"><a href="#band" aria-controls="band" role="tab" data-toggle="tab">乐队</a></li>
+				<span class="underline"></span>
+			</ul>
+
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane fade" id="activity">动态列表</div>
+				<div role="tabpanel" class="tab-pane fade" id="message">消息列表</div>
+				<div role="tabpanel" class="tab-pane fade" id="show">演出列表</div>
+				<div role="tabpanel" class="tab-pane fade" id="band">乐队列表</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- 底部 -->
@@ -30,16 +51,9 @@
 <script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/component.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/user/index.js"></script>
 
 <script>
-new Vue({
-	el: '#gudao',
-	components: {
-		"navbar": navbar,
-		"back-to-top": backToTop,
-		"copyright": copyright
-	}
-});
 $(function() {
 	// $.ajax({
 	// 	url: "__URL__/getCommentByUser",

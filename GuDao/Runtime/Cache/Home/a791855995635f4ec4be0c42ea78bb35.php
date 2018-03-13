@@ -19,7 +19,7 @@
 	<navbar></navbar>
 
 	<!-- 内容 -->
-	<div class="container content">
+	<div id="show" class="container content">
 		<!-- 筛选条件 -->
 		<div class="condition">
 			<ul class="sort">

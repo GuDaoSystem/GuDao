@@ -18,7 +18,7 @@
 	<navbar></navbar>
 
 	<!-- 内容 -->
-	<div class="container content">
+	<div id="band" class="container content">
 	</div>
 
 	<!-- 底部 -->
@@ -30,16 +30,9 @@
 <script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/component.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/band/band.js"></script>
 
 <script>
-new Vue({
-	el: '#gudao',
-	components: {
-		"navbar": navbar,
-		"back-to-top": backToTop,
-		"copyright": copyright
-	}
-});
 $(function() {
 	// 获取所有乐队首字母
 	$.ajax({
