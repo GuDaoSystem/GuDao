@@ -79,6 +79,18 @@ $(function() {
 	}
 
 
+	// 个人中心
+	$(".user-page").click(function(e) {
+		e.preventDefault();
+		location.href = "../../GuDao/User/index?id=" + sessionStorage.getItem("userID");
+	});
+
+	// 我的消息
+	$(".message").click(function(e) {
+		e.preventDefault();
+		location.href = "../../GuDao/User/index?id=" + sessionStorage.getItem("userID") + "#message";
+	});
+
 	// 退出登录
 	$(".logout").click(function(e) {
 		e.preventDefault();

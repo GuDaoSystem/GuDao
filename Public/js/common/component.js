@@ -22,8 +22,8 @@ var navbar = {
 							   <ul class="dropdown-menu">
 								   <li class="dropdown-header">NgWingLam</li>
 								   <li role="separator" class="divider"></li>
-								   <li><a href="../../GuDao/User">个人中心</a></li>
-								   <li><a href="../../GuDao/User" class="tips">我的消息<span class="dot-span"></span></a></li>
+								   <li class="user-page"><a href="#">个人中心</a></li>
+								   <li class="message"><a href="#" class="tips">我的消息<span class="dot-span"></span></a></li>
 								   <li class="logout"><a href="#">退出登录</a></li>
 							   </ul>
 						   </li>
