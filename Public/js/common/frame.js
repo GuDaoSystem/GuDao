@@ -23,7 +23,12 @@ $(function() {
 				"id": sessionStorage.getItem("userID")
 			},
 			success: function(result) {
-				console.log(result);
+				// console.log(result);
+				if(result.data.headshot) {
+					$(".didLogin img").attr("src", "../../GuDao/Public/img/user/" + result.data.headshot);
+				} else {
+					$(".didLogin img").attr("src", "../../GuDao/Public/img/user/default.jpg");
+				}
 			}
 		});
 	}
