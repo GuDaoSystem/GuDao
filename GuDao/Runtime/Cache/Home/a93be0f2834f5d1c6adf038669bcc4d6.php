@@ -55,13 +55,7 @@ new Vue({
 	}
 });
 $(function() {
-	$.ajax({
-		url: "/GuDao/index.php/Home/Band/getInitial",
-		dataType: "json",
-		success: function(result) {
-			console.log(result);
-		}
-	});
+	// 
 	$.ajax({
 		url: "/GuDao/index.php/Home/Band/getBandByID",
 		type: "GET",
@@ -86,7 +80,7 @@ $(function() {
 	});
 	// $.ajax({
 	// 	url: "/GuDao/index.php/Home/Band/checkSupport",
-	// 	type: "GET",
+	// 	type: "POST",
 	// 	dataType: "json",
 	// 	data: {
 	// 		"user_id": sessionStorage.getItem("userID"),
@@ -104,7 +98,7 @@ $(function() {
 			"id": location.search.toString().substr(1).split("=")[1]
 		},
 		success: function(result) {
-			// console.log(result);
+			console.log(result);
 		}
 	});
 	$.ajax({

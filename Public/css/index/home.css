@@ -1,0 +1,105 @@
+.calendar {
+	display: inline-block;
+	width: 30%;
+}
+
+
+.calendar .head {
+	margin-bottom: 0.8rem;
+}
+.calendar .head div {
+	display: inline-block;
+	padding: 0.2rem 0.5rem;
+}
+
+.calendar .head .title {
+	border-top: 1px solid #ffd700;
+	border-left: 4px solid #ffd700; 
+}
+
+.calendar .head .selector {
+	float: right;
+}
+.calendar .head .selector span {
+	cursor: pointer;
+}
+.calendar .head .selector .glyphicon {
+	color: #ffd700;
+}
+.calendar .head .selector p {
+	display: inline-block;
+}
+
+.calendar .head .form {
+	display: none;
+	padding: 0.2rem 0.5rem;
+	float: right;
+}
+.calendar .head .form input {
+	border-bottom: 1px solid #333;
+	color: #ffd700;
+	text-align: center;
+}
+.calendar .head .form input[name="year"] {
+	width: 3rem;
+}
+.calendar .head .form input[name="month"] {
+	width: 1.6rem;
+}
+.calendar .head .form span {
+	margin: 0 0.2rem;
+	color: #ffd700;
+	cursor: pointer;
+}
+
+
+.calendar .body {
+	padding: 0 0.5rem;
+	border: 1px solid #333;
+	border-radius: 0.2rem;
+}
+.calendar .body div {}
+.calendar .body div div {
+	display: inline-block;
+	width: calc(100% / 7);
+	padding: 1rem 0;
+	text-align: center;
+}
+
+.calendar .body .week {
+	border-bottom: 1px solid #333;
+}
+
+.calendar .body .day {}
+.calendar .body .day div.invalid {
+	color: #333;
+}
+.calendar .body .day div.today {
+	color: #ffd700;
+}
+.calendar .body .day div.clickable {
+	cursor: pointer;
+	position: relative;
+}
+.calendar .body .day div.clickable .dot-span {
+	width: 4px;
+	height: 4px;
+	background: #ffd700;
+	position: absolute;
+	bottom: 0.6rem;
+    left: calc(50% - 2px);
+}
+.calendar .body .day div.clickable .count {
+	display: none;
+}
+.calendar .body .day div.clickable:hover {
+	padding: 0.8rem 0;
+	background: #ffd700;
+	color: #0d0d0d;
+}
+.calendar .body .day div.clickable:hover .num {
+	display: none;
+}
+.calendar .body .day div.clickable:hover .count {
+	display: block;
+}

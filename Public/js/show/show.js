@@ -2,7 +2,7 @@ new Vue({
 	el: '#gudao',
 	data: {
 		place: [],
-		showByPage: []
+		shows: []
 	},
 	components: {
 		"navbar": navbar,
@@ -33,18 +33,18 @@ new Vue({
 		});
 	},
 	computed: {
-		list: function() {
-			var result = this.showByPage;
+		list: function() {		//将shows入面show_time后三字符去除
+			var result = this.shows;
 			if(result) {
 				result.forEach(function(item) {
-					item.show_time = item.show_time.toString().substr(0, item.show_time.length - 3);
+					item.show_time = item.show_time.toString().substr(0, item.show_time.length - 3); // 去除最后三字符
 				});
 			}
 			return result;
 		}
 	},
 	methods: {
-		getShowPlace: function() {
+		getShowPlace: function() {	//条件栏获取palces
 			var _this = this;
 			$.ajax({
 				url: "Show/getShowPlace",
@@ -57,7 +57,7 @@ new Vue({
 				}
 			});
 		},
-		getShowByPage: function() {
+		getShowByPage: function() { //获取shows
 			var _this = this;
 			$.ajax({
 				url: "Show/getShowByPage",
@@ -69,7 +69,7 @@ new Vue({
 				},
 				success: function(result) {
 					// console.log(result.data);
-					_this.showByPage = result.data;
+					_this.shows = result.data;
 				}
 			});
 		},
@@ -103,7 +103,7 @@ new Vue({
 						"state": state
 					},
 					success: function(result) {
-						_this.showByPage = result.data;
+						_this.shows = result.data;
 					}
 				});
 			}

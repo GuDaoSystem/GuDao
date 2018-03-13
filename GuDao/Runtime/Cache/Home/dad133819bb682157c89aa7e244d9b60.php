@@ -41,6 +41,30 @@ new Vue({
 	}
 });
 $(function() {
+	// 获取所有乐队首字母
+	$.ajax({
+		url: "/GuDao/index.php/Home/Band/getInitial",
+		dataType: "json",
+		success: function(result) {
+			// console.log(result);
+		}
+	});
+	
+	// 按页获取乐队列表
+	$.ajax({
+		url: "/GuDao/index.php/Home/Band/getBandByPage",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"pageIndex": 1,
+			"pageSize": 10,
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
+
+	// 按首字母获取乐队列表
 	$.ajax({
 		url: "/GuDao/index.php/Home/Band/getBandByPage",
 		type: "GET",
@@ -51,7 +75,7 @@ $(function() {
 			"initial": "L"
 		},
 		success: function(result) {
-			console.log(result);
+			// console.log(result);
 		}
 	});
 });

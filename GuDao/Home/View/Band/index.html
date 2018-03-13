@@ -41,6 +41,15 @@ new Vue({
 	}
 });
 $(function() {
+	// 获取所有乐队首字母
+	$.ajax({
+		url: "__URL__/getInitial",
+		dataType: "json",
+		success: function(result) {
+			// console.log(result);
+		}
+	});
+	
 	// 按页获取乐队列表
 	$.ajax({
 		url: "__URL__/getBandByPage",
@@ -66,7 +75,7 @@ $(function() {
 			"initial": "L"
 		},
 		success: function(result) {
-			console.log(result);
+			// console.log(result);
 		}
 	});
 });
