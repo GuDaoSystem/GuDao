@@ -308,6 +308,41 @@ footer {
 
 
 
+/* -------------------- 页脚 -------------------- */
+
+.no-data {
+	padding: 2rem 1rem;
+}
+.no-data img {
+    display: block;
+	width: 40%;
+    margin: 5rem auto;
+}
+.no-data span {
+	display: block;
+	width: 100%;
+	height: 1px;
+    background: #333;
+	box-shadow: 0.5rem 0.5rem 1rem #000;
+}
+.no-data p {
+    display: inline-block;
+    padding: 0 1rem;
+    background: #0d0d0d;
+    color: #333;
+    position: relative;
+    bottom: 10px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+
+
+
 /* -------------------- 弹窗 -------------------- */
 
 .alert-box {

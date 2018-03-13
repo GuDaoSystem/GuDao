@@ -43,7 +43,11 @@
 		</div>
 
 		<!-- 演出列表 -->
-		<div v-show="!list">NOT FOUND</div>
+		<div v-show="!list" class="no-data">
+			<img src="/GuDao/Public/img/common/noData.png">
+			<span></span>
+			<p>没有相关数据</p>
+		</div>
 		<ul class="row show-list">
 			<li v-for="item in list" class="col-sm-6 col-md-4">
 				<div class="show-content" :index="item.show_id">
