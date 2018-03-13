@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/frame.css">
-<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/Show/show.css">
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/show/showDetail.css">
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/bootstrap.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/vue.js"></script>
@@ -20,13 +20,15 @@
 
 	<!-- 内容 -->
 	<div class="container content">
+		<!-- 基本信息 -->
 		<div class="top">
-			<img src="/GuDao/Public/img/show/1.jpg" class="thumbnail"><div class="info">
+			<img :src="'/GuDao/Public/img/show/' + show.show_poster" class="thumbnail"><div class="info">
 				<span v-if="show.show_state == '1'" class="state yushou">/&ensp;预售</span>
 				<span v-else-if="show.show_state == '2'" class="state quxiao">/&ensp;取消</span>
 				<span v-else-if="show.show_state == '3'" class="state biangeng">/&ensp;变更</span>
 				<span v-else-if="show.show_state == '4'" class="state">/&ensp;结束</span>
 				<p class="name">{{show.show_name}}</p>
+				<!-- 信息列表 -->
 				<ul>
 					<li>
 						<span class="glyphicon glyphicon-headphones"></span>
@@ -66,19 +68,25 @@
 						</ul> -->
 					</li>
 				</ul>
+				<!-- “想看”按钮 -->
 				<button class="want" :class="{active: want}"><span class="glyphicon glyphicon-eye-open"></span><span class="num">{{wantNum}}</span>人想看</button>
 			</div>
 		</div>
 
+		<!-- 标签页 -->
 		<div>
+			<!-- 标签页选项卡 -->
 			<ul class="tablist nav nav-tabs" role="tablist">
 				<li class="tab1" role="presentation"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">详情</a></li>
 				<li class="tab2" role="presentation"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab">评论</a></li>
 				<span class="underline"></span>
 			</ul>
+			<!-- 标签页内容 -->
 			<div class="tab-content">
+				<!-- 详情 -->
 				<div role="tabpanel" class="tab-pane fade" id="detail">
 					<div class="desc"><pre>{{show.show_message}}</pre></div>
+					<!-- 乐队列表 -->
 					<ul class="row band">
 						<li v-for="band in bands" class="col-lg-4 col-sm-6">
 							<div :index="band.band_id">
@@ -89,7 +97,9 @@
 						</li>
 					</ul>
 				</div>
+				<!-- 评论 -->
 				<div role="tabpanel" class="tab-pane fade" id="comment">
+					<!-- 评论框 -->
 					<div class="send-box">
 						<div class="media">
 							<div class="media-left">
@@ -106,7 +116,7 @@
 							</div>
 						</div>
 					</div>
-
+					<!-- 评论列表 -->
 					<ul class="comment-list media-list">
 						<li v-for="comment in comments" :commentid="comment.comment_id" :userid="comment.user_id" class="comment media">
 							<div class="media-left">
@@ -124,7 +134,7 @@
 									<p>{{comment.comment_content}}</p>
 									<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
 								</div>
-
+								<!-- 回复框 -->
 								<div class="reply-box">
 									<textarea maxlength="100"></textarea>
 									<div class="bottom">
@@ -132,6 +142,7 @@
 										<button class="send">发送</button>
 									</div>
 								</div>
+								<!-- 回复列表 -->
 								<ul class="reply-list media-list">
 									<li v-for="reply in comment.reply" class="media">
 										<div class="media-left">
@@ -149,6 +160,7 @@
 												<p>{{reply.reply_content}}</p>
 												<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
 											</div>
+											<!-- 回复框 -->
 											<div class="reply-box">
 												<textarea maxlength="100"></textarea>
 												<div class="bottom">
@@ -176,7 +188,7 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/common.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/component.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
-<script type="text/javascript" src="/GuDao/Public/js/Show/showDetail.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/show/showDetail.js"></script>
 
 <script>
 $(function() {

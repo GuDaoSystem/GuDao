@@ -13,12 +13,14 @@ new Vue({
 		"copyright": copyright
 	},
 	created: function() {
+		// 加载动画
 		$(document).ajaxStart(function() {
 			setLoading();
 		}).ajaxStop(function() {
 			removeLoading();
 		});
 
+		// 获取数据
 		this.getShow();
 		this.getBand();
 		this.getWantNum();
@@ -27,17 +29,21 @@ new Vue({
 	},
 	mounted: function() {
 		this.$nextTick(function () {
+			// 监听“想看哪”按钮
+			$(".want").unbind("click").click(this.toggleWant);
+
+			// 标签页定位
 			var tabList = ["#detail", "#comment"];
 			var tabIndex = tabList.indexOf(location.hash);
 			$(".tablist li:eq(" + tabIndex +")").addClass("active");
 			$(".tablist .underline").addClass("tab" + (tabIndex + 1));
 			$(tabList[tabIndex]).addClass("in").addClass("active");
+
+			// 标签页切换
 			$(".tablist a").unbind("click").click(function () {
 				location.href = location.toString().split("#")[0] + $(this).attr("href");
 				$(".tablist .underline").removeClass("tab1 tab2").addClass($(this).parent()[0].className);
 			});
-
-			$(".want").unbind("click").click(this.toggleWant);
 		});
 	},
 	updated: function () {
@@ -45,6 +51,12 @@ new Vue({
 			var _this = this;
 			$(document).scrollTop(0);
 
+			// 监听乐队列表
+			$(".band div").unbind("click").click(function() {
+				location.href = "../Band/detail?id=" + $(this).attr("index");
+			});
+
+			// textarea高度自适应 & 动态显示textarea内容字数
 			var textareaPadding = 12 * 1 * 2;
 			$("textarea").on("input", function () {
 				if((this.scrollHeight - textareaPadding) > $(this).height()) {
@@ -53,12 +65,11 @@ new Vue({
 				$(this).next().find("span").text(this.value.length);
 			});
 
-			$(".band div").unbind("click").click(function() {
-				location.href = "../Band/detail?id=" + $(this).attr("index");
-			});
-
+			// 监听评论框“发送”按钮
 			$(".send-box .send").unbind("click").click(function() {
 				var send = $(this);
+
+				// 获取表单内容
 				var content = send.parent().prev("textarea").val();
 				if(!content) {
 					setAlertBox({
@@ -69,8 +80,10 @@ new Vue({
 					});
 					return;
 				}
+				// 设置发送时间
 				var time = new Date();
 				time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+				
 				$.ajax({
 					url: "sendComment",
 					type: "POST",
@@ -86,18 +99,23 @@ new Vue({
 						if(result.code === 200) {
 							// console.log(result);
 							send.parent().prev("textarea").val("");
+							// 重新获取评论列表
 							_this.getComment();
 						}
 					}
 				});
 			});
 
+			// 监听“回复”按钮
 			$(".reply").unbind("click").click(function() {
 				$(this).parent().next(".reply-box").toggle();
 			});
 
+			// 监听回复框“发送”按钮
 			$(".reply-box .send").unbind("click").click(function() {
 				var send = $(this);
+
+				// 获取表单内容
 				var content = send.parent().prev("textarea").val();
 				if(!content) {
 					setAlertBox({
@@ -108,8 +126,10 @@ new Vue({
 					});
 					return;
 				}
+				// 设置发送时间
 				var time = new Date();
 				time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+				
 				$.ajax({
 					url: "replyComment",
 					type: "POST",
@@ -127,6 +147,7 @@ new Vue({
 							// console.log(result);
 							send.parent().prev("textarea").val("");
 							$(".reply-box").hide();
+							// 重新获取评论列表
 							_this.getComment();
 						}
 					}
@@ -137,6 +158,7 @@ new Vue({
 	computed: {
 	},
 	methods: {
+		// 获取演出信息
 		getShow: function() {
 			var _this = this;
 			$.ajax({
@@ -150,6 +172,7 @@ new Vue({
 					if(result.code === 200) {
 						var data = result.data;
 
+						// 删除show_time最后三个字符
 						var time = data.show_time.toString();
 						time = time.substr(0, time.length - 3);
 						data.show_time = time;
@@ -160,6 +183,7 @@ new Vue({
 				}
 			});
 		},
+		// 获取乐队列表
 		getBand: function() {
 			var _this = this;
 			$.ajax({
@@ -177,6 +201,7 @@ new Vue({
 				}
 			});
 		},
+		// 获取“想看”数量
 		getWantNum: function() {
 			var _this = this;
 			$.ajax({
@@ -194,6 +219,7 @@ new Vue({
 				}
 			});
 		},
+		// 检查是否“想看”
 		checkWant: function() {
 			var _this = this;
 			$.ajax({
@@ -212,8 +238,11 @@ new Vue({
 				}
 			});
 		},
+		// 切换“想看”状态
 		toggleWant: function() {
 			var _this = this;
+
+			// 判断演出状态
 			if(this.show.show_state == 2 || this.show.show_state == 4) {
 				setAlertBox({
 					className: "text",
@@ -223,8 +252,12 @@ new Vue({
 				});
 				return;
 			}
+
+			// 获取ID信息
 			var user_id = sessionStorage.getItem("userID");
 			var show_id = location.search.substr(1).split("=")[1];
+
+			// 取消“想看”状态
 			if($(".want").hasClass("active")) {
 				$.ajax({
 					url: "deleteWant",
@@ -241,9 +274,13 @@ new Vue({
 						}
 					}
 				});
-			} else {
+			}
+			// 新增“想看”状态
+			else {
+				// 设置“想看”时间
 				var time = new Date();
 				time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
+
 				$.ajax({
 					url: "addWant",
 					type: "POST",
@@ -262,6 +299,7 @@ new Vue({
 				});
 			}
 		},
+		// 获取评论列表
 		getComment: function() {
 			var _this = this;
 			$.ajax({

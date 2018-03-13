@@ -8,6 +8,7 @@ new Vue({
 
 
 $(function() {
+	// 表单校验
 	$("#login").validate({
 		debug: true,
 		rules: {
@@ -29,6 +30,7 @@ $(function() {
 			}
 		},
 		submitHandler: function(form){
+			// 获取表单数据
 			var email = $("input[name='email']").val();
 			var password = md5($("input[name='password']").val());
 			var autoLogin = false;
@@ -62,6 +64,7 @@ $(function() {
         }  
 	});
 
+	// 监听“下次自动登录”按钮
 	$(".checkbox").click(function() {
 		if($(".uncheck").css("display") == "inline-block") {
 			$(".uncheck").hide();

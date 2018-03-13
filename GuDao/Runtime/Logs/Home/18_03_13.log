@@ -6819,3 +6819,2376 @@ INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001386s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001525s ]
 ERR: 无法加载控制器:Public
 
+[ 2018-03-13T10:49:18+08:00 ] ::1 /GuDao/User/forgetPassword
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001055s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001124s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011134s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011211s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000889s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000942s ]
+
+[ 2018-03-13T10:49:18+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000815s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001901s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T10:49:19+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014324s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014418s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000729s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000977s ]
+
+[ 2018-03-13T10:49:19+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000981s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001494s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0128s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0115s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0113s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0107s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0195s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T10:49:20+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000797s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001507s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0084s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0084s ]
+
+[ 2018-03-13T10:49:20+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001626s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T10:49:30+08:00 ] ::1 /GuDao/Show/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000578s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013199s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001030s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001098s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000927s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000983s ]
+
+[ 2018-03-13T10:49:30+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000880s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000980s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001056s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T10:49:30+08:00 ] ::1 /GuDao/Show/getShowByID?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001640s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0004s ]
+
+[ 2018-03-13T10:49:30+08:00 ] ::1 /GuDao/Show/getBandByShow?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001574s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0105s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0067s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0118s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0005s ]
+
+[ 2018-03-13T10:49:30+08:00 ] ::1 /GuDao/Show/getWantUserNum?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001526s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0113s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-03-13T10:49:30+08:00 ] ::1 /GuDao/Public/img/band/2/band2_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001114s ]
+
+[ 2018-03-13T10:49:30+08:00 ] ::1 /GuDao/Public/img/band/4/band4_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000823s ]
+
+[ 2018-03-13T10:49:31+08:00 ] ::1 /GuDao/Public/img/band/5/band5_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001108s ]
+
+[ 2018-03-13T10:49:31+08:00 ] ::1 /GuDao/Public/img/band/3/band3_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001744s ]
+
+[ 2018-03-13T10:49:31+08:00 ] ::1 /GuDao/Show/getCommentNReply?target=1&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001311s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 1 AND `target_id` = 1 ORDER BY comment_time desc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0101s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0112s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 20 ORDER BY reply_time asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0118s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0106s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 19 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0159s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0142s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 18 ORDER BY reply_time asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0138s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0079s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 17 ORDER BY reply_time asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0119s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 16 ORDER BY reply_time asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0134s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0194s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 15 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0084s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0084s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0078s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0064s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0086s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 14 ORDER BY reply_time asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0076s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0102s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0075s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0088s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 13 ORDER BY reply_time asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0102s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 10 ORDER BY reply_time asc  [ RunTime:0.0003s ]
+
+[ 2018-03-13T10:49:31+08:00 ] ::1 /GuDao/Show/checkWant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `want` WHERE `user_id` = 0 AND `show_id` = 1  [ RunTime:0.0003s ]
+
+[ 2018-03-13T10:49:31+08:00 ] ::1 /GuDao/Public/img/show/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001011s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002166s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002286s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T10:49:41+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000083s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001886s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T10:49:41+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0081s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0104s ]
+
+[ 2018-03-13T10:49:41+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001325s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0099s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0141s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0195s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0136s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0106s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0168s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0166s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0179s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T10:49:43+08:00 ] ::1 /GuDao/Show/detail?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012717s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012786s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000701s ]
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001660s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Show/getShowByID?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001380s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 2  [ RunTime:0.0004s ]
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Show/getBandByShow?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000979s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002699s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0089s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0093s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0005s ]
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Show/getWantUserNum?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004224s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Show/checkWant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001503s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `want` WHERE `user_id` = 0 AND `show_id` = 2  [ RunTime:0.0018s ]
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Public/img/band/6/band6_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001320s ]
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Public/img/band/8/band8_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001063s ]
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Public/img/band/9/band9_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001154s ]
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Public/img/band/7/band7_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001211s ]
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Show/getCommentNReply?target=1&id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001029s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 1 AND `target_id` = 2 ORDER BY comment_time desc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0151s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 9  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0134s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 12 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0184s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 1 ORDER BY reply_time asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0131s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0190s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0104s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0117s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0134s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 5  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0091s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 9  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0111s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+
+[ 2018-03-13T10:49:44+08:00 ] ::1 /GuDao/Public/img/show/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000865s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002420s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T10:58:01+08:00 ] ::1 /GuDao/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008768s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008864s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001168s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001289s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001165s ]
+
+[ 2018-03-13T10:58:01+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000830s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002393s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:01:25+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009571s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000855s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000908s ]
+
+[ 2018-03-13T11:01:25+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001541s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:01:25+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002644s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0772s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0133s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0109s ]
+
+[ 2018-03-13T11:01:26+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002018s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0159s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0202s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0197s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0154s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0123s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0108s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0132s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0114s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0074s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T11:01:28+08:00 ] ::1 /GuDao/Show/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012928s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001345s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001426s ]
+
+[ 2018-03-13T11:01:28+08:00 ] ::1 /GuDao/Show/checkWant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002453s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `want` WHERE `user_id` = 0 AND `show_id` = 1  [ RunTime:0.0004s ]
+
+[ 2018-03-13T11:01:29+08:00 ] ::1 /GuDao/Show/getShowByID?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000850s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001376s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0005s ]
+
+[ 2018-03-13T11:01:29+08:00 ] ::1 /GuDao/Public/img/show/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004646s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002151s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003152s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:01:29+08:00 ] ::1 /GuDao/Show/getWantUserNum?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000775s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012173s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-03-13T11:01:29+08:00 ] ::1 /GuDao/Show/getBandByShow?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001166s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0105s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0097s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0083s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0008s ]
+
+[ 2018-03-13T11:01:29+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000765s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001556s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:01:29+08:00 ] ::1 /GuDao/Public/img/band/2/band2_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000654s ]
+
+[ 2018-03-13T11:01:29+08:00 ] ::1 /GuDao/Public/img/band/3/band3_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000951s ]
+
+[ 2018-03-13T11:01:29+08:00 ] ::1 /GuDao/Public/img/band/5/band5_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000869s ]
+
+[ 2018-03-13T11:01:29+08:00 ] ::1 /GuDao/Public/img/band/4/band4_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000787s ]
+
+[ 2018-03-13T11:01:29+08:00 ] ::1 /GuDao/Show/getCommentNReply?target=1&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.019321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019437s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0554s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 1 AND `target_id` = 1 ORDER BY comment_time desc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0088s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 20 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0080s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 19 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0091s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 18 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0104s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 17 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0089s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 16 ORDER BY reply_time asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0115s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 15 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0074s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0099s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0073s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0083s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0093s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 14 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0085s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0068s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0073s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 13 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0080s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 10 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+
+[ 2018-03-13T11:04:33+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000959s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000896s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000960s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009596s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009674s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001069s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001493s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001588s ]
+
+[ 2018-03-13T11:04:34+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001502s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0101s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0100s ]
+
+[ 2018-03-13T11:04:34+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001475s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0126s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0127s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0166s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0169s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0194s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0178s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0196s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0169s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0136s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0171s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T11:04:34+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001809s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:11:01+08:00 ] ::1 /GuDao/Show/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000863s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013592s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013684s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000884s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000948s ]
+
+[ 2018-03-13T11:11:02+08:00 ] ::1 /GuDao/Show/getShowByID?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001012s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001100s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0004s ]
+
+[ 2018-03-13T11:11:02+08:00 ] ::1 /GuDao/Show/getBandByShow?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002044s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0111s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0005s ]
+
+[ 2018-03-13T11:11:02+08:00 ] ::1 /GuDao/Show/getWantUserNum?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000791s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001555s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-03-13T11:11:02+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000847s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001653s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:11:02+08:00 ] ::1 /GuDao/Public/img/band/2/band2_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001690s ]
+
+[ 2018-03-13T11:11:02+08:00 ] ::1 /GuDao/Show/checkWant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001597s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `want` WHERE `user_id` = 0 AND `show_id` = 1  [ RunTime:0.0008s ]
+
+[ 2018-03-13T11:11:02+08:00 ] ::1 /GuDao/Public/img/band/4/band4_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001087s ]
+
+[ 2018-03-13T11:11:02+08:00 ] ::1 /GuDao/Public/img/band/3/band3_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000766s ]
+
+[ 2018-03-13T11:11:02+08:00 ] ::1 /GuDao/Public/img/band/5/band5_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003986s ]
+
+[ 2018-03-13T11:11:03+08:00 ] ::1 /GuDao/Show/getCommentNReply?target=1&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001139s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001246s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0102s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 1 AND `target_id` = 1 ORDER BY comment_time desc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0177s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0286s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 20 ORDER BY reply_time asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0146s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0254s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 19 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0104s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0106s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 18 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 17 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0102s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 16 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0081s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 15 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0094s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0105s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0118s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0111s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0080s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0089s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 14 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0087s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0084s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0122s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 13 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0099s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0084s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 10 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+
+[ 2018-03-13T11:11:03+08:00 ] ::1 /GuDao/Public/img/show/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000964s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001078s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:11:03+08:00 ] ::1 /GuDao/Public/img/show/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001150s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:12:10+08:00 ] ::1 /GuDao/Show/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000234s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012804s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012874s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000657s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2018-03-13T11:12:10+08:00 ] ::1 /GuDao/Show/getBandByShow?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0101s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0157s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0093s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0105s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+
+[ 2018-03-13T11:12:10+08:00 ] ::1 /GuDao/Show/getShowByID?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001465s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0104s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0004s ]
+
+[ 2018-03-13T11:12:10+08:00 ] ::1 /GuDao/Show/getWantUserNum?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001660s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-03-13T11:12:10+08:00 ] ::1 /GuDao/Public/img/band/2/band2_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+
+[ 2018-03-13T11:12:10+08:00 ] ::1 /GuDao/Public/img/band/3/band3_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001017s ]
+
+[ 2018-03-13T11:12:10+08:00 ] ::1 /GuDao/Public/img/band/4/band4_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000967s ]
+
+[ 2018-03-13T11:12:10+08:00 ] ::1 /GuDao/Public/img/band/5/band5_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002982s ]
+
+[ 2018-03-13T11:12:11+08:00 ] ::1 /GuDao/Show/getCommentNReply?target=1&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000849s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002101s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002320s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0406s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 1 AND `target_id` = 1 ORDER BY comment_time desc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0083s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0122s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 20 ORDER BY reply_time asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0133s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0094s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 19 ORDER BY reply_time asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0142s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0121s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0127s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 18 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0104s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0194s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 17 ORDER BY reply_time asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0093s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 16 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0112s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0114s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 15 ORDER BY reply_time asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0098s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0126s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0070s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0079s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 14 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0154s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0122s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0073s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0067s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 13 ORDER BY reply_time asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0081s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 10 ORDER BY reply_time asc  [ RunTime:0.0006s ]
+
+[ 2018-03-13T11:12:11+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000883s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001666s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:12:11+08:00 ] ::1 /GuDao/Show/checkWant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001015s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001621s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `want` WHERE `user_id` = 0 AND `show_id` = 1  [ RunTime:0.0004s ]
+
+[ 2018-03-13T11:12:11+08:00 ] ::1 /GuDao/Public/img/show/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001564s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:12:11+08:00 ] ::1 /GuDao/Public/img/show/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000993s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002303s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:22:21+08:00 ] ::1 /GuDao/Show/detail?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014200s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014271s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001256s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001322s ]
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001546s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Show/getBandByShow?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003767s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0232s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0110s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0107s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Show/getWantUserNum?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002284s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0141s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0108s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Show/getShowByID?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001724s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0005s ]
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Public/img/band/3/band3_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000779s ]
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Public/img/band/4/band4_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001032s ]
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Show/checkWant
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001654s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `want` WHERE `user_id` = 0 AND `show_id` = 1  [ RunTime:0.0005s ]
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Public/img/band/2/band2_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001051s ]
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Public/img/band/5/band5_01.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000847s ]
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Show/getCommentNReply?target=1&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004717s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001255s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0112s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0161s ]
+SQL: SELECT * FROM `comment` WHERE `comment_target` = 1 AND `target_id` = 1 ORDER BY comment_time desc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0192s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0169s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 20 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0122s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 19 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0103s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 18 ORDER BY reply_time asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0080s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0093s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 17 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0076s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 16 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0093s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0108s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 15 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0080s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0062s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0054s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0066s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0067s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 14 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0071s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0089s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0070s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 13 ORDER BY reply_time asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0074s ]
+SQL: SELECT `user_id`,`username`,`gender`,`birthday`,`headshot`,`intro` FROM `user` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `reply` WHERE `comment_id` = 10 ORDER BY reply_time asc  [ RunTime:0.0005s ]
+
+[ 2018-03-13T11:22:22+08:00 ] ::1 /GuDao/Public/img/show/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001765s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002021s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:22:26+08:00 ] ::1 /GuDao/Index/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036208s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036301s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001074s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001157s ]
+
+[ 2018-03-13T11:22:26+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000095s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001064s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001158s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:22:26+08:00 ] ::1 /GuDao/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0094s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2018-03%' GROUP BY show_time  [ RunTime:0.0009s ]
+
+[ 2018-03-13T11:22:29+08:00 ] ::1 /GuDao/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000905s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008006s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0161s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2018-03%' GROUP BY show_time  [ RunTime:0.0004s ]
+
+[ 2018-03-13T11:29:31+08:00 ] ::1 /GuDao/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011363s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011474s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000704s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000889s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000940s ]
+
+[ 2018-03-13T11:29:32+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001108s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:41:41+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000833s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009261s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009347s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000708s ]
+
+[ 2018-03-13T11:41:41+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001759s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001339s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0094s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0097s ]
+
+[ 2018-03-13T11:41:42+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000887s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001730s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0094s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0159s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0164s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0148s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0108s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0176s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0222s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0205s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0198s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0123s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T11:41:42+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001799s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:43:16+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001759s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009009s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009081s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001871s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001984s ]
+
+[ 2018-03-13T11:43:16+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001540s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:43:16+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000988s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0092s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0076s ]
+
+[ 2018-03-13T11:43:17+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000104s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002379s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0106s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0149s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0197s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0104s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0117s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0112s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0252s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0202s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0191s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0218s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0192s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0209s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0174s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0015s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T11:43:35+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001152s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014623s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014728s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001215s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001283s ]
+
+[ 2018-03-13T11:43:35+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001806s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0082s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0091s ]
+
+[ 2018-03-13T11:43:35+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000880s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001540s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0099s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0099s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0101s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0164s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0154s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0128s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0180s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0144s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0112s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0084s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T11:43:35+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001064s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:43:47+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008900s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009261s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001482s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000750s ]
+
+[ 2018-03-13T11:43:47+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001425s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:43:47+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001180s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0096s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0093s ]
+
+[ 2018-03-13T11:43:47+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000083s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001448s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0127s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0152s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0128s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0155s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0117s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0121s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0075s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0105s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0126s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T11:44:06+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001516s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009041s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009129s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001457s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001516s ]
+
+[ 2018-03-13T11:44:06+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001131s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001261s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:44:06+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0091s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0095s ]
+
+[ 2018-03-13T11:44:07+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001480s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0084s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0118s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0166s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0105s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0143s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0133s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0126s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0125s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0073s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T11:45:22+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000523s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012712s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012788s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000608s ]
+
+[ 2018-03-13T11:45:23+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001485s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:45:23+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0106s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0095s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0082s ]
+
+[ 2018-03-13T11:45:23+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002588s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0107s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0082s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0141s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0133s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0168s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0108s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0083s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0127s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0101s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0093s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0106s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0132s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T11:45:44+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6&place=Encore%20LiveClub&state=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000975s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001072s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `show` WHERE `show_place` = 'Encore LiveClub' ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0145s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0152s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0134s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0117s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T11:46:14+08:00 ] ::1 /GuDao/Show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001518s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010229s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010305s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000864s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000916s ]
+
+[ 2018-03-13T11:46:14+08:00 ] ::1 /GuDao/Public/css/common/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001525s ]
+ERR: 无法加载控制器:Public
+
+[ 2018-03-13T11:46:14+08:00 ] ::1 /GuDao/Show/getShowPlace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001158s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0110s ]
+SQL: SELECT `show_place` FROM `show` GROUP BY show_place  [ RunTime:0.0079s ]
+
+[ 2018-03-13T11:46:15+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001499s ]
+NOTIC: [8] Undefined index: place D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 43 行.
+NOTIC: [8] Undefined index: state D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0123s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0105s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0112s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0240s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0151s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0155s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 6  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0127s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 7  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0104s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 9  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0113s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0113s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0151s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0162s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0189s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0138s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+
+[ 2018-03-13T11:46:17+08:00 ] ::1 /GuDao/Show/getShowByPage?pageIndex=1&pageSize=6&place=&state=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003925s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0134s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `show` WHERE `show_state` = 2 ORDER BY show_time desc LIMIT 0,6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0176s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `want` WHERE `show_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `attend` [ RunTime:0.0170s ]
+SQL: SELECT `band_id` FROM `attend` WHERE `show_id` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0174s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0182s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 3  [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0162s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 5  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: sort D:\xampp\htdocs\GuDao\GuDao\Home\Controller\ShowController.class.php 第 96 行.
+

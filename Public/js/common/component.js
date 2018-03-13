@@ -1,3 +1,4 @@
+// 导航栏
 var navbar = {
 	template: `<nav class="navbar navbar-fixed-top">
 			   <div class="container">
@@ -48,10 +49,12 @@ var navbar = {
 		   </nav>`
 };
 
+// 返回顶部
 var backToTop = {
 	template: `<a class="back-to-top"><span class="glyphicon glyphicon-send"></span></a>`
 };
 
+// 底部版权信息
 var copyright = {
 	template: `<footer>Copyright&ensp;&copy;&ensp;2017-2018&ensp;孤岛音乐平台&ensp;All&ensp;Rights&ensp;Reserved.</footer>`
 };

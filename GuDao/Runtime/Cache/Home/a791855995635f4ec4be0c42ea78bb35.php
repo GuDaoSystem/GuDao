@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/frame.css">
-<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/Show/show.css">
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/show/show.css">
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/bootstrap.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/vue.js"></script>
@@ -20,6 +20,7 @@
 
 	<!-- 内容 -->
 	<div class="container content">
+		<!-- 筛选条件 -->
 		<div class="condition">
 			<ul class="sort">
 				<p>演出排序</p>
@@ -41,6 +42,7 @@
 			</ul>
 		</div>
 
+		<!-- 演出列表 -->
 		<div v-show="!list">NOT FOUND</div>
 		<ul class="row show-list">
 			<li v-for="item in list" class="col-sm-6 col-md-4">
@@ -70,7 +72,7 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/common.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/component.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
-<script type="text/javascript" src="/GuDao/Public/js/Show/show.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/show/show.js"></script>
 
 <script>
 $(function() {

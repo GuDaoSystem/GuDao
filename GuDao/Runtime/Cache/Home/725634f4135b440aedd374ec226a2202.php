@@ -20,6 +20,7 @@
 
 	<!-- 内容 -->
 	<div class="container content">
+		<!-- 演出时间表 -->
 		<div class="calendar">
 			<div class="head">
 				<div class="title">演出时间表</div>
@@ -53,15 +54,6 @@
 <script type="text/javascript" src="/GuDao/Public/js/index/home.js"></script>
 
 <script>
-// new Vue({
-// 	el: '#gudao',
-// 	components: {
-// 		"navbar": navbar,
-// 		"back-to-top": backToTop,
-// 		"copyright": copyright
-// 	}
-// });
-
 $(function() {
 	// $.ajax({
 	// 	url: "/GuDao/index.php/Home/Index/getNotice",

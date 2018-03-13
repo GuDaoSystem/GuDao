@@ -10,27 +10,28 @@ new Vue({
 		"copyright": copyright
 	},
 	created: function() {
+		// 加载动画
 		$(document).ajaxStart(function() {
 			setLoading();
 		}).ajaxStop(function() {
 			removeLoading();
 		});
 
-
+		// 设置当月演出时间表
 		var date = new Date();
 		var year = date.getFullYear();
 		var month = date.getMonth() + 1;
 		this.setCalendar(year, month);
-
-			
 	},
 	mounted: function() {
 		this.$nextTick(function () {
 			var _this = this;
+			// 监听演出时间表中的时间选择器
 			$(".calendar .selector").click(function(e) {
 				var year = $(this).find("span.year").text();
 				var month = $(this).find("span.month").text();
 
+				// 上一个月
 				if($(e.target).hasClass("left")) {
 					if(month == 1) {
 						year--;
@@ -39,7 +40,9 @@ new Vue({
 						month--;
 					}
 					_this.setCalendar(year, month);
-				} else if($(e.target).hasClass("right")) {
+				}
+				// 下一个月
+				else if($(e.target).hasClass("right")) {
 					if(month == 12) {
 						year++;
 						month = 1;
@@ -47,20 +50,29 @@ new Vue({
 						month++;
 					}
 					_this.setCalendar(year, month);
-				} else if($(e.target).hasClass("year") || $(e.target).hasClass("month")) {
+				}
+				// 手动输入时间
+				else if($(e.target).hasClass("year") || $(e.target).hasClass("month")) {
 					$(this).hide();
+
 					var form = $(this).parent().find(".form");
-					form.css("display", "inline-block");
+					form.show();
+					// 表单自动赋值
 					form.find(".year").val(year);
 					form.find(".month").val(month);
+					// 聚焦表单
 					if($(e.target).hasClass("year")) {
 						form.find(".year").focus();
 					} else {
 						form.find(".month").focus();
 					}
+					
+					// 监听“完成”按钮
 					form.find("span").unbind("click").click(function() {
+						// 获取表单中的值
 						year = form.find(".year").val();
 						month = form.find(".month").val();
+						// 格式检验
 						if(year.length != 4) {
 							setAlertBox({
 								className: "text",
@@ -89,17 +101,22 @@ new Vue({
 	},
 	updated: function () {
 		this.$nextTick(function () {
-			
 		});
 	},
 	computed: {
 	},
 	methods: {
+		// 设置演出时间表
 		setCalendar: function(year, month) {
+			// 当月的天数
 			var days = new Date(year, month, 0).getDate();
+			// 上一个月的天数
 			var lastMonth = new Date(year, month - 1, 0).getDate();
+
+			// 设置日期列表HTML
 			var dayList = "";
 			var arr = [];
+			// 上一个月
 			for(var i = 0; i < new Date(year, month - 1, 1).getDay(); i++) {
 				arr.push(lastMonth--);
 			}
@@ -107,26 +124,33 @@ new Vue({
 			for(var i = 0; i < arr.length; i++) {
 				dayList += "<div class='invalid'>" + arr[i] + "</div>";
 			}
+			// 当前月
 			for(var i = 1; i <= days; i++) {
 				dayList += "<div><p class='num'>" + i + "</p></div>";
 			}
+			// 下一个月
 			for(var i = 1; i <= 42 - (arr.length + days); i++) {
 				dayList += "<div class='invalid'>" + i + "</div>";
 			}
 
+			// 渲染日期列表
 			$(".calendar .day").html("").append(dayList);
 
+			// 设置今天
 			var date = new Date();
 			if(year == date.getFullYear() && month == date.getMonth() + 1) {
 				$(".calendar .day p:contains(" + date.getDate() +")").parent().addClass("today");
 			}
 
+			// 设置月份格式
 			if(month.toString().length == 1) {
 				month = "0" + month;
 			}
 
+			// 设置时间选择器中的时间
 			$(".calendar .selector p").html("").append("<span class='year'>" + year + "</span>年<span class='month'>" + month + "</span>月");
 
+			// 获取及设置有演出的日期
 			$.ajax({
 				url: "getShowCalendar",
 				type: "POST",

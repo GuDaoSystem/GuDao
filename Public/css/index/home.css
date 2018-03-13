@@ -1,3 +1,6 @@
+
+/* -------------------- 演出时间表 -------------------- */
+
 .calendar {
 	display: inline-block;
 	width: 30%;
@@ -58,9 +61,12 @@
 	border: 1px solid #333;
 	border-radius: 0.2rem;
 }
-.calendar .body div {}
 .calendar .body div div {
 	display: inline-block;
+	width: -webkit-calc(100% / 7);
+	width: -moz-calc(100% / 7);
+	width: -ms-calc(100% / 7);
+	width: -o-calc(100% / 7);
 	width: calc(100% / 7);
 	padding: 1rem 0;
 	text-align: center;
@@ -70,7 +76,6 @@
 	border-bottom: 1px solid #333;
 }
 
-.calendar .body .day {}
 .calendar .body .day div.invalid {
 	color: #333;
 }
@@ -87,6 +92,10 @@
 	background: #ffd700;
 	position: absolute;
 	bottom: 0.6rem;
+    left: -webkit-calc(50% - 2px);
+    left: -moz-calc(50% - 2px);
+    left: -ms-calc(50% - 2px);
+    left: -o-calc(50% - 2px);
     left: calc(50% - 2px);
 }
 .calendar .body .day div.clickable .count {

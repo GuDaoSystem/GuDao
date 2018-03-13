@@ -6,7 +6,9 @@ new Vue({
 	}
 });
 
+
 $(function() {
+	// 获取验证码
 	getCode({
 		form: {
 			targetType: "email",
@@ -24,9 +26,11 @@ $(function() {
 	});
 
 
+	// 表单校验
 	var email = "";
 	var password = "";
 
+	// 第一步
 	$(".step1 form").validate({
 		debug: true,
 		rules: {
@@ -42,6 +46,7 @@ $(function() {
 			}
 		},
 		submitHandler: function(form){
+			// 获取表单数据
 			email = $("input[name='email']").val();
 			var code = $("input[name='code']").val();
 			if(code == "") {
@@ -62,6 +67,7 @@ $(function() {
 					},
 					success: function(result) {
 						if(result.code === 200) {
+							// 切换选项卡
 							$(".tab li").removeClass("active");
 							$(".tab li:eq(1)").addClass("active");
 							$(".tab .underline").removeClass("tab1").addClass("tab2");
@@ -81,6 +87,7 @@ $(function() {
         }  
 	});
 
+	// 第二步
 	$(".step2 form").validate({
 		debug: true,
 		rules: {
@@ -103,6 +110,7 @@ $(function() {
 		},
 		submitHandler: function(form){
 			password = md5($("input[name='password']").val());
+			// 重设密码
 			$.ajax({
 				url: "resetPassword",
 				type: "POST",
@@ -113,12 +121,14 @@ $(function() {
 				},
 				success: function(result) {
 					if(result.code === 200) {
+						// 切换选项卡
 						$(".tab li").removeClass("active");
 						$(".tab li:eq(2)").addClass("active");
 						$(".tab .underline").removeClass("tab2").addClass("tab3");
 						$(".step2").hide();
 						$(".step3").show();
 
+						// 自动登录
 						$.ajax({
 							url: "../Index/doLogin",
 							type: "POST",
@@ -129,8 +139,8 @@ $(function() {
 							},
 							success: function(result) {
 								if(result.code === 200) {
-									var data = result.data;
-									sessionStorage.setItem("userID", data.user_id);
+									// 设置登录状态
+									sessionStorage.setItem("userID", result.data.user_id);
 								} else {
 									setAlertBox({
 										className: "text",
@@ -150,6 +160,7 @@ $(function() {
 							}
 						});
 
+						// 第三步
 						var countdown = 3;
 						$(".step3 .countdown").text(countdown);
 						clearInterval(timer);
