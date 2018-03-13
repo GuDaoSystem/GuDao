@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/frame.css">
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/user/index.css">
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/bootstrap.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/vue.js"></script>
@@ -21,6 +22,37 @@
 	<div id="index" class="container content">
 		<!-- 基本信息 -->
 		<div class="top">
+			<img v-if="info.headshot" :src="'/GuDao/Public/img/user/' + info.headshot" class="thumbnail">
+			<img v-else src="/GuDao/Public/img/user/default.jpg" class="thumbnail"><div class="info">
+				<div class="data">
+					<div class="want">
+						<p>想看演出</p>
+						<p class="num">23333</p>
+					</div><div class="support">
+						<p>支持乐队</p>
+						<p class="num">2333</p>
+					</div>
+				</div>
+				<p class="name">{{info.username}}</p>
+				<!-- 信息列表 -->
+				<ul>
+					<li class="gender">
+						<span class="glyphicon glyphicon-user"></span>
+						<p>{{info.gender}}</p>
+					</li>
+					<li class="age">
+						<span class="glyphicon glyphicon-hourglass"></span>
+						<p>{{info.age}}</p>
+					</li>
+					<li class="intro">
+						<span class="glyphicon glyphicon-bookmark"></span>
+						<p>{{info.intro}}</p>
+					</li>
+				</ul>
+				<!-- 修改按钮 -->
+				<a><span class="glyphicon glyphicon-pencil"></span>修改基本信息</a>
+				<a><span class="glyphicon glyphicon-lock"></span>修改账号信息</a>
+			</div>
 		</div>
 
 		<!-- 标签页 -->

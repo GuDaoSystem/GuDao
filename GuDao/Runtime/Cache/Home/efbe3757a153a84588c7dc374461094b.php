@@ -19,7 +19,7 @@
 	<navbar></navbar>
 
 	<!-- 内容 -->
-	<div class="container content">
+	<div id="show-detail" class="container content">
 		<!-- 基本信息 -->
 		<div class="top">
 			<img :src="'/GuDao/Public/img/show/' + show.show_poster" class="thumbnail"><div class="info">

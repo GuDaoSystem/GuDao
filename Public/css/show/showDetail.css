@@ -169,7 +169,7 @@
 	transition: all 0.2s;
 }
 .tablist .underline.tab1 {
-	left: -wenkit-calc((100% - 140px) / 2);
+	left: -webkit-calc((100% - 140px) / 2);
 	left: -moz-calc((100% - 140px) / 2);
 	left: -ms-calc((100% - 140px) / 2);
 	left: -o-calc((100% - 140px) / 2);
