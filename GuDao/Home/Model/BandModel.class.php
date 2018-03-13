@@ -38,4 +38,16 @@ class BandModel extends Model {
         $result = $band->group('band_initial')->getField('band_initial', true);
         return $result;  
     }
+
+    // 按乐队名称搜索乐队
+    public function searchBandByName($key) {
+        $band = new BandModel();
+        $condition = "%";
+        for ($i = 0; $i < count($key); $i++) {
+            $condition = $condition.$key[$i]."%";
+        }
+        $map["band_name"] = array("like", $condition);
+        $result = $band->where($map)->select();
+        return $result;
+    }
 }

@@ -32,7 +32,26 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
 
 <script>
+new Vue({
+	el: '#gudao',
+	components: {
+		"navbar": navbar,
+		"back-to-top": backToTop,
+		"copyright": copyright
+	}
+});
 $(function() {
+	$.ajax({
+		url: "doSearch",
+		type: "POST",
+		dataType: "json",
+		data: {
+			"key": ["未来", "广州"]
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 });
 </script>
 

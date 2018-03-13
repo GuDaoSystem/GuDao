@@ -244,4 +244,56 @@ class IndexController extends Controller {
         }
         $this->ajaxReturn($result);
     }
+
+
+
+
+
+
+
+
+
+
+    // 搜索
+    public function doSearch() {
+        $show = new ShowModel();
+        $notice = new NoticeModel();
+        $band = new BandModel();
+
+        $flag = false;
+        $result["data"]["show"] = [];
+        $result["data"]["notice"] = [];
+        $result["data"]["band"] = [];
+
+
+        // 循环体
+        $data = $notice->searchNoticeByContent($_POST["key"]);
+        if($data) {
+            $flag = true;
+            $result["data"]["notice"] = array_merge($result["data"]["notice"], $data);
+        }
+        
+        $data = $show->searchShowByName($_POST["key"]);
+        if($data) {
+            $flag = true;
+            $result["data"]["show"] = array_merge($result["data"]["show"], $data);
+        }
+        
+        $data = $band->searchBandByName($_POST["key"]);
+        if($data) {
+            $flag = true;
+            $result["data"]["band"] = array_merge($result["data"]["band"], $data);
+        }
+
+
+        if($flag) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+            $result["data"] = null;
+        }
+        $this->ajaxReturn($result);
+    }
 }

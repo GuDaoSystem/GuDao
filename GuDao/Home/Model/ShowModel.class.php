@@ -38,4 +38,16 @@ class ShowModel extends Model {
         $result = $show->group('show_place')->getField('show_place', true);
         return $result;
     }
+
+    // 按演出名称搜索演出
+    public function searchShowByName($key) {
+        $show = new ShowModel();
+        $condition = "%";
+        for ($i = 0; $i < count($key); $i++) {
+            $condition = $condition.$key[$i]."%";
+        }
+        $map["show_name"] = array("like", $condition);
+        $result = $show->where($map)->select();
+        return $result;
+    }
 }

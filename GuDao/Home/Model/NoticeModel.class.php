@@ -29,4 +29,16 @@ class NoticeModel extends Model {
     //     $result = $notice->where($map)->select();
     //     return $result;
     // }
+
+    // 按通知内容搜索通知
+    public function searchNoticeByContent($key) {
+        $notice = new NoticeModel();
+        $condition = "%";
+        for ($i = 0; $i < count($key); $i++) {
+            $condition = $condition.$key[$i]."%";
+        }
+        $map["notice_content"] = array("like", $condition);
+        $result = $notice->where($map)->select();
+        return $result;
+    }
 }

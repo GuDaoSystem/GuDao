@@ -41,6 +41,17 @@ new Vue({
 	}
 });
 $(function() {
+	$.ajax({
+		url: "doSearch",
+		type: "POST",
+		dataType: "json",
+		data: {
+			"key": ["未来", "广州"]
+		},
+		success: function(result) {
+			console.log(result);
+		}
+	});
 });
 </script>
 
