@@ -1,7 +1,13 @@
 new Vue({
 	el: '#gudao',
 	data: {
-		info: {}
+		info: {},
+		want: 0,
+		support: 0,
+		activity: [],
+		reply: [],
+		show: [],
+		band: []
 	},
 	components: {
 		"navbar": navbar,
@@ -18,9 +24,24 @@ new Vue({
 
 		// 获取数据
 		this.getUserInfo();
+		this.getActivity();
+		this.getReply();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
+			// 标签页定位
+			var tabList = ["#activity", "#message", "#show", "#band"];
+			var tabIndex = tabList.indexOf(location.hash);
+			$(".tablist li:eq(" + tabIndex +")").addClass("active");
+			$(".tablist .underline").addClass("tab" + (tabIndex + 1));
+			$(tabList[tabIndex]).addClass("in").addClass("active");
+
+			// 标签页切换
+			$(".tablist a").unbind("click").click(function () {
+				location.href = location.toString().split("#")[0] + $(this).attr("href");
+				$(".tablist .underline")[0].className = "underline";
+				$(".tablist .underline").addClass($(this).parent()[0].className);
+			});
 		});
 	},
 	updated: function () {
@@ -41,19 +62,64 @@ new Vue({
 					"id": sessionStorage.getItem("userID")
 				},
 				success: function(result) {
-					console.log(result);
+					// console.log(result);
+					if(result.code === 200) {
+						var data = result.data;
 
-					var data = result.data;
+						if(data.gender) {
+							data.gender = "女";
+						} else {
+							data.gender = "男";
+						}
 
-					if(data.gender) {
-						data.gender = "女";
-					} else {
-						data.gender = "男";
+						data.age = new Date().getFullYear() - data.birthday.split("-")[0];
+
+						_this.info = result.data;
 					}
-
-					data.age = new Date().getFullYear() - data.birthday.split("-")[0];
-
-					_this.info = result.data;
+				}
+			});
+		},
+		// 获取用户动态
+		getActivity: function() {
+			_this = this;
+			$.ajax({
+				url: "getUserActivity",
+				type: "GET",
+				dataType: "json",
+				data: {
+					"id": sessionStorage.getItem("userID")
+				},
+				success: function(result) {
+					// console.log(result);
+					if(result.code === 200) {
+						var data = result.data;
+						_this.want = data.want;
+						_this.support = data.support;
+						_this.activity = data.activity;
+						for(var i = 0; i < data.activity.length; i++) {
+							if(data.activity[i]["type"] == "show") {
+								_this.show.push(data.activity[i]["show"]);
+							} else {
+								_this.band.push(data.activity[i]["band"]);
+							}
+						}
+					}
+				}
+			});
+		},
+		// 获取用户收到的回复
+		getReply: function() {
+			_this = this;
+			$.ajax({
+				url: "getReplyByUser",
+				type: "GET",
+				dataType: "json",
+				data: {
+					"id": sessionStorage.getItem("userID")
+				},
+				success: function(result) {
+					// console.log(result);
+					_this.reply = result.data;
 				}
 			});
 		}

@@ -23,14 +23,14 @@
 		<!-- 基本信息 -->
 		<div class="top">
 			<img v-if="info.headshot" :src="'/GuDao/Public/img/user/' + info.headshot" class="thumbnail">
-			<img v-else src="/GuDao/Public/img/user/default.jpg" class="thumbnail"><div class="info">
+			<img v-else src="/GuDao/Public/img/user/default.jpg" class="thumbnail"><div class="info" style="display: none;">
 				<div class="data">
 					<div class="want">
 						<p>想看演出</p>
-						<p class="num">23333</p>
+						<p class="num">{{want}}</p>
 					</div><div class="support">
 						<p>支持乐队</p>
-						<p class="num">2333</p>
+						<p class="num">{{support}}</p>
 					</div>
 				</div>
 				<p class="name">{{info.username}}</p>
@@ -50,8 +50,34 @@
 					</li>
 				</ul>
 				<!-- 修改按钮 -->
-				<a><span class="glyphicon glyphicon-pencil"></span>修改基本信息</a>
-				<a><span class="glyphicon glyphicon-lock"></span>修改账号信息</a>
+				<div class="modify-btn">
+					<a class="modify-info"><span class="glyphicon glyphicon-pencil"></span>修改基本信息</a>
+					<a class="modify-password"><span class="glyphicon glyphicon-lock"></span>修改密码</a>
+				</div>
+			</div><div class="modify-form">
+				<input class="name" type="text" name="name" value="用户名">
+				<div class="gender">
+					<span class="glyphicon glyphicon-user"></span>
+					<p>性别</p>
+					<div class="radio">
+						<input type="radio" name="gender">男
+						<input type="radio" name="gender" checked="checked">女
+					</div>
+				</div>
+				<div class="birthday">
+					<span class="glyphicon glyphicon-hourglass"></span>
+					<p>出生日期</p>
+					<input type="date" name="birthday">
+				</div>
+				<div class="intro">
+					<span class="glyphicon glyphicon-bookmark"></span>
+					<p>用户简介</p>
+					<textarea>用户简介用户简介用户简介用户简介</textarea>
+				</div>
+				<div class="button">
+					<button>确定</button>
+					<button>取消</button>
+				</div>
 			</div>
 		</div>
 

@@ -50,12 +50,13 @@
 .top .info .data div p.num {
 	color: #ffd700;
 	font-size: 1.4rem;
+	cursor: pointer;
 }
 
 .top .info .name {
 	height: 5rem;
 	color: #ffd700;
-	font-size: 3.2rem;
+	font-size: 3rem;
 }
 
 .top .info ul li {
@@ -85,10 +86,45 @@
 	max-width: calc(100% - 3rem);
 }
 
-.top .info a {
-	display: none;
+.top .info .modify-btn {
 	position: absolute;
+	bottom: 1rem;
+	right: 2rem;
 }
+.top .info .modify-btn a {
+	margin: 0 0.5rem;
+	font-size: 1.2rem;
+}
+.top .info .modify-btn a span {
+	margin: 0 0.5rem;
+}
+
+
+.top .modify-form {
+	/*display: none;*/
+	display: inline-block;
+	width: 70%;
+	padding: 1rem 2rem;
+	vertical-align: top;
+}
+.top .modify-form div {}
+.top .modify-form div span {}
+.top .modify-form div p {}
+
+.top .modify-form .name {}
+
+.top .modify-form .gender {}
+.top .modify-form .gender .radio {}
+.top .modify-form .gender .radio input {}
+
+.top .modify-form .birthday {}
+.top .modify-form .birthday input {}
+
+.top .modify-form .intro {}
+.top .modify-form .intro textarea {}
+
+.top .modify-form .button {}
+.top .modify-form .button button {}
 
 
 /* -------------------- 标签页选项卡 -------------------- */
@@ -136,18 +172,32 @@
 	transition: all 0.2s;
 }
 .tablist .underline.tab1 {
-	left: -webkit-calc((100% - 140px) / 2);
-	left: -moz-calc((100% - 140px) / 2);
-	left: -ms-calc((100% - 140px) / 2);
-	left: -o-calc((100% - 140px) / 2);
-	left: calc((100% - 140px) / 2);
+	left: -webkit-calc((100% - 70px * 4) / 2 + 70px * 0);
+	left: -moz-calc((100% - 70px * 4) / 2 + 70px * 0);
+	left: -ms-calc((100% - 70px * 4) / 2 + 70px * 0);
+	left: -o-calc((100% - 70px * 4) / 2 + 70px * 0);
+	left: calc((100% - 70px * 4) / 2 + 70px * 0);
 }
 .tablist .underline.tab2 {
-	left: -webkit-calc((100% - 140px) / 2 + 70px);
-	left: -moz-calc((100% - 140px) / 2 + 70px);
-	left: -ms-calc((100% - 140px) / 2 + 70px);
-	left: -o-calc((100% - 140px) / 2 + 70px);
-	left: calc((100% - 140px) / 2 + 70px);
+	left: -webkit-calc((100% - 70px * 4) / 2 + 70px * 1);
+	left: -moz-calc((100% - 70px * 4) / 2 + 70px * 1);
+	left: -ms-calc((100% - 70px * 4) / 2 + 70px * 1);
+	left: -o-calc((100% - 70px * 4) / 2 + 70px * 1);
+	left: calc((100% - 70px * 4) / 2 + 70px * 1);
+}
+.tablist .underline.tab3 {
+	left: -webkit-calc((100% - 70px * 4) / 2 + 70px * 2);
+	left: -moz-calc((100% - 70px * 4) / 2 + 70px * 2);
+	left: -ms-calc((100% - 70px * 4) / 2 + 70px * 2);
+	left: -o-calc((100% - 70px * 4) / 2 + 70px * 2);
+	left: calc((100% - 70px * 4) / 2 + 70px * 2);
+}
+.tablist .underline.tab4 {
+	left: -webkit-calc((100% - 70px * 4) / 2 + 70px * 3);
+	left: -moz-calc((100% - 70px * 4) / 2 + 70px * 3);
+	left: -ms-calc((100% - 70px * 4) / 2 + 70px * 3);
+	left: -o-calc((100% - 70px * 4) / 2 + 70px * 3);
+	left: calc((100% - 70px * 4) / 2 + 70px * 3);
 }
 
 

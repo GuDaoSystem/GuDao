@@ -7,6 +7,7 @@ use Home\Model\SupportModel;
 use Home\Model\ShowModel;
 use Home\Model\BandModel;
 use Home\Model\CommentModel;
+use Home\Model\ReplyModel;
 class UserController extends Controller {
     public function index(){
         $this->display();
@@ -92,7 +93,7 @@ class UserController extends Controller {
 
     // 获取用户动态
     public function getUserActivity() {
-        $data = array();
+        $activity = [];
 
         // 获取想看的演出
         $want = new WantModel();
@@ -102,6 +103,7 @@ class UserController extends Controller {
             $result["msg"] = "查询失败";
             $this->ajaxReturn($result);
         }
+        $result["data"]["want"] = count($wantList);
         for($i = 0; $i < count($wantList); $i++) {
             if(!$wantList[$i]) {
                 $result["code"] = 201;
@@ -117,7 +119,7 @@ class UserController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
-            array_push($data, $tem);
+            array_push($activity, $tem);
         }
 
         $tem = null;
@@ -130,6 +132,7 @@ class UserController extends Controller {
             $result["msg"] = "查询失败";
             $this->ajaxReturn($result);
         }
+        $result["data"]["support"] = count($supportList);
         for($i = 0; $i < count($supportList); $i++) {
             if(!$supportList[$i]) {
                 $result["code"] = 201;
@@ -145,74 +148,74 @@ class UserController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
-            array_push($data, $tem);
+            array_push($activity, $tem);
         }
 
         // 按数组中的指定字段排序
-        foreach($data as $dataItem) {
+        foreach($activity as $dataItem) {
             $sort[] = $dataItem["time"];
         }
-        array_multisort($sort, SORT_DESC, $data);
+        array_multisort($sort, SORT_DESC, $activity);
 
         $result["code"] = 200;
         $result["msg"] = "查询成功";
-        $result["data"] = $data;
+        $result["data"]["activity"] = $activity;
         $this->ajaxReturn($result);
     }
 
     // 获取演出时间表
-    public function getShowCalendar() {
-        $data = array();
-        $want = new WantModel();
-        $wantList = $want->getShowByUser($_GET["id"]);
-        if(!$wantList) {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-            $this->ajaxReturn($result);
-        }
-        for($i = 0; $i < count($wantList); $i++) {
-            if(!$wantList[$i]) {
-                $result["code"] = 201;
-                $result["msg"] = "查询失败";
-                $this->ajaxReturn($result);
-            }
-            $show = new ShowModel();
-            $tem = $show->getShowByID($wantList[$i]["show_id"]);
-            if(!$tem) {
-                $result["code"] = 201;
-                $result["msg"] = "查询失败";
-                $this->ajaxReturn($result);
-            }
-            array_push($data, $tem);
-        }
+    // public function getShowCalendar() {
+    //     $data = array();
+    //     $want = new WantModel();
+    //     $wantList = $want->getShowByUser($_GET["id"]);
+    //     if(!$wantList) {
+    //         $result["code"] = 201;
+    //         $result["msg"] = "查询失败";
+    //         $this->ajaxReturn($result);
+    //     }
+    //     for($i = 0; $i < count($wantList); $i++) {
+    //         if(!$wantList[$i]) {
+    //             $result["code"] = 201;
+    //             $result["msg"] = "查询失败";
+    //             $this->ajaxReturn($result);
+    //         }
+    //         $show = new ShowModel();
+    //         $tem = $show->getShowByID($wantList[$i]["show_id"]);
+    //         if(!$tem) {
+    //             $result["code"] = 201;
+    //             $result["msg"] = "查询失败";
+    //             $this->ajaxReturn($result);
+    //         }
+    //         array_push($data, $tem);
+    //     }
 
-        // 按数组中的指定字段排序
-        foreach($data as $dataItem) {
-            $sort[] = $dataItem["show_time"];
-        }
-        array_multisort($sort, SORT_ASC, $data);
+    //     // 按数组中的指定字段排序
+    //     foreach($data as $dataItem) {
+    //         $sort[] = $dataItem["show_time"];
+    //     }
+    //     array_multisort($sort, SORT_ASC, $data);
 
-        $result["code"] = 200;
-        $result["msg"] = "查询成功";
-        $result["data"] = $data;
-        $this->ajaxReturn($result);
-    }
+    //     $result["code"] = 200;
+    //     $result["msg"] = "查询成功";
+    //     $result["data"] = $data;
+    //     $this->ajaxReturn($result);
+    // }
 
     // 获取用户发出的评论
-    public function getCommentByUser() {
-        $comment = new CommentModel();
-        $data = $comment->getCommentByUser($_GET["id"]);
-        if($data) {
-            $result["code"] = 200;
-            $result["msg"] = "查询成功";
-            $result["data"] = $data;
-        } else {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-        }
-        $this->ajaxReturn($result);
+    // public function getCommentByUser() {
+    //     $comment = new CommentModel();
+    //     $data = $comment->getCommentByUser($_GET["id"]);
+    //     if($data) {
+    //         $result["code"] = 200;
+    //         $result["msg"] = "查询成功";
+    //         $result["data"] = $data;
+    //     } else {
+    //         $result["code"] = 201;
+    //         $result["msg"] = "查询失败";
+    //     }
+    //     $this->ajaxReturn($result);
         
-    }
+    // }
 
     // 修改用户信息
     public function modifyUserInfo() {
@@ -246,6 +249,36 @@ class UserController extends Controller {
             $result["code"] = 201;
             $result["msg"] = "修改失败";
         }
+        $this->ajaxReturn($result);
+    }
+
+
+    // 获取用户收到的回复
+    public function getReplyByUser() {
+        $reply = new ReplyModel();
+        $data = $reply->getReplyByTarget($_GET["id"]);
+        if(!$data) {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败1";
+            $this->ajaxReturn($result);
+        }
+        for($i = 0; $i < count($data); $i++) {
+            if(!$data[$i]) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败2";
+                $this->ajaxReturn($result);
+            }
+            $user = new UserModel();
+            $data[$i]["user"] = $user->getUserBasicInfo($data[$i]["user_id"]);
+            if(!$data[$i]["user"]) {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败3";
+                $this->ajaxReturn($result);
+            }
+        }
+        $result["code"] = 200;
+        $result["msg"] = "查询成功";
+        $result["data"] = $data;
         $this->ajaxReturn($result);
     }
 

@@ -42,7 +42,8 @@ new Vue({
 			// 标签页切换
 			$(".tablist a").unbind("click").click(function () {
 				location.href = location.toString().split("#")[0] + $(this).attr("href");
-				$(".tablist .underline").removeClass("tab1 tab2").addClass($(this).parent()[0].className);
+				$(".tablist .underline")[0].className = "underline";
+				$(".tablist .underline").addClass($(this).parent()[0].className);
 			});
 		});
 	},

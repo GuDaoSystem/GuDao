@@ -82,7 +82,7 @@ $(function() {
 	// 个人中心
 	$(".user-page").click(function(e) {
 		e.preventDefault();
-		location.href = "../../GuDao/User/index?id=" + sessionStorage.getItem("userID");
+		location.href = "../../GuDao/User/index?id=" + sessionStorage.getItem("userID") + "#activity";
 	});
 
 	// 我的消息
