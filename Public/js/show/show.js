@@ -25,7 +25,7 @@ new Vue({
 	},
 	updated: function () {
 		this.$nextTick(function () {
-			$(".info").click(function() {
+			$(".show-content").click(function() {
 				location.href = "Show/detail?id=" + $(this).attr("index") + "#detail";
 			});
 			

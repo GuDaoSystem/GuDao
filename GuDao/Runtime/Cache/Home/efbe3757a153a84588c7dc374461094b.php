@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/frame.css">
-<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/show.css">
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/Show/show.css">
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/bootstrap.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/vue.js"></script>
@@ -82,7 +82,8 @@
 					<ul class="row band">
 						<li v-for="band in bands" class="col-lg-4 col-sm-6">
 							<div :index="band.band_id">
-								<img src="/GuDao/Public/img/user/headImg.jpg">
+								<img v-if="band.band_cover" :src="'/GuDao/Public/img/band/' + band.band_id + '/' + band.band_cover">
+								<img v-else src="/GuDao/Public/img/band/default.jpg">
 								<p>{{band.band_name}}</p>
 							</div>
 						</li>
@@ -93,7 +94,7 @@
 						<div class="media">
 							<div class="media-left">
 								<a href="#">
-									<img class="media-object" src="/GuDao/Public/img/user/headImg.jpg">
+									<img class="media-object" src="/GuDao/Public/img/user/default.jpg">
 								</a>
 							</div>
 							<div class="media-body">
@@ -110,7 +111,8 @@
 						<li v-for="comment in comments" :commentid="comment.comment_id" :userid="comment.user_id" class="comment media">
 							<div class="media-left">
 								<a href="#">
-									<img class="media-object" src="/GuDao/Public/img/user/headImg.jpg">
+									<img v-if="comment.user.headshot" class="media-object" :src="'/GuDao/Public/img/user/' + comment.user.headshot">
+									<img v-else class="media-object" src="/GuDao/Public/img/user/default.jpg">
 								</a>
 							</div>
 							<div class="media-body">
@@ -134,7 +136,8 @@
 									<li v-for="reply in comment.reply" class="media">
 										<div class="media-left">
 											<a href="#">
-												<img class="media-object" src="/GuDao/Public/img/user/headImg.jpg">
+												<img v-if="reply.user.headshot" class="media-object" :src="'/GuDao/Public/img/user/' + reply.user.headshot">
+												<img v-else class="media-object" src="/GuDao/Public/img/user/default.jpg">
 											</a>
 										</div>
 										<div class="media-body">
@@ -173,7 +176,7 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/common.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/component.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
-<script type="text/javascript" src="/GuDao/Public/js/showDetail.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/Show/showDetail.js"></script>
 
 <script>
 $(function() {

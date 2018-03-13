@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/frame.css">
-<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/forgetPassword.css">
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/user/forgetPassword.css">
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/md5.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery.validate.js"></script>
@@ -73,7 +73,7 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/common.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/component.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
-<script type="text/javascript" src="/GuDao/Public/js/forgetPassword.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/user/forgetPassword.js"></script>
 
 <script>
 $(function() {

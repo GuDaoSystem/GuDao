@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/frame.css">
-<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/login.css">
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/index/login.css">
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/md5.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery.validate.js"></script>
@@ -23,7 +23,7 @@
 	<!-- 内容 -->
 	<div class="container content">
 		<div class="left">
-			<img src="/GuDao/Public/img/login.png">
+			<img src="/GuDao/Public/img/index/login.png">
 		</div>
 		<div class="right">
 			<form id="login">
@@ -57,7 +57,7 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/common.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/component.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
-<script type="text/javascript" src="/GuDao/Public/js/login.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/index/login.js"></script>
 
 <script>
 $(function() {

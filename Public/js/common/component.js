@@ -17,7 +17,7 @@ var navbar = {
 					   <!-- 已登录 -->
 					   <ul class="didLogin nav navbar-nav navbar-right">
 						   <li class="dropdown">
-							   <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../GuDao/Public/img/user/headImg.jpg"></a>
+							   <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src=""></a>
 							   <ul class="dropdown-menu">
 								   <li class="dropdown-header">NgWingLam</li>
 								   <li role="separator" class="divider"></li>

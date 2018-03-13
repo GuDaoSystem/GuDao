@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/frame.css">
-<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/show.css">
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/Show/show.css">
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/bootstrap.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/vue.js"></script>
@@ -44,8 +44,8 @@
 		<div v-show="!list">NOT FOUND</div>
 		<ul class="row show-list">
 			<li v-for="item in list" class="col-sm-6 col-md-4">
-				<div class="show-content">
-					<img :src="'/GuDao/Public/img/show/' + item.show_poster" class="thumbnail"><div class="info" :index="item.show_id">
+				<div class="show-content" :index="item.show_id">
+					<img :src="'/GuDao/Public/img/show/' + item.show_poster"><div class="info">
 						<p class="name text-overflow-ellipsis">{{item.show_name}}</p>
 						<p class="band text-overflow-ellipsis"><span class="glyphicon glyphicon-headphones"></span><span v-for="band in item.band">{{band.band_name}}&ensp;/&ensp;</span></p>
 						<p class="place text-overflow-ellipsis"><span class="glyphicon glyphicon-map-marker"></span>{{item.show_place}}</p>
@@ -70,7 +70,7 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/common.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/component.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
-<script type="text/javascript" src="/GuDao/Public/js/show.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/Show/show.js"></script>
 
 <script>
 $(function() {

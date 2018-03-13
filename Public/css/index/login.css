@@ -100,7 +100,7 @@
 	display: inline-block;
 	width: 1.2rem;
 	height: 1.2rem;
-	background: url(../img/common/icon_checkbox.png) no-repeat;
+	background: url(../../img/common/icon_checkbox.png) no-repeat;
 	background-size: 100%;
 	vertical-align: middle;
 }

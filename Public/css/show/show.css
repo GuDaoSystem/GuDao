@@ -49,7 +49,7 @@
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
 }
-.show-list li .show-content img:hover {
+.show-list li .show-content:hover img {
 	opacity: 0.8;
 }
 
