@@ -82,13 +82,13 @@ $(function() {
 	// 个人中心
 	$(".user-page").click(function(e) {
 		e.preventDefault();
-		location.href = "../../GuDao/User/index?id=" + sessionStorage.getItem("userID") + "#activity";
+		location.href = "../../GuDao/User/index#activity";
 	});
 
 	// 我的消息
 	$(".message").click(function(e) {
 		e.preventDefault();
-		location.href = "../../GuDao/User/index?id=" + sessionStorage.getItem("userID") + "#message";
+		location.href = "../../GuDao/User/index#message";
 	});
 
 	// 退出登录

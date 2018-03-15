@@ -63,6 +63,9 @@
 	display: inline-block;
 	margin: 0.6rem 0;
 }
+.top .info ul li.gender {
+	width: 11rem;
+}
 .top .info ul li.age {
 	margin-left: 2rem;
 }
@@ -101,30 +104,106 @@
 
 
 .top .modify-form {
-	/*display: none;*/
-	display: inline-block;
+	display: none;
 	width: 70%;
 	padding: 1rem 2rem;
 	vertical-align: top;
 }
 .top .modify-form div {}
-.top .modify-form div span {}
-.top .modify-form div p {}
+.top .modify-form div span {
+	color: #333;
+}
+.top .modify-form div p {
+	display: inline-block;
+	margin-right: 0.8rem;
+	color: #333;
+}
 
-.top .modify-form .name {}
+.top .modify-form .name {
+	width: 100%;
+    border: 1px solid #ffd700;
+    border-left: none;
+    border-right: none;
+    font-size: 3rem;
+    padding: 1rem;
+}
 
-.top .modify-form .gender {}
-.top .modify-form .gender .radio {}
-.top .modify-form .gender .radio input {}
+.top .modify-form .gender {
+	display: inline-block;
+	margin-right: 2rem;
+}
+.top .modify-form .gender .radio-box {
+	display: inline-block;
+}
+.top .modify-form .gender .radio-box .radio {
+	display: inline-block;
+	cursor: pointer;
+}
+.top .modify-form .gender .radio-box .radio span {
+	display: inline-block;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.top .modify-form .gender .radio-box .radio .outer {
+	width: 10px;
+	height: 10px;
+	border: 1px solid #f2f2f2;
+}
+.top .modify-form .gender .radio-box .radio .inner {
+	display: none;
+	width: 4px;
+	height: 4px;
+	background: #f2f2f2;
+	position: absolute;
+	top: 9px;
+	left: 3px;
+}
+.top .modify-form .gender .radio-box .radio.checked .inner {
+	display: inline-block;
+}
+.top .modify-form .gender .radio-box .radio p {
+	display: inline-block;
+	margin: 0;
+	color: #f2f2f2;
+}
 
-.top .modify-form .birthday {}
-.top .modify-form .birthday input {}
+.top .modify-form .birthday {
+	display: inline-block;
+}
+.top .modify-form .birthday input {
+	width: 8rem;
+	cursor: pointer;
+}
 
 .top .modify-form .intro {}
-.top .modify-form .intro textarea {}
+.top .modify-form .intro textarea {
+	width: calc(100% - 8rem);
+	height: 6rem;
+    padding: 0.5rem;
+    border: 1px solid #ffd700;
+    border-left: none;
+    border-right: none;
+    vertical-align: top;
+    overflow: hidden;
+}
+.top .modify-form .intro .count {
+	display: block;
+	text-align: right;
+    margin: 0.3rem 0.5rem 0 0;
+    text-align: right;
+}
+.top .modify-form .intro .count span {}
 
-.top .modify-form .button {}
-.top .modify-form .button button {}
+.top .modify-form .button {
+	margin-top: 1rem;
+	position: absolute;
+	right: 2rem;
+}
+.top .modify-form .button button {
+	padding: 0.3rem 1.5rem;
+    margin: 0 0.3rem;
+    font-size: 1.2rem;
+}
 
 
 /* -------------------- 标签页选项卡 -------------------- */

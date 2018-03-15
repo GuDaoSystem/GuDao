@@ -428,3 +428,28 @@ footer {
 .loading span {
 	background: #ffd700;
 }
+
+
+
+
+/* -------------------- 时间选择器 -------------------- */
+
+
+.datetimepicker div table thead tr th,
+.datetimepicker div table tbody tr td {
+	width: 3rem;
+	height: 3rem;
+	color: #0d0d0d;
+}
+/*.datetimepicker div table thead tr th.switch:hover,
+.datetimepicker div table tbody tr td:hover {
+	background: #ffd700 !important;
+	border-radius: 0;
+	text-shadow: none;
+}
+.datetimepicker div table tbody tr td.active {
+	background: #ffd700 !important;
+	border-radius: 0;
+	color: #f2f2f2;
+	text-shadow: none;
+}*/

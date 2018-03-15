@@ -22,13 +22,16 @@
 
 	<!-- 内容 -->
 	<div class="container content">
+		<!-- 标签页指示 -->
 		<ul class="tab">
 			<li class="active"><span></span>获取验证码</li>
 			<li><span></span>重设密码</li>
 			<li><span></span>完成</li>
 			<span class="underline tab1"></span>
 		</ul>
+		<!-- 标签页内容 -->
 		<div class="tab-content">
+			<!-- 第一步 -->
 			<div class="step step1">
 				<form>
 					<div class="input">
@@ -43,6 +46,7 @@
 					<button class="next">下一步</button>
 				</form>
 			</div>
+			<!-- 第二步 -->
 			<div class="step step2">
 				<form>
 					<div class="input">
@@ -56,6 +60,7 @@
 					<button class="next">下一步</button>
 				</form>
 			</div>
+			<!-- 第三步 -->
 			<div class="step step3">
 				<div>
 					<span class="glyphicon glyphicon-ok-circle"></span>

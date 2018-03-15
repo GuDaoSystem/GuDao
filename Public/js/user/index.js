@@ -46,6 +46,21 @@ new Vue({
 	},
 	updated: function () {
 		this.$nextTick(function () {
+			$(".modify-form .female").addClass("checked");
+			$(".modify-form .radio").click(function() {
+				$(".modify-form .radio").removeClass("checked");
+				$(this).addClass("checked");
+			});
+
+			// textarea高度自适应 & 动态显示textarea内容字数
+			var textareaPadding = 12 * 0.5 * 2;
+			$("textarea").next().find("span").text($("textarea").val().length);
+			$("textarea").on("input", function () {
+				if((this.scrollHeight - textareaPadding) > $(this).height()) {
+					$(this).height(this.scrollHeight - textareaPadding);
+				}
+				$(this).next().find("span").text(this.value.length);
+			});
 		});
 	},
 	computed: {
