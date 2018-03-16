@@ -29,6 +29,12 @@ new Vue({
 	},
 	mounted: function() {
 		this.$nextTick(function () {
+			$('#datetimepicker').datetimepicker({
+				format: "yyyy-mm-dd",
+				autoclose: true,
+				minView: "month"
+			});
+			
 			// 标签页定位
 			var tabList = ["#activity", "#message", "#show", "#band"];
 			var tabIndex = tabList.indexOf(location.hash);
@@ -46,7 +52,16 @@ new Vue({
 	},
 	updated: function () {
 		this.$nextTick(function () {
-			$(".modify-form .female").addClass("checked");
+			var _this = this;
+
+			// console.log(!(this.info.gender))
+			if(this.info.gender == 'M') {
+				$(".modify-form .female").removeClass("checked");
+				$(".modify-form .male").addClass("checked");
+			} else {
+				$(".modify-form .male").removeClass("checked");
+				$(".modify-form .female").addClass("checked");
+			}
 			$(".modify-form .radio").click(function() {
 				$(".modify-form .radio").removeClass("checked");
 				$(this).addClass("checked");
@@ -60,6 +75,55 @@ new Vue({
 					$(this).height(this.scrollHeight - textareaPadding);
 				}
 				$(this).next().find("span").text(this.value.length);
+			});
+
+			$(".info .modify-info").click(function() {
+				$(".info").hide();
+				$(".modify-form").css("display", "inline-block");
+			});
+
+			$(".modify-form .confirm").unbind("click").click(function() {
+				var name = $(".modify-form .name").val();
+				if($(".modify-form .radio-box .male").hasClass("checked")) {
+					var gender = 'M';
+				} else {
+					var gender = 'F';
+				}
+				var birthday = $(".modify-form .birthday input").val();
+				var intro = $(".modify-form .intro textarea").val();
+
+				$.ajax({
+					url: "modifyUserInfo",
+					type: "POST",
+					dataType: "json",
+					data: {
+						"id": sessionStorage.getItem("userID"),
+						"username": name,
+						"gender": gender,
+						"birthday": birthday,
+						"intro": intro,
+					},
+					success: function(result) {
+						console.log(result);
+						if(result.code === 200) {
+							_this.getUserInfo();
+							$(".modify-form").hide();
+							$(".info").show();
+						} else {
+							setAlertBox({
+								className: "text",
+								close: true,
+								title: "孤岛提示",
+								message: result.msg
+							});
+						}
+					}
+				});
+			});
+
+			$(".modify-form .cancel").click(function() {
+				$(".modify-form").hide();
+				$(".info").show();
 			});
 		});
 	},
@@ -81,11 +145,11 @@ new Vue({
 					if(result.code === 200) {
 						var data = result.data;
 
-						if(data.gender) {
-							data.gender = "女";
-						} else {
-							data.gender = "男";
-						}
+						// if(data.gender) {
+						// 	data.gender = "男";
+						// } else {
+						// 	data.gender = "女";
+						// }
 
 						data.age = new Date().getFullYear() - data.birthday.split("-")[0];
 

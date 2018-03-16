@@ -40,7 +40,8 @@
 				<ul>
 					<li class="gender">
 						<span class="glyphicon glyphicon-user"></span>
-						<p>{{info.gender}}</p>
+						<p v-if="info.gender == 'M'">男</p>
+						<p v-else>女</p>
 					</li>
 					<li class="age">
 						<span class="glyphicon glyphicon-hourglass"></span>
@@ -136,24 +137,11 @@ $(function() {
 	// 		console.log(result);
 	// 	}
 	// });
-	$('#datetimepicker').datetimepicker({
-		format: "yyyy-mm-dd",
-		autoclose: true,
-		minView: "month"
-	});
-
-
-	
-
-	$(".info .modify-info").click(function() {
-		$(".info").hide();
-		$(".modify-form").css("display", "inline-block");
-	});
-
-	$(".modify-form .cancel").click(function() {
-		$(".modify-form").hide();
-		$(".info").show();
-	});
+	// $('#datetimepicker').datetimepicker({
+	// 	format: "yyyy-mm-dd",
+	// 	autoclose: true,
+	// 	minView: "month"
+	// });
 
 
 });

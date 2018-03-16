@@ -219,10 +219,10 @@ class UserController extends Controller {
 
     // 修改用户信息
     public function modifyUserInfo() {
-        $id = $_POST["id"];
-        if($_POST["email"]) {
-            $data["email"] = $_POST["email"];
-        }
+        // $id = $_POST["id"];
+        // if($_POST["email"]) {
+        //     $data["email"] = $_POST["email"];
+        // }
         if($_POST["password"]) {
             $data["password"] = md5($_POST["password"]);
         }
@@ -242,7 +242,7 @@ class UserController extends Controller {
             $data["intro"] = $_POST["intro"];
         }
         $user = new UserModel();
-        if($user->modifyUserInfo($id, $data)) {
+        if($user->modifyUserInfo($_POST["id"], $data)) {
             $result["code"] = 200;
             $result["msg"] = "修改成功";
         } else {

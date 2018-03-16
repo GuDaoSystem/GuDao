@@ -26,11 +26,11 @@ class UserModel extends Model {
     }
 
     // 修改用户信息
-    public function resetPassword($map, $param) {
-        $user = new UserModel();
-        $result = $user->where($map)->save($param);
-        return $result;
-    }
+    // public function resetPassword($map, $param) {
+    //     $user = new UserModel();
+    //     $result = $user->where($map)->save($param);
+    //     return $result;
+    // }
 
     // 查询邮箱是否已存在
     public function checkEmail($email) {
@@ -62,6 +62,15 @@ class UserModel extends Model {
     public function checkPassword($data) {
         $user = new UserModel();
         $result = $user->where($data)->select();
+        return $result;
+    }
+
+
+    // 修改用户信息
+    public function modifyUserInfo($id, $data) {
+        $user = new UserModel();
+        $map["user_id"] = $id;
+        $result = $user->where($map)->save($data);
         return $result;
     }
 }
