@@ -316,4 +316,18 @@ class UserController extends Controller {
         }
         $this->ajaxReturn($result);
     }
+
+    // 已读消息
+    public function readMessage() {
+        $reply = new ReplyModel();
+        $data = $reply->readMessage($_POST["id"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "已读成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "已读失败";
+        }
+        $this->ajaxReturn($result);
+    }
 }

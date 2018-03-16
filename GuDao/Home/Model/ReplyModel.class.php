@@ -35,4 +35,14 @@ class ReplyModel extends Model {
 		$result = $reply->where($map)->select();
 		return $result;
 	}
+
+
+	// 已读消息
+	public function readMessage($id) {
+		$reply = new ReplyModel();
+		$map["reply_id"] = $id;
+		$date["read"] = 1;
+		$result = $reply->where($map)->save($date);
+		return $result;
+	}
 }

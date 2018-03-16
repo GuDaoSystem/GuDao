@@ -29,6 +29,8 @@ new Vue({
 	},
 	mounted: function() {
 		this.$nextTick(function () {
+			var _this = this;
+
 			// 事件选择器
 			$('#datetimepicker').datetimepicker({
 				format: "yyyy-mm-dd",
@@ -45,6 +47,36 @@ new Vue({
 
 			// 标签页切换
 			$(".tablist a").unbind("click").click(function () {
+				// console.log(tabIndex, $(this).parent()[0])
+				if(tabIndex == 1 && !$(this).parent().hasClass("tab2")) {
+					console.log(_this.reply);
+					var reply = _this.reply;
+					var count = 0;
+					for(var i = 0; i < reply.length; i++) {
+						if(reply[i].read == 0) {
+							$.ajax({
+								url: "readMessage",
+								type: "POST",
+								dataType: "json",
+								data: {
+									"id": reply[i].reply_id,
+								},
+								success: function(result) {
+									if(result.code === 200) {
+										_this.getReply();
+									} else {
+										count++;
+									}
+								}
+							});
+						}
+					}
+					if(count == 0) {
+						$(".didLogin .message a").removeClass("tips");
+					}
+				}
+				tabIndex = $(".tablist li").index($(this).parent());
+
 				location.href = location.toString().split("#")[0] + $(this).attr("href");
 				$(".tablist .underline")[0].className = "underline";
 				$(".tablist .underline").addClass($(this).parent()[0].className);
