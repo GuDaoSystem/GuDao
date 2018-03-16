@@ -1,7 +1,7 @@
 <?php
 return array(
 	// 配置路由
-	'MODULE_ALLOW_LIST' => array('Home'),
+	'MODULE_ALLOW_LIST' => array('Home', 'Admin'),
 
 	// 连接MySQL数据库
     'DB_TYPE' => 'mysql',
