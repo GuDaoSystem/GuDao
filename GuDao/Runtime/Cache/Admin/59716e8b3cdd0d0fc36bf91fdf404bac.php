@@ -4,11 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title></title>
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/common.css">
 <script src="/GuDao/Public/js/common/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
-<script src="/GuDao/Public/js/common/md5.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body>atawe
+<body>
+	<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
 <script>
+	// localStorage.removeItem("test");
+	// console.log(localStorage.getItem("test"));
 </script>
 </body>
 </html>
