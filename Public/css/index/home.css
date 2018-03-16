@@ -1,26 +1,46 @@
 
-/* -------------------- 演出时间表 -------------------- */
+/* -------------------- 通用 -------------------- */
 
-.calendar {
-	display: inline-block;
-	width: 30%;
-}
-
-
-.calendar .head {
+.head {
 	margin-bottom: 0.8rem;
 }
-.calendar .head div {
+.head .title {
 	display: inline-block;
 	padding: 0.2rem 0.5rem;
-}
-
-.calendar .head .title {
 	border-top: 1px solid #ffd700;
 	border-left: 4px solid #ffd700; 
 }
+.head .more {
+	padding-top: 0.4rem;
+	float: right;
+}
+
+
+/* -------------------- 最新通知 -------------------- */
+
+.new-notice ul li {
+	height: 41px;
+}
+.new-notice ul li p {
+	display: inline-block;
+}
+.new-notice ul li p span {
+	color: #333;
+	font-size: 2rem;
+}
+.new-notice ul li .time {
+	padding-top: 0.8rem;
+	float: right;
+	color: #333;
+	font-size: 1.2rem;
+}
+
+
+/* -------------------- 演出时间表 -------------------- */
 
 .calendar .head .selector {
+	display: inline-block;
+	padding: 0.2rem 0.5rem;
 	float: right;
 }
 .calendar .head .selector span {
@@ -111,4 +131,85 @@
 }
 .calendar .body .day div.clickable:hover .count {
 	display: block;
+}
+
+
+/* -------------------- 列表 -------------------- */
+
+.new-show,
+.hot-show,
+.hot-band {
+	padding-top: 2rem;
+}
+.new-show ul,
+.hot-show ul,
+.hot-band ul {
+	padding: 0 10px;
+}
+.new-show ul li.col-xs-6,
+.new-show ul li.col-sm-3,
+.hot-show ul li.col-xs-6,
+.hot-show ul li.col-sm-3
+.hot-band ul li.col-xs-6,
+.hot-band ul li.col-sm-3 {
+	padding: 0 5px;
+}
+.new-show ul li .show-list,
+.hot-show ul li .show-list,
+.hot-band ul li .band-list {
+	padding: 10px;
+	border: 1px solid #333;
+	border-radius: 0.2rem;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.new-show ul li .show-list:hover,
+.hot-show ul li .show-list:hover,
+.hot-band ul li .band-list:hover {
+	border: 1px solid #ffd700;
+}
+
+.new-show ul li .show-list img,
+.hot-show ul li .show-list img {
+	margin-bottom: 5px;
+}
+.new-show ul li .show-list p,
+.hot-show ul li .show-list p {
+	margin-top: 5px;
+	font-size: 1.2rem;
+}
+.new-show ul li .show-list p.name,
+.hot-show ul li .show-list p.name {
+	color: #ffd700;
+	font-size: 1.4rem;
+}
+
+.hot-band ul li .band-list p {
+	padding-top: 10px;
+	color: #ffd700;
+	text-align: center;
+	position: relative;
+}
+.hot-band ul li .band-list p span {
+	display: inline-block;
+	width: 2.6rem;
+	height: 2.6rem;
+	background: url(../../img/common/icon_number_active.png) no-repeat;
+	background-size: 100%;
+	position: absolute;
+	left: 0;
+	top: 0.4rem;
+}
+.hot-band ul li:nth-child(2) .band-list p span {
+	background-position: 0 -2.6rem;
+}
+.hot-band ul li:nth-child(3) .band-list p span {
+	background-position: 0 -5.2rem;
+}
+.hot-band ul li:nth-child(4) .band-list p span {
+	background-position: 0 -7.8rem;
 }

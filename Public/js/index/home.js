@@ -2,7 +2,11 @@ new Vue({
 	el: '#gudao',
 	data: {
 		place: [],
-		shows: []
+		shows: [],
+		notices: [],
+		newShows: [],
+		hotShows: [],
+		hotBands: []
 	},
 	components: {
 		"navbar": navbar,
@@ -22,6 +26,11 @@ new Vue({
 		var year = date.getFullYear();
 		var month = date.getMonth() + 1;
 		this.setCalendar(year, month);
+
+		this.getNotice();
+		this.getNewShow();
+		this.getHotShow();
+		this.getHotBand();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
@@ -167,6 +176,50 @@ new Vue({
 							target.append("<span class='dot-span'></span><p class='count'>" + data[i].count + "场</p>").addClass("clickable");
 						}
 					}
+				}
+			});
+		},
+		getNotice: function() {
+			var _this = this;
+			$.ajax({
+				url: "getNotice",
+				dataType: "json",
+				success: function(result) {
+					// console.log(result);
+					_this.notices = result.data;
+				}
+			});
+		},
+		getNewShow: function() {
+			var _this = this;
+			$.ajax({
+				url: "getRecentShow",
+				dataType: "json",
+				success: function(result) {
+					// console.log(result);
+					_this.newShows = result.data;
+				}
+			});
+		},
+		getHotShow: function() {
+			var _this = this;
+			$.ajax({
+				url: "getHotShow",
+				dataType: "json",
+				success: function(result) {
+					// console.log(result);
+					_this.hotShows = result.data;
+				}
+			});
+		},
+		getHotBand: function() {
+			var _this = this;
+			$.ajax({
+				url: "getHotBand",
+				dataType: "json",
+				success: function(result) {
+					// console.log(result);
+					_this.hotBands = result.data;
 				}
 			});
 		}
