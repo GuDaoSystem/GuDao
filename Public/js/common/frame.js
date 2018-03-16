@@ -94,7 +94,7 @@ $(function() {
 			"id": sessionStorage.getItem("userID")
 		},
 		success: function(result) {
-			console.log(result);
+			// console.log(result);
 			if(result.code === 200) {
 				$(".didLogin .message a").addClass("tips");
 			}

@@ -70,11 +70,18 @@ new Vue({
 			});
 
 			// textarea高度自适应 & 动态显示textarea内容字数
-			var textareaPadding = 12 * 0.5 * 2;
-			$("textarea").next().find("span").text($("textarea").val().length);
-			$("textarea").on("input", function () {
-				if((this.scrollHeight - textareaPadding) > $(this).height()) {
-					$(this).height(this.scrollHeight - textareaPadding);
+			var textareaPadding1 = 12 * 0.5 * 2;
+			$(".modify-form textarea").next().find("span").text($("textarea").val().length);
+			$(".modify-form textarea").on("input", function () {
+				if((this.scrollHeight - textareaPadding1) > $(this).height()) {
+					$(this).height(this.scrollHeight - textareaPadding1);
+				}
+				$(this).next().find("span").text(this.value.length);
+			});
+			var textareaPadding2 = 12 * 1 * 2;
+			$(".reply-box textarea").on("input", function () {
+				if((this.scrollHeight - textareaPadding2) > $(this).height()) {
+					$(this).height(this.scrollHeight - textareaPadding2);
 				}
 				$(this).next().find("span").text(this.value.length);
 			});
@@ -129,6 +136,56 @@ new Vue({
 			$(".modify-form .cancel").click(function() {
 				$(".modify-form").hide();
 				$(".info").show();
+			});
+
+			// 监听消息展开或收起
+			$("#message .content").unbind("click").click(function() {
+				if($(this).parent().hasClass("close-state")) {
+					$("#message li").removeClass("open-state").addClass("close-state");
+					$(this).parent().removeClass("close-state").addClass("open-state");
+				} else {
+					$(this).parent().removeClass("open-state").addClass("close-state");
+				}
+			});
+
+			// 监听“发送”按钮
+			$("#message .reply-box .send").click(function() {
+				var send = $(this);
+
+				var content = send.parent().prev("textarea").val();
+				if(!content) {
+					setAlertBox({
+						className: "text",
+						close: true,
+						title: "孤岛提示",
+						message: "请输入评论内容"
+					});
+					return;
+				}
+				// 设置发送时间
+				var time = new Date();
+				time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+				
+				$.ajax({
+					url: "replyMessage",
+					type: "POST",
+					dataType: "json",
+					data: {
+						"comment_id": send.parents("li").attr("comment"),
+						"content": content,
+						"time": time,
+						"type": 1,
+						"user_id": sessionStorage.getItem("userID"),
+						"target_id": send.parents("li").attr("user")
+					},
+					success: function(result) {
+						if(result.code === 200) {
+							// console.log(result);
+							send.parent().prev("textarea").val("");
+							$(".reply-box").hide();
+						}
+					}
+				});
 			});
 		});
 	},
@@ -196,6 +253,7 @@ new Vue({
 				success: function(result) {
 					// console.log(result);
 					_this.reply = result.data;
+					// console.log(_this.reply);
 				}
 			});
 		}

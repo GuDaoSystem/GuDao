@@ -103,7 +103,24 @@
 
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane fade" id="activity">动态列表</div>
-				<div role="tabpanel" class="tab-pane fade" id="message">消息列表</div>
+				<div role="tabpanel" class="tab-pane fade" id="message">
+					<ul>
+						<li v-for="message in reply" class="close-state" :comment="message.comment_id" :user="message.user_id">
+							<div :class="{read: message.read == 1}" class="content">
+								<p><a :href="'user?id=' + message.user_id" class="name">{{message.user.username}}</a>&ensp;回复了你的评论：{{message.reply_content}}</p>
+								<span class="open-btn glyphicon glyphicon-triangle-bottom"></span>
+								<span class="close-btn glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="reply-box">
+								<textarea maxlength="100"></textarea>
+								<div class="bottom">
+									<p><span>0</span>/100</p>
+									<button class="send">发送</button>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
 				<div role="tabpanel" class="tab-pane fade" id="show">演出列表</div>
 				<div role="tabpanel" class="tab-pane fade" id="band">乐队列表</div>
 			</div>
