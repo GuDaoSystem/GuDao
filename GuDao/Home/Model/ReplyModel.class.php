@@ -25,4 +25,14 @@ class ReplyModel extends Model {
 		$result = $reply->where($map)->order("reply_time desc")->select();
 		return $result;
 	}
+
+
+	// 检查用户是否有未读消息
+	public function hasUnreadMessage($id) {
+		$reply = new ReplyModel();
+		$map["target_id"] = $id;
+		$map["read"] = 0;
+		$result = $reply->where($map)->select();
+		return $result;
+	}
 }

@@ -23,7 +23,7 @@ var navbar = {
 								   <li class="dropdown-header">NgWingLam</li>
 								   <li role="separator" class="divider"></li>
 								   <li class="user-page"><a href="#">个人中心</a></li>
-								   <li class="message"><a href="#" class="tips">我的消息<span class="dot-span"></span></a></li>
+								   <li class="message"><a href="#">我的消息<span class="dot-span"></span></a></li>
 								   <li class="logout"><a href="#">退出登录</a></li>
 							   </ul>
 						   </li>

@@ -86,6 +86,20 @@ $(function() {
 	});
 
 	// 我的消息
+	$.ajax({
+		url: "../../GuDao/User/hasUnreadMessage",
+		type: "GET",
+		dataType: "json",
+		data: {
+			"id": sessionStorage.getItem("userID")
+		},
+		success: function(result) {
+			console.log(result);
+			if(result.code === 200) {
+				$(".didLogin .message a").addClass("tips");
+			}
+		}
+	});
 	$(".message").click(function(e) {
 		e.preventDefault();
 		location.href = "../../GuDao/User/index#message";

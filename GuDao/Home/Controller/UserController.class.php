@@ -282,4 +282,19 @@ class UserController extends Controller {
         $this->ajaxReturn($result);
     }
 
+
+    // 检查是否有未读消息
+    public function hasUnreadMessage() {
+        $reply = new ReplyModel();
+        $data = $reply->hasUnreadMessage($_GET["id"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
 }

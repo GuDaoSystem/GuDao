@@ -29,12 +29,13 @@ new Vue({
 	},
 	mounted: function() {
 		this.$nextTick(function () {
+			// 事件选择器
 			$('#datetimepicker').datetimepicker({
 				format: "yyyy-mm-dd",
 				autoclose: true,
 				minView: "month"
 			});
-			
+
 			// 标签页定位
 			var tabList = ["#activity", "#message", "#show", "#band"];
 			var tabIndex = tabList.indexOf(location.hash);
@@ -54,7 +55,7 @@ new Vue({
 		this.$nextTick(function () {
 			var _this = this;
 
-			// console.log(!(this.info.gender))
+			// 设置性别单选框默认选项
 			if(this.info.gender == 'M') {
 				$(".modify-form .female").removeClass("checked");
 				$(".modify-form .male").addClass("checked");
@@ -62,6 +63,7 @@ new Vue({
 				$(".modify-form .male").removeClass("checked");
 				$(".modify-form .female").addClass("checked");
 			}
+			// 监听性别单选框
 			$(".modify-form .radio").click(function() {
 				$(".modify-form .radio").removeClass("checked");
 				$(this).addClass("checked");
@@ -77,12 +79,15 @@ new Vue({
 				$(this).next().find("span").text(this.value.length);
 			});
 
+			// 监听“修改基本信息”按钮
 			$(".info .modify-info").click(function() {
 				$(".info").hide();
 				$(".modify-form").css("display", "inline-block");
 			});
 
+			// 监听修改基本信息中“确认”按钮
 			$(".modify-form .confirm").unbind("click").click(function() {
+				// 获取字段信息
 				var name = $(".modify-form .name").val();
 				if($(".modify-form .radio-box .male").hasClass("checked")) {
 					var gender = 'M';
@@ -120,7 +125,7 @@ new Vue({
 					}
 				});
 			});
-
+			// 监听修改基本信息中“取消”按钮
 			$(".modify-form .cancel").click(function() {
 				$(".modify-form").hide();
 				$(".info").show();
@@ -144,15 +149,7 @@ new Vue({
 					// console.log(result);
 					if(result.code === 200) {
 						var data = result.data;
-
-						// if(data.gender) {
-						// 	data.gender = "男";
-						// } else {
-						// 	data.gender = "女";
-						// }
-
 						data.age = new Date().getFullYear() - data.birthday.split("-")[0];
-
 						_this.info = result.data;
 					}
 				}
