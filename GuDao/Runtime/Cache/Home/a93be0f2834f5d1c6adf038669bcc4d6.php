@@ -18,7 +18,7 @@
 	<navbar></navbar>
 
 	<!-- 内容 -->
-	<div class="container content">
+	<div id="band-detail" class="container content">
 		<div>
 			<ul class="tablist nav nav-tabs" role="tablist">
 				<li class="tab1" role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">演出</a></li>
@@ -44,16 +44,9 @@
 <script type="text/javascript" src="/GuDao/Public/js/common/common.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/component.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/frame.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/band/bandDetail.js"></script>
 
 <script>
-new Vue({
-	el: '#gudao',
-	components: {
-		"navbar": navbar,
-		"back-to-top": backToTop,
-		"copyright": copyright
-	}
-});
 $(function() {
 	// 
 	$.ajax({

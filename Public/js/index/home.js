@@ -106,10 +106,23 @@ new Vue({
 					return;
 				}
 			});
+
+
+			$(".hot-show .more").click(function() {
+				// console.log(this);
+				location.href = "../Show";
+			});
 		});
 	},
 	updated: function () {
 		this.$nextTick(function () {
+			$(".new-show .show-list, .hot-show .show-list").unbind("click").click(function() {
+				location.href = "../Show/detail?id=" + $(this).attr("index") + "#detail";
+			});
+
+			$(".hot-band .band-list").unbind("click").click(function() {
+				location.href = "../Band/detail?id=" + $(this).attr("index") + "#detail";
+			});
 		});
 	},
 	computed: {

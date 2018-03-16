@@ -22,6 +22,7 @@
 	<div id="home" class="container content">
 		<div class="row">
 			<div class="col-sm-8">
+				<!-- 最新通知 -->
 				<div class="new-notice">
 					<div class="head">
 						<p class="title">最新通知</p>
@@ -36,6 +37,7 @@
 				</div>
 			</div>
 			<div class="col-sm-4">
+				<!-- 演出时间表 -->
 				<div class="calendar">
 					<div class="head">
 						<p class="title">演出时间表</p>
@@ -57,6 +59,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- 最新演出 -->
 		<div class="new-show">
 			<div class="head">
 				<p class="title">最新演出</p>
@@ -73,10 +76,11 @@
 				</li>
 			</ul>
 		</div>
+		<!-- 热门演出 -->
 		<div class="hot-show">
 			<div class="head">
 				<p class="title">热门演出</p>
-				<a href="../Show" class="more">MORE</a>
+				<a class="more">MORE</a>
 			</div>
 			<ul class="row">
 				<li v-for="show in hotShows" class="col-xs-6 col-sm-3">
@@ -89,6 +93,7 @@
 				</li>
 			</ul>
 		</div>
+		<!-- 热门乐队 -->
 		<div class="hot-band">
 			<div class="head">
 				<p class="title">热门乐队</p>
@@ -119,10 +124,6 @@
 
 <script>
 $(function() {
-	
-	
-	
-	
 });
 </script>
 
