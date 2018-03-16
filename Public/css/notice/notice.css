@@ -1,0 +1,45 @@
+.condition {
+	color: #333;
+	text-align: right;
+}
+.condition li {
+	display: inline-block;
+}
+.condition li a {
+	padding: 0 0.8rem;
+}
+.condition li.active {}
+.condition li.active a {
+	color: #ffd700;
+}
+
+
+.list li {
+	margin-top: 10px;
+	padding: 0.5rem 1rem;
+	border: 1px solid #333;
+}
+.list li span {
+	display: inline-block;
+	vertical-align: middle;
+}
+.list li span.state {
+	width: 6rem;
+	color: #333;
+	font-size: 2.4rem;
+}
+.list li p {
+	display: inline-block;
+	width: -webkit-calc(100% - 16rem);
+	width: -moz-calc(100% - 16rem);
+	width: -ms-calc(100% - 16rem);
+	width: -o-calc(100% - 16rem);
+	width: calc(100% - 16rem);
+	vertical-align: middle;
+}
+.list li span.time {
+	width: 10rem;
+	color: #333;
+	font-size: 1.2rem;
+	text-align: right;
+}
