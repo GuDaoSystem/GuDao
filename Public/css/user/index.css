@@ -287,6 +287,108 @@
 }
 
 
+/* -------------------- 标签页内容 -------------------- */
+
+#activity ul {
+	padding: 0 5%;
+}
+#activity ul li {
+	height: 70px;
+}
+#activity ul li>div {
+	display: inline-block;
+	height: 100%;
+}
+
+
+#activity ul li .left {
+	padding: 2rem 0;
+	border-right: 1px solid #333;
+}
+#activity ul li .left p {
+	width: 200px;
+	text-align: center;
+}
+
+
+#activity ul li .dot-span {
+	width: 6px;
+	height: 6px;
+	background: #333;
+	z-index: 10;
+	position: relative;
+	left: -3px;
+}
+
+
+#activity ul li .right {
+	padding: 2rem 2rem;
+	margin-left: -6px;
+	border-left: 1px solid #333;
+	position: relative;
+}
+
+#activity ul li .right p a {
+	color: #ffd700;
+}
+
+#activity ul li .right .pic {
+	display: none;
+	position: absolute;
+	right: -15rem;
+    top: -7.3rem;
+}
+#activity ul li .right .pic.band {
+	top: -4.7rem;
+}
+#activity ul li .right .pic .content {
+	display: inline-block;
+	width: 15rem;
+	padding: 1rem;
+	background: #0d0d0d;
+	border: 1px solid #333;
+	border-radius: 0.2rem;
+	position: relative;
+}
+#activity ul li .right .pic .content .triangle {
+	position: absolute;
+	left: -12px;
+	top: 50%;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+#activity ul li .right .pic .content .triangle span.outer {
+	border-width: 10px 12px 10px 0;
+	border-right-color: #333;
+}
+#activity ul li .right .pic .content .triangle span.inner {
+	border-width: 10px 12px 10px 0;
+	border-right-color: #0d0d0d;
+	position: relative;
+	left: -10px;
+}
+
+
+#activity ul li:hover p {
+	font-size: 1.6rem;
+}
+#activity ul li:hover .dot-span {
+	width: 10px;
+    height: 10px;
+    background: #ffd700;
+    left: -5px;
+}
+#activity ul li:hover .right {
+	margin-left: -10px;
+}
+#activity ul li:hover .right .pic {
+	display: inline-block;
+}
+
+
 /* -------------------- 消息 -------------------- */
 
 #message ul {}

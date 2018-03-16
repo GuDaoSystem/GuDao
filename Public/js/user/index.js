@@ -49,7 +49,7 @@ new Vue({
 			$(".tablist a").unbind("click").click(function () {
 				// console.log(tabIndex, $(this).parent()[0])
 				if(tabIndex == 1 && !$(this).parent().hasClass("tab2")) {
-					console.log(_this.reply);
+					// console.log(_this.reply);
 					var reply = _this.reply;
 					var count = 0;
 					for(var i = 0; i < reply.length; i++) {
@@ -63,7 +63,8 @@ new Vue({
 								},
 								success: function(result) {
 									if(result.code === 200) {
-										_this.getReply();
+										// _this.getReply();
+										_this.reply[i].read = 1;
 									} else {
 										count++;
 									}
@@ -261,6 +262,7 @@ new Vue({
 						_this.want = data.want;
 						_this.support = data.support;
 						_this.activity = data.activity;
+						console.log(_this.activity);
 						for(var i = 0; i < data.activity.length; i++) {
 							if(data.activity[i]["type"] == "show") {
 								_this.show.push(data.activity[i]["show"]);

@@ -102,7 +102,28 @@
 			</ul>
 
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane fade" id="activity">动态列表</div>
+				<div role="tabpanel" class="tab-pane fade" id="activity">
+					<ul>
+						<li v-for="item in activity">
+							<div class="left">
+								<p>{{item.time}}</p>
+							</div><span class="dot-span"></span><div class="right">
+								<p v-if="item.type == 'show'">想看&ensp;<a :href="'../Show/detail?id=' + item.show.show_id">{{item.show.show_name}}</a></p>
+								<p v-if="item.type == 'band'">支持&ensp;<a :href="'../Band/detail?id=' + item.band.band_id">{{item.band.band_name}}</a></p>
+								<div :class="{band: item.type == 'band'}" class="pic">
+									<div class="content">
+										<div class="triangle">
+											<span class="outer triangle-span"></span><span class="inner triangle-span"></span>
+										</div>
+										<img v-if="item.type == 'show'" :src="'__PUBLIC__/img/show/' + item.show.show_poster">
+										<img v-if="item.type == 'band' && item.band.band_cover" :src="'__PUBLIC__/img/band/' + item.band.band_id + '/' + item.band.band_cover">
+										<img v-if="item.type == 'band' && !item.band.band_cover" src="__PUBLIC__/img/band/default.jpg">
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
 				<div role="tabpanel" class="tab-pane fade" id="message">
 					<ul>
 						<li v-for="message in reply" class="close-state" :comment="message.comment_id" :user="message.user_id">
