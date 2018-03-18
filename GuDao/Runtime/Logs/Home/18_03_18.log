@@ -1,0 +1,201 @@
+[ 2018-03-18T17:23:22+08:00 ] ::1 /GuDao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010738s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037675s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037758s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.037294s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.037355s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.011672s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011824s ]
+
+[ 2018-03-18T17:24:35+08:00 ] ::1 /GuDao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000181s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000300s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008865s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008936s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000835s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2018-03-18T17:24:39+08:00 ] ::1 /GuDao/Index/home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.108437s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.108512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000813s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000867s ]
+
+[ 2018-03-18T17:24:42+08:00 ] ::1 /GuDao/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001080s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0696s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0073s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2018-03%' GROUP BY show_time  [ RunTime:0.0005s ]
+
+[ 2018-03-18T17:24:42+08:00 ] ::1 /GuDao/Index/getNotice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
+SQL: SHOW COLUMNS FROM `notice` [ RunTime:0.0087s ]
+NOTIC: [2] Missing argument 3 for Home\Model\NoticeModel::getNoticeByPage(), called in D:\xampp\htdocs\GuDao\GuDao\Home\Controller\IndexController.class.php on line 148 and defined D:\xampp\htdocs\GuDao\GuDao\Home\Model\NoticeModel.class.php 第 11 行.
+SQL: SHOW COLUMNS FROM `notice` [ RunTime:0.0059s ]
+NOTIC: [8] Undefined variable: condition D:\xampp\htdocs\GuDao\GuDao\Home\Model\NoticeModel.class.php 第 13 行.
+SQL: SELECT * FROM `notice` ORDER BY notice_time desc LIMIT 0,7   [ RunTime:0.0217s ]
+
+[ 2018-03-18T17:24:43+08:00 ] ::1 /GuDao/Index/getHotShow
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `want` [ RunTime:0.0076s ]
+SQL: SELECT count('user_id') as count,`show_id` FROM `want` GROUP BY show_id ORDER BY count desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `show` WHERE `show_id` = 2  [ RunTime:0.0004s ]
+
+[ 2018-03-18T17:24:43+08:00 ] ::1 /GuDao/Index/getHotBand
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001109s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `support` [ RunTime:0.0055s ]
+SQL: SELECT count('user_id') as count,`band_id` FROM `support` GROUP BY band_id ORDER BY count desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 8  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `band` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `band` WHERE `band_id` = 4  [ RunTime:0.0005s ]
+
+[ 2018-03-18T17:24:43+08:00 ] ::1 /GuDao/Index/getRecentShow
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002721s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `show` ORDER BY show_time desc LIMIT 0,4   [ RunTime:0.0004s ]
+
+[ 2018-03-18T17:24:44+08:00 ] ::1 /GuDao/User/hasUnreadMessage?id=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001537s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `reply` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `reply` WHERE `target_id` = 0  [ RunTime:0.0004s ]
+
+[ 2018-03-18T17:25:37+08:00 ] ::1 /GuDao/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001589s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0147s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2018-02%' GROUP BY show_time  [ RunTime:0.0004s ]
+
+[ 2018-03-18T17:25:38+08:00 ] ::1 /GuDao/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001807s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000955s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001139s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0145s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2018-01%' GROUP BY show_time  [ RunTime:0.0007s ]
+
+[ 2018-03-18T17:25:39+08:00 ] ::1 /GuDao/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001268s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001115s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0131s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0183s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2017-12%' GROUP BY show_time  [ RunTime:0.0010s ]
+
+[ 2018-03-18T17:25:44+08:00 ] ::1 /GuDao/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004222s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0171s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0123s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2017-11%' GROUP BY show_time  [ RunTime:0.0022s ]
+
+[ 2018-03-18T17:25:46+08:00 ] ::1 /GuDao/Index/getShowCalendar
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000088s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002145s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0151s ]
+SQL: SHOW COLUMNS FROM `show` [ RunTime:0.0162s ]
+SQL: SELECT count('show_id') as count,`show_time` FROM `show` WHERE `show_time` LIKE '2017-10%' GROUP BY show_time  [ RunTime:0.0004s ]
+
