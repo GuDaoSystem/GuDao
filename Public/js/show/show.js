@@ -75,7 +75,7 @@ new Vue({
 					"pageSize": 6
 				},
 				success: function(result) {
-					// console.log(result.data);
+					console.log(result);
 					_this.shows = result.data;
 				}
 			});
