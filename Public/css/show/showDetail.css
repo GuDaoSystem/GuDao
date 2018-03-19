@@ -244,9 +244,20 @@
 .tab-content #comment .send-box .media .media-left {
 	padding: 0 2rem;
 }
-.tab-content #comment .send-box .media .media-left a img {
+.tab-content #comment .send-box .media .media-left a {
+	display: inline-block;
 	width: 6rem;
+	height: 6rem;
 	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+.tab-content #comment .send-box .media .media-left a img {
+	/*width: 6rem;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 .tab-content #comment .send-box .media .media-body textarea {
 	width: 100%;
@@ -287,9 +298,19 @@
 .tab-content #comment .comment-list li .media-left {
 	padding: 0.5rem 1.5rem;
 }
-.tab-content #comment .comment-list li .media-left a img {
+.tab-content #comment .comment-list li .media-left a {
+	display: inline-block;
 	width: 5rem;
+	height: 5rem;
 	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+.tab-content #comment .comment-list li .media-left a img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 .tab-content #comment .comment-list li .media-body .media-heading p {
 	display: inline-block;
