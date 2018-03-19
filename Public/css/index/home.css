@@ -172,15 +172,31 @@
 .hot-band ul li .band-list:hover {
 	border: 1px solid #ffd700;
 }
+.new-show ul li .show-list .img,
+.hot-show ul li .show-list .img,
+.hot-band ul li .band-list .img {
+	width: 100%;
+	height: 0;
+	position: relative;
+}
+.new-show ul li .show-list .img img,
+.hot-show ul li .show-list .img img,
+.hot-band ul li .band-list .img img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 
-.new-show ul li .show-list img,
-.hot-show ul li .show-list img {
-	margin-bottom: 5px;
+.new-show ul li .show-list .img,
+.hot-show ul li .show-list .img {
+	padding-bottom: 142%;
 }
 .new-show ul li .show-list p,
 .hot-show ul li .show-list p {
 	margin-top: 5px;
 	font-size: 1.2rem;
+	line-height: 1.4rem;
 }
 .new-show ul li .show-list p.name,
 .hot-show ul li .show-list p.name {
@@ -188,10 +204,15 @@
 	font-size: 1.4rem;
 }
 
+.hot-band ul li .band-list .img {
+    padding-bottom: 100%;
+}
+
 .hot-band ul li .band-list p {
 	padding-top: 10px;
 	color: #ffd700;
 	text-align: center;
+	line-height: 2rem;
 	position: relative;
 }
 .hot-band ul li .band-list p span {

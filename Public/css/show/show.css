@@ -38,10 +38,21 @@
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
 }
-.show-list li .show-content img {
+.show-list li .show-content .img {
+	display: inline-block;
 	width: 50%;
+	height: 0;
+	padding-bottom: 71%;
+	vertical-align: middle;
+	position: relative;
+}
+.show-list li .show-content .img img {
 	background: #f2f2f2;
 	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	-webkit-transition: all 0.2s;
 	-moz-transition: all 0.2s;
 	-ms-transition: all 0.2s;

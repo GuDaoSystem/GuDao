@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title></title>
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/swiper.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/common/frame.css">
 <link rel="stylesheet" type="text/css" href="/GuDao/Public/css/index/home.css">
 <script type="text/javascript" src="/GuDao/Public/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/bootstrap.js"></script>
+<script type="text/javascript" src="/GuDao/Public/js/common/swiper.js"></script>
 <script type="text/javascript" src="/GuDao/Public/js/common/vue.js"></script>
 </head>
 <body>
@@ -29,8 +31,8 @@
 						<a href="../Notice" class="more">MORE</a>
 					</div>
 					<ul class="body">
-						<li v-for="notice in notices">
-							<p><span v-if="notice.notice_type == '1'" class="state">预售/</span><span v-if="notice.notice_type == '2'" class="state">取消/</span><span v-if="notice.notice_type == '3'" class="state">变更/</span>&ensp;{{notice.notice_content}}</p>
+						<li v-for="notice in notices" :index="notice.show_id">
+							<p class="text-overflow-ellipsis"><span v-if="notice.notice_type == '1'" class="state">预售/</span><span v-if="notice.notice_type == '2'" class="state">取消/</span><span v-if="notice.notice_type == '3'" class="state">变更/</span>&ensp;{{notice.notice_content}}</p>
 							<p class="time">{{notice.notice_time}}</p>
 						</li>
 					</ul>
@@ -68,7 +70,10 @@
 			<ul class="row">
 				<li v-for="show in newShows" class="col-xs-6 col-sm-3">
 					<div class="show-list" :index="show.show_id">
-						<img :src="'/GuDao/Public/img/show/' + show.show_poster">
+						<div class="img">
+							<img v-if="show.show_poster" :src="'/GuDao/Public/img/show/' + show.show_poster">
+							<img v-else src="/GuDao/Public/img/show/default.jpg">
+						</div>
 						<p class="name text-overflow-ellipsis">{{show.show_name}}</p>
 						<p>{{show.show_place}}</p>
 						<p>{{show.show_time}}</p>
@@ -85,7 +90,10 @@
 			<ul class="row">
 				<li v-for="show in hotShows" class="col-xs-6 col-sm-3">
 					<div class="show-list" :index="show.show_id">
-						<img :src="'/GuDao/Public/img/show/' + show.show_poster">
+						<div class="img">
+							<img v-if="show.show_poster" :src="'/GuDao/Public/img/show/' + show.show_poster">
+							<img v-else src="/GuDao/Public/img/show/default.jpg">
+						</div>
 						<p class="name text-overflow-ellipsis">{{show.show_name}}</p>
 						<p>{{show.show_place}}</p>
 						<p>{{show.show_time}}</p>
@@ -102,8 +110,10 @@
 			<ul class="row">
 				<li v-for="band in hotBands" class="col-xs-6 col-sm-3">
 					<div class="band-list" :index="band.band_id">
-						<img v-if="band.band_cover" :src="'/GuDao/Public/img/band/' + band.band_id + '/' + band.band_cover">
-						<img v-else src="/GuDao/Public/img/band/default.jpg">
+						<div class="img">
+							<img v-if="band.band_cover" :src="'/GuDao/Public/img/band/' + band.band_id + '/' + band.band_cover">
+							<img v-else src="/GuDao/Public/img/band/default.jpg">
+						</div>
 						<p><span></span>{{band.band_name}}</p>
 					</div>
 				</li>

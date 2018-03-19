@@ -35,6 +35,7 @@ new Vue({
 	mounted: function() {
 		this.$nextTick(function () {
 			var _this = this;
+
 			// 监听演出时间表中的时间选择器
 			$(".calendar .selector").click(function(e) {
 				var year = $(this).find("span.year").text();
@@ -76,9 +77,14 @@ new Vue({
 						form.find(".month").focus();
 					}
 					
-					// 监听“完成”按钮
-					form.find("span").unbind("click").click(function() {
-						// 获取表单中的值
+					// 监听“完成”按钮&回车键
+					form.find("span").unbind("click").click(submitTime);
+					form.find("input").unbind("keypress").on("keypress", function(e) {
+						if(e.keyCode == 13) {
+							submitTime();
+						}
+					});
+					function submitTime() {
 						year = form.find(".year").val();
 						month = form.find(".month").val();
 						// 格式检验
@@ -101,7 +107,7 @@ new Vue({
 							$(".calendar .selector").show();
 							_this.setCalendar(year, month);
 						}
-					});
+					}
 				} else {
 					return;
 				}
@@ -116,6 +122,16 @@ new Vue({
 	},
 	updated: function () {
 		this.$nextTick(function () {
+			$(".new-notice li").click(function() {
+				location.href = "../Show/detail?id=" + $(this).attr("index") + "#detail";
+			});
+
+			$(".calendar .day").unbind("click").click(function(e) {
+				if($(e.target).parent().hasClass("clickable")) {
+					location.href = "../Show?time=" + $(this).parents(".calendar").find(".selector .year").text() + "-" + $(this).parents(".calendar").find(".selector .month").text() + "-" +$(e.target).parent().find(".num").text();
+				}
+			});
+
 			$(".new-show .show-list, .hot-show .show-list").unbind("click").click(function() {
 				location.href = "../Show/detail?id=" + $(this).attr("index") + "#detail";
 			});
@@ -181,7 +197,7 @@ new Vue({
 					"month": year + "-" + month,
 				},
 				success: function(result) {
-					console.log(result);
+					// console.log(result);
 					if(result.code === 200) {
 						var data = result.data;
 						for(var i = 0; i < data.length; i++) {
@@ -220,7 +236,7 @@ new Vue({
 				url: "getHotShow",
 				dataType: "json",
 				success: function(result) {
-					// console.log(result);
+					console.log(result);
 					_this.hotShows = result.data;
 				}
 			});
