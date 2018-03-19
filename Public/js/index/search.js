@@ -1,8 +1,7 @@
 new Vue({
 	el: '#gudao',
 	data: {
-		result: {},
-		notice: []
+		newNotices: []
 	},
 	components: {
 		"navbar": navbar,
@@ -18,11 +17,14 @@ new Vue({
 		});
 
 		// 获取数据
+		
 	},
 	mounted: function() {
 		this.$nextTick(function () {
+			
 		});
-		this.init();
+
+		this.getNewNotices(["未来", "广州"]);
 	},
 	updated: function () {
 		this.$nextTick(function () {
@@ -31,10 +33,9 @@ new Vue({
 	computed: {
 	},
 	methods: {
-		getResult:function(key) {
-
+		getNewNotices:function(key) {
 			var _this = this;
-			return $.ajax({
+			$.ajax({
 				url: "doSearch",
 				type: "POST",
 				dataType: "json",
@@ -42,22 +43,24 @@ new Vue({
 					"key": key
 				},
 				success: function(r) {
-					// console.log(r,"r");
-					// _this.result = r;
-					_this.notice = r.data.notice;
-					// console.log(_this.result,"_this.result");
-
+					_this.newNotices = r.data.notice;
 				}
 			});
 
 		},
+		getNewShow: function() {
+			var _this = this;
+			$.ajax({
+				url: "getRecentShow",
+				dataType: "json",
+				success: function(result) {
 
-		init:function(){
-			this.getResult(["未来", "广州"]);
-			console.log(this.notice)
-			// console.log(this.result,"this.result");
+					_this.newShows = result.data;
+				}
+			});
+		},
 
-		}
+
 	}
 
 });
