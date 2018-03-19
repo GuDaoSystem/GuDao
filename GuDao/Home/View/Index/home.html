@@ -100,10 +100,19 @@
 				<a href="../Band" class="more">MORE</a>
 			</div>
 			<ul class="row">
-				<li v-for="band in hotBands" class="col-xs-6 col-sm-3">
+				<!-- <li v-for="band in hotBands" class="col-xs-6 col-sm-3">
 					<div class="band-list" :index="band.band_id">
 						<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover">
 						<img v-else src="__PUBLIC__/img/band/default.jpg">
+						<p><span></span>{{band.band_name}}</p>
+					</div>
+				</li> -->
+				<li v-for="band in hotBands" class="col-xs-6 col-sm-3">
+					<div class="band-list" :index="band.band_id">
+						<div class="img">
+							<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover">
+							<img v-else src="__PUBLIC__/img/band/default.jpg">
+						</div>
 						<p><span></span>{{band.band_name}}</p>
 					</div>
 				</li>
