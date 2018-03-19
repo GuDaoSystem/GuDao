@@ -50,13 +50,13 @@ class ShowController extends Controller {
         $data = $show->getShowByCondition($startIndex, $pageLength, $condition);
         if(!$data) {
             $result["code"] = 201;
-            $result["msg"] = "查询失败1";
+            $result["msg"] = "查询失败";
             $this->ajaxReturn($result);
         }
         for($i = 0; $i < count($data); $i++) {
             if(!$data[$i]) {
                 $result["code"] = 201;
-                $result["msg"] = "查询失败2";
+                $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
 
@@ -70,20 +70,20 @@ class ShowController extends Controller {
             $bandID = $attend->getBandIDByShow($data[$i]["show_id"]);
             if(!$bandID) {
                 $result["code"] = 201;
-                $result["msg"] = "查询失败4";
+                $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
             for($j = 0; $j < count($bandID); $j++) {
                 if(!$bandID[$j]) {
                     $result["code"] = 201;
-                    $result["msg"] = "查询失败5";
+                    $result["msg"] = "查询失败";
                     $this->ajaxReturn($result);
                 }
                 $band = new BandModel();
                 $data[$i]["band"][$j] = $band->getBandByID($bandID[$j]);
                 if(!$data[$i]["band"][$j]) {
                     $result["code"] = 201;
-                    $result["msg"] = "查询失败6";
+                    $result["msg"] = "查询失败";
                     $this->ajaxReturn($result);
                 }
             }
