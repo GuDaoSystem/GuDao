@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/frame.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/band/band.css">
 <script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
@@ -19,6 +20,64 @@
 
 	<!-- 内容 -->
 	<div id="band" class="container content">
+		<!-- 筛选条件 -->
+		<div class="condition">
+			<ul>
+				<li class="active"><a>热门</a></li>
+				<li><a>#</a></li>
+				<li><a>A</a></li>
+				<li><a>B</a></li>
+				<li><a>C</a></li>
+				<li><a>D</a></li>
+				<li><a>E</a></li>
+				<li><a>F</a></li>
+				<li><a>G</a></li>
+				<li><a>H</a></li>
+				<li><a>I</a></li>
+				<li><a>J</a></li>
+				<li><a>K</a></li>
+				<li><a>L</a></li>
+				<li><a>M</a></li>
+				<li><a>N</a></li>
+				<li><a>O</a></li>
+				<li><a>P</a></li>
+				<li><a>Q</a></li>
+				<li><a>R</a></li>
+				<li><a>S</a></li>
+				<li><a>T</a></li>
+				<li><a>U</a></li>
+				<li><a>V</a></li>
+				<li><a>W</a></li>
+				<li><a>X</a></li>
+				<li><a>Y</a></li>
+				<li><a>Z</a></li>
+			</ul>
+		</div>
+
+		<!-- 乐队列表 -->
+		<div v-show="!bands" class="no-data">
+			<img src="__PUBLIC__/img/common/noData.png">
+			<span></span>
+			<p>没有相关数据</p>
+		</div>
+		<ul class="row band-list">
+			<li v-for="band in bands" class="col-xs-6 col-sm-4 col-md-3">
+				<div class="band-content" :index="band.band_id">
+					<div class="img">
+						<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover">
+						<img v-else src="__PUBLIC__/img/band/default.jpg">
+					</div>
+					<div class="info">
+						<p class="name text-overflow-ellipsis">{{band.band_name}}</p>
+						<p class="support">有<span class="num">{{band.support}}</span>个支持者</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="no-more">
+			<span></span>
+			<p>没有更多数据</p>
+		</div>
 	</div>
 
 	<!-- 底部 -->
@@ -35,42 +94,42 @@
 <script>
 $(function() {
 	// 获取所有乐队首字母
-	$.ajax({
-		url: "__URL__/getInitial",
-		dataType: "json",
-		success: function(result) {
-			// console.log(result);
-		}
-	});
+	// $.ajax({
+	// 	url: "__URL__/getInitial",
+	// 	dataType: "json",
+	// 	success: function(result) {
+	// 		// console.log(result);
+	// 	}
+	// });
 	
-	// 按页获取乐队列表
-	$.ajax({
-		url: "__URL__/getBandByPage",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"pageIndex": 1,
-			"pageSize": 10,
-		},
-		success: function(result) {
-			console.log(result);
-		}
-	});
+	// // 按页获取乐队列表
+	// $.ajax({
+	// 	url: "__URL__/getBandByPage",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"pageIndex": 1,
+	// 		"pageSize": 10,
+	// 	},
+	// 	success: function(result) {
+	// 		console.log(result);
+	// 	}
+	// });
 
-	// 按首字母获取乐队列表
-	$.ajax({
-		url: "__URL__/getBandByPage",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"pageIndex": 1,
-			"pageSize": 10,
-			"initial": "L"
-		},
-		success: function(result) {
-			// console.log(result);
-		}
-	});
+	// // 按首字母获取乐队列表
+	// $.ajax({
+	// 	url: "__URL__/getBandByPage",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"pageIndex": 1,
+	// 		"pageSize": 10,
+	// 		"initial": "L"
+	// 	},
+	// 	success: function(result) {
+	// 		// console.log(result);
+	// 	}
+	// });
 });
 </script>
 
