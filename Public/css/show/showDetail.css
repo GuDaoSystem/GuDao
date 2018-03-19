@@ -6,9 +6,11 @@
 	position: relative;
 }
 
-
-.top img {
+.top .img {
+	display: inline-block;
 	width: 30%;
+}
+.top .img img {
 	cursor: pointer;
 	vertical-align: top;
 	-webkit-transition: all 0.2s;
@@ -17,7 +19,7 @@
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
 }
-.top img:hover {
+.top .img img:hover {
 	opacity: 0.8;
 }
 

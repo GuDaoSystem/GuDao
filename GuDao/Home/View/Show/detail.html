@@ -22,7 +22,10 @@
 	<div id="show-detail" class="container content">
 		<!-- 基本信息 -->
 		<div class="top">
-			<img :src="'__PUBLIC__/img/show/' + show.show_poster" class="thumbnail"><div class="info">
+			<div class="img">
+				<img v-if="show.show_poster" :src="'__PUBLIC__/img/show/' + show.show_poster" class="thumbnail">
+				<img v-else src="__PUBLIC__/img/show/default.jpg" class="thumbnail">
+			</div><div class="info">
 				<span v-if="show.show_state == '1'" class="state yushou">/&ensp;预售</span>
 				<span v-else-if="show.show_state == '2'" class="state quxiao">/&ensp;取消</span>
 				<span v-else-if="show.show_state == '3'" class="state biangeng">/&ensp;变更</span>
