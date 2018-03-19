@@ -236,7 +236,7 @@ new Vue({
 				url: "getHotShow",
 				dataType: "json",
 				success: function(result) {
-					// console.log(result);
+					console.log(result);
 					_this.hotShows = result.data;
 				}
 			});

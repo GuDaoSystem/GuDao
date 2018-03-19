@@ -68,18 +68,11 @@
 				<a href="../Show" class="more">MORE</a>
 			</div>
 			<ul class="row">
-				<!-- <li v-for="show in newShows" class="col-xs-6 col-sm-3">
-					<div class="show-list" :index="show.show_id">
-						<img :src="'/GuDao/Public/img/show/' + show.show_poster">
-						<p class="name text-overflow-ellipsis">{{show.show_name}}</p>
-						<p>{{show.show_place}}</p>
-						<p>{{show.show_time}}</p>
-					</div>
-				</li> -->
 				<li v-for="show in newShows" class="col-xs-6 col-sm-3">
 					<div class="show-list" :index="show.show_id">
 						<div class="img">
-							<img :src="'/GuDao/Public/img/show/' + show.show_poster">
+							<img v-if="show.show_poster" :src="'/GuDao/Public/img/show/' + show.show_poster">
+							<img v-else src="/GuDao/Public/img/show/default.jpg">
 						</div>
 						<p class="name text-overflow-ellipsis">{{show.show_name}}</p>
 						<p>{{show.show_place}}</p>
@@ -95,18 +88,11 @@
 				<a class="more">MORE</a>
 			</div>
 			<ul class="row">
-				<!-- <li v-for="show in hotShows" class="col-xs-6 col-sm-3">
-					<div class="show-list" :index="show.show_id">
-						<img :src="'/GuDao/Public/img/show/' + show.show_poster">
-						<p class="name text-overflow-ellipsis">{{show.show_name}}</p>
-						<p>{{show.show_place}}</p>
-						<p>{{show.show_time}}</p>
-					</div>
-				</li> -->
 				<li v-for="show in hotShows" class="col-xs-6 col-sm-3">
 					<div class="show-list" :index="show.show_id">
 						<div class="img">
-							<img :src="'/GuDao/Public/img/show/' + show.show_poster">
+							<img v-if="show.show_poster" :src="'/GuDao/Public/img/show/' + show.show_poster">
+							<img v-else src="/GuDao/Public/img/show/default.jpg">
 						</div>
 						<p class="name text-overflow-ellipsis">{{show.show_name}}</p>
 						<p>{{show.show_place}}</p>
