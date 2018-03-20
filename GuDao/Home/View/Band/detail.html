@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/frame.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/band/bandDetail.css">
 <script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
@@ -19,6 +20,19 @@
 
 	<!-- 内容 -->
 	<div id="band-detail" class="container content">
+		<!-- 基本信息 -->
+		<div class="top">
+			<div class="img">
+				<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover" class="thumbnail">
+				<img v-else src="__PUBLIC__/img/band/default.jpg" class="thumbnail">
+			</div><div class="info">
+				<p class="name">{{band.band_name}}</p>
+				<pre class="intro">{{band.band_intro}}</pre>
+				<!-- “支持”按钮 -->
+				<button class="support" :class="{active: support}"><span class="glyphicon glyphicon-heart-empty"></span><span class="num">{{supportNum}}</span>人支持</button>
+			</div>
+		</div>
+		<!-- 标签页 -->
 		<div>
 			<ul class="tablist nav nav-tabs" role="tablist">
 				<li class="tab1" role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">演出</a></li>
@@ -48,29 +62,28 @@
 
 <script>
 $(function() {
-	// 
-	$.ajax({
-		url: "__URL__/getBandByID",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"id": location.search.toString().substr(1).split("=")[1]
-		},
-		success: function(result) {
-			// console.log(result);
-		}
-	});
-	$.ajax({
-		url: "__URL__/getSupportUserNum",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"id": location.search.toString().substr(1).split("=")[1]
-		},
-		success: function(result) {
-			// console.log(result);
-		}
-	});
+	// $.ajax({
+	// 	url: "__URL__/getBandByID",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"id": location.search.toString().substr(1).split("=")[1]
+	// 	},
+	// 	success: function(result) {
+	// 		// console.log(result);
+	// 	}
+	// });
+	// $.ajax({
+	// 	url: "__URL__/getSupportUserNum",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"id": location.search.toString().substr(1).split("=")[1]
+	// 	},
+	// 	success: function(result) {
+	// 		// console.log(result);
+	// 	}
+	// });
 	// $.ajax({
 	// 	url: "__URL__/checkSupport",
 	// 	type: "POST",
@@ -83,51 +96,40 @@ $(function() {
 	// 		// console.log(result);
 	// 	}
 	// });
-	$.ajax({
-		url: "__URL__/getExperience",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"id": location.search.toString().substr(1).split("=")[1]
-		},
-		success: function(result) {
-			console.log(result);
-		}
-	});
-	$.ajax({
-		url: "__URL__/getPictureByBand",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"id": location.search.toString().substr(1).split("=")[1]
-		},
-		success: function(result) {
-			// console.log(result);
-		}
-	});
-	$.ajax({
-		url: "__URL__/getCommentNReply",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"target": 2,
-			"id": location.search.toString().substr(1).split("=")[1]
-		},
-		success: function(result) {
-			// console.log(result);
-		}
-	});
-	
-
-	var tabList = ["#show", "#picture", "#comment"];
-	var tabIndex = tabList.indexOf(location.hash);
-	$(".tablist li:eq(" + tabIndex +")").addClass("active");
-	$(".tablist .underline").addClass("tab" + (tabIndex + 1));
-	$(tabList[tabIndex]).addClass("in").addClass("active");
-	$(".tablist a").unbind("click").click(function () {
-		location.href = location.toString().split("#")[0] + $(this).attr("href");
-		$(".tablist .underline").removeClass("tab1 tab2").addClass($(this).parent()[0].className);
-	});
+	// $.ajax({
+	// 	url: "__URL__/getExperience",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"id": location.search.toString().substr(1).split("=")[1]
+	// 	},
+	// 	success: function(result) {
+	// 		console.log(result);
+	// 	}
+	// });
+	// $.ajax({
+	// 	url: "__URL__/getPictureByBand",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"id": location.search.toString().substr(1).split("=")[1]
+	// 	},
+	// 	success: function(result) {
+	// 		// console.log(result);
+	// 	}
+	// });
+	// $.ajax({
+	// 	url: "__URL__/getCommentNReply",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"target": 2,
+	// 		"id": location.search.toString().substr(1).split("=")[1]
+	// 	},
+	// 	success: function(result) {
+	// 		// console.log(result);
+	// 	}
+	// });
 });
 </script>
 

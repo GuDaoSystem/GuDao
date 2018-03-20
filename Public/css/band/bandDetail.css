@@ -1,0 +1,145 @@
+
+/* -------------------- 基本信息 -------------------- */
+
+.top {
+	margin-bottom: 2rem;
+	position: relative;
+}
+
+.top .img {
+	display: inline-block;
+	width: 30%;
+	height: 0;
+	padding-bottom: 30%;
+	vertical-align: top;
+	position: relative;
+}
+.top .img img {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.top .img img:hover {
+	opacity: 0.8;
+}
+
+
+.top .info {
+	display: inline-block;
+	width: 70%;
+	padding: 1rem 2rem;
+	vertical-align: top;
+}
+
+.top .info .name {
+	height: 5rem;
+	color: #ffd700;
+    font-size: 3rem;
+}
+
+.top .info .intro {
+	line-height: 1.6rem;
+}
+
+.top .info .support {
+    padding: 0.6rem 1.2rem;
+    color: #f2f2f2;
+	font-size: 1.8rem;
+	position: absolute;
+	bottom: 1rem;
+	right: 2rem;
+}
+.top .info .support.active {
+	background: #ffd700;
+	color: #333;
+}
+.top .info .support .glyphicon {
+	margin-right: 0.5rem;
+	color: #ffd700;
+}
+.top .info .support.active .glyphicon {
+	color: #333;
+}
+.top .info .support .num {
+	color: #ffd700;
+	font-weight: bold;
+}
+.top .info .support.active .num {
+	color: #0d0d0d;
+}
+
+
+/* -------------------- 标签页选项卡 -------------------- */
+
+.tablist {
+	border-bottom: 1px solid #333;
+	font-size: 0;
+	text-align: center;
+	position: relative;
+}
+
+.tablist li {
+	display: inline-block;
+	width: 70px;
+	float: none;
+	font-size: 1.4rem;
+}
+.tablist li a {
+	margin: 0;
+	padding: 8px 0;
+	border: none;
+}
+.tablist li a:hover,
+.tablist li.active a:hover {
+	background: none;
+	border: none;
+	color: #ffd700;
+}
+.tablist li.active a {
+	background: none;
+	border: none;
+	color: #ffd700;
+}
+
+.tablist .underline {
+	display: block;
+	width: 70px;
+	height: 1px;
+	background: #ffd700;
+	position: absolute;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.tablist .underline.tab1 {
+	left: -webkit-calc((100% - 70px * 3) / 2 + 70px * 0);
+	left: -moz-calc((100% - 70px * 3) / 2 + 70px * 0);
+	left: -ms-calc((100% - 70px * 3) / 2 + 70px * 0);
+	left: -o-calc((100% - 70px * 3) / 2 + 70px * 0);
+	left: calc((100% - 70px * 3) / 2 + 70px * 0);
+}
+.tablist .underline.tab2 {
+	left: -webkit-calc((100% - 70px * 3) / 2 + 70px * 1);
+	left: -moz-calc((100% - 70px * 3) / 2 + 70px * 1);
+	left: -ms-calc((100% - 70px * 3) / 2 + 70px * 1);
+	left: -o-calc((100% - 70px * 3) / 2 + 70px * 1);
+	left: calc((100% - 70px * 3) / 2 + 70px * 1);
+}
+.tablist .underline.tab3 {
+	left: -webkit-calc((100% - 70px * 3) / 2 + 70px * 2);
+	left: -moz-calc((100% - 70px * 3) / 2 + 70px * 2);
+	left: -ms-calc((100% - 70px * 3) / 2 + 70px * 2);
+	left: -o-calc((100% - 70px * 3) / 2 + 70px * 2);
+	left: calc((100% - 70px * 3) / 2 + 70px * 2);
+}
