@@ -143,3 +143,213 @@
 	left: -o-calc((100% - 70px * 3) / 2 + 70px * 2);
 	left: calc((100% - 70px * 3) / 2 + 70px * 2);
 }
+
+
+/* -------------------- 标签页内容 -------------------- */
+
+
+/* ---------- 演出 ---------- */
+
+#show {
+	padding-top: 2rem;
+}
+#show ul {
+	padding: 0 10px;
+}
+#show ul li.col-xs-6,
+#show ul li.col-sm-3 {
+	padding: 0 5px;
+}
+#show ul li .show-list {
+	padding: 10px;
+	border: 1px solid #333;
+	border-radius: 0.2rem;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+#show ul li .show-list:hover {
+	border: 1px solid #ffd700;
+}
+#show ul li .show-list .img {
+	width: 100%;
+	height: 0;
+	padding-bottom: 142%;
+	position: relative;
+}
+#show ul li .show-list .img img {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#show ul li .show-list p {
+	margin-top: 5px;
+	font-size: 1.2rem;
+	line-height: 1.4rem;
+}
+#show ul li .show-list p.name {
+	color: #ffd700;
+	font-size: 1.4rem;
+}
+
+/* ---------- 图片 ---------- */
+
+#picture {
+	padding-top: 20px;
+}
+
+#picture ul {
+	padding: 0 10px;
+}
+#picture ul li {
+	margin-top: 10px;
+}
+#picture ul li.col-xs-6,
+#picture ul li.col-sm-3 {
+	padding: 0 5px;
+}
+#picture ul li .picture-list {
+	padding: 10px;
+	border: 1px solid #333;
+	border-radius: 0.2rem;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+#picture ul li .picture-list:hover {
+	border: 1px solid #ffd700;
+}
+#picture ul li .picture-list .img {
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	overflow: hidden;
+	position: relative;
+}
+#picture ul li .picture-list .img img {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* ---------- 评论 ---------- */
+
+#comment {
+	padding: 2rem 12rem 0;
+}
+.tab-content #comment .send-box .media .media-left {
+	padding: 0 2rem;
+}
+.tab-content #comment .send-box .media .media-left a {
+	display: inline-block;
+	width: 6rem;
+	height: 6rem;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+.tab-content #comment .send-box .media .media-left a img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.tab-content #comment .send-box .media .media-body textarea {
+	width: 100%;
+	height: 8rem;
+	padding: 1rem;
+	border: 1px solid #333;
+	border-radius: 0.2rem;
+	overflow: hidden;
+}
+
+.tab-content #comment .media .media-body textarea {
+	width: 100%;
+	height: 5rem;
+	padding: 1rem;
+	border: 1px solid #333;
+	border-radius: 0.2rem;
+	overflow: hidden;
+}
+.tab-content #comment .media .media-body .bottom {
+	padding: 0.5rem 0;
+	text-align: right;
+}
+.tab-content #comment .media .media-body .bottom p {
+	display: inline-block;
+	padding: 0.1rem;
+	color: #333;
+	font-size: 1.2rem;
+}
+.tab-content #comment .media .media-body .bottom button {
+	padding: 0.3rem 2rem;
+}
+
+.tab-content #comment .comment-list li {
+	margin: 0;
+	padding: 0.5rem 0;
+	border-top: 1px solid #333;
+}
+.tab-content #comment .comment-list li .media-left {
+	padding: 0.5rem 1.5rem;
+}
+.tab-content #comment .comment-list li .media-left a {
+	display: inline-block;
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+.tab-content #comment .comment-list li .media-left a img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.tab-content #comment .comment-list li .media-body .media-heading p {
+	display: inline-block;
+}
+.tab-content #comment .comment-list li .media-body .media-heading .name a {
+	color: #ffd700;
+}
+.tab-content #comment .comment-list li .media-body .media-heading .time {
+	color: #333;
+	font-size: 1.2rem;
+	float: right;
+}
+.tab-content #comment .comment-list li .media-body .reply {
+	position: absolute;
+	right: 0.5rem;
+	bottom: 0.5rem;
+}
+.tab-content #comment .comment-list li .media-body .reply span {
+	margin: 0 0.3rem;
+}
+.tab-content #comment .comment-list li .media-body .reply-box {
+	display: none;
+}
+.tab-content #comment .comment-list li .media-body .comment-content,
+.tab-content #comment .comment-list li .media-body .reply-list li .media-body .reply-content {
+	min-height: 6rem;
+	padding-bottom: 2.4rem;
+	position: relative;
+}
+.tab-content #comment .comment-list li .media-body .reply-list li .media-body .reply-content .media-heading .name {
+	color: #333;
+}

@@ -4,6 +4,9 @@ new Vue({
 		band: {},
 		supportNum: 0,
 		support: false,
+		shows: [],
+		pictures: [],
+		comments: []
 	},
 	components: {
 		"navbar": navbar,
@@ -20,6 +23,11 @@ new Vue({
 
 		// 获取数据
 		this.getBand();
+		this.getSupportNum();
+		this.checkSupport();
+		this.getShows();
+		this.getPicture();
+		this.getComment();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
@@ -57,14 +65,13 @@ new Vue({
 				success: function(result) {
 					// console.log(result);
 					_this.band = result.data;
-					console.log(_this.band.band_intro);
 				}
 			});
 		},
 		getSupportNum: function() {
 			var _this = this;
 			$.ajax({
-				url: "__URL__/getSupportUserNum",
+				url: "getSupportUserNum",
 				type: "GET",
 				dataType: "json",
 				data: {
@@ -77,8 +84,9 @@ new Vue({
 			});
 		},
 		checkSupport: function() {
+			var _this = this;
 			$.ajax({
-				url: "__URL__/checkSupport",
+				url: "checkSupport",
 				type: "POST",
 				dataType: "json",
 				data: {
@@ -90,6 +98,52 @@ new Vue({
 					if(result.code === 200) {
 						_this.support = true;
 					}
+				}
+			});
+		},
+		getShows: function() {
+			var _this = this;
+			$.ajax({
+				url: "getExperience",
+				type: "GET",
+				dataType: "json",
+				data: {
+					"id": location.search.toString().substr(1).split("=")[1]
+				},
+				success: function(result) {
+					// console.log(result);
+					_this.shows = result.data;
+				}
+			});
+		},
+		getPicture: function() {
+			var _this = this;
+			$.ajax({
+				url: "getPictureByBand",
+				type: "GET",
+				dataType: "json",
+				data: {
+					"id": location.search.toString().substr(1).split("=")[1]
+				},
+				success: function(result) {
+					// console.log(result);
+					_this.pictures = result.data;
+				}
+			});
+		},
+		getComment: function() {
+			var _this = this;
+			$.ajax({
+				url: "getCommentNReply",
+				type: "GET",
+				dataType: "json",
+				data: {
+					"target": 2,
+					"id": location.search.toString().substr(1).split("=")[1]
+				},
+				success: function(result) {
+					// console.log(result);
+					_this.comments = result.data;
 				}
 			});
 		}
