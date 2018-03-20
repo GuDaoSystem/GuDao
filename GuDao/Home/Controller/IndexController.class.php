@@ -250,6 +250,47 @@ class IndexController extends Controller {
 
 
 
+    public function searchNotice() {
+        $notice = new NoticeModel();
+        $data = $notice->searchNoticeByContent($_POST["key"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+    public function searchShow() {
+        $show = new ShowModel();
+        $data = $show->searchShowByName($_POST["key"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+    public function searchBand() {
+        $band = new BandModel();
+        $data = $band->searchBandByName($_POST["key"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+
 
 
 
