@@ -1,6 +1,8 @@
 new Vue({
 	el: '#gudao',
 	data: {
+		loadFlag: true,
+		pageIndex: 2,
 		initial: [],
 		bands: []
 	},
@@ -46,6 +48,35 @@ new Vue({
 			$(".band-content").click(function() {
 				location.href = "Band/detail?id=" + $(this).attr("index") + "#show";
 			});
+
+			// 监听浏览器滚动至底部
+		    $(window).scroll(function(){
+		    	if(_this.loadFlag && $(window).height() + $(window).scrollTop() == $(document).height()) {
+		    		_this.loadFlag = false;
+		    		$.ajax({
+		        		url: "Band/getBandByPage",
+						type: "GET",
+						dataType: "json",
+						data: {
+							"pageIndex": ++_this.pageIndex,
+							"pageSize": 4,
+							// "initial": initial
+						},
+						success: function(result) {
+							if(result.code === 200) {
+								var data = result.data;
+								console.log(data);
+								for(var i = 0; i < data.length; i++) {
+									_this.bands.push(data[i]);
+								}
+								_this.loadFlag = true;
+							} else {
+								$(".no-more").show();
+							}
+						}
+		        	});
+		    	}
+		    });
 		});
 	},
 	computed: {

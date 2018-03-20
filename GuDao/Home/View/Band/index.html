@@ -93,43 +93,27 @@
 
 <script>
 $(function() {
-	// 获取所有乐队首字母
-	// $.ajax({
-	// 	url: "__URL__/getInitial",
-	// 	dataType: "json",
-	// 	success: function(result) {
-	// 		// console.log(result);
-	// 	}
-	// });
-	
-	// // 按页获取乐队列表
-	// $.ajax({
-	// 	url: "__URL__/getBandByPage",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"pageIndex": 1,
-	// 		"pageSize": 10,
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
+    // var page = 1;
+    // $(window).scroll(function(){
+    //     if($(document).height() <= (parseFloat($(window).height()) + parseFloat($(window).scrollTop()))) {
+    //     	$.ajax({
+    //     		url: "Band/getBandByPage",
+				// type: "GET",
+				// dataType: "json",
+				// data: {
+				// 	"pageIndex": ++page,
+				// 	"pageSize": 4,
+				// 	// "initial": initial
+				// },
+				// success: function(result) {
+				// 	console.log(result);
+				// 	// _this.bands.concat(result.data);
+				// }
+    //     	});
+    //     }
+    // });
 
-	// // 按首字母获取乐队列表
-	// $.ajax({
-	// 	url: "__URL__/getBandByPage",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"pageIndex": 1,
-	// 		"pageSize": 10,
-	// 		"initial": "L"
-	// 	},
-	// 	success: function(result) {
-	// 		// console.log(result);
-	// 	}
-	// });
+
 });
 </script>
 
