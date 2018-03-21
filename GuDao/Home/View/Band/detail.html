@@ -34,14 +34,16 @@
 		</div>
 		<!-- 标签页 -->
 		<div>
+			<!-- 标签页选项卡 -->
 			<ul class="tablist nav nav-tabs" role="tablist">
 				<li class="tab1" role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">演出</a></li>
 				<li class="tab2" role="presentation"><a href="#picture" aria-controls="picture" role="tab" data-toggle="tab">图片</a></li>
 				<li class="tab3" role="presentation"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab">评论</a></li>
 				<span class="underline"></span>
 			</ul>
-
+			<!-- 标签页内容 -->
 			<div class="tab-content">
+				<!-- 演出列表 -->
 				<div role="tabpanel" class="tab-pane fade" id="show">
 					<ul class="row">
 						<li v-for="show in shows" class="col-xs-6 col-sm-3">
@@ -57,6 +59,7 @@
 						</li>
 					</ul>
 				</div>
+				<!-- 图片列表 -->
 				<div role="tabpanel" class="tab-pane fade" id="picture">
 					<ul class="row">
 						<li v-for="picture in pictures" class="col-xs-6 col-sm-3">
@@ -68,6 +71,7 @@
 						</li>
 					</ul>
 				</div>
+				<!-- 评论列表 -->
 				<div role="tabpanel" class="tab-pane fade" id="comment">
 					<!-- 评论框 -->
 					<div class="send-box">
