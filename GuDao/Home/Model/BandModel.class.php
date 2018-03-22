@@ -40,14 +40,14 @@ class BandModel extends Model {
     }
 
     // 按乐队名称搜索乐队
-    public function searchBandByName($key) {
+    public function searchBandByName($startIndex, $pageLength, $key) {
         $band = new BandModel();
         $condition = "%";
         for ($i = 0; $i < count($key); $i++) {
             $condition = $condition.$key[$i]."%";
         }
         $map["band_name"] = array("like", $condition);
-        $result = $band->where($map)->select();
+        $result = $band->where($map)->limit($startIndex, $pageLength)->select();
         return $result;
     }
 }
