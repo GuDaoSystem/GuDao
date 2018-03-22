@@ -130,14 +130,20 @@ div.input label {
 }
 
 .navbar .container .navbar-collapse .didLogin .dropdown .dropdown-toggle {
+	width: 3.5rem;
+	height: 3.5rem;
 	padding: 0;
 	background: none;
-}
-.navbar .container .navbar-collapse .didLogin .dropdown .dropdown-toggle img {
-	width: auto;
-	height: 3.5rem;
 	border: 2px solid #ffd700;
 	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+.navbar .container .navbar-collapse .didLogin .dropdown .dropdown-toggle img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .navbar .container .navbar-collapse .didLogin .dropdown .dropdown-menu {
