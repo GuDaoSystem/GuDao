@@ -287,10 +287,10 @@ class ShowController extends Controller {
     public function replyComment() {
         $data["comment_id"] = $_POST["comment_id"];
         $data["reply_content"] = $_POST["content"];
-        $data["reply_type"] = $_POST["type"];
         $data["reply_time"] = $_POST["time"];
         $data["user_id"] = $_POST["user_id"];
         $data["target_id"] = $_POST["target_id"];
+        $data["isRead"] = 0;
         $reply = new ReplyModel();
         $data = $reply->replyComment($data);
         if($data) {

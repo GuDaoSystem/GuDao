@@ -14,8 +14,6 @@
 </head>
 <body>
 
-	
-
 <div id="gudao">	
 	<!-- 导航条 -->
 	<navbar></navbar>
@@ -31,7 +29,7 @@
 				<p class="name">{{band.band_name}}</p>
 				<pre class="intro">{{band.band_intro}}</pre>
 				<!-- “支持”按钮 -->
-				<button class="support" :class="{active: support}"><span class="glyphicon glyphicon-heart-empty"></span><span class="num">{{supportNum}}</span>人支持</button>
+				<button class="support" :class="{active: support}" v-on:click="toggleSupport"><span class="glyphicon glyphicon-heart-empty"></span><span class="num">{{supportNum}}</span>人支持</button>
 			</div>
 		</div>
 		<!-- 标签页 -->
@@ -49,7 +47,7 @@
 				<div role="tabpanel" class="tab-pane fade" id="show">
 					<ul class="row">
 						<li v-for="show in shows" class="col-xs-6 col-sm-3">
-							<div class="show-list" :index="show.show_id">
+							<div class="show-list" v-on:click="toShowDetail(show.show_id)">
 								<div class="img">
 									<img v-if="show.show_poster" :src="'__PUBLIC__/img/show/' + show.show_poster">
 									<img v-else src="__PUBLIC__/img/show/default.jpg">
@@ -87,7 +85,7 @@
 								<textarea maxlength="140"></textarea>
 								<div class="bottom">
 									<p><span>0</span>/140</p>
-									<button class="send">发送</button>
+									<button class="send" v-on:click="sendComment">发送</button>
 								</div>
 							</div>
 						</div>
@@ -108,14 +106,14 @@
 										<p class="time">{{comment.comment_time}}</p>
 									</div>
 									<p>{{comment.comment_content}}</p>
-									<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
+									<a class="reply" v-on:click="toggleShowReplyBox"><span class="glyphicon glyphicon-comment"></span>回复</a>
 								</div>
 								<!-- 回复框 -->
 								<div class="reply-box">
 									<textarea maxlength="100"></textarea>
 									<div class="bottom">
 										<p><span>0</span>/100</p>
-										<button class="send">发送</button>
+										<button class="send" v-on:click="replyComment">发送</button>
 									</div>
 								</div>
 								<!-- 回复列表 -->
@@ -134,14 +132,14 @@
 													<p class="time">{{reply.reply_time}}</p>
 												</div>
 												<p>{{reply.reply_content}}</p>
-												<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
+												<a class="reply" v-on:click="toggleShowReplyBox"><span class="glyphicon glyphicon-comment"></span>回复</a>
 											</div>
 											<!-- 回复框 -->
 											<div class="reply-box">
 												<textarea maxlength="100"></textarea>
 												<div class="bottom">
 													<p><span>0</span>/100</p>
-													<button class="send">发送</button>
+													<button class="send" v-on:click="replyComment">发送</button>
 												</div>
 											</div>
 										</div>
@@ -168,74 +166,6 @@
 
 <script>
 $(function() {
-	// $.ajax({
-	// 	url: "__URL__/getBandByID",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"id": location.search.toString().substr(1).split("=")[1]
-	// 	},
-	// 	success: function(result) {
-	// 		// console.log(result);
-	// 	}
-	// });
-	// $.ajax({
-	// 	url: "__URL__/getSupportUserNum",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"id": location.search.toString().substr(1).split("=")[1]
-	// 	},
-	// 	success: function(result) {
-	// 		// console.log(result);
-	// 	}
-	// });
-	// $.ajax({
-	// 	url: "__URL__/checkSupport",
-	// 	type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"user_id": sessionStorage.getItem("userID"),
-	// 		"band_id": location.search.toString().substr(1).split("=")[1]
-	// 	},
-	// 	success: function(result) {
-	// 		// console.log(result);
-	// 	}
-	// });
-	// $.ajax({
-	// 	url: "__URL__/getExperience",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"id": location.search.toString().substr(1).split("=")[1]
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
-	// $.ajax({
-	// 	url: "__URL__/getPictureByBand",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"id": location.search.toString().substr(1).split("=")[1]
-	// 	},
-	// 	success: function(result) {
-	// 		// console.log(result);
-	// 	}
-	// });
-	// $.ajax({
-	// 	url: "__URL__/getCommentNReply",
-	// 	type: "GET",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"target": 2,
-	// 		"id": location.search.toString().substr(1).split("=")[1]
-	// 	},
-	// 	success: function(result) {
-	// 		// console.log(result);
-	// 	}
-	// });
 });
 </script>
 

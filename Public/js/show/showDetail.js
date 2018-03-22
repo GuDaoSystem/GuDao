@@ -29,7 +29,7 @@ new Vue({
 	},
 	mounted: function() {
 		this.$nextTick(function () {
-			// 监听“想看哪”按钮
+			// 监听“想看”按钮
 			$(".want").unbind("click").click(this.toggleWant);
 
 			// 标签页定位
@@ -139,7 +139,6 @@ new Vue({
 						"comment_id": send.parents(".comment").attr("commentid"),
 						"content": content,
 						"time": time,
-						"type": 1,
 						"user_id": sessionStorage.getItem("userID"),
 						"target_id": send.parents(".comment").attr("Userid")
 					},
