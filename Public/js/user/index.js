@@ -6,8 +6,8 @@ new Vue({
 		support: 0,
 		activity: [],
 		reply: [],
-		show: [],
-		band: []
+		shows: [],
+		bands: []
 	},
 	components: {
 		"navbar": navbar,
@@ -265,9 +265,9 @@ new Vue({
 						console.log(_this.activity);
 						for(var i = 0; i < data.activity.length; i++) {
 							if(data.activity[i]["type"] == "show") {
-								_this.show.push(data.activity[i]["show"]);
+								_this.shows.push(data.activity[i]["show"]);
 							} else {
-								_this.band.push(data.activity[i]["band"]);
+								_this.bands.push(data.activity[i]["band"]);
 							}
 						}
 					}

@@ -40,14 +40,14 @@ class ShowModel extends Model {
     }
 
     // 按演出名称搜索演出
-    public function searchShowByName($key) {
+    public function searchShowByName($startIndex, $pageLength, $key) {
         $show = new ShowModel();
         $condition = "%";
         for ($i = 0; $i < count($key); $i++) {
             $condition = $condition.$key[$i]."%";
         }
         $map["show_name"] = array("like", $condition);
-        $result = $show->where($map)->select();
+        $result = $show->where($map)->limit($startIndex, $pageLength)->select();
         return $result;
     }
 }

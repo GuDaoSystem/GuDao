@@ -1,0 +1,85 @@
+
+/* -------------------- 筛选条件 -------------------- */
+
+.condition ul {
+	border-bottom: 1px dashed #333;
+}
+
+.condition ul li {
+	display: inline-block;
+	padding: 0.6rem 1rem;
+	cursor: pointer;
+}
+
+.condition ul li:hover a,
+.condition ul li.active a {
+	color: #ffd700;
+}
+
+.condition ul li.invalid {
+	cursor: text;
+}
+.condition ul li.invalid a {
+	cursor: text;
+}
+.condition ul li.invalid:hover a {
+	color: #333;
+}
+
+
+/* -------------------- 乐队列表 -------------------- */
+
+.band-list li {
+	margin-top: 2rem;
+}
+
+.band-list li .band-content {
+	padding: 0.8rem;
+	border: 1px solid #333;
+	border-radius: 0.2rem;
+	cursor: pointer;
+	position: relative;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.band-list li .band-content .img {
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	border: none;
+	position: relative;
+}
+.band-list li .band-content .img img {
+	width: auto;
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.band-list li .band-content .info {
+	text-align: center;
+}
+.band-list li .band-content .info p {
+	margin: 0.5rem 0;
+}
+.band-list li .band-content .info .name {
+	color: #ffd700;
+	font-size: 1.6rem;
+	line-height: 1.6rem;
+}
+.band-list li .band-content .info .support .num {
+	font-size: 1.2rem;
+	color: #ffd700;
+}
+
+.band-list li .band-content:hover {
+	border: 1px solid #ffd700;
+}
+.band-list li .band-content:hover .img img {
+	opacity: 0.8;
+}

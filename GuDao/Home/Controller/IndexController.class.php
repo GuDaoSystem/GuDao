@@ -250,6 +250,53 @@ class IndexController extends Controller {
 
 
 
+    public function searchNotice() {
+        $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
+        $pageLength = $_GET["pageSize"];
+        $notice = new NoticeModel();
+        $data = $notice->searchNoticeByContent($startIndex, $pageLength, $_POST["key"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+    public function searchShow() {
+        $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
+        $pageLength = $_GET["pageSize"];
+        $show = new ShowModel();
+        $data = $show->searchShowByName($startIndex, $pageLength, $_POST["key"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+    public function searchBand() {
+        $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
+        $pageLength = $_GET["pageSize"];
+        $band = new BandModel();
+        $data = $band->searchBandByName($startIndex, $pageLength, $_POST["key"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+
 
 
 

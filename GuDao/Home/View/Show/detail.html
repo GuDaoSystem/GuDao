@@ -22,7 +22,10 @@
 	<div id="show-detail" class="container content">
 		<!-- 基本信息 -->
 		<div class="top">
-			<img :src="'__PUBLIC__/img/show/' + show.show_poster" class="thumbnail"><div class="info">
+			<div class="img">
+				<img v-if="show.show_poster" :src="'__PUBLIC__/img/show/' + show.show_poster" class="thumbnail">
+				<img v-else src="__PUBLIC__/img/show/default.jpg" class="thumbnail">
+			</div><div class="info">
 				<span v-if="show.show_state == '1'" class="state yushou">/&ensp;预售</span>
 				<span v-else-if="show.show_state == '2'" class="state quxiao">/&ensp;取消</span>
 				<span v-else-if="show.show_state == '3'" class="state biangeng">/&ensp;变更</span>
@@ -61,11 +64,6 @@
 						<p class="title">演出门票：</p>
 						<p v-if="show.show_ticket == 0" class="msg">免票</p>
 						<p v-else class="msg"><span class="value">￥{{show.show_ticket}}</span></p>
-						<!-- <ul v-else class="msg">
-							<li><span class="value">￥21</span>（预售票，不含酒）</li>
-							<li><span class="value">￥21</span>（预售票，不含酒）</li>
-							<li><span class="value">￥21</span>（预售票，不含酒）</li>
-						</ul> -->
 					</li>
 				</ul>
 				<!-- “想看”按钮 -->
@@ -90,8 +88,10 @@
 					<ul class="row band">
 						<li v-for="band in bands" class="col-lg-4 col-sm-6">
 							<div :index="band.band_id">
-								<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover">
-								<img v-else src="__PUBLIC__/img/band/default.jpg">
+								<div class="img">
+									<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover">
+									<img v-else src="__PUBLIC__/img/band/default.jpg">
+								</div>
 								<p>{{band.band_name}}</p>
 							</div>
 						</li>

@@ -1,0 +1,53 @@
+.father{
+		height:100%;
+		width: 100%;
+		position:relative;
+		background-color: #0d0d0d;
+
+	}
+	.child{
+		width:50%;
+		position:absolute;
+		top:50%;
+		transform: translate(-50%,-50%);
+		left:50%;
+		text-align: center;
+	}
+	img{
+		opacity: 0;
+
+	}
+	.gu,
+	.dao{
+		display: inline-block;
+		margin:.5em;
+	}
+
+	.gu{
+		width:13%;
+		animation: fadein 2s ease .5s;
+		animation-fill-mode: forwards;
+		-webkit-animation: fadein 2s ease .5s;
+		-webkit-animation-fill-mode: forwards;
+	}
+	.dao{
+		width:11%;
+		animation: fadein 2s ease 1s;
+		animation-fill-mode: forwards;
+		-webkit-animation: fadein 2s ease 1s;
+		-webkit-animation-fill-mode: forwards;
+	}
+	.gudao{
+		animation: fadein 2s ease 1.5s;
+		animation-fill-mode: forwards;
+		-webkit-animation: fadein 2s ease 1.5s;
+		-webkit-animation-fill-mode: forwards;
+	}
+	@keyframes fadein{
+		from{opacity: 0;}
+		to{opacity: 1;}
+	}
+	@-webkit-keyframes fadein{
+		from{opacity: 0;}
+		to{opacity: 1;}
+	}

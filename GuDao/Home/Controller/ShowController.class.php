@@ -50,13 +50,13 @@ class ShowController extends Controller {
         $data = $show->getShowByCondition($startIndex, $pageLength, $condition);
         if(!$data) {
             $result["code"] = 201;
-            $result["msg"] = "查询失败1";
+            $result["msg"] = "查询失败";
             $this->ajaxReturn($result);
         }
         for($i = 0; $i < count($data); $i++) {
             if(!$data[$i]) {
                 $result["code"] = 201;
-                $result["msg"] = "查询失败2";
+                $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
 
@@ -70,20 +70,20 @@ class ShowController extends Controller {
             $bandID = $attend->getBandIDByShow($data[$i]["show_id"]);
             if(!$bandID) {
                 $result["code"] = 201;
-                $result["msg"] = "查询失败4";
+                $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
             for($j = 0; $j < count($bandID); $j++) {
                 if(!$bandID[$j]) {
                     $result["code"] = 201;
-                    $result["msg"] = "查询失败5";
+                    $result["msg"] = "查询失败";
                     $this->ajaxReturn($result);
                 }
                 $band = new BandModel();
                 $data[$i]["band"][$j] = $band->getBandByID($bandID[$j]);
                 if(!$data[$i]["band"][$j]) {
                     $result["code"] = 201;
-                    $result["msg"] = "查询失败6";
+                    $result["msg"] = "查询失败";
                     $this->ajaxReturn($result);
                 }
             }
@@ -287,10 +287,10 @@ class ShowController extends Controller {
     public function replyComment() {
         $data["comment_id"] = $_POST["comment_id"];
         $data["reply_content"] = $_POST["content"];
-        $data["reply_type"] = $_POST["type"];
         $data["reply_time"] = $_POST["time"];
         $data["user_id"] = $_POST["user_id"];
         $data["target_id"] = $_POST["target_id"];
+        $data["isRead"] = 0;
         $reply = new ReplyModel();
         $data = $reply->replyComment($data);
         if($data) {
