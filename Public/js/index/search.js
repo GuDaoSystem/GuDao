@@ -1,7 +1,11 @@
 new Vue({
 	el: '#gudao',
 	data: {
-		newNotices: []
+		notices: [],
+		shows:[],
+		bands:[],
+		keyword:"",
+		editedKey:""
 	},
 	components: {
 		"navbar": navbar,
@@ -24,16 +28,27 @@ new Vue({
 			
 		});
 
-		this.getNewNotices(["未来", "广州"]);
+		this.getNotices(["未来", "广州"]);
+		this.getShows();
+		this.getBands();
 	},
 	updated: function () {
 		this.$nextTick(function () {
 		});
 	},
+	watch:{
+		keyword:function(newVal,oldVal){
+			this.editedKey = newVal + "hello";
+			console.log(newVal);
+			console.log(this.editedKey);
+		}
+	},
 	computed: {
+
 	},
 	methods: {
-		getNewNotices:function(key) {
+		
+		getNotices:function(key) {
 			var _this = this;
 			$.ajax({
 				url: "doSearch",
@@ -43,22 +58,42 @@ new Vue({
 					"key": key
 				},
 				success: function(r) {
-					_this.newNotices = r.data.notice;
+					_this.notices = r.data.notice;
 				}
 			});
 
 		},
-		getNewShow: function() {
+		getShows: function() {
 			var _this = this;
 			$.ajax({
 				url: "getRecentShow",
 				dataType: "json",
-				success: function(result) {
-
-					_this.newShows = result.data;
+				success: function(r) {
+					_this.shows = r.data;
 				}
 			});
 		},
+		getBands: function() {
+			var _this = this;
+			$.ajax({
+				url: "getHotBand",
+				dataType: "json",
+				success: function(r) {
+					console.log(r.data);
+					_this.bands = r.data;
+				}
+			});
+		},
+		// 点击演出跳转
+		goShow:function(index){
+			// console.log(index);
+			// console.log(this.shows[index].show_id);
+			location.href = "../Show/detail?id=" + this.shows[index].show_id + "#detail";
+		},
+		// 点击乐队跳转
+		goBand:function(index){
+			location.href = "../Band/detail?id=" + this.bands[index].band_id + "#detail";
+		}
 
 
 	}

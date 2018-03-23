@@ -10,6 +10,89 @@
 <script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
+
+<style>
+.content {
+	height: -webkit-calc(100% - 41px);
+	height: -moz-calc(100% - 41px);
+	height: -ms-calc(100% - 41px);
+	height: -o-calc(100% - 41px);
+	height: calc(100% - 41px);
+}
+
+
+.left {
+	display: inline-block;
+	width: 49%;
+	height: 100%;
+	border-right: 1px solid #ffd700;
+}
+.left img {
+    display: block;
+    width: 12%;
+	margin: 50% auto 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.right {
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
+}
+
+.right form {
+	width: 50%;
+	margin: 50% auto 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.right form div.input {
+	/*width: 100%;
+	margin-top: -1px;
+	padding: 0.8rem 1rem;
+	border-top: 1px solid #ffd700;
+	border-bottom: 1px solid #ffd700;*/
+	font-size: 0;
+}
+.right form div.input span {
+	color: #333;
+	font-size: 2.4rem;
+	vertical-align: middle;
+}
+.right form div.input input {
+	width: -webkit-calc(100% - 2.4rem);
+	width: -moz-calc(100% - 2.4rem);
+	width: -ms-calc(100% - 2.4rem);
+	width: -o-calc(100% - 2.4rem);
+	width: calc(100% - 2.4rem);
+	padding-left: 1rem;
+	margin-top: 3px;
+	color: #f2f2f2;
+	font-size: 1.6rem;
+	vertical-align: middle;
+}
+.right form div.getCode input{
+	
+	width: calc(100% - 10rem);
+}
+.right form div.getCode span.getCode{
+	display: inline-block;
+	margin-top: 3px;
+	font-size: 1.6rem;
+}
+.right form button {
+	margin-top: 3rem;
+	width: 100%;
+	padding: 0.8rem 0;
+	font-size: 1.6rem;
+}
+</style>
 </head>
 <body>
 
@@ -19,6 +102,31 @@
 
 	<!-- 内容 -->
 	<div class="container content">
+		<div class="left">
+			<img src="__PUBLIC__/img/index/register.png">
+		</div>
+		<div class="right">
+			<form id="signUp">
+					<div class="input">
+							<span class="glyphicon glyphicon-envelope"></span>
+							<input type="email" name="email" placeholder="邮箱" autocomplete="off" v-model="email">
+					</div>
+					<div class="input getCode">
+							<span class="glyphicon glyphicon-ok-circle"></span>
+							<input type="text" maxlength="6" name="code" placeholder="验证码" autocomplete="off" v-model="code">
+							<span class="getCode">获取验证码</span>
+					</div>
+					<div class="input">
+							<span class="glyphicon glyphicon-lock"></span>
+							<input type="password" name="password" placeholder="密码" autocomplete="off" v-model="password">
+					</div>
+					<div class="input">
+							<span class="glyphicon glyphicon-lock"></span>
+							<input type="password" name="passwordCheck" placeholder="确认密码" autocomplete="off" v-model="passwordCheck">
+					</div>
+					<button>注册</button>
+			</form>
+		</div>
 	</div>
 
 	<!-- 底部 -->
@@ -34,6 +142,12 @@
 <script>
 new Vue({
 	el: '#gudao',
+	data:{
+		email:"",
+		code:"",
+		password:"",
+		passwordCheck:""
+	},
 	components: {
 		"navbar": navbar,
 		"back-to-top": backToTop,

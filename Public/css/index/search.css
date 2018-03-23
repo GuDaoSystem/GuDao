@@ -1,0 +1,177 @@
+	#search .searchbox1{
+		width: calc(100% - 185px);
+		vertical-align: middle;
+		display: inline-block;
+		height: 40px;
+		margin-bottom: 2rem;
+	}
+
+	#search .searchbox1 input{
+		width: calc(100% - 40px);
+		vertical-align: top;
+		height: 100%;
+		border: 1px solid #333;
+		border-radius: 3px 0 0 3px;
+		border-right: none;
+	}
+	#search .searchbox1 button{
+		
+		width: 40px;
+		font-size: 2rem;
+		vertical-align: top;
+		height:100%;
+		border: 1px solid #333;
+		border-radius: 0 3px 3px 0;
+		border-left: none;
+		padding-right: 8px;
+	}
+	#search .conditions1{
+		vertical-align: middle;
+		height: 40px;
+		line-height: 40px;
+		font-size: 1.4rem;
+		display: inline-block;
+		color: #333;
+		width: 180px;
+		float: right;
+	}
+	#search .conditions1 span{
+		padding: 0 5px 0 5px;
+	}
+
+	/* 头部 */
+
+	.head{
+		margin-bottom: 0.8rem;
+	}
+	
+	.head .title{
+	display: inline-block;
+	padding: 0.2rem 0.5rem;
+	border-top: 1px solid #ffd700;
+	border-left: 4px solid #ffd700; 
+
+	}
+	.head .more{
+	padding-top: 0.4rem;
+	float: right;
+	}
+
+	/* 通知模块 */
+
+	.notices .body li{
+		border-width: 1px;
+		border-style: solid;
+		border-color: #333;
+		padding: .8rem;
+		margin-bottom: .8rem;
+
+	}
+
+	.notices .body .state{
+		font-size: 2rem;
+		color: #333;
+
+	}
+	.notices .body p{
+		width: calc(100% - 120px);
+		display: inline-block;
+	}
+
+	.notices .body .time{
+		float: right;
+		width:120px;
+		line-height: 26px;
+	}
+
+	/* 演出模块 */
+
+	.shows,
+	.bands {
+		padding-top: 2rem;
+		display: block;
+	}
+	
+	.shows ul,
+	.bands ul {
+		padding: 0 10px;
+	}
+	.shows ul li.col-xs-6,
+	.shows ul li.col-sm-3,
+	.bands ul li.col-xs-6,
+	.bands ul li.col-sm-3 {
+		padding: 0 5px;
+	}
+	.shows ul li .show-list,
+	.bands ul li .band-list {
+		padding: 10px;
+		border: 1px solid #333;
+		border-radius: 0.2rem;
+		cursor: pointer;
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		transition: all 0.2s;
+	}
+	.shows ul li .show-list:hover,
+	.bands ul li .band-list:hover {
+		border: 1px solid #ffd700;
+	}
+	.shows ul li .show-list .img,
+	.bands ul li .band-list .img {
+		width: 100%;
+		height: 0;
+		position: relative;
+	}
+	.shows ul li .show-list .img img,
+	.bands ul li .band-list .img img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.shows ul li .show-list .img{
+		padding-bottom: 142%;
+	}
+	.shows ul li .show-list p{
+		margin-top: 5px;
+		font-size: 1.2rem;
+		line-height: 1.4rem;
+	}
+	.shows ul li .show-list p.name{
+		color: #ffd700;
+		font-size: 1.4rem;
+	}
+
+	.bands ul li .band-list .img {
+		padding-bottom: 100%;
+	}
+
+	.bands ul li .band-list p {
+		padding-top: 10px;
+		color: #ffd700;
+		text-align: center;
+		line-height: 2rem;
+		position: relative;
+	}
+	.bands ul li .band-list p span {
+		display: inline-block;
+		width: 2.6rem;
+		height: 2.6rem;
+		background: url(../../img/common/icon_number_active.png) no-repeat;
+		background-size: 100%;
+		position: absolute;
+		left: 0;
+		top: 0.4rem;
+	}
+	.bands ul li:nth-child(2) .band-list p span {
+		background-position: 0 -2.6rem;
+	}
+	.bands ul li:nth-child(3) .band-list p span {
+		background-position: 0 -5.2rem;
+	}
+	.bands ul li:nth-child(4) .band-list p span {
+		background-position: 0 -7.8rem;
+	}
