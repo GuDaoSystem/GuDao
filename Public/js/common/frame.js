@@ -118,7 +118,7 @@ $(function() {
 				value: "确定",
 				callback: function() {
 					sessionStorage.removeItem("userID");
-					location.reload();
+					location.href = "../GuDao/Index/home";
 				}
 			}, {
 				value: "取消"
