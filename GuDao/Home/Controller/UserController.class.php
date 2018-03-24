@@ -27,17 +27,23 @@ class UserController extends Controller {
     // 1. 发送验证码
     public function sendCode() {
         $email = $_POST["email"];
-        $title = "孤岛验证码";
-        $code = rand(1000, 9999);
-        $content = "验证码为 <strong>{$code}</strong> 。你正在重新设置密码，若非本人操作请注意账号安全！";
-        if(sendMail($email, $title, $content)) {
-            S($email, $code, 60);
-            $result["code"] = 200;
-            $result["msg"] = "发送验证码成功";
-            // setcookie("code", $code, time() + 60, "/");
-        } else {
+        $user = new UserModel();
+        if(!$user->checkEmail($email)) {
             $result["code"] = 201;
-            $result["msg"] = "发送验证码失败";
+            $result["msg"] = "邮箱未注册";
+        } else {
+            $title = "孤岛验证码";
+            $code = rand(1000, 9999);
+            $content = "验证码为 <strong>{$code}</strong> 。你正在重新设置密码，若非本人操作请注意账号安全！";
+            if(sendMail($email, $title, $content)) {
+                S($email, $code, 60);
+                $result["code"] = 200;
+                $result["msg"] = "发送验证码成功";
+                // setcookie("code", $code, time() + 60, "/");
+            } else {
+                $result["code"] = 201;
+                $result["msg"] = "发送验证码失败";
+            }
         }
         $this->ajaxReturn($result);
     }
