@@ -109,6 +109,8 @@ class IndexController extends Controller {
         if(S($email) == $code) {
             $data["email"] = $email;
             $data["password"] = md5($_POST["password"]);
+            $data["username"] = "孤岛没有名字";
+            $data["intro"] = "孤岛没有简介";
             $user = new UserModel();
             if($user->register($data)) {
                 $this->doLogin();
