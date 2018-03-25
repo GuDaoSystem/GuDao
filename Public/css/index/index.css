@@ -1,53 +1,54 @@
-.father{
-		height:100%;
-		width: 100%;
-		position:relative;
-		background-color: #0d0d0d;
+.father {
+	height: 100%;
+	width: 100%;
+	background-color: #0d0d0d;
+	position: relative;
+}
 
-	}
-	.child{
-		width:50%;
-		position:absolute;
-		top:50%;
-		transform: translate(-50%,-50%);
-		left:50%;
-		text-align: center;
-	}
-	img{
-		opacity: 0;
+.child {
+	width:50%;
+	text-align: center;
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.child img {
+	margin: 0.5em;
+	opacity: 0;
+}
 
-	}
-	.gu,
-	.dao{
-		display: inline-block;
-		margin:.5em;
-	}
+.gu {
+	width: 13%;
+	animation: fadein 1.5s ease .5s;
+	animation-fill-mode: forwards;
+	-webkit-animation: fadein 1.5s ease .5s;
+	-webkit-animation-fill-mode: forwards;
+}
+.dao {
+	width: 11%;
+	animation: fadein 1.5s ease 1s;
+	animation-fill-mode: forwards;
+	-webkit-animation: fadein 1.5s ease 1s;
+	-webkit-animation-fill-mode: forwards;
+}
+.gudao {
+	animation: fadein 1.5s ease 1.5s;
+	animation-fill-mode: forwards;
+	-webkit-animation: fadein 1.5s ease 1.5s;
+	-webkit-animation-fill-mode: forwards;
+}
 
-	.gu{
-		width:13%;
-		animation: fadein 2s ease .5s;
-		animation-fill-mode: forwards;
-		-webkit-animation: fadein 2s ease .5s;
-		-webkit-animation-fill-mode: forwards;
-	}
-	.dao{
-		width:11%;
-		animation: fadein 2s ease 1s;
-		animation-fill-mode: forwards;
-		-webkit-animation: fadein 2s ease 1s;
-		-webkit-animation-fill-mode: forwards;
-	}
-	.gudao{
-		animation: fadein 2s ease 1.5s;
-		animation-fill-mode: forwards;
-		-webkit-animation: fadein 2s ease 1.5s;
-		-webkit-animation-fill-mode: forwards;
-	}
-	@keyframes fadein{
-		from{opacity: 0;}
-		to{opacity: 1;}
-	}
-	@-webkit-keyframes fadein{
-		from{opacity: 0;}
-		to{opacity: 1;}
-	}
+
+@keyframes fadein {
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+@-webkit-keyframes fadein {
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
