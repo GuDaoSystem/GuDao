@@ -27,12 +27,27 @@
 .new-notice ul li p span {
 	color: #333;
 	font-size: 2rem;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
 }
 .new-notice ul li .time {
 	padding-top: 0.8rem;
 	float: right;
 	color: #333;
 	font-size: 1.2rem;
+}
+
+.new-notice ul li:hover p span.yushou {
+	color: #ffd700;
+}
+.new-notice ul li:hover p span.quxiao {
+	color: #f00;
+}
+.new-notice ul li:hover p span.biangeng {
+	color: #0f0;
 }
 
 
@@ -185,6 +200,10 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
 

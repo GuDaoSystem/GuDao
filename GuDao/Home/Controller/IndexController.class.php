@@ -12,19 +12,125 @@ class IndexController extends Controller {
     public function index(){
         $this->display();
     }
+    public function home(){
+        $this->display();
+    }
     public function login(){
         $this->display();
     }
     public function register(){
         $this->display();
     }
-    public function home(){
-        $this->display();
-    }
     public function search(){
         $this->display();
     }
 
+
+
+    /* -------------------- 首页 -------------------- */
+
+    // 获取通知列表
+    public function getNotice() {
+        $notice = new NoticeModel();
+        $data = $notice->getNoticeByPage(0, 7);
+        if($data) {
+             $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+    // 获取演出时间表
+    public function getShowCalendar() {
+        $show = new ShowModel();
+        $data = $show->getDateByShowNum($_POST["month"]);
+        if($data) {
+            $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+    // 获取最新演出
+    public function getRecentShow() {
+        $show = new ShowModel();
+        $data = $show->getShowByPage(0, 4, "show_time desc");
+        if($data) {
+             $result["code"] = 200;
+            $result["msg"] = "查询成功";
+            $result["data"] = $data;
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+    // 获取热门演出
+    public function getHotShow() {
+        $want = new WantModel();
+        $wantList = $want->sortShowByUserNum(0, 4);
+        if(!$wantList) {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        } else {
+            for($i = 0; $i < count($wantList); $i++) {
+                $show = new ShowModel();
+                $showList[$i] = $show->getShowByID($wantList[$i]["show_id"]);
+                if(!$showList[$i]) {
+                    $result["code"] = 201;
+                    $result["msg"] = "查询失败";
+                    $this->ajaxReturn($result);
+                }
+            }
+            if($showList) {
+                $result["code"] = 200;
+                $result["msg"] = "查询成功";
+                $result["data"] = $showList;
+            } else {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+            }
+        }
+        $this->ajaxReturn($result);
+    }
+
+    // 获取热门乐队
+    public function getHotBand() {
+        $support = new SupportModel();
+        $supportList = $support->sortBandByUserNum(0, 4);
+        if(!$supportList) {
+            $result["code"] = 201;
+            $result["msg"] = "查询失败";
+        } else {
+            for($i = 0; $i < count($supportList); $i++) {
+                $band = new BandModel();
+                $bandList[$i] = $band->getBandByID($supportList[$i]["band_id"]);
+                if(!$bandList[$i]) {
+                    $result["code"] = 201;
+                    $result["msg"] = "查询失败";
+                    $this->ajaxReturn($result);
+                }
+            }
+            if($bandList) {
+                $result["code"] = 200;
+                $result["msg"] = "查询成功";
+                $result["data"] = $bandList;
+            } else {
+                $result["code"] = 201;
+                $result["msg"] = "查询失败";
+            }
+        }
+        $this->ajaxReturn($result);
+    }
 
 
 
@@ -137,112 +243,6 @@ class IndexController extends Controller {
         } else {
             $result["code"] = 201;
             $result["msg"] = "验证码错误";
-        }
-        $this->ajaxReturn($result);
-    }
-
-
-    /* -------------------- 首页 -------------------- */
-
-    // 获取通知
-    public function getNotice() {
-        $notice = new NoticeModel();
-        $data = $notice->getNoticeByPage(0, 7);
-        if($data) {
-             $result["code"] = 200;
-            $result["msg"] = "查询成功";
-            $result["data"] = $data;
-        } else {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-        }
-        $this->ajaxReturn($result);
-    }
-
-    // 获取演出时间表
-    public function getShowCalendar() {
-        $show = new ShowModel();
-        $data = $show->getDateByShowNum($_POST["month"]);
-        if($data) {
-            $result["code"] = 200;
-            $result["msg"] = "查询成功";
-            $result["data"] = $data;
-        } else {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-        }
-        $this->ajaxReturn($result);
-    }
-
-    // 获取最新演出
-    public function getRecentShow() {
-        $show = new ShowModel();
-        $data = $show->getShowByPage(0, 4, "show_time desc");
-        if($data) {
-             $result["code"] = 200;
-            $result["msg"] = "查询成功";
-            $result["data"] = $data;
-        } else {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-        }
-        $this->ajaxReturn($result);
-    }
-
-    // 获取热门演出
-    public function getHotShow() {
-        $want = new WantModel();
-        $wantList = $want->sortShowByUserNum(0, 4);
-        if(!$wantList) {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-        } else {
-            for($i = 0; $i < count($wantList); $i++) {
-                $show = new ShowModel();
-                $showList[$i] = $show->getShowByID($wantList[$i]["show_id"]);
-                if(!$showList[$i]) {
-                    $result["code"] = 201;
-                    $result["msg"] = "查询失败";
-                    $this->ajaxReturn($result);
-                }
-            }
-            if($showList) {
-                $result["code"] = 200;
-                $result["msg"] = "查询成功";
-                $result["data"] = $showList;
-            } else {
-                $result["code"] = 201;
-                $result["msg"] = "查询失败";
-            }
-        }
-        $this->ajaxReturn($result);
-    }
-
-    // 获取热门乐队
-    public function getHotBand() {
-        $support = new SupportModel();
-        $supportList = $support->sortBandByUserNum(0, 4);
-        if(!$supportList) {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-        } else {
-            for($i = 0; $i < count($supportList); $i++) {
-                $band = new BandModel();
-                $bandList[$i] = $band->getBandByID($supportList[$i]["band_id"]);
-                if(!$bandList[$i]) {
-                    $result["code"] = 201;
-                    $result["msg"] = "查询失败";
-                    $this->ajaxReturn($result);
-                }
-            }
-            if($bandList) {
-                $result["code"] = 200;
-                $result["msg"] = "查询成功";
-                $result["data"] = $bandList;
-            } else {
-                $result["code"] = 201;
-                $result["msg"] = "查询失败";
-            }
         }
         $this->ajaxReturn($result);
     }

@@ -5,14 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title></title>
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/swiper.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/frame.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/home.css">
-<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/swiper.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 </head>
 <body>
 
@@ -32,7 +27,7 @@
 					</div>
 					<ul class="body">
 						<li v-for="notice in notices" :index="notice.show_id">
-							<p class="text-overflow-ellipsis"><span v-if="notice.notice_type == '1'" class="state">预售/</span><span v-if="notice.notice_type == '2'" class="state">取消/</span><span v-if="notice.notice_type == '3'" class="state">变更/</span>&ensp;{{notice.notice_content}}</p>
+							<p class="text-overflow-ellipsis"><span v-if="notice.notice_type == '1'" class="state yushou">预售/</span><span v-if="notice.notice_type == '2'" class="state quxiao">取消/</span><span v-if="notice.notice_type == '3'" class="state biangeng">变更/</span>&ensp;{{notice.notice_content}}</p>
 							<p class="time">{{notice.notice_time}}</p>
 						</li>
 					</ul>
@@ -44,9 +39,9 @@
 					<div class="head">
 						<p class="title">演出时间表</p>
 						<div class="selector">
-							<span class="left glyphicon glyphicon-chevron-left"></span>
-							<p></p>
-							<span class="right glyphicon glyphicon-chevron-right"></span>
+							<span class="left glyphicon glyphicon-chevron-left" v-on:click="lastMonth"></span>
+							<p v-on:click="resetMonth"></p>
+							<span class="right glyphicon glyphicon-chevron-right" v-on:click="nextMonth"></span>
 						</div>
 						<div class="form">
 							<input class="year" type="text" name="year" maxlength="4">年<input class="month" type="text" name="month" maxlength="2">月<span class="glyphicon glyphicon glyphicon-ok"></span>
@@ -69,7 +64,7 @@
 			</div>
 			<ul class="row">
 				<li v-for="show in newShows" class="col-xs-6 col-sm-3">
-					<div class="show-list" :index="show.show_id">
+					<div class="show-list" v-on:click="toShowDetail(show.show_id)">
 						<div class="img">
 							<img v-if="show.show_poster" :src="'__PUBLIC__/img/show/' + show.show_poster">
 							<img v-else src="__PUBLIC__/img/show/default.jpg">
@@ -85,11 +80,11 @@
 		<div class="hot-show">
 			<div class="head">
 				<p class="title">热门演出</p>
-				<a class="more">MORE</a>
+				<a href="../Show?sort=hot" class="more">MORE</a>
 			</div>
 			<ul class="row">
 				<li v-for="show in hotShows" class="col-xs-6 col-sm-3">
-					<div class="show-list" :index="show.show_id">
+					<div class="show-list" v-on:click="toShowDetail(show.show_id)">
 						<div class="img">
 							<img v-if="show.show_poster" :src="'__PUBLIC__/img/show/' + show.show_poster">
 							<img v-else src="__PUBLIC__/img/show/default.jpg">
@@ -109,7 +104,7 @@
 			</div>
 			<ul class="row">
 				<li v-for="band in hotBands" class="col-xs-6 col-sm-3">
-					<div class="band-list" :index="band.band_id">
+					<div class="band-list" v-on:click="toBandDetail(band.band_id)">
 						<div class="img">
 							<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover">
 							<img v-else src="__PUBLIC__/img/band/default.jpg">
@@ -126,16 +121,12 @@
 	<copyright></copyright>
 </div>
 
-
-<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/component.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index/home.js"></script>
-
-<script>
-$(function() {
-});
-</script>
-
 </body>
 </html>
