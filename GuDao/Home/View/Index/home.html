@@ -27,7 +27,7 @@
 					</div>
 					<ul class="body">
 						<li v-for="notice in notices" :index="notice.show_id">
-							<p class="text-overflow-ellipsis"><span v-if="notice.notice_type == '1'" class="state yushou">预售/</span><span v-if="notice.notice_type == '2'" class="state quxiao">取消/</span><span v-if="notice.notice_type == '3'" class="state biangeng">变更/</span>&ensp;{{notice.notice_content}}</p>
+							<p class="text-overflow-ellipsis" v-on:click="toShowDetail(notice.show_id)"><span v-if="notice.notice_type == '1'" class="state yushou">预售/</span><span v-if="notice.notice_type == '2'" class="state quxiao">取消/</span><span v-if="notice.notice_type == '3'" class="state biangeng">变更/</span>&ensp;{{notice.notice_content}}</p>
 							<p class="time">{{notice.notice_time}}</p>
 						</li>
 					</ul>

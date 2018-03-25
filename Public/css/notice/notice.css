@@ -1,3 +1,6 @@
+
+/* -------------------- 筛选条件 -------------------- */
+
 .condition {
 	color: #333;
 	text-align: right;
@@ -8,11 +11,12 @@
 .condition li a {
 	padding: 0 0.8rem;
 }
-.condition li.active {}
-.condition li.active a {
+.condition li a.active {
 	color: #ffd700;
 }
 
+
+/* -------------------- 通知列表 -------------------- */
 
 .list li {
 	margin-top: 10px;
@@ -27,6 +31,20 @@
 	width: 6rem;
 	color: #333;
 	font-size: 2.4rem;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.list li:hover span.state.yushou {
+	color: #ffd700;
+}
+.list li:hover span.state.quxiao {
+	color: #f00;
+}
+.list li:hover span.state.biangeng {
+	color: #0f0;
 }
 .list li p {
 	display: inline-block;
@@ -36,6 +54,7 @@
 	width: -o-calc(100% - 16rem);
 	width: calc(100% - 16rem);
 	vertical-align: middle;
+	cursor: pointer;
 }
 .list li span.time {
 	width: 10rem;

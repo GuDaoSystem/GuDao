@@ -1,6 +1,10 @@
 new Vue({
 	el: '#gudao',
 	data: {
+		// 自动加载相关变量
+		loadFlag: true,
+		pageIndex: 2,
+		// 通知列表
 		notices: []
 	},
 	components: {
@@ -18,6 +22,7 @@ new Vue({
 
 		// 获取数据
 		this.getNotice();
+		this.scrollToBottom();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
@@ -25,17 +30,16 @@ new Vue({
 	},
 	updated: function () {
 		this.$nextTick(function () {
-			// 监听筛选条件
-			$(".condition a").unbind("click").click(this.getNoticeByType);
 		});
 	},
 	computed: {
 	},
 	methods: {
+		// 获取通知列表
 		getNotice: function() {
 			var _this = this;
 			$.ajax({
-				url: "Notice/getNoticeByPage",
+				url: "../../GuDao/Notice/getNoticeByPage",
 				type: "GET",
 				dataType: "json",
 				data: {
@@ -43,9 +47,11 @@ new Vue({
 					"pageSize": 10
 				},
 				success: function(result) {
-					// console.log(result);
 					if(result.code === 200) {
 						var data = result.data;
+						if(data.length < 10) {
+							$(".no-more").show();
+						}
 						for(var i = 0; i < data.length; i++) {
 							var time = data[i].notice_time.toString().split(" ")[0].split("-");
 							data[i].notice_time = time[0] + "年" + time[1] + "月" + time[2] + "日";
@@ -55,25 +61,31 @@ new Vue({
 				}
 			});
 		},
+		// 按通知类型获取通知列表
 		getNoticeByType: function(e) {
 			var _this = this;
-			if(!$(e.target).hasClass("active")) {
-				$(".condition li").removeClass("active");
-				$(e.target).parent().addClass("active");
+			if(e.target.tagName.toLowerCase() == "a" && !$(e.target).hasClass("active")) {
+				// 设置active样式
+				$(".condition a").removeClass("active");
+				$(e.target).addClass("active");
+				// 重设自动加载相关变量
+				_this.resetLoad();
 
 				$.ajax({
-					url: "Notice/getNoticeByPage",
+					url: "../../GuDao/Notice/getNoticeByPage",
 					type: "GET",
 					dataType: "json",
 					data: {
 						"pageIndex": 1,
 						"pageSize": 10,
-						"type": $(".condition li").index($(e.target).parent())
+						"type": $(".condition a").index($(e.target))
 					},
 					success: function(result) {
-						console.log(result);
 						if(result.code === 200) {
 							var data = result.data;
+							if(data.length < 10) {
+								$(".no-more").show();
+							}
 							for(var i = 0; i < data.length; i++) {
 								var time = data[i].notice_time.toString().split(" ")[0].split("-");
 								data[i].notice_time = time[0] + "年" + time[1] + "月" + time[2] + "日";
@@ -83,6 +95,51 @@ new Vue({
 					}
 				});
 			}
+		},
+		// 滚动至底部自动加载数据
+		scrollToBottom: function() {
+			var _this = this;
+			$(window).scroll(function(){
+		    	if(_this.loadFlag && $(window).height() + $(window).scrollTop() == $(document).height()) {
+		    		// 防止多次加载
+		    		_this.loadFlag = false;
+
+		    		$.ajax({
+		        		url: "../../GuDao/Notice/getNoticeByPage",
+						type: "GET",
+						dataType: "json",
+						data: {
+							"pageIndex": ++_this.pageIndex,
+							"pageSize": 5,
+							"type": $(".condition a").index($(".condition .active"))
+						},
+						success: function(result) {
+							if(result.code === 200) {
+								var data = result.data;
+								if(data.length < 5) {
+									$(".no-more").show();
+								}
+								for(var i = 0; i < data.length; i++) {
+									_this.notices.push(data[i]);
+								}
+								_this.loadFlag = true;
+							} else {
+								$(".no-more").show();
+							}
+						}
+		        	});
+		    	}
+		    });
+		},
+		// 重设自动加载相关变量
+		resetLoad: function() {
+			this.loadFlag = true,
+			this.pageIndex = 2;
+			$(".no-more").hide();
+		},
+		// 跳转至演出详细页
+		toShowDetail: function(index) {
+			location.href = "../../GuDao/Show/detail?id=" + index + "#detail";
 		}
 	}
 });

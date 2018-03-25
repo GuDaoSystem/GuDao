@@ -23,6 +23,7 @@
 }
 .new-notice ul li p {
 	display: inline-block;
+	cursor: pointer;
 }
 .new-notice ul li p span {
 	color: #333;
@@ -38,6 +39,7 @@
 	float: right;
 	color: #333;
 	font-size: 1.2rem;
+	cursor: text;
 }
 
 .new-notice ul li:hover p span.yushou {
