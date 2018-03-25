@@ -85,6 +85,7 @@ new Vue({
 							var data = result.data;
 							if(data.length < 10) {
 								$(".no-more").show();
+								_this.loadFlag = false;
 							}
 							for(var i = 0; i < data.length; i++) {
 								var time = data[i].notice_time.toString().split(" ")[0].split("-");
@@ -116,13 +117,17 @@ new Vue({
 						success: function(result) {
 							if(result.code === 200) {
 								var data = result.data;
-								if(data.length < 5) {
-									$(".no-more").show();
-								}
 								for(var i = 0; i < data.length; i++) {
+									var time = data[i].notice_time.toString().split(" ")[0].split("-");
+									data[i].notice_time = time[0] + "年" + time[1] + "月" + time[2] + "日";
 									_this.notices.push(data[i]);
 								}
-								_this.loadFlag = true;
+								if(data.length < 5) {
+									$(".no-more").show();
+									_this.loadFlag = false;
+								} else {
+									_this.loadFlag = true;
+								}
 							} else {
 								$(".no-more").show();
 							}

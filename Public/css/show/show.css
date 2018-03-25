@@ -16,7 +16,7 @@
 	padding: 0.6rem 1rem;
 	cursor: pointer;
 }
-.condition ul li.active a {
+.condition ul li a.active {
 	color: #ffd700;
 }
 
@@ -47,17 +47,15 @@
 	position: relative;
 }
 .show-list li .show-content .img img {
-	background: #f2f2f2;
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-	-webkit-transition: all 0.2s;
-	-moz-transition: all 0.2s;
-	-ms-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	transition: all 0.2s;
 }
 .show-list li .show-content .info {
 	display: inline-block;

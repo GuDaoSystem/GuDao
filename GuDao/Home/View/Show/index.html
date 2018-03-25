@@ -8,9 +8,6 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/frame.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/show/show.css">
-<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 </head>
 <body>
 
@@ -21,20 +18,20 @@
 	<!-- 内容 -->
 	<div id="show" class="container content">
 		<!-- 筛选条件 -->
-		<div class="condition">
+		<div class="condition" v-on:click="getShowByCondition">
 			<ul class="sort">
 				<p>演出排序</p>
-				<li class="active"><a>按时间</a></li>
+				<li><a class="active">按时间</a></li>
 				<li><a>按热度</a></li>
 			</ul>
 			<ul class="place">
 				<p>演出地点</p>
-				<li class="active"><a>全部</a></li>
-				<li v-for="item in place"><a>{{item}}</a></li>
+				<li><a class="active">全部</a></li>
+				<li v-for="place in places"><a>{{place}}</a></li>
 			</ul>
 			<ul class="state">
 				<p>演出状态</p>
-				<li class="active"><a>全部</a></li>
+				<li><a class="active">全部</a></li>
 				<li><a>预售</a></li>
 				<li><a>取消</a></li>
 				<li><a>变更</a></li>
@@ -43,27 +40,27 @@
 		</div>
 
 		<!-- 演出列表 -->
-		<div v-show="!list" class="no-data">
+		<div v-show="!shows" class="no-data">
 			<img src="__PUBLIC__/img/common/noData.png">
 			<span></span>
 			<p>没有相关数据</p>
 		</div>
 		<ul class="row show-list">
-			<li v-for="item in list" class="col-sm-6 col-md-4">
-				<div class="show-content" :index="item.show_id">
+			<li v-for="show in shows" class="col-sm-6 col-md-4">
+				<div class="show-content" v-on:click="toShowDetail(show.show_id)">
 					<div class="img">
-						<img v-if="item.show_poster" :src="'__PUBLIC__/img/show/' + item.show_poster">
+						<img v-if="show.show_poster" :src="'__PUBLIC__/img/show/' + show.show_poster">
 						<img v-else src="__PUBLIC__/img/show/default.jpg">
 					</div><div class="info">
-						<p class="name text-overflow-ellipsis">{{item.show_name}}</p>
-						<p class="band text-overflow-ellipsis"><span class="glyphicon glyphicon-headphones"></span><span v-for="band in item.band">{{band.band_name}}&ensp;/&ensp;</span></p>
-						<p class="place text-overflow-ellipsis"><span class="glyphicon glyphicon-map-marker"></span>{{item.show_place}}</p>
-						<p class="time text-overflow-ellipsis"><span class="glyphicon glyphicon-time"></span>{{item.show_time}}</p>
-						<p class="want"><span class="glyphicon glyphicon-eye-open"></span><span class="num">{{item.want}}</span>人想看</p>
-						<span v-if="item.show_state == '1'" class="state yushou">/&ensp;预售</span>
-						<span v-else-if="item.show_state == '2'" class="state quxiao">/&ensp;取消</span>
-						<span v-else-if="item.show_state == '3'" class="state biangeng">/&ensp;变更</span>
-						<span v-else-if="item.show_state == '4'" class="state">/&ensp;结束</span>
+						<p class="name text-overflow-ellipsis">{{show.show_name}}</p>
+						<p class="band text-overflow-ellipsis"><span class="glyphicon glyphicon-headphones"></span><span v-for="band in show.band">{{band.band_name}}&ensp;/&ensp;</span></p>
+						<p class="place text-overflow-ellipsis"><span class="glyphicon glyphicon-map-marker"></span>{{show.show_place}}</p>
+						<p class="time text-overflow-ellipsis"><span class="glyphicon glyphicon-time"></span>{{show.show_time}}</p>
+						<p class="want"><span class="glyphicon glyphicon-eye-open"></span><span class="num">{{show.want}}</span>人想看</p>
+						<span v-if="show.show_state == '1'" class="state yushou">/&ensp;预售</span>
+						<span v-else-if="show.show_state == '2'" class="state quxiao">/&ensp;取消</span>
+						<span v-else-if="show.show_state == '3'" class="state biangeng">/&ensp;变更</span>
+						<span v-else-if="show.show_state == '4'" class="state">/&ensp;结束</span>
 					</div>
 				</div>
 			</li>
@@ -79,16 +76,12 @@
 	<copyright></copyright>
 </div>
 
-
-<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/component.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/show/show.js"></script>
-
-<script>
-$(function() {
-});
-</script>
-
 </body>
 </html>

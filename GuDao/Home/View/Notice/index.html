@@ -29,7 +29,7 @@
 		</div>
 		<ul class="list">
 			<li v-for="notice in notices">
-				<span v-if="notice.notice_type == '1'" class="state yushou">预售/</span><span v-if="notice.notice_type == '2'" class="state quxiao">取消/</span><span v-if="notice.notice_type == '3'" class="state biangeng">变更/</span><p v-on:click="toShowDetail(notice.show_id)">{{notice.notice_content}}</p><span class="time">{{notice.notice_time}}</span>
+				<span v-if="notice.notice_type == '1'" class="state yushou">预售/</span><span v-if="notice.notice_type == '2'" class="state quxiao">取消/</span><span v-if="notice.notice_type == '3'" class="state biangeng">变更/</span><p class="text-overflow-ellipsis" v-on:click="toShowDetail(notice.show_id)">{{notice.notice_content}}</p><span class="time">{{notice.notice_time}}</span>
 			</li>
 		</ul>
 		<div class="no-more">

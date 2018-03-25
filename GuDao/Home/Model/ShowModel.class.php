@@ -5,7 +5,7 @@ class ShowModel extends Model {
     // 按页获取所有演出
     public function getShowByPage($startIndex, $pageLength) {
     	$show = new ShowModel();
-    	$result = $show->order("show_time desc")->limit($startIndex, $pageLength)->select();
+        $result = $show->order("show_time desc")->limit($startIndex, $pageLength)->select();
     	return $result;
     }
 

@@ -46,6 +46,9 @@ class ShowController extends Controller {
         if($_GET["state"] > 0) {
             $condition["show_state"] = $_GET["state"];
         }
+        if($_GET["time"]) {
+            $condition["show_time"] = array("like", $_GET["time"]."%");
+        }
         $show = new ShowModel();
         $data = $show->getShowByCondition($startIndex, $pageLength, $condition);
         if(!$data) {
