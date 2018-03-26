@@ -35,16 +35,16 @@
 		<!-- 标签页 -->
 		<div>
 			<!-- 标签页选项卡 -->
-			<ul class="tablist nav nav-tabs" role="tablist">
-				<li class="tab1" role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">演出</a></li>
+			<ul class="tablist nav nav-tabs" role="tablist" v-on:click="switchTab">
+				<li class="tab1 active" role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">演出</a></li>
 				<li class="tab2" role="presentation"><a href="#picture" aria-controls="picture" role="tab" data-toggle="tab">图片</a></li>
 				<li class="tab3" role="presentation"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab">评论</a></li>
-				<span class="underline"></span>
+				<span class="underline tab1"></span>
 			</ul>
 			<!-- 标签页内容 -->
 			<div class="tab-content">
 				<!-- 演出列表 -->
-				<div role="tabpanel" class="tab-pane fade" id="show">
+				<div role="tabpanel" class="tab-pane fade in active" id="show">
 					<ul class="row">
 						<li v-for="show in shows" class="col-xs-6 col-sm-3">
 							<div class="show-list" v-on:click="toShowDetail(show.show_id)">
@@ -65,7 +65,8 @@
 						<li v-for="picture in pictures" class="col-xs-6 col-sm-3">
 							<div class="picture-list">
 								<div class="img">
-									<img :src="'__PUBLIC__/img/band/' + band.band_id + '/' + picture" class="thumbnail">
+									<img v-if="picture && band.band_id" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + picture" class="thumbnail">
+									<img v-else src="">
 								</div>
 							</div>
 						</li>
@@ -113,7 +114,7 @@
 									<textarea maxlength="100"></textarea>
 									<div class="bottom">
 										<p><span>0</span>/100</p>
-										<button class="send" v-on:click="replyComment">发送</button>
+										<button class="send" v-on:click="sendReply">发送</button>
 									</div>
 								</div>
 								<!-- 回复列表 -->
@@ -139,7 +140,7 @@
 												<textarea maxlength="100"></textarea>
 												<div class="bottom">
 													<p><span>0</span>/100</p>
-													<button class="send" v-on:click="replyComment">发送</button>
+													<button class="send" v-on:click="sendReply">发送</button>
 												</div>
 											</div>
 										</div>

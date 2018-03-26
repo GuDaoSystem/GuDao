@@ -108,20 +108,22 @@ new Vue({
 		// 检查是否“想看”
 		checkWant: function() {
 			var _this = this;
-			$.ajax({
-				url: "checkWant",
-				type: "POST",
-				dataType: "json",
-				data: {
-					"user_id": sessionStorage.getItem("userID"),
-					"show_id": location.search.substr(1).split("=")[1],
-				},
-				success: function(result) {
-					if(result.code === 200) {
-						_this.want = true;
+			if(_this.loginFlag) {
+				$.ajax({
+					url: "checkWant",
+					type: "POST",
+					dataType: "json",
+					data: {
+						"user_id": sessionStorage.getItem("userID"),
+						"show_id": location.search.substr(1).split("=")[1],
+					},
+					success: function(result) {
+						if(result.code === 200) {
+							_this.want = true;
+						}
 					}
-				}
-			});
+				});
+			}
 		},
 		// 切换“想看”状态
 		toggleWant: function() {

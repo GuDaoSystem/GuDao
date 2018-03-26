@@ -1,6 +1,7 @@
 new Vue({
 	el: '#gudao',
 	data: {
+		loginFlag: false,
 		band: {},
 		supportNum: 0,
 		support: false,
@@ -31,37 +32,23 @@ new Vue({
 	},
 	mounted: function() {
 		this.$nextTick(function () {
-			// 标签页定位
-			var tabList = ["#show", "#picture", "#comment"];
-			var tabIndex = tabList.indexOf(location.hash);
-			$(".tablist li:eq(" + tabIndex +")").addClass("active");
-			$(".tablist .underline").addClass("tab" + (tabIndex + 1));
-			$(tabList[tabIndex]).addClass("in").addClass("active");
-
-			// 标签页切换
-			$(".tablist a").unbind("click").click(function () {
-				location.href = location.toString().split("#")[0] + $(this).attr("href");
-				$(".tablist .underline")[0].className = "underline";
-				$(".tablist .underline").addClass($(this).parent()[0].className);
-			});
 		});
 	},
 	updated: function () {
 		this.$nextTick(function () {
-
-			// textarea高度自适应 & 动态显示textarea内容字数
-			var textareaPadding = 12 * 1 * 2;
-			$("textarea").on("input", function () {
-				if((this.scrollHeight - textareaPadding) > $(this).height()) {
-					$(this).height(this.scrollHeight - textareaPadding);
-				}
-				$(this).next().find("span").text(this.value.length);
-			});
 		});
 	},
 	computed: {
 	},
 	methods: {
+		// 检查是否已登录
+		checkLogin: function() {
+			var _this = this;
+			if(sessionStorage.getItem("userID")) {
+				_this.loginFlag = true;
+			}
+		},
+		// 获取乐队信息
 		getBand: function() {
 			var _this = this;
 			$.ajax({
@@ -72,11 +59,13 @@ new Vue({
 					"id": location.search.toString().substr(1).split("=")[1]
 				},
 				success: function(result) {
-					// console.log(result);
-					_this.band = result.data;
+					if(result.code === 200) {
+						_this.band = result.data;
+					}
 				}
 			});
 		},
+		// 获取“支持”数量
 		getSupportNum: function() {
 			var _this = this;
 			$.ajax({
@@ -87,37 +76,49 @@ new Vue({
 					"id": location.search.toString().substr(1).split("=")[1]
 				},
 				success: function(result) {
-					// console.log(result);
-					_this.supportNum = result.data;
-				}
-			});
-		},
-		checkSupport: function() {
-			var _this = this;
-			$.ajax({
-				url: "checkSupport",
-				type: "POST",
-				dataType: "json",
-				data: {
-					"user_id": sessionStorage.getItem("userID"),
-					"band_id": location.search.toString().substr(1).split("=")[1]
-				},
-				success: function(result) {
-					// console.log(result);
 					if(result.code === 200) {
-						_this.support = true;
+						_this.supportNum = result.data;
 					}
 				}
 			});
 		},
+		// 检查是否“支持”
+		checkSupport: function() {
+			var _this = this;
+			if(_this.loginFlag) {
+				$.ajax({
+					url: "checkSupport",
+					type: "POST",
+					dataType: "json",
+					data: {
+						"user_id": sessionStorage.getItem("userID"),
+						"band_id": location.search.toString().substr(1).split("=")[1]
+					},
+					success: function(result) {
+						if(result.code === 200) {
+							_this.support = true;
+						}
+					}
+				});
+			}
+		},
+		// 切换“支持”状态
 		toggleSupport: function(e) {
 			var _this = this;
+
+			if(!_this.loginFlag) {
+				setAlertBox({
+					className: "text",
+					close: true,
+					title: "孤岛提示",
+					message: "登录可以进行更多操作哦！"
+				});
+				return;
+			}
 
 			// 获取ID信息
 			var user_id = sessionStorage.getItem("userID");
 			var band_id = location.search.substr(1).split("=")[1];
-
-			console.log(user_id, band_id);
 
 			// 取消“支持”状态
 			if(_this.support) {
@@ -161,6 +162,13 @@ new Vue({
 				});
 			}
 		},
+		// 切换选项卡
+		switchTab: function(e) {
+			var tabList = ["show", "picture", "comment"];
+			$(".underline")[0].className = "underline";
+			$(".underline").addClass("tab" + (tabList.indexOf($(e.target).attr("aria-controls")) + 1));
+		},
+		// 获取乐队列表
 		getShows: function() {
 			var _this = this;
 			$.ajax({
@@ -171,11 +179,17 @@ new Vue({
 					"id": location.search.toString().substr(1).split("=")[1]
 				},
 				success: function(result) {
-					// console.log(result);
-					_this.shows = result.data;
+					if(result.code === 200) {
+						_this.shows = result.data;
+					}
 				}
 			});
 		},
+		// 跳转至演出详细页
+		toShowDetail: function(index) {
+			location.href = "../Show/detail?id=" + index;
+		},
+		// 获取图片
 		getPicture: function() {
 			var _this = this;
 			$.ajax({
@@ -186,11 +200,14 @@ new Vue({
 					"id": location.search.toString().substr(1).split("=")[1]
 				},
 				success: function(result) {
-					// console.log(result);
-					_this.pictures = result.data;
+					if(result.code === 200) {
+						_this.pictures = result.data;
+					}
+					
 				}
 			});
 		},
+		// 获取评论列表
 		getComment: function() {
 			var _this = this;
 			$.ajax({
@@ -202,20 +219,40 @@ new Vue({
 					"id": location.search.toString().substr(1).split("=")[1]
 				},
 				success: function(result) {
-					// console.log(result);
-					_this.comments = result.data;
+					if(result.code === 200) {
+						_this.comments = result.data;
+					}
+					
 				}
 			});
 		},
-		toShowDetail: function(index) {
-			location.href = "../Show/detail?id=" + index + "#detail";
+		// textarea自适应高度
+		textareaAutoHeight: function(e) {
+			var textareaPadding = 12 * 1 * 2;
+			if((e.target.scrollHeight - textareaPadding) > $(e.target).height()) {
+				$(e.target).height(e.target.scrollHeight - textareaPadding);
+			}
+			$(e.target).next().find("span").text(e.target.value.length);
 		},
+		// 切换显示回复框
 		toggleShowReplyBox: function(e) {
 			$(e.currentTarget).parent().next(".reply-box").toggle();
 		},
+		// 发送评论
 		sendComment: function(e) {
 			var _this = this;
-			var send = $(e.currentTarget);
+
+			if(!_this.loginFlag) {
+				setAlertBox({
+					className: "text",
+					close: true,
+					title: "孤岛提示",
+					message: "登录可以进行更多操作哦！"
+				});
+				return;
+			}
+
+			var send = $(e.target);
 
 			// 获取表单内容
 			var content = send.parent().prev("textarea").val();
@@ -245,7 +282,6 @@ new Vue({
 				},
 				success: function(result) {
 					if(result.code === 200) {
-						// console.log(result);
 						send.parent().prev("textarea").val("");
 						// 重新获取评论列表
 						_this.getComment();
@@ -253,7 +289,8 @@ new Vue({
 				}
 			});
 		},
-		replyComment: function(e) {
+		// 发送回复
+		sendReply: function(e) {
 			var _this = this;
 			var send = $(e.currentTarget);
 
@@ -285,7 +322,6 @@ new Vue({
 				},
 				success: function(result) {
 					if(result.code === 200) {
-						// console.log(result);
 						send.parent().prev("textarea").val("");
 						$(".reply-box").hide();
 						// 重新获取评论列表
