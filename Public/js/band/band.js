@@ -3,7 +3,6 @@ new Vue({
 	data: {
 		loadFlag: true,
 		pageIndex: 2,
-		initial: [],
 		bands: []
 	},
 	components: {
@@ -20,8 +19,9 @@ new Vue({
 		});
 
 		// 获取数据
-		this.getBands();
 		this.getInitial();
+		this.getBands();
+		this.scrollToBottom();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
@@ -29,54 +29,6 @@ new Vue({
 	},
 	updated: function () {
 		this.$nextTick(function () {
-			var _this = this;
-
-			// 监听筛选条件
-			$(".condition li").unbind("click").click(function() {
-				if(!$(this).hasClass("active") && !$(this).hasClass("invalid")) {
-					$(".condition li").removeClass("active");
-					$(this).addClass("active");
-					if($(".condition li").index(this) == 0) {
-						_this.getBands();
-					} else {
-						_this.getBands($(this).find("a").text());
-					}
-				}
-			});
-
-			// 监听乐队列表
-			$(".band-content").click(function() {
-				location.href = "Band/detail?id=" + $(this).attr("index") + "#show";
-			});
-
-			// 监听浏览器滚动至底部
-		    $(window).scroll(function(){
-		    	if(_this.loadFlag && $(window).height() + $(window).scrollTop() == $(document).height()) {
-		    		_this.loadFlag = false;
-		    		$.ajax({
-		        		url: "Band/getBandByPage",
-						type: "GET",
-						dataType: "json",
-						data: {
-							"pageIndex": ++_this.pageIndex,
-							"pageSize": 4,
-							// "initial": initial
-						},
-						success: function(result) {
-							if(result.code === 200) {
-								var data = result.data;
-								console.log(data);
-								for(var i = 0; i < data.length; i++) {
-									_this.bands.push(data[i]);
-								}
-								_this.loadFlag = true;
-							} else {
-								$(".no-more").show();
-							}
-						}
-		        	});
-		    	}
-		    });
 		});
 	},
 	computed: {
@@ -84,17 +36,15 @@ new Vue({
 	methods: {
 		// 获取首字母
 		getInitial: function() {
-			var _this = this;
 			$.ajax({
 				url: "Band/getInitial",
 				dataType: "json",
 				success: function(result) {
-					// console.log(result);
 					if(result.code === 200) {
-						_this.initial = result.data;
-						for(var i = 1; i < $(".condition li").length; i++) {
-							if(_this.initial.indexOf($($(".condition li")[i]).find("a").text()) == -1) {
-								$($(".condition li")[i]).addClass("invalid");
+						var data = result.data;
+						for(var i = 1; i < $(".condition a").length; i++) {
+							if(data.indexOf($($(".condition a")[i]).text()) == -1) {
+								$($(".condition a")[i]).addClass("invalid");
 							}
 						}
 					}
@@ -104,6 +54,7 @@ new Vue({
 		// 获取乐队列表
 		getBands: function(initial) {
 			var _this = this;
+			
 			$.ajax({
 				url: "Band/getBandByPage",
 				type: "GET",
@@ -114,10 +65,84 @@ new Vue({
 					"initial": initial
 				},
 				success: function(result) {
-					// console.log(result);
+					if(result.code === 200) {
+						if(result.data.length < 8) {
+							$(".no-more").show();
+							_this.loadFlag = false;
+						}
+					}
 					_this.bands = result.data;
 				}
 			});
+		},
+		getBandsByCondition: function(e) {
+			var _this = this;
+			if(e.target.tagName.toLowerCase() == "a" && !$(e.target).hasClass("active") && !$(e.target).hasClass("invalid")) {
+				$(".condition a").removeClass("active");
+				$(e.target).addClass("active");
+
+				var initial = $(e.target).text();
+				if(initial == "热门") {
+					initial = "";
+				}
+
+				// 重设自动加载相关变量
+				_this.resetLoad();
+
+				_this.getBands(initial);
+			}
+		},
+		// 滚动至底部自动加载数据
+		scrollToBottom: function() {
+			var _this = this;
+			$(window).scroll(function(){
+		    	if(_this.loadFlag && $(window).height() + $(window).scrollTop() == $(document).height()) {
+		    		// 防止多次加载
+		    		_this.loadFlag = false;
+
+		    		var initial = $(".condition .active").text();
+		    		if(initial == "热门") {
+		    			initial = "";
+		    		}
+
+		    		$.ajax({
+		        		url: "Band/getBandByPage",
+						type: "GET",
+						dataType: "json",
+						data: {
+							"pageIndex": ++_this.pageIndex,
+							"pageSize": 4,
+							"initial": initial
+						},
+						success: function(result) {
+							if(result.code === 200) {
+								var data = result.data;
+								for(var i = 0; i < data.length; i++) {
+									_this.bands.push(data[i]);
+								}
+								if(data.length < 4) {
+									$(".no-more").show();
+									_this.loadFlag = false;
+								} else {
+									_this.loadFlag = true;
+								}
+							} else {
+								$(".no-more").show();
+							}
+						}
+		        	});
+		    	}
+		    });
+		},
+		// 重设自动加载相关变量
+		resetLoad: function() {
+			this.loadFlag = true,
+			this.pageIndex = 2;
+			$(".no-more").hide();
+		},
+		// 跳转至乐队详细页
+		toBandDetail: function(index) {
+			location.href = "Band/detail?id=" + index + "#show";
 		}
 	}
 });

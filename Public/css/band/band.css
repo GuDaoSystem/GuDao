@@ -12,17 +12,14 @@
 }
 
 .condition ul li:hover a,
-.condition ul li.active a {
+.condition ul li a.active {
 	color: #ffd700;
 }
 
-.condition ul li.invalid {
+.condition ul li a.invalid {
 	cursor: text;
 }
-.condition ul li.invalid a {
-	cursor: text;
-}
-.condition ul li.invalid:hover a {
+.condition ul li:hover a.invalid {
 	color: #333;
 }
 
@@ -59,6 +56,10 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
 .band-list li .band-content .info {
@@ -79,7 +80,4 @@
 
 .band-list li .band-content:hover {
 	border: 1px solid #ffd700;
-}
-.band-list li .band-content:hover .img img {
-	opacity: 0.8;
 }
