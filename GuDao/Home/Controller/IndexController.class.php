@@ -252,11 +252,15 @@ class IndexController extends Controller {
 
 
 
+    /* -------------------- 搜索页面 -------------------- */
+
+
+
     public function searchNotice() {
         $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
         $pageLength = $_GET["pageSize"];
         $notice = new NoticeModel();
-        $data = $notice->searchNoticeByContent($startIndex, $pageLength, $_POST["key"]);
+        $data = $notice->searchNoticeByContent($startIndex, $pageLength, $_GET["key"]);
         if($data) {
             $result["code"] = 200;
             $result["msg"] = "查询成功";
@@ -271,7 +275,7 @@ class IndexController extends Controller {
         $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
         $pageLength = $_GET["pageSize"];
         $show = new ShowModel();
-        $data = $show->searchShowByName($startIndex, $pageLength, $_POST["key"]);
+        $data = $show->searchShowByName($startIndex, $pageLength, $_GET["key"]);
         if($data) {
             $result["code"] = 200;
             $result["msg"] = "查询成功";
@@ -286,7 +290,7 @@ class IndexController extends Controller {
         $startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
         $pageLength = $_GET["pageSize"];
         $band = new BandModel();
-        $data = $band->searchBandByName($startIndex, $pageLength, $_POST["key"]);
+        $data = $band->searchBandByName($startIndex, $pageLength, $_GET["key"]);
         if($data) {
             $result["code"] = 200;
             $result["msg"] = "查询成功";
@@ -294,54 +298,6 @@ class IndexController extends Controller {
         } else {
             $result["code"] = 201;
             $result["msg"] = "查询失败";
-        }
-        $this->ajaxReturn($result);
-    }
-
-
-
-
-
-
-    // 搜索
-    public function doSearch() {
-        $show = new ShowModel();
-        $notice = new NoticeModel();
-        $band = new BandModel();
-
-        $flag = false;
-        $result["data"]["show"] = [];
-        $result["data"]["notice"] = [];
-        $result["data"]["band"] = [];
-
-
-        // 循环体
-        $data = $notice->searchNoticeByContent($_POST["key"]);
-        if($data) {
-            $flag = true;
-            $result["data"]["notice"] = array_merge($result["data"]["notice"], $data);
-        }
-        
-        $data = $show->searchShowByName($_POST["key"]);
-        if($data) {
-            $flag = true;
-            $result["data"]["show"] = array_merge($result["data"]["show"], $data);
-        }
-        
-        $data = $band->searchBandByName($_POST["key"]);
-        if($data) {
-            $flag = true;
-            $result["data"]["band"] = array_merge($result["data"]["band"], $data);
-        }
-
-
-        if($flag) {
-            $result["code"] = 200;
-            $result["msg"] = "查询成功";
-        } else {
-            $result["code"] = 201;
-            $result["msg"] = "查询失败";
-            $result["data"] = null;
         }
         $this->ajaxReturn($result);
     }

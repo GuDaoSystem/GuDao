@@ -8,11 +8,6 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/frame.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/search.css">
-
-
-<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 </head>
 <body>
 
@@ -24,66 +19,89 @@
 	<div id="search" class="container content">
 		
 		<!-- 搜索框 -->
-		<div class="searchbox1"> 
-			<input type="text" v-model="keyword"><button>
+		<div class="searchbox"> 
+			<input type="text" @keypress="doSearch"><button @click="doSearch">
 				<span class="glyphicon glyphicon-search"></span>
 			</button>
+		</div><div class="conditions">
+			<span class="active" @click="searchAll">全部</span>|<span @click="searchNotice">通知</span>|<span @click="searchShow">演出</span>|<span @click="searchBand">乐队</span>
 		</div>
-		<div class="conditions1">
-			<span>全部</span>|<span>通知</span>|<span>演出</span>|<span>乐队</span>
-		</div>
-
-		<p>{{editedKey}}</p>
 
 		<!-- 通知模块 -->
 		<div class="notices">
 			<div class="head">
 				<p class="title">通知</p>
-				<a href="" class="more">MORE</a>
+				<a href="" class="more" @click.prevent="searchNotice">MORE</a>
+			</div>
+			<div v-show="!notices.length" class="no-data">
+				<span></span>
+				<p>没有相关数据</p>
 			</div>
 			<ul class="body">
 				<li v-for="notice in notices">
-					<p><span  class="state" v-if="notice.notice_type=='1'">预售/</span><span  class="state" v-if="notice.notice_type=='2'">取消/</span><span  class="state" v-if="notice.notice_type=='3'">变更/</span>&ensp;{{notice.notice_content}}</p>
-					<p class="time">{{notice.notice_time}}</p>
+					<span v-if="notice.notice_type == '1'" class="state yushou">预售/</span><span v-if="notice.notice_type == '2'" class="state quxiao">取消/</span><span v-if="notice.notice_type == '3'" class="state biangeng">变更/</span><p class="text-overflow-ellipsis" v-html="notice.notice_content" v-on:click="toShowDetail(notice.show_id)"></p><span class="time">{{notice.notice_time}}</span>
 				</li>					
 			</ul>
+			<div class="no-more">
+				<span></span>
+				<p>没有更多数据</p>
+			</div>
 		</div>
 
 		<!-- 演出模块 -->
 		<div class="shows">
 			<div class="head">
 				<p class="title">演出</p>
-				<a href="" class="more">MORE</a>
-			</div>			
+				<a href="" class="more" @click.prevent="searchShow">MORE</a>
+			</div>
+			<div v-show="!shows.length" class="no-data">
+				<span></span>
+				<p>没有相关数据</p>
+			</div>
 			<ul class="row" >
-				<li v-for="(show, index) in shows" class="col-xs-6 col-sm-3" @click = "goShow(index)"> 
-					<div class="show-list" >
-						<img :src="'__PUBLIC__/img/show/' + show.show_poster">
-						<p class="name text-overflow-ellipsis">{{show.show_name}}</p>
+				<li v-for="(show, index) in shows" class="col-xs-6 col-sm-3"> 
+					<div class="show-list" @click="toShowDetail(show.show_id)">
+						<div class="img">
+							<img v-if="show.show_poster" :src="'__PUBLIC__/img/show/' + show.show_poster">
+							<img v-else src="__PUBLIC__/img/show/default.jpg">
+						</div>
+						<p class="name text-overflow-ellipsis" v-html="show.show_name" :title="show.show_name"></p>
 						<p>{{show.show_place}}</p>
 						<p>{{show.show_time}}</p>
 					</div>
 				</li>
 			</ul>
+			<div class="no-more">
+				<span></span>
+				<p>没有更多数据</p>
+			</div>
 		</div>
 
 		<!-- 乐队模块 -->
 		<div class="bands">
 			<div class="head">
-				<p class="title">演出</p>
-				<a href="" class="more">MORE</a>
-			</div>			
+				<p class="title">乐队</p>
+				<a href="" class="more" @click.prevent="searchBand">MORE</a>
+			</div>
+			<div v-show="!bands.length" class="no-data">
+				<span></span>
+				<p>没有相关数据</p>
+			</div>
 			<ul class="row">
-				<li v-for="(band,index) in bands" class="col-xs-6 col-sm-3" @click="goShow(index)">
-					<div class="band-list">
+				<li v-for="(band,index) in bands" class="col-xs-6 col-sm-3">
+					<div class="band-list" @click="toBandDetail(band.band_id)">
 						<div class="img">
 							<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover">
 							<img v-else src="__PUBLIC__/img/band/default.jpg">
 						</div>
-						<p><span></span>{{band.band_name}}</p>
+						<p v-html="band.band_name"></p>
 					</div>
 				</li>
 			</ul>
+			<div class="no-more">
+				<span></span>
+				<p>没有更多数据</p>
+			</div>
 		</div>
 	</div>
 
@@ -92,15 +110,12 @@
 	<copyright></copyright>
 </div>
 
-
-<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/component.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index/search.js"></script>
-
-<script>
-
-</script>
-
 </body>
 </html>

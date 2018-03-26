@@ -67,7 +67,6 @@ $(function() {
 	});
 	function search() {
 		if($(".search-box input").val()) {
-			console.log("123");
 			location.href = "../../GuDao/Index/search" + "?key=" + $(".search-box input").val();
 		} else {
 			setAlertBox({
