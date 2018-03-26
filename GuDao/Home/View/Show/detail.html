@@ -8,9 +8,6 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/frame.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/show/showDetail.css">
-<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 </head>
 <body>
 
@@ -67,27 +64,27 @@
 					</li>
 				</ul>
 				<!-- “想看”按钮 -->
-				<button class="want" :class="{active: want}"><span class="glyphicon glyphicon-eye-open"></span><span class="num">{{wantNum}}</span>人想看</button>
+				<button class="want" :class="{active: want}" v-on:click="toggleWant"><span class="glyphicon glyphicon-eye-open"></span><span class="num">{{wantNum}}</span>人想看</button>
 			</div>
 		</div>
 
 		<!-- 标签页 -->
 		<div>
 			<!-- 标签页选项卡 -->
-			<ul class="tablist nav nav-tabs" role="tablist">
-				<li class="tab1" role="presentation"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">详情</a></li>
+			<ul class="tablist nav nav-tabs" role="tablist" v-on:click="switchTab">
+				<li class="tab1 active" role="presentation"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">详情</a></li>
 				<li class="tab2" role="presentation"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab">评论</a></li>
-				<span class="underline"></span>
+				<span class="underline tab1"></span>
 			</ul>
 			<!-- 标签页内容 -->
 			<div class="tab-content">
 				<!-- 详情 -->
-				<div role="tabpanel" class="tab-pane fade" id="detail">
+				<div role="tabpanel" class="tab-pane fade in active" id="detail">
 					<div class="desc"><pre>{{show.show_message}}</pre></div>
 					<!-- 乐队列表 -->
 					<ul class="row band">
 						<li v-for="band in bands" class="col-lg-4 col-sm-6">
-							<div :index="band.band_id">
+							<div v-on:click="toBandDetail(band.band_id)">
 								<div class="img">
 									<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover">
 									<img v-else src="__PUBLIC__/img/band/default.jpg">
@@ -108,10 +105,10 @@
 								</a>
 							</div>
 							<div class="media-body">
-								<textarea maxlength="140"></textarea>
+								<textarea maxlength="140" v-on:input="textareaAutoHeight"></textarea>
 								<div class="bottom">
 									<p><span>0</span>/140</p>
-									<button class="send">发送</button>
+									<button class="send" v-on:click="sendComment">发送</button>
 								</div>
 							</div>
 						</div>
@@ -132,14 +129,14 @@
 										<p class="time">{{comment.comment_time}}</p>
 									</div>
 									<p>{{comment.comment_content}}</p>
-									<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
+									<a class="reply" v-on:click="toggleReplyBox"><span class="glyphicon glyphicon-comment"></span>回复</a>
 								</div>
 								<!-- 回复框 -->
 								<div class="reply-box">
-									<textarea maxlength="100"></textarea>
+									<textarea maxlength="100" v-on:input="textareaAutoHeight"></textarea>
 									<div class="bottom">
 										<p><span>0</span>/100</p>
-										<button class="send">发送</button>
+										<button class="send" v-on:click="sendReply">发送</button>
 									</div>
 								</div>
 								<!-- 回复列表 -->
@@ -158,14 +155,14 @@
 													<p class="time">{{reply.reply_time}}</p>
 												</div>
 												<p>{{reply.reply_content}}</p>
-												<a class="reply"><span class="glyphicon glyphicon-comment"></span>回复</a>
+												<a class="reply" v-on:click="toggleReplyBox"><span class="glyphicon glyphicon-comment"></span>回复</a>
 											</div>
 											<!-- 回复框 -->
 											<div class="reply-box">
-												<textarea maxlength="100"></textarea>
+												<textarea maxlength="100" v-on:input="textareaAutoHeight"></textarea>
 												<div class="bottom">
 													<p><span>0</span>/100</p>
-													<button class="send">发送</button>
+													<button class="send" v-on:click="sendReply">发送</button>
 												</div>
 											</div>
 										</div>
@@ -184,17 +181,12 @@
 	<copyright></copyright>
 </div>
 
-
-<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/component.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/show/showDetail.js"></script>
-
-<script>
-$(function() {
-
-});
-</script>
-
 </body>
 </html>

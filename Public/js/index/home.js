@@ -242,11 +242,11 @@ new Vue({
 		},
 		// 跳转至演出详细页
 		toShowDetail: function(index) {
-			location.href = "../Show/detail?id=" + index + "#detail";
+			location.href = "../Show/detail?id=" + index;
 		},
 		// 跳转至乐队详细页
 		toBandDetail: function(index) {
-			location.href = "../Band/detail?id=" + index + "#show";
+			location.href = "../Band/detail?id=" + index;
 		}
 	}
 });

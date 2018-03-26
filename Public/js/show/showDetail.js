@@ -1,6 +1,7 @@
 new Vue({
 	el: '#gudao',
 	data: {
+		loginFlag: false,
 		show: {},
 		bands: [],
 		wantNum: 0,
@@ -21,6 +22,7 @@ new Vue({
 		});
 
 		// 获取数据
+		this.checkLogin();
 		this.getShow();
 		this.getBand();
 		this.getWantNum();
@@ -29,135 +31,22 @@ new Vue({
 	},
 	mounted: function() {
 		this.$nextTick(function () {
-			// 监听“想看”按钮
-			$(".want").unbind("click").click(this.toggleWant);
-
-			// 标签页定位
-			var tabList = ["#detail", "#comment"];
-			var tabIndex = tabList.indexOf(location.hash);
-			$(".tablist li:eq(" + tabIndex +")").addClass("active");
-			$(".tablist .underline").addClass("tab" + (tabIndex + 1));
-			$(tabList[tabIndex]).addClass("in").addClass("active");
-
-			// 标签页切换
-			$(".tablist a").unbind("click").click(function () {
-				location.href = location.toString().split("#")[0] + $(this).attr("href");
-				$(".tablist .underline")[0].className = "underline";
-				$(".tablist .underline").addClass($(this).parent()[0].className);
-			});
 		});
 	},
 	updated: function () {
 		this.$nextTick(function () {
-			var _this = this;
-			$(document).scrollTop(0);
-
-			// 监听乐队列表
-			$(".band div").unbind("click").click(function() {
-				location.href = "../Band/detail?id=" + $(this).attr("index");
-			});
-
-			// textarea高度自适应 & 动态显示textarea内容字数
-			var textareaPadding = 12 * 1 * 2;
-			$("textarea").on("input", function () {
-				if((this.scrollHeight - textareaPadding) > $(this).height()) {
-					$(this).height(this.scrollHeight - textareaPadding);
-				}
-				$(this).next().find("span").text(this.value.length);
-			});
-
-			// 监听评论框“发送”按钮
-			$(".send-box .send").unbind("click").click(function() {
-				var send = $(this);
-
-				// 获取表单内容
-				var content = send.parent().prev("textarea").val();
-				if(!content) {
-					setAlertBox({
-						className: "text",
-						close: true,
-						title: "孤岛提示",
-						message: "请输入评论内容"
-					});
-					return;
-				}
-				// 设置发送时间
-				var time = new Date();
-				time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
-				
-				$.ajax({
-					url: "sendComment",
-					type: "POST",
-					dataType: "json",
-					data: {
-						"content": content,
-						"user_id": sessionStorage.getItem("userID"),
-						"time": time,
-						"target": 1,
-						"target_id": location.search.substr(1).split("=")[1]
-					},
-					success: function(result) {
-						if(result.code === 200) {
-							// console.log(result);
-							send.parent().prev("textarea").val("");
-							// 重新获取评论列表
-							_this.getComment();
-						}
-					}
-				});
-			});
-
-			// 监听“回复”按钮
-			$(".reply").unbind("click").click(function() {
-				$(this).parent().next(".reply-box").toggle();
-			});
-
-			// 监听回复框“发送”按钮
-			$(".reply-box .send").unbind("click").click(function() {
-				var send = $(this);
-
-				// 获取表单内容
-				var content = send.parent().prev("textarea").val();
-				if(!content) {
-					setAlertBox({
-						className: "text",
-						close: true,
-						title: "孤岛提示",
-						message: "请输入评论内容"
-					});
-					return;
-				}
-				// 设置发送时间
-				var time = new Date();
-				time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
-				
-				$.ajax({
-					url: "replyComment",
-					type: "POST",
-					dataType: "json",
-					data: {
-						"comment_id": send.parents(".comment").attr("commentid"),
-						"content": content,
-						"time": time,
-						"user_id": sessionStorage.getItem("userID"),
-						"target_id": send.parents(".comment").attr("Userid")
-					},
-					success: function(result) {
-						if(result.code === 200) {
-							// console.log(result);
-							send.parent().prev("textarea").val("");
-							$(".reply-box").hide();
-							// 重新获取评论列表
-							_this.getComment();
-						}
-					}
-				});
-			});
 		});
 	},
 	computed: {
 	},
 	methods: {
+		// 检查是否已登录
+		checkLogin: function() {
+			var _this = this;
+			if(sessionStorage.getItem("userID")) {
+				_this.loginFlag = true;
+			}
+		},
 		// 获取演出信息
 		getShow: function() {
 			var _this = this;
@@ -178,7 +67,6 @@ new Vue({
 						data.show_time = time;
 
 						_this.show = data;
-						// console.log(_this.show);
 					}
 				}
 			});
@@ -196,7 +84,6 @@ new Vue({
 				success: function(result) {
 					if(result.code === 200) {
 						_this.bands = result.data;
-						// console.log(_this.bands);
 					}
 				}
 			});
@@ -214,7 +101,6 @@ new Vue({
 				success: function(result) {
 					if(result.code === 200) {
 						_this.wantNum = result.data;
-						// console.log(_this.want);
 					}
 				}
 			});
@@ -231,7 +117,6 @@ new Vue({
 					"show_id": location.search.substr(1).split("=")[1],
 				},
 				success: function(result) {
-					// console.log(result);
 					if(result.code === 200) {
 						_this.want = true;
 					}
@@ -241,6 +126,16 @@ new Vue({
 		// 切换“想看”状态
 		toggleWant: function() {
 			var _this = this;
+
+			if(!_this.loginFlag) {
+				setAlertBox({
+					className: "text",
+					close: true,
+					title: "孤岛提示",
+					message: "登录可以进行更多操作哦！"
+				});
+				return;
+			}
 
 			// 判断演出状态
 			if(this.show.show_state == 2 || this.show.show_state == 4) {
@@ -299,6 +194,16 @@ new Vue({
 				});
 			}
 		},
+		// 切换选项卡
+		switchTab: function(e) {
+			var tabList = ["detail", "comment"];
+			$(".underline")[0].className = "underline";
+			$(".underline").addClass("tab" + (tabList.indexOf($(e.target).attr("aria-controls")) + 1));
+		},
+		// 跳转至乐队详细页
+		toBandDetail: function(index) {
+			location.href = "../Band/detail?id=" + index;
+		},
 		// 获取评论列表
 		getComment: function() {
 			var _this = this;
@@ -311,10 +216,122 @@ new Vue({
 					"id": location.search.substr(1).split("=")[1]
 				},
 				success: function(result) {
-					// console.log(result.data[1].reply);
 					if(result.code === 200) {
 						_this.comments = result.data;
-						console.log(_this.comments);
+					}
+				}
+			});
+		},
+		// textarea自适应高度
+		textareaAutoHeight: function(e) {
+			var textareaPadding = 12 * 1 * 2;
+			if((e.target.scrollHeight - textareaPadding) > $(e.target).height()) {
+				$(e.target).height(e.target.scrollHeight - textareaPadding);
+			}
+			$(e.target).next().find("span").text(e.target.value.length);
+		},
+		// 切换显示回复框
+		toggleReplyBox: function(e) {
+			$(e.currentTarget).parent().next(".reply-box").toggle();
+		},
+		// 发送评论
+		sendComment: function(e) {
+			var _this = this;
+
+			if(!_this.loginFlag) {
+				setAlertBox({
+					className: "text",
+					close: true,
+					title: "孤岛提示",
+					message: "登录可以进行更多操作哦！"
+				});
+				return;
+			}
+
+			var send = $(e.target);
+
+			// 获取表单内容
+			var content = send.parent().prev("textarea").val();
+			if(!content) {
+				setAlertBox({
+					className: "text",
+					close: true,
+					title: "孤岛提示",
+					message: "请输入评论内容"
+				});
+				return;
+			}
+			// 设置发送时间
+			var time = new Date();
+			time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+			
+			$.ajax({
+				url: "sendComment",
+				type: "POST",
+				dataType: "json",
+				data: {
+					"content": content,
+					"user_id": sessionStorage.getItem("userID"),
+					"time": time,
+					"target": 1,
+					"target_id": location.search.substr(1).split("=")[1]
+				},
+				success: function(result) {
+					if(result.code === 200) {
+						send.parent().prev("textarea").val("");
+						// 重新获取评论列表
+						_this.getComment();
+					}
+				}
+			});
+		},
+		// 发送回复
+		sendReply: function(e) {
+			var _this = this;
+			var send = $(e.target);
+
+			if(!_this.loginFlag) {
+				setAlertBox({
+					className: "text",
+					close: true,
+					title: "孤岛提示",
+					message: "登录可以进行更多操作哦！"
+				});
+				return;
+			}
+
+			// 获取表单内容
+			var content = send.parent().prev("textarea").val();
+			if(!content) {
+				setAlertBox({
+					className: "text",
+					close: true,
+					title: "孤岛提示",
+					message: "请输入会回复内容"
+				});
+				return;
+			}
+			// 设置发送时间
+			var time = new Date();
+			time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+			
+			$.ajax({
+				url: "replyComment",
+				type: "POST",
+				dataType: "json",
+				data: {
+					"comment_id": send.parents(".comment").attr("commentid"),
+					"content": content,
+					"time": time,
+					"user_id": sessionStorage.getItem("userID"),
+					"target_id": send.parents(".comment").attr("Userid")
+				},
+				success: function(result) {
+					if(result.code === 200) {
+						send.parent().prev("textarea").val("");
+						$(".reply-box").hide();
+						// 重新获取评论列表
+						_this.getComment();
 					}
 				}
 			});

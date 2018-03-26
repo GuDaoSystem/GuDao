@@ -142,7 +142,7 @@ new Vue({
 		},
 		// 跳转至乐队详细页
 		toBandDetail: function(index) {
-			location.href = "Band/detail?id=" + index + "#show";
+			location.href = "Band/detail?id=" + index;
 		}
 	}
 });

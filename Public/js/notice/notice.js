@@ -144,7 +144,7 @@ new Vue({
 		},
 		// 跳转至演出详细页
 		toShowDetail: function(index) {
-			location.href = "../../GuDao/Show/detail?id=" + index + "#detail";
+			location.href = "../../GuDao/Show/detail?id=" + index;
 		}
 	}
 });
