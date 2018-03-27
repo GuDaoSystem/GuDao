@@ -2,6 +2,7 @@ new Vue({
 	el: '#gudao',
 	data: {
 		loginFlag: false,
+		user: {},
 		band: {},
 		supportNum: 0,
 		support: false,
@@ -23,6 +24,7 @@ new Vue({
 		});
 
 		// 获取数据
+		this.checkLogin();
 		this.getBand();
 		this.getSupportNum();
 		this.checkSupport();
@@ -46,6 +48,19 @@ new Vue({
 			var _this = this;
 			if(sessionStorage.getItem("userID")) {
 				_this.loginFlag = true;
+				$.ajax({
+					url: "../User/getUserBasicInfo",
+					type: "GET",
+					dataType: "json",
+					data: {
+						"id": sessionStorage.getItem("userID")
+					},
+					success: function(result) {
+						if(result.code === 200) {
+							_this.user = result.data;
+						}
+					}
+				});
 			}
 		},
 		// 获取乐队信息

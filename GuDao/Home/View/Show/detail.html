@@ -100,7 +100,10 @@
 					<div class="send-box">
 						<div class="media">
 							<div class="media-left">
-								<a href="#">
+								<a v-if="loginFlag" href="../User">
+									<img class="media-object" :src="'__PUBLIC__/img/user/' + user.headshot">
+								</a>
+								<a v-else href="../Index/login">
 									<img class="media-object" src="__PUBLIC__/img/user/default.jpg">
 								</a>
 							</div>
@@ -117,7 +120,7 @@
 					<ul class="comment-list media-list">
 						<li v-for="comment in comments" :commentid="comment.comment_id" :userid="comment.user_id" class="comment media">
 							<div class="media-left">
-								<a href="#">
+								<a :href="'../User/user?id=' + comment.user_id">
 									<img v-if="comment.user.headshot" class="media-object" :src="'__PUBLIC__/img/user/' + comment.user.headshot">
 									<img v-else class="media-object" src="__PUBLIC__/img/user/default.jpg">
 								</a>
@@ -143,7 +146,7 @@
 								<ul class="reply-list media-list">
 									<li v-for="reply in comment.reply" class="media">
 										<div class="media-left">
-											<a href="#">
+											<a :href="'../User/user?id=' + reply.user_id">
 												<img v-if="reply.user.headshot" class="media-object" :src="'__PUBLIC__/img/user/' + reply.user.headshot">
 												<img v-else class="media-object" src="__PUBLIC__/img/user/default.jpg">
 											</a>
@@ -151,7 +154,7 @@
 										<div class="media-body">
 											<div class="reply-content">
 												<div class="media-heading">
-													<p class="name"><a href="">{{reply.user.username}}</a>&ensp;回复&ensp;<a href="">{{reply.target.username}}</a></p>
+													<p class="name"><a :href="'../User/user?id=' + reply.user_id">{{reply.user.username}}</a>&ensp;回复&ensp;<a :href="'../User/user?id=' + reply.target_id">{{reply.target.username}}</a></p>
 													<p class="time">{{reply.reply_time}}</p>
 												</div>
 												<p>{{reply.reply_content}}</p>

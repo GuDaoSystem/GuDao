@@ -204,7 +204,7 @@ new Vue({
 		},
 		// 跳转至演出详细页
 		toShowDetail: function(index) {
-			location.href = "Show/detail?id=" + index + "#detail";
+			location.href = "Show/detail?id=" + index;
 		}
 	}
 });

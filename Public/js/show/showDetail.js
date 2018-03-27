@@ -2,6 +2,7 @@ new Vue({
 	el: '#gudao',
 	data: {
 		loginFlag: false,
+		user: {},
 		show: {},
 		bands: [],
 		wantNum: 0,
@@ -45,6 +46,19 @@ new Vue({
 			var _this = this;
 			if(sessionStorage.getItem("userID")) {
 				_this.loginFlag = true;
+				$.ajax({
+					url: "../User/getUserBasicInfo",
+					type: "GET",
+					dataType: "json",
+					data: {
+						"id": sessionStorage.getItem("userID")
+					},
+					success: function(result) {
+						if(result.code === 200) {
+							_this.user = result.data;
+						}
+					}
+				});
 			}
 		},
 		// 获取演出信息
