@@ -40,15 +40,15 @@ new Vue({
 		// 输入关键词
 		doSearch: function(e) {
 			if(e.keyCode == 13 || e.currentTarget.tagName.toLowerCase() == "button") {
-				if($(".searchbox input").val()) {
-					location.href = "search" + "?key=" + $(".searchbox input").val();
-				} else {
+				if(/^ *$/.test($(".searchbox input").val())) {
 					setAlertBox({
 						className: "text",
 						close: true,
 						title: "孤岛提示",
 						message: "请输入搜索内容"
 					});
+				} else {
+					location.href = "search" + "?key=" + $(".searchbox input").val();
 				}
 			}
 		},
@@ -165,6 +165,11 @@ new Vue({
 				success: function(result) {
 					if(result.code === 200) {
 						var data = result.data;
+						for(var i = 0; i < data.length; i++) {
+							for(var j = 0; j < _this.keys.length; j++) {
+								data[i].notice_content = data[i].notice_content.replace(new RegExp(_this.keys[j],"g"), "<span class='keyword'>" + _this.keys[j] + "</span>");
+							}
+						}
 						_this.notices = data;
 						if(data.length < 10) {
 							$(".notices .no-more").show();
@@ -196,6 +201,11 @@ new Vue({
 				success: function(result) {
 					if(result.code === 200) {
 						var data = result.data;
+						for(var i = 0; i < data.length; i++) {
+							for(var j = 0; j < _this.keys.length; j++) {
+								data[i].show_name = data[i].show_name.replace(new RegExp(_this.keys[j],"g"), "<span class='keyword'>" + _this.keys[j] + "</span>");
+							}
+						}
 						_this.shows = data;
 						if(data.length < 8) {
 							$(".shows .no-more").show();
@@ -227,6 +237,11 @@ new Vue({
 				success: function(result) {
 					if(result.code === 200) {
 						var data = result.data;
+						for(var i = 0; i < data.length; i++) {
+							for(var j = 0; j < _this.keys.length; j++) {
+								data[i].band_name = data[i].band_name.replace(new RegExp(_this.keys[j],"g"), "<span class='keyword'>" + _this.keys[j] + "</span>");
+							}
+						}
 						_this.bands = data;
 						if(data.length < 8) {
 							$(".bands .no-more").show();
@@ -258,6 +273,11 @@ new Vue({
 								success: function(result) {
 									if(result.code === 200) {
 										var data = result.data;
+										for(var i = 0; i < data.length; i++) {
+											for(var j = 0; j < _this.keys.length; j++) {
+												data[i].notice_content = data[i].notice_content.replace(new RegExp(_this.keys[j],"g"), "<span class='keyword'>" + _this.keys[j] + "</span>");
+											}
+										}
 										_this.notices = _this.notices.concat(data);
 										if(data.length < 5) {
 											$(".notices .no-more").show();
@@ -283,6 +303,11 @@ new Vue({
 								success: function(result) {
 									if(result.code === 200) {
 										var data = result.data;
+										for(var i = 0; i < data.length; i++) {
+											for(var j = 0; j < _this.keys.length; j++) {
+												data[i].show_name = data[i].show_name.replace(new RegExp(_this.keys[j],"g"), "<span class='keyword'>" + _this.keys[j] + "</span>");
+											}
+										}
 										_this.shows = _this.shows.concat(data);
 										if(data.length < 4) {
 											$(".shows .no-more").show();
@@ -308,6 +333,11 @@ new Vue({
 								success: function(result) {
 									if(result.code === 200) {
 										var data = result.data;
+										for(var i = 0; i < data.length; i++) {
+											for(var j = 0; j < _this.keys.length; j++) {
+												data[i].band_name = data[i].band_name.replace(new RegExp(_this.keys[j],"g"), "<span class='keyword'>" + _this.keys[j] + "</span>");
+											}
+										}
 										_this.bands = _this.bands.concat(data);
 										if(data.length < 4) {
 											$(".bands .no-more").show();

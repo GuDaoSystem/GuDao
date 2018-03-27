@@ -66,15 +66,15 @@ $(function() {
 		}
 	});
 	function search() {
-		if($(".search-box input").val()) {
-			location.href = "../../GuDao/Index/search" + "?key=" + $(".search-box input").val();
-		} else {
+		if(/^ *$/.test($(".searchbox input").val())) {
 			setAlertBox({
 				className: "text",
 				close: true,
 				title: "孤岛提示",
 				message: "请输入搜索内容"
 			});
+		} else {
+			location.href = "../../GuDao/Index/search" + "?key=" + $(".searchbox input").val();
 		}
 	}
 
