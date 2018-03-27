@@ -180,8 +180,10 @@ new Vue({
 		// 切换选项卡
 		switchTab: function(e) {
 			var tabList = ["show", "picture", "comment"];
-			$(".underline")[0].className = "underline";
-			$(".underline").addClass("tab" + (tabList.indexOf($(e.target).attr("aria-controls")) + 1));
+			if(e.target.tagName.toLowerCase() == "a") {
+				$(".underline")[0].className = "underline";
+				$(".underline").addClass("tab" + (tabList.indexOf($(e.target).attr("aria-controls")) + 1));
+			}
 		},
 		// 获取乐队列表
 		getShows: function() {

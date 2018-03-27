@@ -9,10 +9,6 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/frame.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/user/index.css">
-<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap-datetimepicker.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 </head>
 <body>
 
@@ -31,10 +27,10 @@
 				<div class="data">
 					<div class="want">
 						<p>想看演出</p>
-						<p class="num">{{want}}</p>
+						<p class="num" @click="toShowTab">{{want}}</p>
 					</div><div class="support">
 						<p>支持乐队</p>
-						<p class="num">{{support}}</p>
+						<p class="num" @click="toBandTab">{{support}}</p>
 					</div>
 				</div>
 				<p class="name">{{info.username}}</p>
@@ -56,8 +52,8 @@
 				</ul>
 				<!-- 修改按钮 -->
 				<div class="modify-btn">
-					<a class="modify-info"><span class="glyphicon glyphicon-pencil"></span>修改基本信息</a>
-					<a href="password" class="modify-password"><span class="glyphicon glyphicon-lock"></span>修改密码</a>
+					<a class="modify-info" @click="modifyInfo"><span class="glyphicon glyphicon-pencil"></span>修改基本信息</a>
+					<a href="../../GuDao/User/password" class="modify-password"><span class="glyphicon glyphicon-lock"></span>修改密码</a>
 				</div>
 			</div><div class="modify-form">
 				<input class="name" type="text" name="name" :value="info.username">
@@ -65,11 +61,11 @@
 					<span class="glyphicon glyphicon-user"></span>
 					<p>性别</p>
 					<div class="radio-box">
-						<div class="radio male">
+						<div class="radio male" @click="selectGender">
 							<span class="outer"></span><span class="inner"></span>
 							<p>男</p>
 						</div>
-						<div class="radio female">
+						<div class="radio female" @click="selectGender">
 							<span class="outer"></span><span class="inner"></span>
 							<p>女</p>
 						</div>
@@ -83,35 +79,35 @@
 				<div class="intro">
 					<span class="glyphicon glyphicon-bookmark"></span>
 					<p>用户简介</p>
-					<textarea maxlength="100">{{info.intro}}</textarea>
+					<textarea maxlength="100" @input="textareaAutoHeight">{{info.intro}}</textarea>
 					<p class="count"><span>0</span>/100</p>
 				</div>
 				<div class="button">
-					<button class="confirm">确定</button>
-					<button class="cancel">取消</button>
+					<button class="confirm" @click="submitModify">确定</button>
+					<button class="cancel" @click="cancelModify">取消</button>
 				</div>
 			</div>
 		</div>
 
 		<!-- 标签页 -->
 		<div>
-			<ul class="tablist nav nav-tabs" role="tablist">
-				<li class="tab1" role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">动态</a></li>
+			<ul class="tablist nav nav-tabs" role="tablist" @click="switchTab">
+				<li class="tab1 active" role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">动态</a></li>
 				<li class="tab2" role="presentation"><a href="#message" aria-controls="message" role="tab" data-toggle="tab">消息</a></li>
 				<li class="tab3" role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">演出</a></li>
 				<li class="tab4" role="presentation"><a href="#band" aria-controls="band" role="tab" data-toggle="tab">乐队</a></li>
-				<span class="underline"></span>
+				<span class="underline tab1"></span>
 			</ul>
 
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane fade" id="activity">
+				<div role="tabpanel" class="tab-pane fade in active" id="activity">
 					<ul>
 						<li v-for="item in activity">
 							<div class="left">
 								<p>{{item.time}}</p>
 							</div><span class="dot-span"></span><div class="right">
-								<p v-if="item.type == 'show'">想看&ensp;<a :href="'../Show/detail?id=' + item.show.show_id">{{item.show.show_name}}</a></p>
-								<p v-if="item.type == 'band'">支持&ensp;<a :href="'../Band/detail?id=' + item.band.band_id">{{item.band.band_name}}</a></p>
+								<p v-if="item.type == 'show'">想看&ensp;<a :href="'../../GuDao/Show/detail?id=' + item.show.show_id">{{item.show.show_name}}</a></p>
+								<p v-if="item.type == 'band'">支持&ensp;<a :href="'../../GuDao/Band/detail?id=' + item.band.band_id">{{item.band.band_name}}</a></p>
 								<div :class="{band: item.type == 'band'}" class="pic">
 									<div class="content">
 										<div class="triangle">
@@ -131,14 +127,14 @@
 						<li v-for="message in reply" class="close-state" :comment="message.comment_id" :user="message.user_id">
 							<div :class="{read: message.read == 1}" class="content">
 								<p><a :href="'user?id=' + message.user_id" class="name">{{message.user.username}}</a>&ensp;回复了你的评论：{{message.reply_content}}</p>
-								<span class="open-btn glyphicon glyphicon-triangle-bottom"></span>
-								<span class="close-btn glyphicon glyphicon-triangle-top"></span>
+								<span class="open-btn glyphicon glyphicon-triangle-bottom" @click="openMessage"></span>
+								<span class="close-btn glyphicon glyphicon-triangle-top" @click="closeMessage"></span>
 							</div>
 							<div class="reply-box">
-								<textarea maxlength="100"></textarea>
+								<textarea maxlength="100" @input="textareaAutoHeight"></textarea>
 								<div class="bottom">
 									<p><span>0</span>/100</p>
-									<button class="send">发送</button>
+									<button class="send" @click="sendReply">发送</button>
 								</div>
 							</div>
 						</li>
@@ -147,7 +143,7 @@
 				<div role="tabpanel" class="tab-pane fade" id="show">
 					<ul class="row">
 						<li v-for="show in shows" class="col-xs-6 col-sm-3">
-							<div class="show-list" :index="show.show_id">
+							<div class="show-list" @click="toShowDetail(show.show_id)">
 								<div class="img">
 									<img v-if="show.show_poster" :src="'__PUBLIC__/img/show/' + show.show_poster">
 									<img v-else src="__PUBLIC__/img/show/default.jpg">
@@ -162,7 +158,7 @@
 				<div role="tabpanel" class="tab-pane fade" id="band">
 					<ul class="row">
 						<li v-for="band in bands" class="col-xs-6 col-sm-3">
-							<div class="band-list" :index="band.band_id">
+							<div class="band-list" @click="toShowDetail(band.band_id)">
 								<div class="img">
 									<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover">
 									<img v-else src="__PUBLIC__/img/band/default.jpg">
@@ -181,37 +177,13 @@
 	<copyright></copyright>
 </div>
 
-
-<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/component.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/user/index.js"></script>
-
-<script>
-$(function() {
-	// $.ajax({
-	// 	url: "__URL__/getCommentByUser",
-	// 	type: "GET",
-	// 	// type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"id": 4,
-	// 		"password": md5("wuyinglin"),
-	// 		//"email": "ng.winglam@qq.com"
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
-	// $('#datetimepicker').datetimepicker({
-	// 	format: "yyyy-mm-dd",
-	// 	autoclose: true,
-	// 	minView: "month"
-	// });
-
-
-});
-</script>
-
 </body>
 </html>

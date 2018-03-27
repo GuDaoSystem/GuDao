@@ -23,213 +23,39 @@ new Vue({
 		});
 
 		// 获取数据
+		this.init();
 		this.getUserInfo();
 		this.getActivity();
 		this.getReply();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
-			var _this = this;
-
-			// 事件选择器
-			$('#datetimepicker').datetimepicker({
-				format: "yyyy-mm-dd",
-				autoclose: true,
-				minView: "month"
-			});
-
-			// 标签页定位
-			var tabList = ["#activity", "#message", "#show", "#band"];
-			var tabIndex = tabList.indexOf(location.hash);
-			$(".tablist li:eq(" + tabIndex +")").addClass("active");
-			$(".tablist .underline").addClass("tab" + (tabIndex + 1));
-			$(tabList[tabIndex]).addClass("in").addClass("active");
-
-			// 标签页切换
-			$(".tablist a").unbind("click").click(function () {
-				// console.log(tabIndex, $(this).parent()[0])
-				if(tabIndex == 1 && !$(this).parent().hasClass("tab2")) {
-					// console.log(_this.reply);
-					var reply = _this.reply;
-					var count = 0;
-					for(var i = 0; i < reply.length; i++) {
-						if(reply[i].read == 0) {
-							$.ajax({
-								url: "readMessage",
-								type: "POST",
-								dataType: "json",
-								data: {
-									"id": reply[i].reply_id,
-								},
-								success: function(result) {
-									if(result.code === 200) {
-										// _this.getReply();
-										_this.reply[i].read = 1;
-									} else {
-										count++;
-									}
-								}
-							});
-						}
-					}
-					if(count == 0) {
-						$(".didLogin .message a").removeClass("tips");
-					}
-				}
-				tabIndex = $(".tablist li").index($(this).parent());
-
-				location.href = location.toString().split("#")[0] + $(this).attr("href");
-				$(".tablist .underline")[0].className = "underline";
-				$(".tablist .underline").addClass($(this).parent()[0].className);
-			});
 		});
 	},
 	updated: function () {
 		this.$nextTick(function () {
-			var _this = this;
-
-			// 设置性别单选框默认选项
-			if(this.info.gender == 'M') {
-				$(".modify-form .female").removeClass("checked");
-				$(".modify-form .male").addClass("checked");
-			} else {
-				$(".modify-form .male").removeClass("checked");
-				$(".modify-form .female").addClass("checked");
-			}
-			// 监听性别单选框
-			$(".modify-form .radio").click(function() {
-				$(".modify-form .radio").removeClass("checked");
-				$(this).addClass("checked");
-			});
-
-			// textarea高度自适应 & 动态显示textarea内容字数
-			var textareaPadding1 = 12 * 0.5 * 2;
-			$(".modify-form textarea").next().find("span").text($("textarea").val().length);
-			$(".modify-form textarea").on("input", function () {
-				if((this.scrollHeight - textareaPadding1) > $(this).height()) {
-					$(this).height(this.scrollHeight - textareaPadding1);
-				}
-				$(this).next().find("span").text(this.value.length);
-			});
-			var textareaPadding2 = 12 * 1 * 2;
-			$(".reply-box textarea").on("input", function () {
-				if((this.scrollHeight - textareaPadding2) > $(this).height()) {
-					$(this).height(this.scrollHeight - textareaPadding2);
-				}
-				$(this).next().find("span").text(this.value.length);
-			});
-
-			// 监听“修改基本信息”按钮
-			$(".info .modify-info").click(function() {
-				$(".info").hide();
-				$(".modify-form").css("display", "inline-block");
-			});
-
-			// 监听修改基本信息中“确认”按钮
-			$(".modify-form .confirm").unbind("click").click(function() {
-				// 获取字段信息
-				var name = $(".modify-form .name").val();
-				if($(".modify-form .radio-box .male").hasClass("checked")) {
-					var gender = 'M';
-				} else {
-					var gender = 'F';
-				}
-				var birthday = $(".modify-form .birthday input").val();
-				var intro = $(".modify-form .intro textarea").val();
-
-				$.ajax({
-					url: "modifyUserInfo",
-					type: "POST",
-					dataType: "json",
-					data: {
-						"id": sessionStorage.getItem("userID"),
-						"username": name,
-						"gender": gender,
-						"birthday": birthday,
-						"intro": intro,
-					},
-					success: function(result) {
-						console.log(result);
-						if(result.code === 200) {
-							_this.getUserInfo();
-							$(".modify-form").hide();
-							$(".info").show();
-						} else {
-							setAlertBox({
-								className: "text",
-								close: true,
-								title: "孤岛提示",
-								message: result.msg
-							});
-						}
-					}
-				});
-			});
-			// 监听修改基本信息中“取消”按钮
-			$(".modify-form .cancel").click(function() {
-				$(".modify-form").hide();
-				$(".info").show();
-			});
-
-			// 监听消息展开或收起
-			$("#message .content").unbind("click").click(function() {
-				if($(this).parent().hasClass("close-state")) {
-					$("#message li").removeClass("open-state").addClass("close-state");
-					$(this).parent().removeClass("close-state").addClass("open-state");
-				} else {
-					$(this).parent().removeClass("open-state").addClass("close-state");
-				}
-			});
-
-			// 监听“发送”按钮
-			$("#message .reply-box .send").click(function() {
-				var send = $(this);
-
-				var content = send.parent().prev("textarea").val();
-				if(!content) {
-					setAlertBox({
-						className: "text",
-						close: true,
-						title: "孤岛提示",
-						message: "请输入评论内容"
-					});
-					return;
-				}
-				// 设置发送时间
-				var time = new Date();
-				time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
-				
-				$.ajax({
-					url: "replyMessage",
-					type: "POST",
-					dataType: "json",
-					data: {
-						"comment_id": send.parents("li").attr("comment"),
-						"content": content,
-						"time": time,
-						"type": 1,
-						"user_id": sessionStorage.getItem("userID"),
-						"target_id": send.parents("li").attr("user")
-					},
-					success: function(result) {
-						if(result.code === 200) {
-							// console.log(result);
-							send.parent().prev("textarea").val("");
-							$(".reply-box").hide();
-						}
-					}
-				});
-			});
 		});
 	},
 	computed: {
 	},
 	methods: {
+		// 页面初始化
+		init: function() {
+			console.log(location.hash);
+			if(location.hash == "#message") {
+				$(".tablist li").removeClass("active");
+				$(".tabList li.tab2").addClass("active");
+				$(".underline")[0].className = "underline";
+				$(".underline").addClass("tab2");
+				$(".tab-pane").removeClass("in active");
+				$("#message").addClass("in active");
+			}
+		},
 		// 获取用户信息
 		getUserInfo: function() {
 			_this = this;
 			$.ajax({
-				url: "getUserBasicInfo",
+				url: "../../GuDao/User/getUserBasicInfo",
 				type: "GET",
 				dataType: "json",
 				data: {
@@ -249,7 +75,7 @@ new Vue({
 		getActivity: function() {
 			_this = this;
 			$.ajax({
-				url: "getUserActivity",
+				url: "../../GuDao/User/getUserActivity",
 				type: "GET",
 				dataType: "json",
 				data: {
@@ -278,7 +104,7 @@ new Vue({
 		getReply: function() {
 			_this = this;
 			$.ajax({
-				url: "getReplyByUser",
+				url: "../../GuDao/User/getReplyByUser",
 				type: "GET",
 				dataType: "json",
 				data: {
@@ -290,6 +116,175 @@ new Vue({
 					// console.log(_this.reply);
 				}
 			});
+		},
+		// 切换选项卡
+		switchTab: function(e) {
+			var tabList = ["activity", "message", "show", "band"];
+			if(e.target.tagName.toLowerCase() == "a") {
+				$(".underline")[0].className = "underline";
+				$(".underline").addClass("tab" + (tabList.indexOf($(e.target).attr("aria-controls")) + 1));
+			}
+		},
+		// 切换至演出选项卡
+		toShowTab: function() {
+			$(".tablist li").removeClass("active");
+			$(".tabList li.tab3").addClass("active");
+			$(".underline")[0].className = "underline";
+			$(".underline").addClass("tab3");
+			$(".tab-pane").removeClass("in active");
+			$("#show").addClass("active");
+			setTimeout(function() {
+				$("#show").addClass("in");
+			}, 200);
+		},
+		// 切换至乐队选项卡
+		toBandTab: function() {
+			$(".tablist li").removeClass("active");
+			$(".tabList li.tab4").addClass("active");
+			$(".underline")[0].className = "underline";
+			$(".underline").addClass("tab4");
+			$(".tab-pane").removeClass("in active");
+			$("#band").addClass("active");
+			setTimeout(function() {
+				$("#band").addClass("in");
+			}, 200);
+		},
+		// 修改基本信息
+		modifyInfo: function() {
+			$(".info").hide();
+			$(".modify-form").css("display", "inline-block");
+
+			if(this.info.gender == 'M') {
+				$(".modify-form .female").removeClass("checked");
+				$(".modify-form .male").addClass("checked");
+			} else {
+				$(".modify-form .male").removeClass("checked");
+				$(".modify-form .female").addClass("checked");
+			}
+
+			$('#datetimepicker').datetimepicker({
+				format: "yyyy-mm-dd",
+				autoclose: true,
+				minView: "month"
+			});
+
+			$(".intro .count span").text($(".intro textarea").val().length);
+		},
+		// 选择性别
+		selectGender: function(e) {
+			$(".modify-form .radio").removeClass("checked");
+			$(e.currentTarget).addClass("checked");
+		},
+		// textarea自适应高度
+		textareaAutoHeight: function(e) {
+			var textareaPadding = 12 * 1 * 2;
+			if((e.target.scrollHeight - textareaPadding) > $(e.target).height()) {
+				$(e.target).height(e.target.scrollHeight - textareaPadding);
+			}
+			$(e.target).next().find("span").text(e.target.value.length);
+		},
+		// 提交修改信息
+		submitModify: function() {
+			// 获取字段信息
+			var name = $(".modify-form .name").val();
+			if($(".modify-form .radio-box .male").hasClass("checked")) {
+				var gender = 'M';
+			} else {
+				var gender = 'F';
+			}
+			var birthday = $(".modify-form .birthday input").val();
+			var intro = $(".modify-form .intro textarea").val();
+
+			$.ajax({
+				url: "../../GuDao/User/modifyUserInfo",
+				type: "POST",
+				dataType: "json",
+				data: {
+					"id": sessionStorage.getItem("userID"),
+					"username": name,
+					"gender": gender,
+					"birthday": birthday,
+					"intro": intro
+				},
+				success: function(result) {
+					// console.log(result);
+					if(result.code === 200) {
+						_this.getUserInfo();
+						_this.cancelModify();
+						// $(".modify-form").hide();
+						// $(".info").show();
+					} else {
+						setAlertBox({
+							className: "text",
+							close: true,
+							title: "孤岛提示",
+							message: result.msg
+						});
+					}
+				}
+			});
+		},
+		// 取消修改信息
+		cancelModify: function() {
+			$(".info").show();
+			$(".modify-form").hide();
+		},
+		// 展开消息
+		openMessage: function(e) {
+			$("#message li").removeClass("open-state").addClass("close-state");
+			$(e.target).parents("li").removeClass("close-state").addClass("open-state");
+		},
+		// 关闭消息
+		closeMessage: function(e) {
+			$(e.target).parents("li").removeClass("open-state").addClass("close-state");
+		},
+		// 发送回复
+		sendReply: function(e) {
+			var _this = this;
+			var send = $(e.target);
+
+			var content = send.parent().prev("textarea").val();
+			if(!content) {
+				setAlertBox({
+					className: "text",
+					close: true,
+					title: "孤岛提示",
+					message: "请输入评论内容"
+				});
+				return;
+			}
+			// 设置发送时间
+			var time = new Date();
+			time = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+			
+			$.ajax({
+				url: "../../GuDao/User/replyMessage",
+				type: "POST",
+				dataType: "json",
+				data: {
+					"comment_id": send.parents("li").attr("comment"),
+					"content": content,
+					"time": time,
+					"type": 1,
+					"user_id": sessionStorage.getItem("userID"),
+					"target_id": send.parents("li").attr("user")
+				},
+				success: function(result) {
+					if(result.code === 200) {
+						// console.log(result);
+						send.parent().prev("textarea").val("");
+						$(".reply-box").hide();
+					}
+				}
+			});
+		},
+		// 跳转至演出详细页
+		toShowDetail: function(index) {
+			location.href = "../../GuDao/Show/detail?id=" + index;
+		},
+		// 跳转至乐队详细页
+		toBandDetail: function(index) {
+			location.href = "../../GuDao/Band/detail?id=" + index;
 		}
 	}
 });
