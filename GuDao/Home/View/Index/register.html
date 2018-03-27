@@ -7,95 +7,7 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/frame.css">
-<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/jquery.validate.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
-
-<style>
-.content {
-	height: -webkit-calc(100% - 41px);
-	height: -moz-calc(100% - 41px);
-	height: -ms-calc(100% - 41px);
-	height: -o-calc(100% - 41px);
-	height: calc(100% - 41px);
-}
-
-
-.left {
-	display: inline-block;
-	width: 49%;
-	height: 100%;
-	border-right: 1px solid #ffd700;
-}
-.left img {
-    display: block;
-    width: 12%;
-	margin: 50% auto 0;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-.right {
-	display: inline-block;
-	width: 50%;
-	vertical-align: top;
-}
-
-.right form {
-	width: 50%;
-	margin: 50% auto 0;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-.right form div.input {
-	/*width: 100%;
-	margin-top: -1px;
-	padding: 0.8rem 1rem;
-	border-top: 1px solid #ffd700;
-	border-bottom: 1px solid #ffd700;*/
-	font-size: 0;
-}
-.right form div.input span {
-	color: #333;
-	font-size: 2.4rem;
-	vertical-align: middle;
-}
-.right form div.input input {
-	width: -webkit-calc(100% - 2.4rem);
-	width: -moz-calc(100% - 2.4rem);
-	width: -ms-calc(100% - 2.4rem);
-	width: -o-calc(100% - 2.4rem);
-	width: calc(100% - 2.4rem);
-	padding-left: 1rem;
-	margin-top: 3px;
-	color: #f2f2f2;
-	font-size: 1.6rem;
-	vertical-align: middle;
-}
-.right form div.code input{
-	
-	width: calc(100% - 10rem);
-}
-.right form div.code button.getCode{
-	display: inline-block;
-	height:18px;
-	font-size: 1.6rem;
-	border: none;
-	background: none;
-}
-.right form .signUpBtn {
-	margin-top: 3rem;
-	width: 100%;
-	padding: 0.8rem 0;
-	font-size: 1.6rem;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/register.css">
 </head>
 <body>
 
@@ -128,6 +40,7 @@
 							<input type="password" name="passwordCheck" placeholder="确认密码" autocomplete="off">
 					</div>
 					<button class="signUpBtn">注册</button>
+					<p class="login">已有账号？点击<a href="login">登录</a></p>
 			</form>
 		</div>
 	</div>
@@ -137,31 +50,13 @@
 	<copyright></copyright>
 </div>
 
-
-<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/jquery.validate.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/component.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index/register.js"></script>
-
-<script>
-$(function() {
-	
-	// $.ajax({
-	// 	url: "__URL__/doRegister",
-	// 	type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"email": "ng.winglam@qq.com",
-	// 		"code": 1234,
-	// 		"password": md5("wuyinglin123"),
-	// 		"autoLogin": true
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
-});
-</script>
-
 </body>
 </html>
