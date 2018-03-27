@@ -27,19 +27,6 @@ new Vue({
 	},
 	mounted: function() {
 		this.$nextTick(function () {
-			// 标签页定位
-			var tabList = ["#activity", "#show", "#band"];
-			var tabIndex = tabList.indexOf(location.hash);
-			$(".tablist li:eq(" + tabIndex +")").addClass("active");
-			$(".tablist .underline").addClass("tab" + (tabIndex + 1));
-			$(tabList[tabIndex]).addClass("in").addClass("active");
-
-			// 标签页切换
-			$(".tablist a").unbind("click").click(function () {
-				location.href = location.toString().split("#")[0] + $(this).attr("href");
-				$(".tablist .underline")[0].className = "underline";
-				$(".tablist .underline").addClass($(this).parent()[0].className);
-			});
 		});
 	},
 	updated: function () {
@@ -60,7 +47,6 @@ new Vue({
 					"id": location.search.toString().substr(1).split("=")[1]
 				},
 				success: function(result) {
-					// console.log(result);
 					if(result.code === 200) {
 						var data = result.data;
 						if(data.birthday) {
@@ -82,13 +68,11 @@ new Vue({
 					"id": location.search.toString().substr(1).split("=")[1]
 				},
 				success: function(result) {
-					// console.log(result);
 					if(result.code === 200) {
 						var data = result.data;
 						_this.want = data.want;
 						_this.support = data.support;
 						_this.activity = data.activity;
-						// console.log(_this.activity);
 						for(var i = 0; i < data.activity.length; i++) {
 							if(data.activity[i]["type"] == "show") {
 								_this.shows.push(data.activity[i]["show"]);
@@ -100,5 +84,43 @@ new Vue({
 				}
 			});
 		},
+		// 切换选项卡
+		switchTab: function(e) {
+			var tabList = ["activity", "show", "band"];
+			$(".underline")[0].className = "underline";
+			$(".underline").addClass("tab" + (tabList.indexOf($(e.target).attr("aria-controls")) + 1));
+		},
+		// 切换至演出选项卡
+		toShowTab: function() {
+			$(".tablist li").removeClass("active");
+			$(".tabList li.tab2").addClass("active");
+			$(".underline")[0].className = "underline";
+			$(".underline").addClass("tab2");
+			$(".tab-pane").removeClass("in active");
+			$("#show").addClass("active");
+			setTimeout(function() {
+				$("#show").addClass("in");
+			}, 200);
+		},
+		// 切换至乐队选项卡
+		toBandTab: function() {
+			$(".tablist li").removeClass("active");
+			$(".tabList li.tab3").addClass("active");
+			$(".underline")[0].className = "underline";
+			$(".underline").addClass("tab3");
+			$(".tab-pane").removeClass("in active");
+			$("#band").addClass("active");
+			setTimeout(function() {
+				$("#band").addClass("in");
+			}, 200);
+		},
+		// 跳转至演出详细页
+		toShowDetail: function(index) {
+			location.href = "../Show/detail?id=" + index;
+		},
+		// 跳转至乐队详细页
+		toBandDetail: function(index) {
+			location.href = "../Band/detail?id=" + index;
+		}
 	}
 });

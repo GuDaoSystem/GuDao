@@ -8,9 +8,6 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common/frame.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/user/user.css">
-<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 </head>
 <body>
 
@@ -29,10 +26,10 @@
 				<div class="data">
 					<div class="want">
 						<p>想看演出</p>
-						<p class="num">{{want}}</p>
+						<p class="num" @click="toShowTab">{{want}}</p>
 					</div><div class="support">
 						<p>支持乐队</p>
-						<p class="num">{{support}}</p>
+						<p class="num" @click="toBandTab">{{support}}</p>
 					</div>
 				</div>
 				<p class="name">{{info.username}}</p>
@@ -57,15 +54,15 @@
 
 		<!-- 标签页 -->
 		<div>
-			<ul class="tablist nav nav-tabs" role="tablist">
-				<li class="tab1" role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">动态</a></li>
+			<ul class="tablist nav nav-tabs" role="tablist" @click="switchTab">
+				<li class="tab1 active" role="presentation"><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">动态</a></li>
 				<li class="tab2" role="presentation"><a href="#show" aria-controls="show" role="tab" data-toggle="tab">演出</a></li>
 				<li class="tab3" role="presentation"><a href="#band" aria-controls="band" role="tab" data-toggle="tab">乐队</a></li>
-				<span class="underline"></span>
+				<span class="underline tab1"></span>
 			</ul>
 
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane fade" id="activity">
+				<div role="tabpanel" class="tab-pane fade in active" id="activity">
 					<ul>
 						<li v-for="item in activity">
 							<div class="left">
@@ -90,7 +87,7 @@
 				<div role="tabpanel" class="tab-pane fade" id="show">
 					<ul class="row">
 						<li v-for="show in shows" class="col-xs-6 col-sm-3">
-							<div class="show-list" :index="show.show_id">
+							<div class="show-list" @click="toShowDetail(show.show_id)">
 								<div class="img">
 									<img v-if="show.show_poster" :src="'__PUBLIC__/img/show/' + show.show_poster">
 									<img v-else src="__PUBLIC__/img/show/default.jpg">
@@ -105,7 +102,7 @@
 				<div role="tabpanel" class="tab-pane fade" id="band">
 					<ul class="row">
 						<li v-for="band in bands" class="col-xs-6 col-sm-3">
-							<div class="band-list" :index="band.band_id">
+							<div class="band-list" @click="toBandDetail(band.band_id)">
 								<div class="img">
 									<img v-if="band.band_cover" :src="'__PUBLIC__/img/band/' + band.band_id + '/' + band.band_cover">
 									<img v-else src="__PUBLIC__/img/band/default.jpg">
@@ -125,28 +122,12 @@
 </div>
 
 
-<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/bootstrap.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/vue.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/component.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/common.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/common/frame.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/user/user.js"></script>
-
-<script>
-$(function() {
-	// $.ajax({
-	// 	url: "__URL__/sendForgetPasswordCode",
-	// 	type: "POST",
-	// 	dataType: "json",
-	// 	data: {
-	// 		"id": 4,
-	// 		//"password": md5("wuyinglin"),
-	// 		"email": "ng.winglam@qq.com"
-	// 	},
-	// 	success: function(result) {
-	// 		console.log(result);
-	// 	}
-	// });
-});
-</script>
-
 </body>
 </html>
