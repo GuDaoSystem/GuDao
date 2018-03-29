@@ -140,7 +140,7 @@ $(function() {
 							success: function(result) {
 								if(result.code === 200) {
 									// 设置登录状态
-									sessionStorage.setItem("userID", result.data.user_id);
+									// sessionStorage.setItem("userID", result.data.user_id);
 								} else {
 									setAlertBox({
 										className: "text",

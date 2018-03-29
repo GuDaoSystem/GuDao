@@ -50,7 +50,7 @@ $(function() {
 				success: function(result) {
 					if(result.code === 200) {
 						var data = result.data;
-						sessionStorage.setItem("userID", data.user_id);
+						// sessionStorage.setItem("userID", data.user_id);
 						location.href = "home";
 					} else {
 						setAlertBox({

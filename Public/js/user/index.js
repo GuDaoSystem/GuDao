@@ -1,6 +1,7 @@
 new Vue({
 	el: '#gudao',
 	data: {
+		loginFlag: false,
 		info: {},
 		want: 0,
 		support: 0,
@@ -24,9 +25,9 @@ new Vue({
 
 		// 获取数据
 		this.init();
-		this.getUserInfo();
-		this.getActivity();
-		this.getReply();
+		// this.getUserInfo();
+		// this.getActivity();
+		// this.getReply();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
@@ -39,38 +40,72 @@ new Vue({
 	computed: {
 	},
 	methods: {
-		// 页面初始化
 		init: function() {
-			console.log(location.hash);
-			if(location.hash == "#message") {
-				$(".tablist li").removeClass("active");
-				$(".tabList li.tab2").addClass("active");
-				$(".underline")[0].className = "underline";
-				$(".underline").addClass("tab2");
-				$(".tab-pane").removeClass("in active");
-				$("#message").addClass("in active");
-			}
-		},
-		// 获取用户信息
-		getUserInfo: function() {
-			_this = this;
+			var _this = this;
 			$.ajax({
-				url: "../../GuDao/User/getUserBasicInfo",
-				type: "GET",
+				url: "../../GuDao/Index/checkLogin",
 				dataType: "json",
-				data: {
-					"id": sessionStorage.getItem("userID")
-				},
 				success: function(result) {
-					// console.log(result);
 					if(result.code === 200) {
 						var data = result.data;
 						data.age = new Date().getFullYear() - data.birthday.split("-")[0];
-						_this.info = result.data;
+						_this.info = data;
+						_this.getActivity();
+						_this.getReply();
+					} else {
+						setAlertBox({
+							className: "text",
+							close: true,
+							title: "孤岛提示",
+							message: "请先进行登录",
+							buttons: [{
+								value: "去登录",
+								callback: function() {
+									location.href = "../../GuDao/Index/login";
+								}
+							}, {
+								value: "取消",
+								callback: function() {
+									location.href = "../../GuDao/Index/home"
+								}
+							}]
+						});
 					}
 				}
 			});
 		},
+		// // 页面初始化
+		// init: function() {
+		// 	console.log(location.hash);
+		// 	if(location.hash == "#message") {
+		// 		$(".tablist li").removeClass("active");
+		// 		$(".tabList li.tab2").addClass("active");
+		// 		$(".underline")[0].className = "underline";
+		// 		$(".underline").addClass("tab2");
+		// 		$(".tab-pane").removeClass("in active");
+		// 		$("#message").addClass("in active");
+		// 	}
+		// },
+		// // 获取用户信息
+		// getUserInfo: function() {
+		// 	_this = this;
+		// 	$.ajax({
+		// 		url: "../../GuDao/User/getUserBasicInfo",
+		// 		type: "GET",
+		// 		dataType: "json",
+		// 		data: {
+		// 			"id": sessionStorage.getItem("userID")
+		// 		},
+		// 		success: function(result) {
+		// 			// console.log(result);
+		// 			if(result.code === 200) {
+		// 				var data = result.data;
+		// 				data.age = new Date().getFullYear() - data.birthday.split("-")[0];
+		// 				_this.info = result.data;
+		// 			}
+		// 		}
+		// 	});
+		// },
 		// 获取用户动态
 		getActivity: function() {
 			_this = this;
@@ -79,7 +114,8 @@ new Vue({
 				type: "GET",
 				dataType: "json",
 				data: {
-					"id": sessionStorage.getItem("userID")
+					// "id": sessionStorage.getItem("userID")
+					"id": _this.info.user_id
 				},
 				success: function(result) {
 					// console.log(result);
@@ -108,7 +144,8 @@ new Vue({
 				type: "GET",
 				dataType: "json",
 				data: {
-					"id": sessionStorage.getItem("userID")
+					// "id": sessionStorage.getItem("userID")
+					"id": _this.info.user_id
 				},
 				success: function(result) {
 					// console.log(result);
@@ -200,7 +237,8 @@ new Vue({
 				type: "POST",
 				dataType: "json",
 				data: {
-					"id": sessionStorage.getItem("userID"),
+					// "id": sessionStorage.getItem("userID"),
+					"id": _this.info.user_id,
 					"username": name,
 					"gender": gender,
 					"birthday": birthday,
@@ -266,7 +304,8 @@ new Vue({
 					"content": content,
 					"time": time,
 					"type": 1,
-					"user_id": sessionStorage.getItem("userID"),
+					// "user_id": sessionStorage.getItem("userID"),
+					"user_id": _this.info.user_id,
 					"target_id": send.parents("li").attr("user")
 				},
 				success: function(result) {

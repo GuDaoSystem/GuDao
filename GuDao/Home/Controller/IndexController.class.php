@@ -27,6 +27,33 @@ class IndexController extends Controller {
 
 
 
+
+
+
+    /* -------------------- 登录页面 -------------------- */
+
+    // 检查是否登录
+    public function checkLogin() {
+    	$user = new UserModel();
+    	$data = $user->getUserBasicInfo(session("user"));
+    	if($data) {
+    		$result["code"] = 200;
+    		$result["msg"] = "已登录";
+    		$result["data"] = $data;
+    	} else {
+    		$result["code"] = 201;
+    		$result["msg"] = "未登录";
+    	}
+    	$this->ajaxReturn($result);
+    }
+
+    // 退出登录
+    public function logout() {
+    	session("user", null);
+    }
+
+
+
     /* -------------------- 首页 -------------------- */
 
     // 获取通知列表
@@ -149,9 +176,10 @@ class IndexController extends Controller {
                 $data["token"] = null;
             }
             $user->setToken($data["user_id"], $data["token"]);
+            session("user", $data["user_id"]);
             $result["code"] = 200;
             $result["msg"] = "登录成功";
-            $result["data"] = $data;
+            // $result["data"] = $data;
         } else {
             $result["code"] = 201;
             $result["msg"] = "登录失败";
@@ -167,9 +195,10 @@ class IndexController extends Controller {
         $data = $user->checkToken($param)[0];
         if($data) {
             $data["token"] = md5($data["email"].time().$data["password"]);
+            session("user", $param["user_id"]);
             $result["code"] = 200;
             $result["msg"] = "自动登录成功";
-            $result["data"] = $data;
+            // $result["data"] = $data;
         } else {
             $data["token"] = null;
             $result["code"] = 201;

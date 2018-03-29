@@ -24,13 +24,14 @@ new Vue({
 		});
 
 		// 获取数据
-		this.checkLogin();
-		this.getBand();
-		this.getSupportNum();
-		this.checkSupport();
-		this.getShows();
-		this.getPicture();
-		this.getComment();
+		// this.checkLogin();
+		// this.getBand();
+		// this.getSupportNum();
+		// this.checkSupport();
+		// this.getShows();
+		// this.getPicture();
+		// this.getComment();
+		this.init();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
@@ -43,26 +44,41 @@ new Vue({
 	computed: {
 	},
 	methods: {
-		// 检查是否已登录
-		checkLogin: function() {
+		init: function() {
 			var _this = this;
-			if(sessionStorage.getItem("userID")) {
-				_this.loginFlag = true;
-				$.ajax({
-					url: "../User/getUserBasicInfo",
-					type: "GET",
-					dataType: "json",
-					data: {
-						"id": sessionStorage.getItem("userID")
-					},
-					success: function(result) {
-						if(result.code === 200) {
-							_this.user = result.data;
-						}
+			$.ajax({
+				url: "../Index/checkLogin",
+				dataType: "json",
+				success: function(result) {
+					console.log(result);
+					if(result.code === 200) {
+						_this.loginFlag = true;
+						_this.user = result.data;
+						_this.getBand();
+						_this.getSupportNum();
+						_this.checkSupport();
+						_this.getShows();
+						_this.getPicture();
+						_this.getComment();
 					}
-				});
-			}
+				}
+			});
 		},
+		// // 检查是否已登录
+		// checkLogin: function() {
+		// 	var _this = this;
+		// 	$.ajax({
+		// 		url: "../Index/checkLogin",
+		// 		dataType: "json",
+		// 		success: function(result) {
+		// 			console.log(result);
+		// 			if(result.code === 200) {
+		// 				_this.loginFlag = true;
+		// 				_this.user = result.data;
+		// 			}
+		// 		}
+		// 	});
+		// },
 		// 获取乐队信息
 		getBand: function() {
 			var _this = this;
@@ -106,7 +122,8 @@ new Vue({
 					type: "POST",
 					dataType: "json",
 					data: {
-						"user_id": sessionStorage.getItem("userID"),
+						// "user_id": sessionStorage.getItem("userID"),
+						"user_id": _this.user.user_id,
 						"band_id": location.search.toString().substr(1).split("=")[1]
 					},
 					success: function(result) {
@@ -132,7 +149,8 @@ new Vue({
 			}
 
 			// 获取ID信息
-			var user_id = sessionStorage.getItem("userID");
+			// var user_id = sessionStorage.getItem("userID");
+			var user_id = _this.user.user_id;
 			var band_id = location.search.substr(1).split("=")[1];
 
 			// 取消“支持”状态
@@ -142,7 +160,8 @@ new Vue({
 					type: "POST",
 					dataType: "json",
 					data: {
-						"user_id": sessionStorage.getItem("userID"),
+						// "user_id": sessionStorage.getItem("userID"),
+						"user_id": _this.user.user_id,
 						"band_id": location.search.substr(1).split("=")[1]
 					},
 					success: function(result) {
@@ -164,7 +183,8 @@ new Vue({
 					type: "POST",
 					dataType: "json",
 					data: {
-						"user_id": sessionStorage.getItem("userID"),
+						// "user_id": sessionStorage.getItem("userID"),
+						"user_id": _this.user.user_id,
 						"band_id": location.search.substr(1).split("=")[1],
 						"time": time
 					},
@@ -292,7 +312,8 @@ new Vue({
 				dataType: "json",
 				data: {
 					"content": content,
-					"user_id": sessionStorage.getItem("userID"),
+					// "user_id": sessionStorage.getItem("userID"),
+					"user_id": _this.user.user_id,
 					"time": time,
 					"target": 2,
 					"target_id": location.search.substr(1).split("=")[1]
@@ -334,7 +355,8 @@ new Vue({
 					"comment_id": send.parents(".comment").attr("commentid"),
 					"content": content,
 					"time": time,
-					"user_id": sessionStorage.getItem("userID"),
+					// "user_id": sessionStorage.getItem("userID"),
+					"user_id": _this.user.user_id,
 					"target_id": send.parents(".comment").attr("Userid")
 				},
 				success: function(result) {

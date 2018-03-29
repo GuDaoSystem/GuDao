@@ -9,29 +9,99 @@ $(function() {
 
 	// 检查登录状态
 	// sessionStorage.setItem("userID", 1);
-	if(sessionStorage.getItem("userID")) {
-		$(".didnotLogin").hide();
-	} else {
-		$(".didLogin").hide();
-	}
-	if(sessionStorage.getItem("userID")) {
-		$.ajax({
-			url: "../../GuDao/User/getUserBasicInfo",
-			type: "GET",
-			dataType: "json",
-			data: {
-				"id": sessionStorage.getItem("userID")
-			},
-			success: function(result) {
-				// console.log(result);
-				if(result.data.headshot) {
-					$(".didLogin img").attr("src", "../../GuDao/Public/img/user/" + result.data.headshot);
+
+	$.ajax({
+		url: "../../GuDao/Index/checkLogin",
+		dataType: "json",
+		success: function(result) {
+			// console.log(result);
+			if(result.code === 200) {
+				$(".didnotLogin").hide();
+				var data = result.data;
+
+				if(data.headshot) {
+					$(".didLogin img").attr("src", "../../GuDao/Public/img/user/" + data.headshot);
 				} else {
 					$(".didLogin img").attr("src", "../../GuDao/Public/img/user/default.jpg");
 				}
+
+				// 个人中心
+				$(".user-page").click(function(e) {
+					e.preventDefault();
+					location.href = "../../GuDao/User";
+				});
+
+				// 我的消息
+				$.ajax({
+					url: "../../GuDao/User/hasUnreadMessage",
+					type: "GET",
+					dataType: "json",
+					data: {
+						"id": data.user_id
+					},
+					success: function(result) {
+						// console.log(result);
+						if(result.code === 200) {
+							$(".didLogin .message a").addClass("tips");
+						}
+					}
+				});
+				$(".message").click(function(e) {
+					e.preventDefault();
+					location.href = "../../GuDao/User#message";
+				});
+
+				// 退出登录
+				$(".logout").click(function(e) {
+					e.preventDefault();
+					setAlertBox({
+						className: "text",
+						close: true,
+						title: "孤岛提示",
+						message: "您确定要退出登录吗？",
+						buttons: [{
+							value: "确定",
+							callback: function() {
+								$.ajax({
+									url: "../../GuDao/Index/logout"
+								});
+								location.href = "../../GuDao/Index/home";
+							}
+						}, {
+							value: "取消"
+						}]
+					});
+				});
+			} else {
+				$(".didLogin").hide();
 			}
-		});
-	}
+		}
+	});
+
+
+	// if(sessionStorage.getItem("userID")) {
+	// 	$(".didnotLogin").hide();
+	// } else {
+	// 	$(".didLogin").hide();
+	// }
+	// if(sessionStorage.getItem("userID")) {
+	// 	$.ajax({
+	// 		url: "../../GuDao/User/getUserBasicInfo",
+	// 		type: "GET",
+	// 		dataType: "json",
+	// 		data: {
+	// 			"id": sessionStorage.getItem("userID")
+	// 		},
+	// 		success: function(result) {
+	// 			// console.log(result);
+	// 			if(result.data.headshot) {
+	// 				$(".didLogin img").attr("src", "../../GuDao/Public/img/user/" + result.data.headshot);
+	// 			} else {
+	// 				$(".didLogin img").attr("src", "../../GuDao/Public/img/user/default.jpg");
+	// 			}
+	// 		}
+	// 	});
+	// }
 
 
 	// 导航栏avtive状态
@@ -79,51 +149,53 @@ $(function() {
 	}
 
 
-	// 个人中心
-	$(".user-page").click(function(e) {
-		e.preventDefault();
-		location.href = "../../GuDao/User";
-	});
+	// // 个人中心
+	// $(".user-page").click(function(e) {
+	// 	e.preventDefault();
+	// 	location.href = "../../GuDao/User";
+	// });
 
-	// 我的消息
-	$.ajax({
-		url: "../../GuDao/User/hasUnreadMessage",
-		type: "GET",
-		dataType: "json",
-		data: {
-			"id": sessionStorage.getItem("userID")
-		},
-		success: function(result) {
-			// console.log(result);
-			if(result.code === 200) {
-				$(".didLogin .message a").addClass("tips");
-			}
-		}
-	});
-	$(".message").click(function(e) {
-		e.preventDefault();
-		location.href = "../../GuDao/User#message";
-	});
+	// // 我的消息
+	// $.ajax({
+	// 	url: "../../GuDao/User/hasUnreadMessage",
+	// 	type: "GET",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"id": sessionStorage.getItem("userID")
+	// 	},
+	// 	success: function(result) {
+	// 		// console.log(result);
+	// 		if(result.code === 200) {
+	// 			$(".didLogin .message a").addClass("tips");
+	// 		}
+	// 	}
+	// });
+	// $(".message").click(function(e) {
+	// 	e.preventDefault();
+	// 	location.href = "../../GuDao/User#message";
+	// });
 
-	// 退出登录
-	$(".logout").click(function(e) {
-		e.preventDefault();
-		setAlertBox({
-			className: "text",
-			close: true,
-			title: "孤岛提示",
-			message: "您确定要退出登录吗？",
-			buttons: [{
-				value: "确定",
-				callback: function() {
-					sessionStorage.removeItem("userID");
-					location.href = "../GuDao/Index/home";
-				}
-			}, {
-				value: "取消"
-			}]
-		});
-	});
+	// // 退出登录
+	// $(".logout").click(function(e) {
+	// 	e.preventDefault();
+	// 	setAlertBox({
+	// 		className: "text",
+	// 		close: true,
+	// 		title: "孤岛提示",
+	// 		message: "您确定要退出登录吗？",
+	// 		buttons: [{
+	// 			value: "确定",
+	// 			callback: function() {
+	// 				$.ajax({
+	// 					url: "../../GuDao/Index/logout"
+	// 				});
+	// 				location.href = "../../GuDao/Index/home";
+	// 			}
+	// 		}, {
+	// 			value: "取消"
+	// 		}]
+	// 	});
+	// });
 
 
 	// 返回顶部
