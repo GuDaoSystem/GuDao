@@ -136,7 +136,7 @@ $(function() {
 		}
 	});
 	function search() {
-		if(/^ *$/.test($(".searchbox input").val())) {
+		if(/^ *$/.test($(".search-box input").val())) {
 			setAlertBox({
 				className: "text",
 				close: true,
@@ -144,7 +144,7 @@ $(function() {
 				message: "请输入搜索内容"
 			});
 		} else {
-			location.href = "../../GuDao/Index/search" + "?key=" + $(".searchbox input").val();
+			location.href = "../../GuDao/Index/search" + "?key=" + $(".search-box input").val();
 		}
 	}
 
