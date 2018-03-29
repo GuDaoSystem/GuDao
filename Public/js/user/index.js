@@ -41,6 +41,15 @@ new Vue({
 	},
 	methods: {
 		init: function() {
+			if(location.hash == "#message") {
+				$(".tablist li").removeClass("active");
+				$(".tabList li.tab2").addClass("active");
+				$(".underline")[0].className = "underline";
+				$(".underline").addClass("tab2");
+				$(".tab-pane").removeClass("in active");
+				$("#message").addClass("in active");
+			}
+			
 			var _this = this;
 			$.ajax({
 				url: "../../GuDao/Index/checkLogin",
@@ -48,7 +57,9 @@ new Vue({
 				success: function(result) {
 					if(result.code === 200) {
 						var data = result.data;
-						data.age = new Date().getFullYear() - data.birthday.split("-")[0];
+						if(data.age) {
+							data.age = new Date().getFullYear() - data.birthday.split("-")[0];
+						}
 						_this.info = data;
 						_this.getActivity();
 						_this.getReply();
@@ -74,7 +85,7 @@ new Vue({
 				}
 			});
 		},
-		// // 页面初始化
+		// 页面初始化
 		// init: function() {
 		// 	console.log(location.hash);
 		// 	if(location.hash == "#message") {
@@ -124,7 +135,7 @@ new Vue({
 						_this.want = data.want;
 						_this.support = data.support;
 						_this.activity = data.activity;
-						console.log(_this.activity);
+						// console.log(_this.activity);
 						for(var i = 0; i < data.activity.length; i++) {
 							if(data.activity[i]["type"] == "show") {
 								_this.shows.push(data.activity[i]["show"]);
@@ -267,6 +278,24 @@ new Vue({
 			$(".info").show();
 			$(".modify-form").hide();
 		},
+		// 全部标为已读
+		readAll: function() {
+			var _this = this;
+			var reply = this.reply;
+			for(var i = 0; i < reply.length; i++) {
+				if(reply[i].isread == 0) {
+					$.ajax({
+						url: "../../GuDao/User/readMessage",
+						type: "POST",
+						dataType: "json",
+						data: {
+							"id": reply[i].reply_id
+						}
+					});
+					_this.reply[i].isread = 1;
+				}
+			}
+		},
 		// 展开消息
 		openMessage: function(e) {
 			$("#message li").removeClass("open-state").addClass("close-state");
@@ -275,6 +304,21 @@ new Vue({
 		// 关闭消息
 		closeMessage: function(e) {
 			$(e.target).parents("li").removeClass("open-state").addClass("close-state");
+			if(!$(e.target).parents("li").hasClass("read")) {
+				$.ajax({
+					url: "../../GuDao/User/readMessage",
+					type: "POST",
+					dataType: "json",
+					data: {
+						"id": $(e.target).parent().attr("index")
+					},
+					success: function(result) {
+						if(result.code == 200) {
+							$(e.target).parents("li").addClass("read");
+						}
+					}
+				});
+			}
 		},
 		// 发送回复
 		sendReply: function(e) {

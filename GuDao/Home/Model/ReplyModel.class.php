@@ -31,7 +31,7 @@ class ReplyModel extends Model {
 	public function hasUnreadMessage($id) {
 		$reply = new ReplyModel();
 		$map["target_id"] = $id;
-		$map["read"] = 0;
+		$map["isRead"] = 0;
 		$result = $reply->where($map)->select();
 		return $result;
 	}
@@ -41,7 +41,7 @@ class ReplyModel extends Model {
 	public function readMessage($id) {
 		$reply = new ReplyModel();
 		$map["reply_id"] = $id;
-		$date["read"] = 1;
+		$date["isRead"] = 1;
 		$result = $reply->where($map)->save($date);
 		return $result;
 	}

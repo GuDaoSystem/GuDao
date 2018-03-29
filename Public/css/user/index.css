@@ -414,12 +414,21 @@
 #message {
 	padding: 2rem 12rem 0;
 }
-#message ul {}
+
+
+#message .read-all {
+	text-align: right;
+}
+#message .read-all button {
+    padding: 0.2rem 1rem;
+	font-size: 1.2rem;
+}
+
+
 #message ul li {
 	padding: 1rem;
 	border-bottom: 1px solid #333;
 }
-
 
 #message ul li .content {
 	position: relative;
@@ -437,12 +446,12 @@
 	right: 3px;
 	top: 3px;
 }
-#message ul li .content.read,
-#message ul li .content.read p a,
-#message ul li .content.read span {
+#message ul li.read .content,
+#message ul li.read .content p a,
+#message ul li.read .content span {
 	color: #333;
 }
-#message ul li .content.read p a:hover {
+#message ul li.read .content p a:hover {
 	color: #ffd700;
 }
 
