@@ -8,13 +8,11 @@ $(function() {
 
 
 	// 检查登录状态
-	// sessionStorage.setItem("userID", 1);
-
 	$.ajax({
 		url: "../../GuDao/Index/checkLogin",
 		dataType: "json",
 		success: function(result) {
-			// console.log(result);
+			console.log(result);
 			if(result.code === 200) {
 				$(".didnotLogin").hide();
 				var data = result.data;

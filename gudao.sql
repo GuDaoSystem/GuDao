@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2018-03-18 09:51:26
+-- Generation Time: 2018-03-29 09:32:55
 -- 服务器版本： 5.6.20
 -- PHP Version: 5.5.15
 
@@ -159,7 +159,7 @@ INSERT INTO `band` (`band_id`, `band_name`, `band_intro`, `band_cover`, `band_in
 (42, '幽闭猫', '我们如同一只懵逼的猫\r\n跟致幻剂一起被薛定谔幽闭在人生这个狭小的盒子里\r\n有时磕多了槟榔狂躁四溢\r\n有时幽闭到抑郁垂死呻吟\r\n生死未卜的叠加状态，致死之前先致幻一把\r\nI’m the cat\r\nand UbCat', 'cover.jpg', 'Y'),
 (43, '好风水', '从前华立有个不知名的小样乐队，\r\n后来因为风水不好，改名了。\r\n为了乐队以后能有长期的好风水，\r\n大家都在一直努力中。\r\n希望为普罗大众带去好风水，好运气。', 'cover.jpg', 'H'),
 (44, 'Shameless', '', 'cover.jpg', 'S'),
-(45, '5WAG', '我们可能是一个车祸乐队，也可能因为主唱没来演出，所以不会车祸。\r\n主唱是ODDope，他说唱很厉害，我们要陪他玩，要怪就怪他。', 'cover.jpg', ''),
+(45, '5WAG', '我们可能是一个车祸乐队，也可能因为主唱没来演出，所以不会车祸。\r\n主唱是ODDope，他说唱很厉害，我们要陪他玩，要怪就怪他。', 'cover.jpg', '#'),
 (46, 'ALPACA', 'Alpaca是来自上海的Sludge Metal乐队，成立于2015年末，成员分别来自四个不同的地区(加拿大、塞尔维亚、台湾、秘鲁)。风格深受Down、Eyehategod、Crowbar、Corrosion of Conformity、Red Fang、Mastodon与Melvins的影响，沉重的降调蓝调是Alpaca的标识。乐队同时负责主导组织一年一度的SHANGHELLFEST音乐节与两个月一次的SHANGHORRORFEST音乐节。', '', 'A'),
 (47, 'HEXFIRE', 'HEXFIRE是广州的敲击金属乐队，成立于2012年底。\r\n2015年11月HEXFIRE发行了同名EP。\r\n\r\n成员：\r\n陈穗彬 - 吉他&主唱\r\n林嘉豪 - 吉他\r\n金石开 - 贝斯&主唱', 'cover.jpg', 'H'),
 (48, '堆填区', '堆填区 Landfills\r\n[我们在虚浮年代里分泌出病态的喜怒哀乐,\r\n过份得意地瑟缩在这座巨大的堆填区狂欢.]\r\n \r\n乐队诞生于2013年中,最初的开端是由贝斯手方舟、鼓手暐潇与吉他手思帆组成的一支不成形的朋克乐队。\r\n \r\n正式成立于2014年初,继主唱泽荣加入了其中后,乐队风格及阵容再次正式改变及确立。我们不断地尝试着去延伸属于九十年代最真实的噪音,并重新孕育出属于当今时代却又截然不同的风格与思想。\r\n \r\n风格:Alternative Rock(另类摇滚)/Garage punk(车库朋克)/ Post-Grunge(后垃圾)为主。', 'cover.jpg', 'D'),
@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `comment_time` datetime NOT NULL COMMENT '评论时间',
   `comment_target` int(1) NOT NULL COMMENT '评论目标（1为演出，2为乐队）',
   `target_id` int(10) NOT NULL COMMENT '目标ID'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- 转存表中的数据 `comment`
@@ -196,7 +196,9 @@ INSERT INTO `comment` (`comment_id`, `comment_content`, `user_id`, `comment_time
 (17, '测试测试测试测试', 1, '2018-03-08 16:13:42', 1, 1),
 (18, 'test', 1, '2018-03-08 16:14:35', 1, 1),
 (19, '啊啊啊啊啊啊', 1, '2018-03-08 16:16:09', 1, 1),
-(20, '你最牛逼！', 1, '2018-03-08 16:35:37', 1, 1);
+(20, '你最牛逼！', 1, '2018-03-08 16:35:37', 1, 1),
+(21, 'testtest', 1, '2018-03-22 10:09:36', 2, 5),
+(22, 'loadinginginging', 1, '2018-03-29 10:39:43', 2, 8);
 
 -- --------------------------------------------------------
 
@@ -344,7 +346,7 @@ CREATE TABLE IF NOT EXISTS `reply` (
   `user_id` int(10) NOT NULL COMMENT '回复用户ID',
   `target_id` int(10) NOT NULL COMMENT '被回复用户ID',
   `isRead` int(1) NOT NULL DEFAULT '0' COMMENT '是否已读（0为未读，1为已读）'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- 转存表中的数据 `reply`
@@ -356,7 +358,10 @@ INSERT INTO `reply` (`reply_id`, `comment_id`, `reply_content`, `reply_time`, `u
 (4, 15, '你最牛逼！', '2018-03-08 16:41:48', 1, 1, 1),
 (5, 14, '你最牛逼！', '2018-03-08 16:42:09', 1, 1, 1),
 (6, 15, '你也牛逼！', '2018-03-08 16:48:16', 1, 1, 1),
-(7, 1, '555555555', '2018-03-16 11:49:15', 1, 5, 0);
+(7, 1, '555555555', '2018-03-16 11:49:15', 1, 5, 0),
+(8, 21, '赞7你！', '2018-03-22 10:13:52', 1, 1, 1),
+(9, 21, '再赞7你！', '2018-03-22 10:14:26', 1, 1, 1),
+(10, 1, '啊啊啊啊啊啊啊', '2018-03-27 12:21:19', 1, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -374,14 +379,14 @@ CREATE TABLE IF NOT EXISTS `show` (
   `show_ticket` int(3) NOT NULL DEFAULT '0' COMMENT '演出门票',
   `show_poster` mediumtext COMMENT '演出海报',
   `show_state` int(1) NOT NULL DEFAULT '1' COMMENT '演出状态（1为预售，2为取消，3为变更，4为结束）'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- 转存表中的数据 `show`
 --
 
 INSERT INTO `show` (`show_id`, `show_name`, `show_time`, `show_place`, `show_address`, `show_message`, `show_ticket`, `show_poster`, `show_state`) VALUES
-(1, '未来现场Future Live 2017 广州站', '2017-11-18 19:00:00', 'Encore LiveClub', '广州大学城南亭商业区南亭大道35号顶层', '闪耀而糜烂，自由又迷失\r\n宏伟而扭曲，脆弱且纯粹\r\n\r\n首先跟大家说声抱歉！这场演出因不可抗力必须延期。玛丽简因档期问题无法继续参演。很痛心玛丽简的退出！为表诚意，我们另外邀请了2支优秀乐队参演。由4队变5队，票价不变，酒水不变！11月18日晚7点 ，依然在Encore！一场肤浅的演出，带来流行/宅核/摇滚/英伦/电子核五种万花筒般的迷！预售：¥21(不含酒)¥30（含1支啤酒） 现场：¥40（含1支啤酒）', 40, '1.jpg', 3),
+(1, '未来现场Future Live 2017 广州站', '2017-11-18 19:00:00', 'Encore LiveClub', '广州大学城南亭商业区南亭大道35号顶层', '闪耀而糜烂，自由又迷失\r\n宏伟而扭曲，脆弱且纯粹\r\n\r\n首先跟大家说声抱歉！\r\n这场演出因不可抗力必须延期。\r\n玛丽简因档期问题无法继续参演。\r\n很痛心玛丽简的退出！\r\n为表诚意，我们另外邀请了2支优秀乐队参演。\r\n由4队变5队，票价不变，酒水不变！\r\n11月18日晚7点 ，依然在Encore！\r\n\r\n一场肤浅的演出，带来流行/宅核/摇滚/英伦/电子核五种万花筒般的迷！\r\n预售：¥21(不含酒)\r\n¥30（含1支啤酒）\r\n现场：¥40（含1支啤酒）', 40, '1.jpg', 3),
 (2, '“音宴”音乐会', '2017-12-14 19:30:00', '广东外语外贸大学', '学生活动中心二楼', '既然你有勇气点开\r\n我们的故事就开始了\r\n\r\n\r\n门票获取\r\n\r\n想来吗？\r\n可是，老规矩，\r\n门票！！！\r\n门票领取途径？\r\n悄咪咪告诉你\r\n\r\n一、刷脸\r\n各种狂撩霏阳管理层大佬\r\n卖萌，请奶茶，请宵夜，\r\n软磨硬泡，\r\n最终取得门票\r\n\r\n二、成为霏阳会员\r\n（一入霏阳深似海）\r\n即可享有赠票特权\r\n可无条件获得门票\r\n\r\n三、玩游戏\r\n去霏阳的摊宣玩游戏拿呗\r\n\r\n\r\n摊宣\r\n\r\n12.13  \r\n中午 11：30-13：00  \r\n下午 17：00-18：30  \r\n隧道口  \r\n霏阳摊宣 等你来咯', 0, '2.jpg', 1),
 (3, '广工大地三校联演', '2017-12-16 17:00:00', 'Encore LiveClub', '广州大学城南亭商业区南亭大道35号顶层', '大地卅载之际，三校区再次聚首用最震撼的音符，撼动这土地这一年的大地专场是你的专场也是每一个人的专场', 0, '3.jpg', 1),
 (4, '11.11光棍重型夜', '2017-11-11 20:00:00', 'Encore LiveClub', '广州大学城南亭商业区南亭大道35号顶层', '继周年重型专场系列-毁灭音场-之后，我们在重型道路上再接再厉，将更好的音乐带给大家。HILLTOP三大巨头乐队将在11.11与你一起high！这个光棍节没有光棍，因为，你已经被我们的音乐包围啦~~！！这个光棍节我们在ENCORE live house！！等着你！！预售：￥40现场：￥60', 60, '4.jpg', 1),
@@ -405,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `support` (
   `user_id` int(10) NOT NULL COMMENT '用户ID',
   `band_id` int(10) NOT NULL COMMENT '乐队ID',
   `support_time` date NOT NULL COMMENT '支持时间'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- 转存表中的数据 `support`
@@ -413,10 +418,11 @@ CREATE TABLE IF NOT EXISTS `support` (
 
 INSERT INTO `support` (`support_id`, `user_id`, `band_id`, `support_time`) VALUES
 (1, 1, 2, '2017-11-01'),
-(2, 1, 8, '2017-12-01'),
 (4, 5, 1, '2017-10-17'),
 (5, 5, 2, '2017-12-12'),
-(7, 5, 4, '2017-12-22');
+(7, 5, 4, '2017-12-22'),
+(10, 1, 11, '2018-03-22'),
+(11, 1, 8, '2018-03-29');
 
 -- --------------------------------------------------------
 
@@ -433,16 +439,18 @@ CREATE TABLE IF NOT EXISTS `user` (
   `birthday` date DEFAULT NULL COMMENT '出生日期',
   `headshot` mediumtext COMMENT '头像链接',
   `intro` longtext NOT NULL COMMENT '简介（默认为“孤岛没有简介”）',
-  `token` tinytext NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+  `token` tinytext COMMENT '自动登录验证信息',
+  `expire` datetime DEFAULT NULL COMMENT '自动登录过期时间'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- 转存表中的数据 `user`
 --
 
-INSERT INTO `user` (`user_id`, `email`, `password`, `username`, `gender`, `birthday`, `headshot`, `intro`, `token`) VALUES
-(1, 'ng.winglam@qq.com', '3049a1f0f1c808cdaa4fbed0e01649b1', 'NgWingLam', 'F', '1996-06-06', '1.jpg', '我是吴颖琳。', '6700803f95f17d2443d81a0e5e55fd2b'),
-(5, 'test@test.com', '2a04fb82ed0892fb753d00b6812aa63c', '孤岛没有名字', 'M', NULL, NULL, '孤岛没有简介', '3be0faa3f3d2e2cb15daa51f30dfb718');
+INSERT INTO `user` (`user_id`, `email`, `password`, `username`, `gender`, `birthday`, `headshot`, `intro`, `token`, `expire`) VALUES
+(1, 'ng.winglam@qq.com', '3049a1f0f1c808cdaa4fbed0e01649b1', 'NgWingLam', 'F', '1996-06-06', '1.jpg', '我是吴颖琳。', NULL, NULL),
+(5, 'test@test.com', '2a04fb82ed0892fb753d00b6812aa63c', '孤岛没有名字', 'M', NULL, NULL, '孤岛没有简介', NULL, NULL),
+(7, '479086484@qq.com', '3049a1f0f1c808cdaa4fbed0e01649b1', '孤岛没有名字', 'M', NULL, NULL, '孤岛没有简介', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -548,7 +556,7 @@ MODIFY `band_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '乐队ID',AUTO_INCREME
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-MODIFY `comment_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '评论ID',AUTO_INCREMENT=21;
+MODIFY `comment_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '评论ID',AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `notice`
 --
@@ -563,22 +571,22 @@ MODIFY `picture_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '图片ID',AUTO_INCR
 -- AUTO_INCREMENT for table `reply`
 --
 ALTER TABLE `reply`
-MODIFY `reply_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '回复ID',AUTO_INCREMENT=8;
+MODIFY `reply_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '回复ID',AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `show`
 --
 ALTER TABLE `show`
-MODIFY `show_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '演出ID',AUTO_INCREMENT=14;
+MODIFY `show_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '演出ID',AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `support`
 --
 ALTER TABLE `support`
-MODIFY `support_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '支持ID',AUTO_INCREMENT=8;
+MODIFY `support_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '支持ID',AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户ID',AUTO_INCREMENT=10;
+MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户ID',AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `want`
 --

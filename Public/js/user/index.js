@@ -57,7 +57,7 @@ new Vue({
 				success: function(result) {
 					if(result.code === 200) {
 						var data = result.data;
-						if(data.age) {
+						if(data.birthday) {
 							data.age = new Date().getFullYear() - data.birthday.split("-")[0];
 						}
 						_this.info = data;

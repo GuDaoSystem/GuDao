@@ -30,11 +30,32 @@ class IndexController extends Controller {
 
 
 
-    /* -------------------- 登录页面 -------------------- */
+    /* -------------------- 通用 -------------------- */
 
     // 检查是否登录
     public function checkLogin() {
-    	$user = new UserModel();
+        $user = new UserModel();
+
+        if(cookie("GuDaoUser")) {
+            $param["user_id"] = cookie("GuDaoUser")[0];
+            $param["token"] = cookie("GuDaoUser")[1];
+            $data = $user->checkToken($param)[0];
+            $param = null;
+            if($data) {
+                $param["token"] = md5($data["email"].time().$data["password"]);
+                $param["expire"] = $data["expire"];
+                if($user->setAutoLogin($data["user_id"], $param)) {
+                    cookie("GuDaoUser", array($data["user_id"], $param["token"]), (strtotime($data["expire"]) - time()), "/");
+                }
+                session("user", $data["user_id"]);
+            } else {
+                $param["token"] = null;
+                $param["expire"] = null;
+                $user->setAutoLogin(cookie("GuDaoUser")[0], $param);
+                cookie("GuDaoUser", null);
+            }
+        }
+    	
     	$data = $user->getUserBasicInfo(session("user"));
     	if($data) {
     		$result["code"] = 200;
@@ -49,7 +70,12 @@ class IndexController extends Controller {
 
     // 退出登录
     public function logout() {
+        $user = new UserModel();
+        $param["token"] = null;
+        $param["expire"] = null;
+        $data = $user->setAutoLogin(session("user"), $param);
     	session("user", null);
+        cookie("GuDaoUser", null);
     }
 
 
@@ -170,16 +196,17 @@ class IndexController extends Controller {
         $user = new UserModel();
         $data = $user->login($param)[0];
         if($data) {
-            if($_POST["autoLogin"]) {
-                $data["token"] = md5($_POST["email"].time().md5($_POST["password"]));
-            } else {
-                $data["token"] = null;
+            if($_POST["autoLogin"] == "true") {
+                $param = null;
+                $param["token"] = md5($_POST["email"].time().md5($_POST["password"]));
+                $param["expire"] = date("Y-m-d H:i:s", strtotime("+5 day"));
+                if($user->setAutoLogin($data["user_id"], $param)) {
+                    cookie("GuDaoUser", array($data["user_id"], $param["token"]), 60 * 60 * 24 * 5, "/");
+                }
             }
-            $user->setToken($data["user_id"], $data["token"]);
             session("user", $data["user_id"]);
             $result["code"] = 200;
             $result["msg"] = "登录成功";
-            // $result["data"] = $data;
         } else {
             $result["code"] = 201;
             $result["msg"] = "登录失败";
@@ -188,25 +215,25 @@ class IndexController extends Controller {
     }
 
     // 自动登录
-    function autoLogin() {
-        $param["user_id"] = $_POST["id"];
-        $param["token"] = $_POST["token"];
-        $user = new UserModel();
-        $data = $user->checkToken($param)[0];
-        if($data) {
-            $data["token"] = md5($data["email"].time().$data["password"]);
-            session("user", $param["user_id"]);
-            $result["code"] = 200;
-            $result["msg"] = "自动登录成功";
-            // $result["data"] = $data;
-        } else {
-            $data["token"] = null;
-            $result["code"] = 201;
-            $result["msg"] = "自动登录失败";
-        }
-        $user->setToken($_POST["id"], $data["token"]);
-        $this->ajaxReturn($result);
-    }
+    // function autoLogin() {
+    //     $param["user_id"] = $_POST["id"];
+    //     $param["token"] = $_POST["token"];
+    //     $user = new UserModel();
+    //     $data = $user->checkToken($param)[0];
+    //     if($data) {
+    //         $data["token"] = md5($data["email"].time().$data["password"]);
+    //         session("user", $param["user_id"]);
+    //         $result["code"] = 200;
+    //         $result["msg"] = "自动登录成功";
+    //         // $result["data"] = $data;
+    //     } else {
+    //         $data["token"] = null;
+    //         $result["code"] = 201;
+    //         $result["msg"] = "自动登录失败";
+    //     }
+    //     $user->setToken($_POST["id"], $data["token"]);
+    //     $this->ajaxReturn($result);
+    // }
 
 
 

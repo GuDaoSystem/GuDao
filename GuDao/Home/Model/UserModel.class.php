@@ -10,10 +10,16 @@ class UserModel extends Model {
     }
 
     // 设置token
-    public function setToken($id, $token) {
+    // public function setToken($id, $token) {
+    //     $user = new UserModel();
+    //     $map["user_id"] = $id;
+    //     $param["token"] = $token;
+    //     $result = $user->where($map)->save($param);
+    //     return $result;
+    // }
+    public function setAutoLogin($id, $param) {
         $user = new UserModel();
         $map["user_id"] = $id;
-        $param["token"] = $token;
         $result = $user->where($map)->save($param);
         return $result;
     }
@@ -21,7 +27,8 @@ class UserModel extends Model {
     // 检查token
     public function checkToken($param) {
         $user = new UserModel();
-        $result = $user->where($param)->field("user_id, username, headshot")->select();
+        // $result = $user->where($param)->field("user_id, username, headshot")->select();
+        $result = $user->where($param)->select();
         return $result;
     }
 
