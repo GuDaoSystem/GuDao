@@ -54,15 +54,15 @@ new Vue({
 					if(result.code === 200) {
 						_this.loginFlag = true;
 						_this.user = result.data;
-						_this.getBand();
-						_this.getSupportNum();
 						_this.checkSupport();
-						_this.getShows();
-						_this.getPicture();
-						_this.getComment();
 					}
 				}
 			});
+			_this.getBand();
+			_this.getSupportNum();
+			_this.getShows();
+			_this.getPicture();
+			_this.getComment();
 		},
 		// // 检查是否已登录
 		// checkLogin: function() {

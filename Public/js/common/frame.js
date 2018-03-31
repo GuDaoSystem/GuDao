@@ -1,10 +1,10 @@
 $(function() {
 	// 加载动画
-	$(document).ajaxStart(function() {
-		setLoading();
-	}).ajaxStop(function() {
-		removeLoading();
-	});
+	// $(document).ajaxStart(function() {
+	// 	setLoading();
+	// }).ajaxStop(function() {
+	// 	removeLoading();
+	// });
 
 
 	// 检查登录状态

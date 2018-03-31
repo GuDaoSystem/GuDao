@@ -43,7 +43,7 @@ new Vue({
 		init: function() {
 			if(location.hash == "#message") {
 				$(".tablist li").removeClass("active");
-				$(".tabList li.tab2").addClass("active");
+				$(".tablist li.tab2").addClass("active");
 				$(".underline")[0].className = "underline";
 				$(".underline").addClass("tab2");
 				$(".tab-pane").removeClass("in active");
@@ -90,7 +90,7 @@ new Vue({
 		// 	console.log(location.hash);
 		// 	if(location.hash == "#message") {
 		// 		$(".tablist li").removeClass("active");
-		// 		$(".tabList li.tab2").addClass("active");
+		// 		$(".tablist li.tab2").addClass("active");
 		// 		$(".underline")[0].className = "underline";
 		// 		$(".underline").addClass("tab2");
 		// 		$(".tab-pane").removeClass("in active");
@@ -176,7 +176,7 @@ new Vue({
 		// 切换至演出选项卡
 		toShowTab: function() {
 			$(".tablist li").removeClass("active");
-			$(".tabList li.tab3").addClass("active");
+			$(".tablist li.tab3").addClass("active");
 			$(".underline")[0].className = "underline";
 			$(".underline").addClass("tab3");
 			$(".tab-pane").removeClass("in active");
@@ -188,7 +188,7 @@ new Vue({
 		// 切换至乐队选项卡
 		toBandTab: function() {
 			$(".tablist li").removeClass("active");
-			$(".tabList li.tab4").addClass("active");
+			$(".tablist li.tab4").addClass("active");
 			$(".underline")[0].className = "underline";
 			$(".underline").addClass("tab4");
 			$(".tab-pane").removeClass("in active");

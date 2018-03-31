@@ -51,14 +51,14 @@ new Vue({
 					if(result.code === 200) {
 						_this.loginFlag = true;
 						_this.user = result.data;
-						_this.getShow();
-						_this.getBand();
-						_this.getWantNum();
 						_this.checkWant();
-						_this.getComment();
 					}
 				}
 			});
+			_this.getShow();
+			_this.getBand();
+			_this.getWantNum();
+			_this.getComment();
 		},
 		// // 检查是否已登录
 		// checkLogin: function() {
