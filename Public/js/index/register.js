@@ -31,11 +31,6 @@ $(function() {
 				required: true,
 				email: true
 			},
-			// code:{
-			// 	required:true,
-			// 	digits:true,
-			// 	maxlength:4
-			// },
 			password: {
 				required: true
 			},
@@ -48,11 +43,6 @@ $(function() {
 				required: "请输入邮箱",
 				email: "邮箱格式有误"
 			},
-			// code:{
-			// 	required:"请输入验证码",
-			// 	digits:"请输入数字",
-			// 	maxlength:"请输入四位数字"
-			// },
 			password:{
 				required: "请输入密码"
 			},
@@ -76,7 +66,6 @@ $(function() {
 				success:function(result){
 					if (result.code === 200){
 						var data = result.data;
-						// sessionStorage.setItem("userID", data.user_id);
 						location.href="home";
 					}
 					else if (result.code === 201 && result.msg === "登录失败"){

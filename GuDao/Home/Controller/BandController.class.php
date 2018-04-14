@@ -1,13 +1,13 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-use Home\Model\BandModel;
-use Home\Model\SupportModel;
 use Home\Model\AttendModel;
-use Home\Model\ShowModel;
-use Home\Model\PictureModel;
+use Home\Model\BandModel;
 use Home\Model\CommentModel;
+use Home\Model\PictureModel;
 use Home\Model\ReplyModel;
+use Home\Model\ShowModel;
+use Home\Model\SupportModel;
 use Home\Model\UserModel;
 class BandController extends Controller {
 	// 渲染页面
@@ -44,6 +44,7 @@ class BandController extends Controller {
         if($_GET["initial"]) {
             $condition["band_initial"] = $_GET["initial"];
         }
+
         $band = new BandModel();
         $data = $band->getBandByPage($startIndex, $pageLength, $condition);
         if(!$data) {
@@ -51,20 +52,20 @@ class BandController extends Controller {
             $result["msg"] = "查询失败";
             $this->ajaxReturn($result);
         }
+        // 按乐队获取支持数量
         for($i = 0; $i < count($data); $i++) {
             if(!$data[$i]) {
                 $result["code"] = 201;
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
-
             $support = new SupportModel();
             $data[$i]["support"] = $support->getUserNumByBand($data[$i]["band_id"]);
         }
-
+        // 按字段排序
         foreach ($data as $key => $item) {
-            $key1[$key] = $item['support'];
-            $key2[$key] = $item['band_name'];
+            $key1[$key] = $item["support"];
+            $key2[$key] = $item["band_name"];
         }
         array_multisort($key1, SORT_DESC, $key2, SORT_ASC, $data);
 
@@ -110,6 +111,7 @@ class BandController extends Controller {
     public function checkSupport() {
         $data["user_id"] = $_POST["user_id"];
         $data["band_id"] = $_POST["band_id"];
+
         $support = new SupportModel();
         if($support->checkSupport($data)) {
             $result["code"] = 200;
@@ -126,6 +128,7 @@ class BandController extends Controller {
         $data["user_id"] = $_POST["user_id"];
         $data["band_id"] = $_POST["band_id"];
         $data["support_time"] = $_POST["time"];
+
         $support = new SupportModel();
         if($support->addSupport($data)) {
             $result["code"] = 200;
@@ -141,6 +144,7 @@ class BandController extends Controller {
     public function deleteSupport() {
         $data["user_id"] = $_POST["user_id"];
         $data["band_id"] = $_POST["band_id"];
+
         $support = new SupportModel();
         if($support->deleteSupport($data)) {
             $result["code"] = 200;
@@ -161,6 +165,7 @@ class BandController extends Controller {
             $result["msg"] = "查询失败";
             $this->ajaxReturn($result);
         }
+        // 获取演出
         for($i = 0; $i < count($showID); $i++) {
             if(!$showID[$i]) {
                 $result["code"] = 201;
@@ -201,6 +206,7 @@ class BandController extends Controller {
     public function getCommentNReply() {
         $data["comment_target"] = $_GET["target"];
         $data["target_id"] = $_GET["id"];
+        
         $comment = new CommentModel();
         $data = $comment->getCommentByTarget($data);
         if(!$data) {
@@ -214,7 +220,7 @@ class BandController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
-
+            // 按评论获取评论者
             $user = new UserModel();
             $data[$i]["user"] = $user->getUserBasicInfo($data[$i]["user_id"]);
             if(!$data[$i]["user"]) {
@@ -222,18 +228,20 @@ class BandController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
-
+            // 按评论获取回复
             $reply = new ReplyModel();
             $data[$i]["reply"] = $reply->getReplyByComment($data[$i]["comment_id"]);
             if($data[$i]["reply"]) {
                 for($j = 0; $j < count($data[$i]["reply"]); $j++) {
                     $user = new UserModel();
+                    // 按回复获取回复用户
                     $data[$i]["reply"][$j]["user"] = $user->getUserBasicInfo($data[$i]["reply"][$j]["user_id"]);
                     if(!$data[$i]["reply"][$j]["user"]) {
                         $result["code"] = 201;
                         $result["msg"] = "查询失败";
                         $this->ajaxReturn($result);
                     }
+                    // 按回复获取被回复用户
                     $data[$i]["reply"][$j]["target"] = $user->getUserBasicInfo($data[$i]["reply"][$j]["target_id"]);
                     if(!$data[$i]["reply"][$j]["target"]) {
                         $result["code"] = 201;
@@ -258,6 +266,7 @@ class BandController extends Controller {
         $data["comment_time"] = $_POST["time"];
         $data["comment_target"] = $_POST["target"];
         $data["target_id"] = $_POST["target_id"];
+
         $comment = new CommentModel();
         $data = $comment->sendComment($data);
         if($data) {
@@ -278,6 +287,7 @@ class BandController extends Controller {
         $data["user_id"] = $_POST["user_id"];
         $data["target_id"] = $_POST["target_id"];
         $data["isRead"] = 0;
+        
         $reply = new ReplyModel();
         $data = $reply->replyComment($data);
         if($data) {

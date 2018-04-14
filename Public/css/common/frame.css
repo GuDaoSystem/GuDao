@@ -123,7 +123,6 @@ div.input label {
 	height: 5.5rem;
 }
 
-
 /* ---------- 已登录二级菜单 ---------- */
 
 .navbar .container .navbar-collapse .didLogin .dropdown {
@@ -183,7 +182,6 @@ div.input label {
 	vertical-align: top;
 }
 
-
 /* ---------- 表单 ---------- */
 
 .navbar .container .navbar-collapse .navbar-form .input-group .form-control {
@@ -213,7 +211,6 @@ div.input label {
 	color: #ffd700;
 }
 
-
 /* ---------- 菜单 ---------- */
 
 .navbar .container .navbar-collapse .navbar-nav li a {
@@ -226,8 +223,6 @@ div.input label {
 .navbar .container .navbar-collapse .navbar-nav li a:hover {
 	background: none;
 }
-
-
 
 
 /* -------------------- 内容 -------------------- */
@@ -245,8 +240,6 @@ div.input label {
 .container .thumbnail {
 	cursor: pointer;
 }
-
-
 
 
 /* -------------------- 返回顶部 -------------------- */
@@ -289,7 +282,6 @@ div.input label {
 	-webkit-animation-fill-mode: forwards;
 }
 
-
 @keyframes showBackToTop { from { bottom: -3rem; opacity: 0; } to { bottom: 4rem; opacity: 1; } }
 @-moz-keyframes showBackToTop { from { bottom: -3rem; opacity: 0; } to { bottom: 4rem; opacity: 1; } }
 @-webkit-keyframes showBackToTop { from { bottom: -3rem; opacity: 0; } to { bottom: 4rem; opacity: 1; } }
@@ -299,8 +291,6 @@ div.input label {
 @-moz-keyframes hideBackToTop { from { bottom: 4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
 @-webkit-keyframes hideBackToTop { from { bottom: 4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
 @-o-keyframes hideBackToTop { from { bottom: 4rem; opacity: 1; } to { bottom: -3rem; opacity: 0; } }
-
-
 
 
 /* -------------------- 页脚 -------------------- */
@@ -313,9 +303,7 @@ footer {
 }
 
 
-
-
-/* -------------------- 没有相关数据/没有更多数据 -------------------- */
+/* -------------------- 没有相关数据 & 没有更多数据 -------------------- */
 
 .no-data {
 	padding: 2rem 1rem;
@@ -351,8 +339,6 @@ footer {
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
 }
-
-
 
 
 /* -------------------- 弹窗 -------------------- */
@@ -403,7 +389,6 @@ footer {
 	font-size: 1.2rem;
 }
 
-
 /* ---------- 查看原图 ---------- */
 
 .alert-box.image .box {
@@ -421,8 +406,6 @@ footer {
 }
 
 
-
-
 /* -------------------- 加载动画 -------------------- */
 
 .loading {
@@ -435,10 +418,7 @@ footer {
 }
 
 
-
-
 /* -------------------- 时间选择器 -------------------- */
-
 
 .datetimepicker div table thead tr th,
 .datetimepicker div table tbody tr td {
@@ -446,15 +426,3 @@ footer {
 	height: 3rem;
 	color: #0d0d0d;
 }
-/*.datetimepicker div table thead tr th.switch:hover,
-.datetimepicker div table tbody tr td:hover {
-	background: #ffd700 !important;
-	border-radius: 0;
-	text-shadow: none;
-}
-.datetimepicker div table tbody tr td.active {
-	background: #ffd700 !important;
-	border-radius: 0;
-	color: #f2f2f2;
-	text-shadow: none;
-}*/

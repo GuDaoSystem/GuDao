@@ -1,13 +1,13 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-use Home\Model\ShowModel;
-use Home\Model\WantModel;
 use Home\Model\AttendModel;
 use Home\Model\BandModel;
 use Home\Model\CommentModel;
 use Home\Model\ReplyModel;
+use Home\Model\ShowModel;
 use Home\Model\UserModel;
+use Home\Model\WantModel;
 class ShowController extends Controller {
 	// 渲染页面
     public function index(){
@@ -49,6 +49,7 @@ class ShowController extends Controller {
         if($_GET["time"]) {
             $condition["show_time"] = array("like", $_GET["time"]."%");
         }
+
         $show = new ShowModel();
         $data = $show->getShowByCondition($startIndex, $pageLength, $condition);
         if(!$data) {
@@ -62,13 +63,13 @@ class ShowController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
-
+            // 按演出获取想看数量
             $want = new WantModel();
             $data[$i]["want"] = $want->getUserNumByShow($data[$i]["show_id"]);
             if(!$data[$i]["want"]) {
                 $data[$i]["want"] = 0;
             }
-
+            // 按演出获取参演乐队
             $attend = new AttendModel();
             $bandID = $attend->getBandIDByShow($data[$i]["show_id"]);
             if(!$bandID) {
@@ -76,6 +77,7 @@ class ShowController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
+            // 获取乐队
             for($j = 0; $j < count($bandID); $j++) {
                 if(!$bandID[$j]) {
                     $result["code"] = 201;
@@ -91,18 +93,21 @@ class ShowController extends Controller {
                 }
             }
         }
+
         $result["code"] = 200;
         $result["msg"] = "查询成功";
         $result["data"] = $data;
+
+        // 按热门排序
         if($_GET["sort"] == "hot") {
             foreach($result["data"] as $dataItem) {
                 $sort[] = $dataItem["want"];
             }
             array_multisort($sort, SORT_DESC, $result["data"]);
         }
+
         $this->ajaxReturn($result);
     }
-
 
 
     /* -------------------- 演出详细页 -------------------- */
@@ -131,6 +136,7 @@ class ShowController extends Controller {
             $result["msg"] = "查询失败";
             $this->ajaxReturn($result);
         }
+        // 获取乐队
         for($i = 0; $i < count($bandID); $i++) {
             if(!$bandID[$i]) {
                 $result["code"] = 201;
@@ -171,6 +177,7 @@ class ShowController extends Controller {
     public function checkWant() {
         $data["user_id"] = $_POST["user_id"];
         $data["show_id"] = $_POST["show_id"];
+
         $want = new WantModel();
         if($want->checkWant($data)) {
             $result["code"] = 200;
@@ -182,11 +189,12 @@ class ShowController extends Controller {
         $this->ajaxReturn($result);
     }
 
-    // 新增想看
+    // 新增想看记录
     public function addWant() {
         $data["user_id"] = $_POST["user_id"];
         $data["show_id"] = $_POST["show_id"];
         $data["want_time"] = $_POST["time"];
+
         $want = new WantModel();
         if($want->addWant($data)) {
             $result["code"] = 200;
@@ -198,10 +206,11 @@ class ShowController extends Controller {
         $this->ajaxReturn($result);
     }
 
-    // 删除想看
+    // 删除想看记录
     public function deleteWant() {
         $data["user_id"] = $_POST["user_id"];
         $data["show_id"] = $_POST["show_id"];
+
         $want = new WantModel();
         if($want->deleteWant($data)) {
             $result["code"] = 200;
@@ -217,6 +226,7 @@ class ShowController extends Controller {
     public function getCommentNReply() {
         $data["comment_target"] = $_GET["target"];
         $data["target_id"] = $_GET["id"];
+
         $comment = new CommentModel();
         $data = $comment->getCommentByTarget($data);
         if(!$data) {
@@ -230,7 +240,7 @@ class ShowController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
-
+            // 按评论获取评论者
             $user = new UserModel();
             $data[$i]["user"] = $user->getUserBasicInfo($data[$i]["user_id"]);
             if(!$data[$i]["user"]) {
@@ -238,18 +248,20 @@ class ShowController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
-
+            // 按评论获取回复
             $reply = new ReplyModel();
             $data[$i]["reply"] = $reply->getReplyByComment($data[$i]["comment_id"]);
             if($data[$i]["reply"]) {
                 for($j = 0; $j < count($data[$i]["reply"]); $j++) {
                     $user = new UserModel();
+                    // 按回复获取回复用户
                     $data[$i]["reply"][$j]["user"] = $user->getUserBasicInfo($data[$i]["reply"][$j]["user_id"]);
                     if(!$data[$i]["reply"][$j]["user"]) {
                         $result["code"] = 201;
                         $result["msg"] = "查询失败";
                         $this->ajaxReturn($result);
                     }
+                    // 按回复获取被回复用户
                     $data[$i]["reply"][$j]["target"] = $user->getUserBasicInfo($data[$i]["reply"][$j]["target_id"]);
                     if(!$data[$i]["reply"][$j]["target"]) {
                         $result["code"] = 201;
@@ -257,7 +269,6 @@ class ShowController extends Controller {
                         $this->ajaxReturn($result);
                     }
                 }
-                
             }
         }
 
@@ -274,6 +285,7 @@ class ShowController extends Controller {
         $data["comment_time"] = $_POST["time"];
         $data["comment_target"] = $_POST["target"];
         $data["target_id"] = $_POST["target_id"];
+
         $comment = new CommentModel();
         $data = $comment->sendComment($data);
         if($data) {
@@ -294,6 +306,7 @@ class ShowController extends Controller {
         $data["user_id"] = $_POST["user_id"];
         $data["target_id"] = $_POST["target_id"];
         $data["isRead"] = 0;
+        
         $reply = new ReplyModel();
         $data = $reply->replyComment($data);
         if($data) {

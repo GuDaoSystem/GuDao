@@ -2,6 +2,7 @@
 namespace Home\Model;
 use Think\Model;
 class ShowModel extends Model {
+    
     // 按页获取所有演出
     public function getShowByPage($startIndex, $pageLength) {
     	$show = new ShowModel();

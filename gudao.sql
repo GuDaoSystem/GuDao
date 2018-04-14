@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2018-03-29 09:32:55
+-- Generation Time: 2018-04-14 09:20:23
 -- 服务器版本： 5.6.20
 -- PHP Version: 5.5.15
 
@@ -105,8 +105,8 @@ INSERT INTO `attend` (`attend_id`, `band_id`, `show_id`) VALUES
 CREATE TABLE IF NOT EXISTS `band` (
 `band_id` int(10) NOT NULL COMMENT '乐队ID',
   `band_name` tinytext NOT NULL COMMENT '乐队名称',
-  `band_intro` longtext NOT NULL COMMENT '乐队介绍（默认为“孤岛乐队没有介绍“）',
-  `band_cover` mediumtext COMMENT '乐队封面',
+  `band_intro` mediumtext NOT NULL COMMENT '乐队介绍（默认为“孤岛乐队没有介绍“）',
+  `band_cover` tinytext COMMENT '乐队封面',
   `band_initial` char(1) NOT NULL COMMENT '乐队名称首字母'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
 
@@ -173,7 +173,7 @@ INSERT INTO `band` (`band_id`, `band_name`, `band_intro`, `band_cover`, `band_in
 
 CREATE TABLE IF NOT EXISTS `comment` (
 `comment_id` int(10) NOT NULL COMMENT '评论ID',
-  `comment_content` mediumtext NOT NULL COMMENT '评论内容',
+  `comment_content` tinytext NOT NULL COMMENT '评论内容',
   `user_id` int(10) NOT NULL COMMENT '评论者ID',
   `comment_time` datetime NOT NULL COMMENT '评论时间',
   `comment_target` int(1) NOT NULL COMMENT '评论目标（1为演出，2为乐队）',
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `notice` (
 `notice_id` int(10) NOT NULL COMMENT '通知ID',
   `notice_type` int(1) NOT NULL DEFAULT '1' COMMENT '通知类型（1为预售，2为取消，3为变更）',
   `notice_time` date NOT NULL COMMENT '通知时间',
-  `notice_content` longtext NOT NULL COMMENT '通知内容',
+  `notice_content` mediumtext NOT NULL COMMENT '通知内容',
   `show_id` int(10) NOT NULL COMMENT '演出ID'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
@@ -253,7 +253,7 @@ INSERT INTO `notice` (`notice_id`, `notice_type`, `notice_time`, `notice_content
 
 CREATE TABLE IF NOT EXISTS `picture` (
 `picture_id` int(10) NOT NULL COMMENT '图片ID',
-  `picture_url` mediumtext NOT NULL COMMENT '图片链接',
+  `picture_url` tinytext NOT NULL COMMENT '图片链接',
   `band_id` int(10) NOT NULL COMMENT '乐队ID'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=70 ;
 
@@ -341,7 +341,7 @@ INSERT INTO `picture` (`picture_id`, `picture_url`, `band_id`) VALUES
 CREATE TABLE IF NOT EXISTS `reply` (
 `reply_id` int(10) NOT NULL COMMENT '回复ID',
   `comment_id` int(10) NOT NULL COMMENT '评论ID',
-  `reply_content` mediumtext NOT NULL COMMENT '回复内容',
+  `reply_content` tinytext NOT NULL COMMENT '回复内容',
   `reply_time` datetime NOT NULL COMMENT '回复时间',
   `user_id` int(10) NOT NULL COMMENT '回复用户ID',
   `target_id` int(10) NOT NULL COMMENT '被回复用户ID',
@@ -374,10 +374,10 @@ CREATE TABLE IF NOT EXISTS `show` (
   `show_name` tinytext NOT NULL COMMENT '演出名称',
   `show_time` datetime NOT NULL COMMENT '演出时间',
   `show_place` tinytext NOT NULL COMMENT '演出地点',
-  `show_address` mediumtext NOT NULL COMMENT '演出具体地址',
+  `show_address` tinytext NOT NULL COMMENT '演出具体地址',
   `show_message` longtext COMMENT '演出信息',
   `show_ticket` int(3) NOT NULL DEFAULT '0' COMMENT '演出门票',
-  `show_poster` mediumtext COMMENT '演出海报',
+  `show_poster` tinytext COMMENT '演出海报',
   `show_state` int(1) NOT NULL DEFAULT '1' COMMENT '演出状态（1为预售，2为取消，3为变更，4为结束）'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
@@ -437,20 +437,19 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` tinytext NOT NULL COMMENT '用户名（默认为“孤岛没有名字”）',
   `gender` char(1) NOT NULL DEFAULT 'M' COMMENT '性别',
   `birthday` date DEFAULT NULL COMMENT '出生日期',
-  `headshot` mediumtext COMMENT '头像链接',
-  `intro` longtext NOT NULL COMMENT '简介（默认为“孤岛没有简介”）',
+  `headshot` tinytext COMMENT '头像链接',
+  `intro` mediumtext NOT NULL COMMENT '简介（默认为“孤岛没有简介”）',
   `token` tinytext COMMENT '自动登录验证信息',
   `expire` datetime DEFAULT NULL COMMENT '自动登录过期时间'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- 转存表中的数据 `user`
 --
 
 INSERT INTO `user` (`user_id`, `email`, `password`, `username`, `gender`, `birthday`, `headshot`, `intro`, `token`, `expire`) VALUES
-(1, 'ng.winglam@qq.com', '3049a1f0f1c808cdaa4fbed0e01649b1', 'NgWingLam', 'F', '1996-06-06', '1.jpg', '我是吴颖琳。', NULL, NULL),
-(5, 'test@test.com', '2a04fb82ed0892fb753d00b6812aa63c', '孤岛没有名字', 'M', NULL, NULL, '孤岛没有简介', NULL, NULL),
-(7, '479086484@qq.com', '3049a1f0f1c808cdaa4fbed0e01649b1', '孤岛没有名字', 'M', NULL, NULL, '孤岛没有简介', NULL, NULL);
+(1, 'ng.winglam@qq.com', 'd4fbb7d8d5603db43ac2094f5955787c', 'NgWingLam', 'F', '1996-06-06', '1.jpg', '我是吴颖琳。', NULL, NULL),
+(5, 'test@test.com', '2a04fb82ed0892fb753d00b6812aa63c', '孤岛没有名字', 'M', NULL, NULL, '孤岛没有简介', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -463,7 +462,7 @@ CREATE TABLE IF NOT EXISTS `want` (
   `user_id` int(10) NOT NULL COMMENT '用户ID',
   `show_id` int(10) NOT NULL COMMENT '演出ID',
   `want_time` date NOT NULL COMMENT '想看时间'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
 -- 转存表中的数据 `want`
@@ -472,7 +471,9 @@ CREATE TABLE IF NOT EXISTS `want` (
 INSERT INTO `want` (`want_id`, `user_id`, `show_id`, `want_time`) VALUES
 (5, 5, 1, '2018-03-14'),
 (16, 1, 1, '2018-03-08'),
-(17, 1, 2, '2018-03-08');
+(17, 1, 2, '2018-03-08'),
+(18, 5, 7, '2018-03-29'),
+(19, 1, 3, '2018-03-22');
 
 --
 -- Indexes for dumped tables
@@ -586,12 +587,12 @@ MODIFY `support_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '支持ID',AUTO_INCR
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户ID',AUTO_INCREMENT=8;
+MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户ID',AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `want`
 --
 ALTER TABLE `want`
-MODIFY `want_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '想看ID',AUTO_INCREMENT=18;
+MODIFY `want_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '想看ID',AUTO_INCREMENT=20;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

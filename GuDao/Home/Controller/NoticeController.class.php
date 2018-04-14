@@ -7,6 +7,10 @@ class NoticeController extends Controller {
         $this->display();
     }
 
+
+
+    /* -------------------- 通知列表页面 -------------------- */
+
     // 按页获取通知列表
     public function getNoticeByPage() {
     	$startIndex = ($_GET["pageIndex"] - 1) * $_GET["pageSize"];
@@ -14,6 +18,7 @@ class NoticeController extends Controller {
         if($_GET["type"]) {
             $condition["notice_type"] = $_GET["type"];
         }
+
     	$notice = new NoticeModel();
         $data = $notice->getNoticeByPage($startIndex, $pageLength, $condition);
     	if($data) {

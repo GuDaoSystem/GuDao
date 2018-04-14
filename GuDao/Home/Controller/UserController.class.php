@@ -1,13 +1,13 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-use Home\Model\UserModel;
-use Home\Model\WantModel;
-use Home\Model\SupportModel;
-use Home\Model\ShowModel;
 use Home\Model\BandModel;
 use Home\Model\CommentModel;
 use Home\Model\ReplyModel;
+use Home\Model\ShowModel;
+use Home\Model\SupportModel;
+use Home\Model\UserModel;
+use Home\Model\WantModel;
 class UserController extends Controller {
     public function index(){
         $this->display();
@@ -21,12 +21,12 @@ class UserController extends Controller {
 
 
 
-
     /* -------------------- 忘记密码 -------------------- */
 
     // 1. 发送验证码
     public function sendCode() {
         $email = $_POST["email"];
+
         $user = new UserModel();
         if(!$user->checkEmail($email)) {
             $result["code"] = 201;
@@ -39,7 +39,6 @@ class UserController extends Controller {
                 S($email, $code, 60);
                 $result["code"] = 200;
                 $result["msg"] = "发送验证码成功";
-                // setcookie("code", $code, time() + 60, "/");
             } else {
                 $result["code"] = 201;
                 $result["msg"] = "发送验证码失败";
@@ -52,6 +51,7 @@ class UserController extends Controller {
     public function resetPassword() {
         $map["email"] = $_POST["email"];
         $param["password"] = md5($_POST["password"]);
+
         $user = new UserModel();
         $data = $user->resetPassword($map, $param);
         if($data) {
@@ -80,7 +80,7 @@ class UserController extends Controller {
     }
 
 
-    /* -------------------- 个人页面 -------------------- */
+    /* -------------------- 个人页面 & 用户页面 -------------------- */
 
     // 获取用户信息
     public function getUserBasicInfo() {
@@ -157,7 +157,7 @@ class UserController extends Controller {
             array_push($activity, $tem);
         }
 
-        // 按数组中的指定字段排序
+        // 按字段排序
         foreach($activity as $dataItem) {
             $sort[] = $dataItem["time"];
         }
@@ -169,69 +169,8 @@ class UserController extends Controller {
         $this->ajaxReturn($result);
     }
 
-    // 获取演出时间表
-    // public function getShowCalendar() {
-    //     $data = array();
-    //     $want = new WantModel();
-    //     $wantList = $want->getShowByUser($_GET["id"]);
-    //     if(!$wantList) {
-    //         $result["code"] = 201;
-    //         $result["msg"] = "查询失败";
-    //         $this->ajaxReturn($result);
-    //     }
-    //     for($i = 0; $i < count($wantList); $i++) {
-    //         if(!$wantList[$i]) {
-    //             $result["code"] = 201;
-    //             $result["msg"] = "查询失败";
-    //             $this->ajaxReturn($result);
-    //         }
-    //         $show = new ShowModel();
-    //         $tem = $show->getShowByID($wantList[$i]["show_id"]);
-    //         if(!$tem) {
-    //             $result["code"] = 201;
-    //             $result["msg"] = "查询失败";
-    //             $this->ajaxReturn($result);
-    //         }
-    //         array_push($data, $tem);
-    //     }
-
-    //     // 按数组中的指定字段排序
-    //     foreach($data as $dataItem) {
-    //         $sort[] = $dataItem["show_time"];
-    //     }
-    //     array_multisort($sort, SORT_ASC, $data);
-
-    //     $result["code"] = 200;
-    //     $result["msg"] = "查询成功";
-    //     $result["data"] = $data;
-    //     $this->ajaxReturn($result);
-    // }
-
-    // 获取用户发出的评论
-    // public function getCommentByUser() {
-    //     $comment = new CommentModel();
-    //     $data = $comment->getCommentByUser($_GET["id"]);
-    //     if($data) {
-    //         $result["code"] = 200;
-    //         $result["msg"] = "查询成功";
-    //         $result["data"] = $data;
-    //     } else {
-    //         $result["code"] = 201;
-    //         $result["msg"] = "查询失败";
-    //     }
-    //     $this->ajaxReturn($result);
-        
-    // }
-
     // 修改用户信息
     public function modifyUserInfo() {
-        // $id = $_POST["id"];
-        // if($_POST["email"]) {
-        //     $data["email"] = $_POST["email"];
-        // }
-        if($_POST["password"]) {
-            $data["password"] = md5($_POST["password"]);
-        }
         if($_POST["username"]) {
             $data["username"] = $_POST["username"];
         }
@@ -247,6 +186,7 @@ class UserController extends Controller {
         if($_POST["intro"]) {
             $data["intro"] = $_POST["intro"];
         }
+
         $user = new UserModel();
         if($user->modifyUserInfo($_POST["id"], $data)) {
             $result["code"] = 200;
@@ -258,7 +198,6 @@ class UserController extends Controller {
         $this->ajaxReturn($result);
     }
 
-
     // 获取用户收到的回复
     public function getReplyByUser() {
         $reply = new ReplyModel();
@@ -268,6 +207,7 @@ class UserController extends Controller {
             $result["msg"] = "查询失败1";
             $this->ajaxReturn($result);
         }
+        // 按回复获取回复用户
         for($i = 0; $i < count($data); $i++) {
             if(!$data[$i]) {
                 $result["code"] = 201;
@@ -282,12 +222,12 @@ class UserController extends Controller {
                 $this->ajaxReturn($result);
             }
         }
+
         $result["code"] = 200;
         $result["msg"] = "查询成功";
         $result["data"] = $data;
         $this->ajaxReturn($result);
     }
-
 
     // 检查是否有未读消息
     public function hasUnreadMessage() {
@@ -311,6 +251,7 @@ class UserController extends Controller {
         $data["reply_time"] = $_POST["time"];
         $data["user_id"] = $_POST["user_id"];
         $data["target_id"] = $_POST["target_id"];
+        
         $reply = new ReplyModel();
         $data = $reply->replyComment($data);
         if($data) {

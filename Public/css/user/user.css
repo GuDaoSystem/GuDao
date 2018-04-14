@@ -126,11 +126,6 @@
 	border: none;
 	color: #ffd700;
 }
-/*.tablist li.active a {
-	background: none;
-	border: none;
-	color: #ffd700;
-}*/
 
 .tablist .underline {
 	display: block;
@@ -164,12 +159,6 @@
 	left: -ms-calc((100% - 70px * 3) / 2 + 70px * 2);
 	left: -o-calc((100% - 70px * 3) / 2 + 70px * 2);
 	left: calc((100% - 70px * 3) / 2 + 70px * 2);
-}
-
-
-/* -------------------- 标签页内容 -------------------- */
-
-.tab-content .tab-pane {
 }
 
 
@@ -335,9 +324,7 @@
 }
 
 
-
-/*  乐队  */
-
+/* -------------------- 乐队 -------------------- */
 
 #band {
 	padding-top: 2rem;

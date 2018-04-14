@@ -2,6 +2,7 @@
 namespace Home\Model;
 use Think\Model;
 class AttendModel extends Model {
+    
 	// 按演出获取乐队
     public function getBandIDByShow($id) {
         $attend = new AttendModel();

@@ -2,6 +2,7 @@
 namespace Home\Model;
 use Think\Model;
 class SupportModel extends Model {
+	
 	// 按用户获取乐队
 	public function getBandByUser($id) {
 		$support = new SupportModel();

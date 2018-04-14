@@ -15,15 +15,6 @@
 	position: relative;
 }
 .top .img img {
-	/*width: 30%;
-	cursor: pointer;
-	vertical-align: top;
-	-webkit-transition: all 0.2s;
-	-moz-transition: all 0.2s;
-	-ms-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	transition: all 0.2s;*/
-
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -125,7 +116,6 @@
 	padding: 1rem 2rem;
 	vertical-align: top;
 }
-.top .modify-form div {}
 .top .modify-form div span {
 	color: #333;
 }
@@ -191,7 +181,6 @@
 	cursor: pointer;
 }
 
-.top .modify-form .intro {}
 .top .modify-form .intro textarea {
 	width: calc(100% - 8rem);
 	height: 6rem;
@@ -208,7 +197,6 @@
     margin: 0.3rem 0.5rem 0 0;
     text-align: right;
 }
-.top .modify-form .intro .count span {}
 
 .top .modify-form .button {
 	margin-top: 1rem;
@@ -295,12 +283,6 @@
 	left: -ms-calc((100% - 70px * 4) / 2 + 70px * 3);
 	left: -o-calc((100% - 70px * 4) / 2 + 70px * 3);
 	left: calc((100% - 70px * 4) / 2 + 70px * 3);
-}
-
-
-/* -------------------- 标签页内容 -------------------- */
-
-.tab-content .tab-pane {
 }
 
 
@@ -477,7 +459,6 @@
 	color: #333;
 	font-size: 1.2rem;
 }
-#message ul li .reply-box .bottom p span {}
 #message ul li .reply-box .bottom button {
 	padding: 0.3rem 1.2rem;
 	font-size: 1.2rem;
@@ -496,7 +477,6 @@
 	display: none;
 }
 
-#message ul li.open-state .content {}
 #message ul li.open-state .content span.open-btn {
 	display: none;
 }
@@ -562,9 +542,7 @@
 }
 
 
-
-/*  乐队  */
-
+/* -------------------- 乐队 -------------------- */
 
 #band {
 	padding-top: 2rem;

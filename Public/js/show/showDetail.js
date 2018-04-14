@@ -23,12 +23,6 @@ new Vue({
 		});
 
 		// 获取数据
-		// this.checkLogin();
-		// this.getShow();
-		// this.getBand();
-		// this.getWantNum();
-		// this.checkWant();
-		// this.getComment();
 		this.init();
 	},
 	mounted: function() {
@@ -60,26 +54,6 @@ new Vue({
 			_this.getWantNum();
 			_this.getComment();
 		},
-		// // 检查是否已登录
-		// checkLogin: function() {
-		// 	var _this = this;
-		// 	if(sessionStorage.getItem("userID")) {
-		// 		_this.loginFlag = true;
-		// 		$.ajax({
-		// 			url: "../User/getUserBasicInfo",
-		// 			type: "GET",
-		// 			dataType: "json",
-		// 			data: {
-		// 				"id": sessionStorage.getItem("userID")
-		// 			},
-		// 			success: function(result) {
-		// 				if(result.code === 200) {
-		// 					_this.user = result.data;
-		// 				}
-		// 			}
-		// 		});
-		// 	}
-		// },
 		// 获取演出信息
 		getShow: function() {
 			var _this = this;
@@ -147,7 +121,6 @@ new Vue({
 					type: "POST",
 					dataType: "json",
 					data: {
-						// "user_id": sessionStorage.getItem("userID"),
 						"user_id": _this.user.user_id,
 						"show_id": location.search.substr(1).split("=")[1],
 					},
@@ -185,7 +158,6 @@ new Vue({
 			}
 
 			// 获取ID信息
-			// var user_id = sessionStorage.getItem("userID");
 			var user_id = _this.user.user_id;
 			var show_id = location.search.substr(1).split("=")[1];
 
@@ -196,7 +168,6 @@ new Vue({
 					type: "POST",
 					dataType: "json",
 					data: {
-						// "user_id": sessionStorage.getItem("userID"),
 						"user_id": _this.user.user_id,
 						"show_id": location.search.substr(1).split("=")[1]
 					},
@@ -219,7 +190,6 @@ new Vue({
 					type: "POST",
 					dataType: "json",
 					data: {
-						// "user_id": sessionStorage.getItem("userID"),
 						"user_id": _this.user.user_id,
 						"show_id": location.search.substr(1).split("=")[1],
 						"time": time
@@ -312,7 +282,6 @@ new Vue({
 				dataType: "json",
 				data: {
 					"content": content,
-					// "user_id": sessionStorage.getItem("userID"),
 					"user_id": _this.user.user_id,
 					"time": time,
 					"target": 1,
@@ -365,7 +334,6 @@ new Vue({
 					"comment_id": send.parents(".comment").attr("commentid"),
 					"content": content,
 					"time": time,
-					// "user_id": sessionStorage.getItem("userID"),
 					"user_id": _this.user.user_id,
 					"target_id": send.parents(".comment").attr("Userid")
 				},

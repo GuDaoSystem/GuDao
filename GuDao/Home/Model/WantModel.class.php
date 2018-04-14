@@ -2,6 +2,7 @@
 namespace Home\Model;
 use Think\Model;
 class WantModel extends Model {
+	
 	// 按用户获取演出
 	public function getShowByUser($id) {
 		$want = new WantModel();

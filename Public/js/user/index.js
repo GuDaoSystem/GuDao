@@ -25,9 +25,6 @@ new Vue({
 
 		// 获取数据
 		this.init();
-		// this.getUserInfo();
-		// this.getActivity();
-		// this.getReply();
 	},
 	mounted: function() {
 		this.$nextTick(function () {
@@ -85,38 +82,6 @@ new Vue({
 				}
 			});
 		},
-		// 页面初始化
-		// init: function() {
-		// 	console.log(location.hash);
-		// 	if(location.hash == "#message") {
-		// 		$(".tablist li").removeClass("active");
-		// 		$(".tablist li.tab2").addClass("active");
-		// 		$(".underline")[0].className = "underline";
-		// 		$(".underline").addClass("tab2");
-		// 		$(".tab-pane").removeClass("in active");
-		// 		$("#message").addClass("in active");
-		// 	}
-		// },
-		// // 获取用户信息
-		// getUserInfo: function() {
-		// 	_this = this;
-		// 	$.ajax({
-		// 		url: "../../GuDao/User/getUserBasicInfo",
-		// 		type: "GET",
-		// 		dataType: "json",
-		// 		data: {
-		// 			"id": sessionStorage.getItem("userID")
-		// 		},
-		// 		success: function(result) {
-		// 			// console.log(result);
-		// 			if(result.code === 200) {
-		// 				var data = result.data;
-		// 				data.age = new Date().getFullYear() - data.birthday.split("-")[0];
-		// 				_this.info = result.data;
-		// 			}
-		// 		}
-		// 	});
-		// },
 		// 获取用户动态
 		getActivity: function() {
 			_this = this;
@@ -125,17 +90,14 @@ new Vue({
 				type: "GET",
 				dataType: "json",
 				data: {
-					// "id": sessionStorage.getItem("userID")
 					"id": _this.info.user_id
 				},
 				success: function(result) {
-					// console.log(result);
 					if(result.code === 200) {
 						var data = result.data;
 						_this.want = data.want;
 						_this.support = data.support;
 						_this.activity = data.activity;
-						// console.log(_this.activity);
 						for(var i = 0; i < data.activity.length; i++) {
 							if(data.activity[i]["type"] == "show") {
 								_this.shows.push(data.activity[i]["show"]);
@@ -155,13 +117,10 @@ new Vue({
 				type: "GET",
 				dataType: "json",
 				data: {
-					// "id": sessionStorage.getItem("userID")
 					"id": _this.info.user_id
 				},
 				success: function(result) {
-					// console.log(result);
 					_this.reply = result.data;
-					// console.log(_this.reply);
 				}
 			});
 		},
@@ -248,7 +207,6 @@ new Vue({
 				type: "POST",
 				dataType: "json",
 				data: {
-					// "id": sessionStorage.getItem("userID"),
 					"id": _this.info.user_id,
 					"username": name,
 					"gender": gender,
@@ -256,12 +214,9 @@ new Vue({
 					"intro": intro
 				},
 				success: function(result) {
-					// console.log(result);
 					if(result.code === 200) {
 						_this.getUserInfo();
 						_this.cancelModify();
-						// $(".modify-form").hide();
-						// $(".info").show();
 					} else {
 						setAlertBox({
 							className: "text",
@@ -348,13 +303,11 @@ new Vue({
 					"content": content,
 					"time": time,
 					"type": 1,
-					// "user_id": sessionStorage.getItem("userID"),
 					"user_id": _this.info.user_id,
 					"target_id": send.parents("li").attr("user")
 				},
 				success: function(result) {
 					if(result.code === 200) {
-						// console.log(result);
 						send.parent().prev("textarea").val("");
 						$(".reply-box").hide();
 					}

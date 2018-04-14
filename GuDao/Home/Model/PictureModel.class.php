@@ -2,6 +2,7 @@
 namespace Home\Model;
 use Think\Model;
 class PictureModel extends Model {
+	
     // 按乐队获取图片
     public function getPictureByBand($id) {
         $picture = new PictureModel();

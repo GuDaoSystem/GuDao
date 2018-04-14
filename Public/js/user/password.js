@@ -138,10 +138,7 @@ $(function() {
 								"password": password
 							},
 							success: function(result) {
-								if(result.code === 200) {
-									// 设置登录状态
-									// sessionStorage.setItem("userID", result.data.user_id);
-								} else {
+								if(result.code !== 200) {
 									setAlertBox({
 										className: "text",
 										close: true,

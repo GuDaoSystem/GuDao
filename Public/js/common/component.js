@@ -58,13 +58,3 @@ var backToTop = {
 var copyright = {
 	template: `<footer>Copyright&ensp;&copy;&ensp;2017-2018&ensp;孤岛音乐平台&ensp;All&ensp;Rights&ensp;Reserved.</footer>`
 };
-
-
-// new Vue({
-//   el: '#gudao',
-//   components: {
-//   	"navbar": navbar,
-//   	"back-to-top": backToTop,
-//   	"copyright": copyright
-//   }
-// });

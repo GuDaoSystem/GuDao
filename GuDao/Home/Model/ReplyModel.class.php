@@ -2,6 +2,7 @@
 namespace Home\Model;
 use Think\Model;
 class ReplyModel extends Model {
+	
 	// 按评论获取回复
 	public function getReplyByComment($id) {
 		$reply = new ReplyModel();
@@ -17,7 +18,6 @@ class ReplyModel extends Model {
 		return $result;
 	}
 
-
 	// 按目标用户获取回复
 	public function getReplyByTarget($id) {
 		$reply = new ReplyModel();
@@ -25,7 +25,6 @@ class ReplyModel extends Model {
 		$result = $reply->where($map)->order("reply_time desc")->select();
 		return $result;
 	}
-
 
 	// 检查用户是否有未读消息
 	public function hasUnreadMessage($id) {
@@ -35,7 +34,6 @@ class ReplyModel extends Model {
 		$result = $reply->where($map)->select();
 		return $result;
 	}
-
 
 	// 已读消息
 	public function readMessage($id) {

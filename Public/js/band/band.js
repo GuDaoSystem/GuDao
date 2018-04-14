@@ -12,11 +12,11 @@ new Vue({
 	},
 	created: function() {
 		// 加载动画
-		// $(document).ajaxStart(function() {
-		// 	setLoading();
-		// }).ajaxStop(function() {
-		// 	removeLoading();
-		// });
+		$(document).ajaxStart(function() {
+			setLoading();
+		}).ajaxStop(function() {
+			removeLoading();
+		});
 
 		// 获取数据
 		this.getInitial();
