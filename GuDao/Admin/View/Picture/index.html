@@ -10,12 +10,13 @@
 <script type="text/javascript">
 $(function() {
 
-	// 按页获取回复
+	// 按乐队获取图片
 	// $.ajax({
-	// 	url: "Reply/getReplys",
+	// 	url: "Picture/getPictures",
 	// 	type: "GET",
 	// 	dataType: "json",
 	// 	data: {
+	// 		"id": 1,
 	// 		"pageIndex": 1,
 	// 		"pageSize": 10
 	// 	},
@@ -24,13 +25,41 @@ $(function() {
 	// 	}
 	// });
 
-	// 删除回复
+	// 删除图片
 	// $.ajax({
-	// 	url: "Reply/deleteReply",
+	// 	url: "Picture/deletePicture",
 	// 	type: "POST",
 	// 	dataType: "json",
 	// 	data: {
-	// 		"id": 11
+	// 		"id": 70
+	// 	},
+	// 	success: function(result) {
+	// 		console.log(result);
+	// 	}
+	// });
+
+	// 新增单张图片
+	// $.ajax({
+	// 	url: "Picture/addPicture",
+	// 	type: "POST",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"id": "233",
+	// 		"url": "test"
+	// 	},
+	// 	success: function(result) {
+	// 		console.log(result);
+	// 	}
+	// });
+
+	// 新增多张图片
+	// $.ajax({
+	// 	url: "Picture/addPictures",
+	// 	type: "POST",
+	// 	dataType: "json",
+	// 	data: {
+	// 		"id": "233",
+	// 		"urls": ["test1", "test2", "test3"]
 	// 	},
 	// 	success: function(result) {
 	// 		console.log(result);
