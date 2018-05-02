@@ -4,21 +4,32 @@ use Think\Model;
 class NoticeModel extends Model {
 
     // 按页获取通知
-    public function getNoticeByPage($startIndex, $pageLength, $condition) {
+    public function getNotices($startIndex, $pageLength) {
         $notice = new NoticeModel();
-        $result = $notice->where($condition)->order("notice_time desc")->limit($startIndex, $pageLength)->select();
+        $result = $notice->order("notice_time desc")->limit($startIndex, $pageLength)->select();
         return $result;
     }
 
-    // 按通知内容搜索通知
-    public function searchNoticeByContent($startIndex, $pageLength, $key) {
+    // 新增通知
+    public function addNotice($param) {
         $notice = new NoticeModel();
-        $condition = "%";
-        for ($i = 0; $i < count($key); $i++) {
-            $condition = $condition.$key[$i]."%";
-        }
-        $map["notice_content"] = array("like", $condition);
-        $result = $notice->where($map)->limit($startIndex, $pageLength)->select();
+        $result = $notice->add($param);
+        return $result;
+    }
+
+    // 删除通知
+    public function deleteNotice($id) {
+        $notice = new NoticeModel();
+        $map["notice_id"] = $id;
+        $result = $notice->where($map)->delete();
+        return $result;
+    }
+
+    // 修改通知
+    public function modifyNotice($id, $param) {
+        $notice = new NoticeModel();
+        $map["notice_id"] = $id;
+        $result = $notice->where($map)->save($param);
         return $result;
     }
 }
