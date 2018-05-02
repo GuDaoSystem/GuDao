@@ -167,5 +167,30 @@ class ShowController extends Controller {
 
         $this->ajaxReturn($result);
     }
-    
+
+    // 新增参演乐队
+    public function addBandToShow() {
+        $attend = new AttendModel();
+        if($attend->addAttend($_POST["show_id"], $_POST["band_id"])) {
+            $result["code"] = 200;
+            $result["msg"] = "新增成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "新增失败";
+        }
+        $this->ajaxReturn($result);
+    }
+
+    // 删除参演乐队
+    public function deleteBandFromShow() {
+        $attend = new AttendModel();
+        if($attend->deleteAttend($_POST["show_id"], $_POST["band_id"])) {
+            $result["code"] = 200;
+            $result["msg"] = "删除成功";
+        } else {
+            $result["code"] = 201;
+            $result["msg"] = "删除失败";
+        }
+        $this->ajaxReturn($result);
+    }
 }
