@@ -31,9 +31,8 @@ class CommentController extends Controller {
     // 删除评论
     public function deleteComment() {
         $comment = new CommentModel();
-        $data = $comment->deleteComment($_POST["id"]);
-
-        if($data) {
+        
+        if($comment->deleteComment($_POST["id"])) {
             $result["code"] = 200;
             $result["msg"] = "删除成功";
         } else {

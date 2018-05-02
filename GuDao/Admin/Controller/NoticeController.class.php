@@ -15,6 +15,7 @@ class NoticeController extends Controller {
 
         $notice = new NoticeModel();
         $data = $notice->getNotices($startIndex, $pageLength);
+
         if($data) {
             $result["code"] = 200;
             $result["msg"] = "查询成功";
@@ -23,6 +24,7 @@ class NoticeController extends Controller {
             $result["code"] = 201;
             $result["msg"] = "查询失败";
         }
+
         $this->ajaxReturn($result);
     }
 
@@ -36,6 +38,7 @@ class NoticeController extends Controller {
         $param["show_id"] = $_POST["show"];
 
         $notice = new NoticeModel();
+
         if($notice->addNotice($param)) {
             $result["code"] = 200;
             $result["msg"] = "新增成功";
@@ -43,12 +46,14 @@ class NoticeController extends Controller {
             $result["code"] = 201;
             $result["msg"] = "新增失败";
         }
+
         $this->ajaxReturn($result);
     }
 
     // 删除通知
     public function deleteNotice() {
         $notice = new NoticeModel();
+
         if($notice->deleteNotice($_POST["id"])) {
             $result["code"] = 200;
             $result["msg"] = "删除成功";
@@ -56,6 +61,7 @@ class NoticeController extends Controller {
             $result["code"] = 201;
             $result["msg"] = "删除失败";
         }
+
         $this->ajaxReturn($result);
     }
 
@@ -74,6 +80,7 @@ class NoticeController extends Controller {
         }
 
         $notice = new NoticeModel();
+
         if($notice->modifyNotice($id, $param)) {
             $result["code"] = 200;
             $result["msg"] = "修改成功";
@@ -81,6 +88,7 @@ class NoticeController extends Controller {
             $result["code"] = 201;
             $result["msg"] = "修改失败";
         }
+        
         $this->ajaxReturn($result);
     }
 }

@@ -38,9 +38,8 @@ class UserController extends Controller {
         $param["expire"] = null;
 
         $user = new UserModel();
-        $data = $user->modifyUser($id, $param);
 
-        if($data) {
+        if($user->modifyUser($id, $param)) {
             $result["code"] = 200;
             $result["msg"] = "删除成功";
         } else {

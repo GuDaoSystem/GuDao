@@ -3,11 +3,7 @@ namespace Admin\Controller;
 use Think\Controller;
 use Admin\Model\AttendModel;
 use Admin\Model\BandModel;
-// use Admin\Model\CommentModel;
-// use Admin\Model\ReplyModel;
 use Admin\Model\ShowModel;
-// use Admin\Model\UserModel;
-// use Admin\Model\WantModel;
 class ShowController extends Controller {
 	// 渲染页面
     public function index(){
@@ -27,12 +23,14 @@ class ShowController extends Controller {
             $result["msg"] = "查询失败";
             $this->ajaxReturn($result);
         }
+
         for($i = 0; $i < count($data); $i++) {
             if(!$data[$i]) {
                 $result["code"] = 201;
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
+
             // 按演出获取参演乐队
             $attend = new AttendModel();
             $bands = $attend->getBands($data[$i]["show_id"]);
@@ -41,12 +39,14 @@ class ShowController extends Controller {
                 $result["msg"] = "查询失败";
                 $this->ajaxReturn($result);
             }
+
             for($j = 0; $j < count($bands); $j++) {
                 if(!$bands[$j]) {
                     $result["code"] = 201;
                     $result["msg"] = "查询失败";
                     $this->ajaxReturn($result);
                 }
+
                 // 获取乐队
                 $band = new BandModel();
                 $data[$i]["bands"][$j] = $band->getBand($bands[$j]);
@@ -71,9 +71,8 @@ class ShowController extends Controller {
         $param["show_state"] = 5;
 
         $show = new ShowModel();
-        $data = $show->modifyShow($id, $param);
 
-        if($data) {
+        if($show->modifyShow($id, $param)) {
             $result["code"] = 200;
             $result["msg"] = "删除成功";
         } else {
@@ -113,9 +112,8 @@ class ShowController extends Controller {
         }
 
         $show = new ShowModel();
-        $data = $show->modifyShow($id, $param);
 
-        if($data) {
+        if($show->modifyShow($id, $param)) {
             $result["code"] = 200;
             $result["msg"] = "修改成功";
         } else {
@@ -171,6 +169,7 @@ class ShowController extends Controller {
     // 新增参演乐队
     public function addBandToShow() {
         $attend = new AttendModel();
+
         if($attend->addAttend($_POST["show_id"], $_POST["band_id"])) {
             $result["code"] = 200;
             $result["msg"] = "新增成功";
@@ -178,12 +177,14 @@ class ShowController extends Controller {
             $result["code"] = 201;
             $result["msg"] = "新增失败";
         }
+
         $this->ajaxReturn($result);
     }
 
     // 删除参演乐队
     public function deleteBandFromShow() {
         $attend = new AttendModel();
+
         if($attend->deleteAttend($_POST["show_id"], $_POST["band_id"])) {
             $result["code"] = 200;
             $result["msg"] = "删除成功";
@@ -191,6 +192,7 @@ class ShowController extends Controller {
             $result["code"] = 201;
             $result["msg"] = "删除失败";
         }
+        
         $this->ajaxReturn($result);
     }
 }

@@ -47,6 +47,7 @@ class PictureController extends Controller {
     // 新增单张图片
     public function addPicture() {
     	$picture = new PictureModel();
+
     	if($picture->addPicture($_POST["id"], $_POST["url"])) {
     		$result["code"] = 200;
     		$result["msg"] = "新增成功";
@@ -54,6 +55,7 @@ class PictureController extends Controller {
     		$result["code"] = 201;
     		$result["msg"] = "新增失败";
     	}
+        
     	$this->ajaxReturn($result);
     }
 
