@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2018-04-14 09:20:23
+-- Generation Time: 2018-05-02 15:15:28
 -- 服务器版本： 5.6.20
 -- PHP Version: 5.5.15
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `attend` (
 `attend_id` int(10) NOT NULL COMMENT '参加ID',
   `band_id` int(10) NOT NULL COMMENT '乐队ID',
   `show_id` int(10) NOT NULL COMMENT '演出ID'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
 
 --
 -- 转存表中的数据 `attend`
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `band` (
   `band_intro` mediumtext NOT NULL COMMENT '乐队介绍（默认为“孤岛乐队没有介绍“）',
   `band_cover` tinytext COMMENT '乐队封面',
   `band_initial` char(1) NOT NULL COMMENT '乐队名称首字母'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
 
 --
 -- 转存表中的数据 `band`
@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `comment_time` datetime NOT NULL COMMENT '评论时间',
   `comment_target` int(1) NOT NULL COMMENT '评论目标（1为演出，2为乐队）',
   `target_id` int(10) NOT NULL COMMENT '目标ID'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- 转存表中的数据 `comment`
@@ -212,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `notice` (
   `notice_time` date NOT NULL COMMENT '通知时间',
   `notice_content` mediumtext NOT NULL COMMENT '通知内容',
   `show_id` int(10) NOT NULL COMMENT '演出ID'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- 转存表中的数据 `notice`
@@ -255,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `picture` (
 `picture_id` int(10) NOT NULL COMMENT '图片ID',
   `picture_url` tinytext NOT NULL COMMENT '图片链接',
   `band_id` int(10) NOT NULL COMMENT '乐队ID'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=70 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=77 ;
 
 --
 -- 转存表中的数据 `picture`
@@ -330,7 +330,11 @@ INSERT INTO `picture` (`picture_id`, `picture_url`, `band_id`) VALUES
 (66, '20180318150143.jpg', 49),
 (67, '20180318150156.jpg', 49),
 (68, '20180318150201.jpg', 49),
-(69, '20180318150206.jpg', 49);
+(69, '20180318150206.jpg', 49),
+(73, 'test', 233),
+(74, 'test1', 233),
+(75, 'test2', 233),
+(76, 'test3', 233);
 
 -- --------------------------------------------------------
 
@@ -378,7 +382,7 @@ CREATE TABLE IF NOT EXISTS `show` (
   `show_message` longtext COMMENT '演出信息',
   `show_ticket` int(3) NOT NULL DEFAULT '0' COMMENT '演出门票',
   `show_poster` tinytext COMMENT '演出海报',
-  `show_state` int(1) NOT NULL DEFAULT '1' COMMENT '演出状态（1为预售，2为取消，3为变更，4为结束）'
+  `show_state` int(1) NOT NULL DEFAULT '1' COMMENT '演出状态（1为预售，2为取消，3为变更，4为结束，5为删除）'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
@@ -433,7 +437,7 @@ INSERT INTO `support` (`support_id`, `user_id`, `band_id`, `support_time`) VALUE
 CREATE TABLE IF NOT EXISTS `user` (
 `user_id` int(10) NOT NULL COMMENT '用户ID',
   `email` tinytext NOT NULL COMMENT '邮箱',
-  `password` tinytext NOT NULL COMMENT '密码',
+  `password` tinytext COMMENT '密码（为空时表示用户已注销）',
   `username` tinytext NOT NULL COMMENT '用户名（默认为“孤岛没有名字”）',
   `gender` char(1) NOT NULL DEFAULT 'M' COMMENT '性别',
   `birthday` date DEFAULT NULL COMMENT '出生日期',
@@ -441,7 +445,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `intro` mediumtext NOT NULL COMMENT '简介（默认为“孤岛没有简介”）',
   `token` tinytext COMMENT '自动登录验证信息',
   `expire` datetime DEFAULT NULL COMMENT '自动登录过期时间'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `user`
@@ -449,7 +453,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`user_id`, `email`, `password`, `username`, `gender`, `birthday`, `headshot`, `intro`, `token`, `expire`) VALUES
 (1, 'ng.winglam@qq.com', 'd4fbb7d8d5603db43ac2094f5955787c', 'NgWingLam', 'F', '1996-06-06', '1.jpg', '我是吴颖琳。', NULL, NULL),
-(5, 'test@test.com', '2a04fb82ed0892fb753d00b6812aa63c', '孤岛没有名字', 'M', NULL, NULL, '孤岛没有简介', NULL, NULL);
+(5, 'test@test.com', '2a04fb82ed0892fb753d00b6812aa63c', '孤岛没有名字', 'M', NULL, NULL, '孤岛没有简介', NULL, NULL),
+(6, '用户已注销', NULL, '15414', 'M', '2018-04-03', NULL, '151614', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -547,27 +552,27 @@ ALTER TABLE `want`
 -- AUTO_INCREMENT for table `attend`
 --
 ALTER TABLE `attend`
-MODIFY `attend_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '参加ID',AUTO_INCREMENT=60;
+MODIFY `attend_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '参加ID',AUTO_INCREMENT=61;
 --
 -- AUTO_INCREMENT for table `band`
 --
 ALTER TABLE `band`
-MODIFY `band_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '乐队ID',AUTO_INCREMENT=50;
+MODIFY `band_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '乐队ID',AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-MODIFY `comment_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '评论ID',AUTO_INCREMENT=23;
+MODIFY `comment_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '评论ID',AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
-MODIFY `notice_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '通知ID',AUTO_INCREMENT=27;
+MODIFY `notice_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '通知ID',AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `picture`
 --
 ALTER TABLE `picture`
-MODIFY `picture_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '图片ID',AUTO_INCREMENT=70;
+MODIFY `picture_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '图片ID',AUTO_INCREMENT=77;
 --
 -- AUTO_INCREMENT for table `reply`
 --
@@ -587,7 +592,7 @@ MODIFY `support_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '支持ID',AUTO_INCR
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户ID',AUTO_INCREMENT=9;
+MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户ID',AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `want`
 --
