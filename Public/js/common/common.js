@@ -1,15 +1,8 @@
-/*
-	author: 吴颖琳
-	contact: ng.winglam@qq.com
-	date: 2018.01.12-2018.03.24
-	ps: 依赖jQuery
-*/
-
 
 
 /*
 	功能：完成手机号码或邮箱地址的基本验证及获取验证码
-	参数：必选，对象，获取验证码所用到的表单、ajax和弹窗的相关设置
+	参数：必选，对象，获取验证码所用到的表单、ajax和弹窗的相关设置 
 		{
 			form: {							// 必选，对象，获取验证码的表单设置
 				targetType: "",				// 可选，字符串，目标类型，取值为"phone"或"email"，默认为"phone"
@@ -233,14 +226,14 @@ function setAlertBox(param) {
 	if(param.className) {
 		html += "<div class='alert-box " + param.className +"'>";
 	} else {
-		html += "<div class='alert-box'>";
+		html += "<div class='alert-box'>"; 
 	}
 	html += "<div class='box'>";
 	if(param.close) {
 		html += "<span class='close'></span>";
 	}
 	if(param.title) {
-		html += "<p class='title'>" + param.title +"</p>";
+		html += "<p class='title'>" + param.title +"</p>"; 
 	}
 	html += "<div class='message'>" + param.message + "</div>"
 		 + "<div class='buttons'>";
